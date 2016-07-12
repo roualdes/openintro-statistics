@@ -5,17 +5,6 @@
 
 Probability forms a foundation for statistics. You might already be familiar with many aspects of probability, however, formalization of the concepts is new for most. This chapter aims to introduce probability on familiar terms using processes most people have seen before.
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlkwd{choose}\hlstd{(}\hlnum{5}\hlstd{,} \hlnum{2}\hlstd{)}
-\end{alltt}
-\begin{verbatim}
-## [1] 10
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
-
 \section{Defining probability (special topic)}
 \label{basicsOfProbability}
 
