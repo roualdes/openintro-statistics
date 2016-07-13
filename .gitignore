@@ -19,6 +19,7 @@ main.fls
 *gitignore~
 *.Rapp.history
 *~
+figs
 Icon[^/]
 \#*
 *.dropbox

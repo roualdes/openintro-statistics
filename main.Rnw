@@ -31,6 +31,7 @@
 <<setup, include=FALSE>>=
 options(replace.assign=TRUE, width=40)
 opts_knit$set(progress=FALSE)
+suppressMessages(library(ggplot2))
 @
 
 \renewcommand{\thepage}{}
@@ -42,51 +43,51 @@ opts_knit$set(progress=FALSE)
 \normalsize
 
 % Chapter 1
-<<chIntroToData, child="ch_intro_to_data/TeX/ch_intro_to_data.Rnw">>=
+<<ch01Content, child="ch_intro_to_data/content.Rnw">>=
 @ 
-<<chIntroToDataEx, child="ch_intro_to_data/TeX/ch_intro_to_data_ex.Rnw">>=
+<<ch01Exercises, child="ch_intro_to_data/exercises.Rnw">>=
 @ 
 
 % Chapter 2
-<<chProbability, child="ch_probability/TeX/ch_probability.Rnw">>=
+<<ch02Content, child="ch_probability/content.Rnw">>=
 @ 
-<<chProbabilityEx, child="ch_probability/TeX/ch_probability_ex.Rnw">>=
+<<ch03Exercises, child="ch_probability/exercises.Rnw">>=
 @ 
 
 % Chapter 3
-<<chDistributions, child="ch_distributions/TeX/ch_distributions.Rnw">>=
+<<ch03Content, child="ch_distributions/content.Rnw">>=
 @ 
-<<chDistributionsEx, child="ch_distributions/TeX/ch_distributions_ex.Rnw">>=
+<<ch03Exercises, child="ch_distributions/exercises.Rnw">>=
 @ 
 
 % Chapter 4
-<<chInferenceFoundations, child="ch_inference_foundations/TeX/ch_inference_foundations.Rnw">>=
+<<ch04Content, child="ch_inference_foundations/content.Rnw">>=
 @ 
-<<chInferenceFoundationsEx, child="ch_inference_foundations/TeX/ch_inference_foundations_ex.Rnw">>=
+<<ch04Exercises, child="ch_inference_foundations/exercises.Rnw">>=
 @ 
 
 % Chapter 5
-<<chInferenceForMeans, child="ch_inference_for_means/TeX/ch_inference_for_means.Rnw">>=
+<<ch05Content, child="ch_inference_for_means/content.Rnw">>=
 @ 
-<<chInferenceForMeansEx, child="ch_inference_for_means/TeX/ch_inference_for_means_ex.Rnw">>=
+<<ch05Exercises, child="ch_inference_for_means/exercises.Rnw">>=
 @ 
 
 % Chapter 6
-<<chInferenceForProps, child="ch_inference_for_props/TeX/ch_inference_for_props.Rnw">>=
+<<ch06Content, child="ch_inference_for_props/content.Rnw">>=
 @ 
-<<chInferenceForPropsEx, child="ch_inference_for_props/TeX/ch_inference_for_props_ex.Rnw">>=
+<<ch06Exercises, child="ch_inference_for_props/exercises.Rnw">>=
 @ 
 
 % Chapter 7
-<<chRegrSimpleLinear, child="ch_regr_simple_linear/TeX/ch_regr_simple_linear.Rnw">>=
+<<ch07Content, child="ch_regr_simple_linear/content.Rnw">>=
 @ 
-<<chRegrSimpleLinearEx, child="ch_regr_simple_linear/TeX/ch_regr_simple_linear_ex.Rnw">>=
+<<ch07, child="ch_regr_simple_linear/exercises.Rnw">>=
 @ 
 
 % Chapter 8
-<<chRegrMultAndLog, child="ch_regr_mult_and_log/TeX/ch_regr_mult_and_log.Rnw">>=
+<<ch08Content, child="ch_regr_mult_and_log/content.Rnw">>=
 @ 
-<<chRegrMultAndLogEx, child="ch_regr_mult_and_log/TeX/ch_regr_mult_and_log_ex.Rnw">>=
+<<ch08Exercises, child="ch_regr_mult_and_log/exercises.Rnw">>=
 @ 
 
 \appendix

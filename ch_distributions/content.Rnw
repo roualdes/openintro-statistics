@@ -7,14 +7,20 @@
 \section{Normal distribution}
 \label{normalDist}
 
-Among all the distributions we see in practice, one is overwhelmingly the most common. The symmetric, unimodal, bell curve is ubiquitous throughout statistics. Indeed it is so common, that people often know it as the \term{normal curve} or \termsub{normal distribution}{distribution!normal},\footnote{It is also introduced as the Gaussian distribution after Frederic Gauss, the first person to formalize its mathematical expression.} shown in Figure~\ref{simpleNormal}. Variables such as SAT scores and heights of US adult males closely follow the normal distribution.
+Among all the distributions we see in practice, one is overwhelmingly the most common. The symmetric, unimodal, bell curve is ubiquitous throughout statistics. Indeed it is so common, that people often know it as the \term{normal curve} or \termsub{normal distribution}{distribution!normal},\footnote{It is also introduced as the Gaussian distribution after Frederic Gauss, the first person to formalize its mathematical expression.} shown in Figure~\ref{fig:stdNormal}. Variables such as SAT scores and heights of US adult males closely follow the normal distribution.
 
-\begin{figure}
-\centering
-\includegraphics[width=0.7\textwidth]{ch_distributions/figures/simpleNormal/simpleNormal}
-\caption{A normal curve.}
-\label{simpleNormal}
-\end{figure}
+% \begin{figure}
+% \centering
+% \includegraphics[width=0.7\textwidth]{ch_distributions/figures/simpleNormal/simpleNormal}
+% \caption{A normal curve.}
+% \label{simpleNormal}
+% \end{figure}
+
+<<stdNormal, fig.cap="Standard normal distribution", echo=FALSE, fig.width=4, fig.height=2.5, fig.align="center", fig.pos="h">>=
+ggplot(data.frame(x=c(-4,4)), aes(x)) +
+    stat_function(fun=dnorm, geom="line") +
+    labs(y="", x="")
+@ 
 
 \begin{termBox}{\tBoxTitle{Normal distribution facts}
 Many variables are nearly normal, but none are exactly normal. Thus the normal distribution, while not perfect for any single problem, is very useful for a variety of problems. We will use it in data exploration and to solve important problems in statistics.\vspace{0.7mm}}

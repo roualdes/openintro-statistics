@@ -1,7 +1,9 @@
+This nascent project attempts to introduce `R` code into [OpenIntro Statistics](https://github.com/OpenIntroOrg/openintro-statistics), the book from which this project is derived.
+
 Project Organization
 --------------------
 
-- Each chapter's content is in one of the eight chapter folders that start with "ch_". Within each folder, there is a "figures" folder and a "TeX" folder. The TeX folder contains the text files that are used to typeset the chapters in the textbook.
+- Each chapter's content is in one of the eight chapter folders that start with "ch_". Within each folder, there is a "figures" folder, and files named content.Rnw and exercises.Rnw, which contain the content and exercises for the respective chapter. The Rnw files contain the text that are used to typeset the chapters in the textbook.
 - In many cases, R code is supplied with figures to regenerate the figure. It will often be necessary to install the "openintro" R package that is available from GitHub (https://github.com/OpenIntroOrg) if you would like to regenerate a figure. Other packages may also occasionally be required.
 - Exercise figures may be found in [chapter folder] > figures > eoce > [exercise figure folders]. "EOCE" means end-of-chapter exercises.
 - The extraTeX folder contains files for the front and back matter of the textbook and also the style files. Note that use of any style files, like all other files here, is under the Creative Commons license cited in the LICENSE file.
@@ -11,32 +13,12 @@ Project Organization
 Typesetting the Textbook
 ------------------------
 
-The textbook may be typeset using the main.tex file. This file pulls in all of the necessary TeX files and figures. For a final typesetting event, typeset in the following order
+The textbook may be typeset using the files main.Rnw and Makefile.  From the command line, run
 
-- LaTeX 3 times.
-- MakeIndex once.
-- BibTeX once.
-- LaTeX once.
-- MakeIndex once.
-- LaTeX once.
+```
+$ make
+```
 
-This isn't important for casual browsing, but it is important for a "final" version. The repetitive typesetting is to account for when typesetting changes references slightly, since typesetting the first few times can move content from one page to the next, e.g. as a \ref{...} gets filled in.
+There are some errors along the way, but the book also appears to compile.  Any help on reducing the number of compilation errors is welcome.
 
 - - -
-
-Learning LaTeX
---------------
-
-If you are not familiar with LaTeX but would like to learn how to use it, check out the slides from two LaTeX mini-courses at
-
-https://github.com/OpenIntroOrg/mini-course-materials
-
-PDFs:
-
-[Basics of LaTeX](https://github.com/OpenIntroOrg/mini-course-materials/raw/master/LaTeX_Basics/basicsOfLatex.pdf)
-
-[Math and BibTeX](https://github.com/OpenIntroOrg/mini-course-materials/raw/master/LaTeX_Math_and_BibTeX/bibtexMathInLatex.pdf)
-
-For a more authoritative review, the book "Guide to LaTeX" is an excellent resource.
-
-Also, see the branches of [this repo](https://github.com/statkclee/mini-course-materials) by Kwangchun Lee for Korean translations of these mini-course materials.
