@@ -1,4 +1,4 @@
-This nascent project attempts to introduce `R` code into [OpenIntro Statistics](https://github.com/OpenIntroOrg/openintro-statistics), the book from which this project is derived.
+This nascent project attempts to introduce R code into [OpenIntro Statistics](https://github.com/OpenIntroOrg/openintro-statistics), the book from which this project is derived.
 
 Project Organization
 --------------------
