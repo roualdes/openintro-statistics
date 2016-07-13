@@ -9,21 +9,31 @@
 *.ilg
 *.ind
 *.out
-*.pdf
 *.run.xml
 *.synctex.gz
 *.toc
 *.dvi
 *.fdb_latexmk
 *.DS_Store
-*gitignore~
-*.Rapp.history
-*.Rhistory
 *~
 figs
+main.pdf
 Icon[^/]
 \#*
 *.dropbox
-_README
 *-deprecated*
-*.Rhistory
+_README
+
+### R nonsense ### 
+.Rhistory
+*-Ex.R
+*.Rapp.history
+
+### OS Files ###
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
