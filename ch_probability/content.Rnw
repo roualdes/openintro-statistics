@@ -1514,6 +1514,3 @@ Suppose a person's height is rounded to the nearest centimeter. Is there a chanc
 \end{exercise}
 
 \index{data!FCID|)}
-
-
-
