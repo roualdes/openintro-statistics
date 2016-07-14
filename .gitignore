@@ -14,8 +14,12 @@
 *.dvi
 *.fdb_latexmk
 *.DS_Store
+*.RData
+*.rdx
+*.rdb
 *~
 ch_*/*.tex
+cache
 figs
 main.pdf
 Icon[^/]
