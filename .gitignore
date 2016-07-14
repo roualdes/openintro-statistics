@@ -1,6 +1,5 @@
 *.log
 *.aux
-*.tex
 *.fls
 *.bib
 *.bbl
@@ -16,6 +15,7 @@
 *.fdb_latexmk
 *.DS_Store
 *~
+ch_*/*.tex
 figs
 main.pdf
 Icon[^/]

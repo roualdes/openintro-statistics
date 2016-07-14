@@ -16,7 +16,7 @@ Among all the distributions we see in practice, one is overwhelmingly the most c
 % \label{simpleNormal}
 % \end{figure}
 
-<<stdNormal, fig.cap="Standard normal distribution", echo=FALSE, fig.width=4, fig.height=2.5, fig.align="center", fig.pos="h">>=
+<<stdNormal, opts.label="plot", fig.cap="Standard normal distribution">>=
 ggplot(data.frame(x=c(-4,4)), aes(x)) +
     stat_function(fun=dnorm, geom="line") +
     labs(y="", x="")
@@ -1004,3 +1004,5 @@ Even when events are not really independent -- for instance, Saturdays and Sunda
 \index{distribution!Poisson|)}
 
 
+
+ESS[S] finished at Thu Jul 14 10:13:18

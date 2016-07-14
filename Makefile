@@ -15,6 +15,7 @@ RFILES    :=
 TEXFILES  := $(shell find . -type f -name '*.tex' ! -name 'main.tex')
 CACHEDIR  := cache
 FIGUREDIR := figs
+BUILD     := $(build)
 LATEXMK_FLAGS := 
 ##### Explicit Dependencies #####
 ################################################################################
@@ -45,6 +46,7 @@ $(FIGUREDIR):
 	  -e "library(knitr)" \
 	  -e "knitr::opts_chunk[['set']](fig.path='$(FIGUREDIR)/$*-')" \
 	  -e "knitr::opts_chunk[['set']](cache.path='$(CACHEDIR)/$*-')" \
+	  -e "knitr::opts_chunk[['set']](build='$(BUILD)')" \
 	  -e "knitr::knit('$<','$@')"
 
 %.R: %.Rnw
@@ -75,7 +77,3 @@ cleanall: clean clearcache
 
 open:
 	open -a Skim $(MAINPDF)
-
-handout:
-	gsed 's/documentclass/documentclass[handout]/' main.tex >main_handout.tex
-	latexmk -pdf main_handout.tex

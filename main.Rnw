@@ -32,6 +32,16 @@
 options(replace.assign=TRUE, width=40)
 opts_knit$set(progress=FALSE)
 suppressMessages(library(ggplot2))
+buildstyle <- opts_chunk[["get"]]("build")
+plot <- list(
+    echo=FALSE, fig.width=5, fig.height=2.5,
+    fig.align="center", fig.pos="h", cache=TRUE
+)
+if (grepl("code", buildstyle)) {
+    plot[["echo"]] <- TRUE
+}
+code <- plot["echo"]
+opts_template[["set"]](plot=plot, code=code)
 @
 
 \renewcommand{\thepage}{}
