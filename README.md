@@ -1,4 +1,4 @@
-This nascent project attempts to introduce R code into [OpenIntro Statistics](https://github.com/OpenIntroOrg/openintro-statistics), the book from which this project is derived.
+This nascent project attempts to [knit](http://yihui.name/knitr/) R code into [OpenIntro Statistics](https://github.com/OpenIntroOrg/openintro-statistics), the book from which this project is derived.
 
 Project Organization
 --------------------
@@ -19,6 +19,12 @@ The textbook may be typeset using the files main.Rnw and Makefile.  From the com
 $ make
 ```
 
-There are some errors along the way, but the book also appears to compile.  Any help on reducing the number of compilation errors is welcome.
+To compile the book with R code knit into the text, specify the make option
+
+```
+$ make build=code
+```
+
+There are some errors along the way, but the book appears to compile.  Any help on reducing the number of compilation errors is welcome.
 
 - - -
