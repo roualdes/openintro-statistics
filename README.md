@@ -29,11 +29,10 @@ $ make build=code
 
 Dependencies
 ------------
-LaTeX
-Make
-R
-KnitR
-tidyverse
-openintro
 
-extra CSV files
+- [LaTeX](https://www.latex-project.org/)
+- [Make](https://www.gnu.org/software/make/)
+- [R](https://cran.r-project.org/)
+- [knitr](http://yihui.name/knitr/)
+- [tidyverse](https://cran.r-project.org/web/packages/tidyverse/index.html)
+- [openintro](https://cran.r-project.org/web/packages/openintro/index.html)
