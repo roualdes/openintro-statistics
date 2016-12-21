@@ -1,3 +1,4 @@
+% -*- compile-command: "cd ../ && make" -*-
 \chapter{Inference for numerical data}
 \label{inferenceForNumericalData}
 
@@ -9,9 +10,6 @@ Chapter~\ref{foundationsForInference} introduced a framework for statistical inf
 \item Apply the ideas from Chapter~\ref{foundationsForInference} using the distribution from step 2.
 \end{enumerate}
 
-
-
-%__________________
 \section{One-sample means with the $t$-distribution}
 \label{oneSampleMeansWithTDistribution}
 
@@ -56,7 +54,7 @@ In the cases where we will use a small sample to calculate the standard error, i
 
 \begin{figure}
 \centering
-\includegraphics[height=45mm]{ch_inference_for_means/figures/tDistCompareToNormalDist/tDistCompareToNormalDist}
+\includegraphics[height=45mm]{ch_inference_means/figures/tDistCompareToNormalDist/tDistCompareToNormalDist}
 \caption{Comparison of a $t$-distribution (solid line) and a normal distribution (dotted line).}
 \label{tDistCompareToNormalDist}
 \end{figure}
@@ -65,7 +63,7 @@ The $t$-distribution, always centered at zero, has a single parameter: degrees o
 
 \begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth]{ch_inference_for_means/figures/tDistConvergeToNormalDist/tDistConvergeToNormalDist}
+\includegraphics[width=0.8\textwidth]{ch_inference_means/figures/tDistConvergeToNormalDist/tDistConvergeToNormalDist}
 \caption{The larger the degrees of freedom, the more closely the $t$-distribution resembles the standard normal model.}
 \label{tDistConvergeToNormalDist}
 \end{figure}
@@ -87,18 +85,18 @@ It's very useful to become familiar with the $t$-distribution, because it allows
 one tail & \hspace{1.5mm}  0.100 & \hspace{1.5mm} 0.050 & \hspace{1.5mm} 0.025 & \hspace{1.5mm} 0.010 & \hspace{1.5mm} 0.005  \\
 two tails & 0.200 & 0.100 & 0.050 & 0.020 & 0.010 \\
 \hline
-{$df$} \hfill 1  &  {\normalsize  3.08} & {\normalsize  6.31} & {\normalsize 12.71} & {\normalsize 31.82} & {\normalsize 63.66}  \\ 
-2  &  {\normalsize  1.89} & {\normalsize  2.92} & {\normalsize  4.30} & {\normalsize  6.96} & {\normalsize  9.92}  \\ 
-3  &  {\normalsize  1.64} & {\normalsize  2.35} & {\normalsize  3.18} & {\normalsize  4.54} & {\normalsize  5.84}  \\ 
+{$df$} \hfill 1  &  {\normalsize  3.08} & {\normalsize  6.31} & {\normalsize 12.71} & {\normalsize 31.82} & {\normalsize 63.66}  \\
+2  &  {\normalsize  1.89} & {\normalsize  2.92} & {\normalsize  4.30} & {\normalsize  6.96} & {\normalsize  9.92}  \\
+3  &  {\normalsize  1.64} & {\normalsize  2.35} & {\normalsize  3.18} & {\normalsize  4.54} & {\normalsize  5.84}  \\
 $\vdots$ & $\vdots$ &$\vdots$ &$\vdots$ &$\vdots$ & \\
-17  &  {\normalsize  1.33} & {\normalsize  1.74} & {\normalsize  2.11} & {\normalsize  2.57} & {\normalsize  2.90}  \\ 
-\highlightO{18}  &  \highlightO{\normalsize  1.33} & \highlightO{\normalsize  1.73} & \highlightO{\normalsize  2.10} & \highlightO{\normalsize  2.55} & \highlightO{\normalsize  2.88}  \\ 
-19  &  {\normalsize  1.33} & {\normalsize  1.73} & {\normalsize  2.09} & {\normalsize  2.54} & {\normalsize  2.86}  \\ 
-20  &  {\normalsize  1.33} & {\normalsize  1.72} & {\normalsize  2.09} & {\normalsize  2.53} & {\normalsize  2.85}  \\ 
+17  &  {\normalsize  1.33} & {\normalsize  1.74} & {\normalsize  2.11} & {\normalsize  2.57} & {\normalsize  2.90}  \\
+\highlightO{18}  &  \highlightO{\normalsize  1.33} & \highlightO{\normalsize  1.73} & \highlightO{\normalsize  2.10} & \highlightO{\normalsize  2.55} & \highlightO{\normalsize  2.88}  \\
+19  &  {\normalsize  1.33} & {\normalsize  1.73} & {\normalsize  2.09} & {\normalsize  2.54} & {\normalsize  2.86}  \\
+20  &  {\normalsize  1.33} & {\normalsize  1.72} & {\normalsize  2.09} & {\normalsize  2.53} & {\normalsize  2.85}  \\
 $\vdots$ & $\vdots$ &$\vdots$ &$\vdots$ &$\vdots$ & \\
-400  &  {\normalsize  1.28} & {\normalsize  1.65} & {\normalsize  1.97} & {\normalsize  2.34} & {\normalsize  2.59}  \\ 
-500  &  {\normalsize  1.28} & {\normalsize  1.65} & {\normalsize  1.96} & {\normalsize  2.33} & {\normalsize  2.59}  \\ 
-$\infty$  &  {\normalsize  1.28} & {\normalsize  1.64} & {\normalsize  1.96} & {\normalsize  2.33} & {\normalsize  2.58}  \\ 
+400  &  {\normalsize  1.28} & {\normalsize  1.65} & {\normalsize  1.97} & {\normalsize  2.34} & {\normalsize  2.59}  \\
+500  &  {\normalsize  1.28} & {\normalsize  1.65} & {\normalsize  1.96} & {\normalsize  2.33} & {\normalsize  2.59}  \\
+$\infty$  &  {\normalsize  1.28} & {\normalsize  1.64} & {\normalsize  1.96} & {\normalsize  2.33} & {\normalsize  2.58}  \\
 \end{tabular}
 \caption{An abbreviated look at the $t$-table. Each row represents a different $t$-distribution. The columns describe the cutoffs for specific tail areas. The row with $df=18$ has been \highlightO{highlighted}.}
 \label{tTableSample}
@@ -112,7 +110,7 @@ Just like a normal probability problem, we first draw the picture in Figure~\ref
 
 \begin{figure}
 \centering
-\includegraphics[width=0.5\textwidth]{ch_inference_for_means/figures/tDistDF18LeftTail2Point10/tDistDF18LeftTail2Point10}
+\includegraphics[width=0.5\textwidth]{ch_inference_means/figures/tDistDF18LeftTail2Point10/tDistDF18LeftTail2Point10}
 \caption{The $t$-distribution with 18 degrees of freedom. The area below -2.10 has been shaded.}
 \label{tDistDF18LeftTail2Point10}
 \end{figure}
@@ -123,7 +121,7 @@ We identify the row in the $t$-table using the degrees of freedom: $df=20$. Then
 
 \begin{figure}
 \centering
-\includegraphics[width=0.85\textwidth]{ch_inference_for_means/figures/tDistDF20RightTail1Point65/tDistDF20RightTail1Point65}
+\includegraphics[width=0.85\textwidth]{ch_inference_means/figures/tDistDF20RightTail1Point65/tDistDF20RightTail1Point65}
 \caption{Left: The $t$-distribution with 20 degrees of freedom, with the area above 1.65 shaded. Right: The $t$-distribution with 2 degrees of freedom, with the area further than 3 units from 0 shaded.}
 \label{tDistDF20RightTail1Point65}
 \end{figure}
@@ -167,7 +165,7 @@ Dolphins are at the top of the oceanic food chain, which causes dangerous substa
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{ch_inference_for_means/figures/rissosDolphin/rissosDolphin.jpg}  \\
+\includegraphics[width=0.8\textwidth]{ch_inference_means/figures/rissosDolphin/rissosDolphin.jpg}  \\
 \addvspace{2mm}
 \begin{minipage}{\textwidth}
    \caption[rissosDolphinPic]{A Risso's dolphin.\vspace{-1mm} \\
@@ -211,7 +209,7 @@ $t^{\star}_{df}$\vspace{1mm}\\\footnotesize Multiplication\\factor for\\$t$ conf
 If the sample has $n$ observations and we are examining a single mean, then we use the $t$-distribution with $df=n-1$ degrees of freedom.}
 \end{termBox}
 
-In our current example, we should use the $t$-distribution with $df=19-1=18$ degrees of freedom. Then identifying $t_{18}^{\star}$ is similar to how we found $z^{\star}$. 
+In our current example, we should use the $t$-distribution with $df=19-1=18$ degrees of freedom. Then identifying $t_{18}^{\star}$ is similar to how we found $z^{\star}$.
 \begin{itemize}
 \setlength{\itemsep}{0mm}
 \item For a 95\% confidence interval, we want to find the cutoff $t^{\star}_{18}$ such that 95\% of the $t$-distribution is between -$t^{\star}_{18}$ and $t^{\star}_{18}$.
@@ -281,7 +279,7 @@ The data come from a simple random sample from less than 10\% of all participant
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.65\textwidth]{ch_inference_for_means/figures/run10SampTimeHistogram/run10SampTimeHistogram} 
+\includegraphics[width=0.65\textwidth]{ch_inference_means/figures/run10SampTimeHistogram/run10SampTimeHistogram}
 \caption{A histogram of \var{time} for the sample Cherry Blossom Race data.}
 \label{run10SampTimeHistogram}
 \end{figure}
@@ -298,13 +296,8 @@ To help us remember to use the $t$-distribution, we use a $T$ to represent the t
 
 \CalculatorVideos{confidence intervals and hypothesis tests for a single mean}
 
-
-
 \textC{\newpage}
 
-
-
-%__________________
 \section{Paired data}
 \label{pairedData}
 
@@ -317,15 +310,15 @@ Are textbooks actually cheaper online? Here we compare the price of textbooks at
 \centering
 \begin{tabular}{rllrrr}
   \hline
- & dept & course & ucla & amazon & diff \\ 
+ & dept & course & ucla & amazon & diff \\
   \hline
-1 & Am Ind &  C170 & 27.67 & 27.95 & -0.28 \\ 
-  2 & Anthro & 9 & 40.59 & 31.14 & 9.45 \\ 
-  3 & Anthro & 135T & 31.68 & 32.00 & -0.32 \\ 
-  4 & Anthro & 191HB & 16.00 & 11.52 & 4.48 \\ 
+1 & Am Ind &  C170 & 27.67 & 27.95 & -0.28 \\
+  2 & Anthro & 9 & 40.59 & 31.14 & 9.45 \\
+  3 & Anthro & 135T & 31.68 & 32.00 & -0.32 \\
+  4 & Anthro & 191HB & 16.00 & 11.52 & 4.48 \\
 $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\
-  72 & Wom Std & M144 & 23.76 & 18.72 & 5.04 \\ 
-  73 & Wom Std & 285 & 27.70 & 18.22 & 9.48 \\ 
+  72 & Wom Std & M144 & 23.76 & 18.72 & 5.04 \\
+  73 & Wom Std & 285 & 27.70 & 18.22 & 9.48 \\
    \hline
 \end{tabular}
 \caption{Six cases of the \data{textbooks} data set.}
@@ -349,7 +342,7 @@ for each book. It is important that we always subtract using a consistent order;
 
 \begin{figure}
 \centering
-\includegraphics[width=0.93\textwidth]{ch_inference_for_means/figures/textbooksS10/diffInTextbookPricesS10}
+\includegraphics[width=0.93\textwidth]{ch_inference_means/figures/textbooksS10/diffInTextbookPricesS10}
 \caption{Histogram of the difference in price for each book sampled. These data are strongly skewed.\index{skew!example: strong}}
 \label{diffInTextbookPricesS10}
 \end{figure}
@@ -399,7 +392,7 @@ The degrees of freedom are $df = 73 - 1 = 72$. If we examined Appendix~\vref{tDi
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.65\textwidth]{ch_inference_for_means/figures/textbooksS10/textbooksS10HTTails}
+\includegraphics[width=0.65\textwidth]{ch_inference_means/figures/textbooksS10/textbooksS10HTTails}
 \caption{Sampling distribution for the mean difference in book prices, if the true average difference is zero.}
 \label{textbooksS10HTTails}
 \end{figure}
@@ -416,7 +409,6 @@ We are 95\% confident that Amazon is, on average, between \$9.44 and \$16.08 che
 
 
 
-%__________________
 \section{Difference of two means}
 \label{differenceOfTwoMeans}
 
@@ -475,7 +467,7 @@ Because both conditions are met, we can use the $t$-distribution to model the di
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.58\textwidth]{ch_inference_for_means/figures/stemCellTherapyForHearts/stemCellTherapyForHearts}
+\includegraphics[width=0.58\textwidth]{ch_inference_means/figures/stemCellTherapyForHearts/stemCellTherapyForHearts}
 \caption{Histograms for both the embryonic stem cell group and the control group. Higher values are associated with greater improvement. We don't see any evidence of skew in these data; however, it is worth noting that skew would be difficult to detect with such a small sample.}
 \label{stemCellTherapyForHearts}
 \end{figure}
@@ -538,13 +530,13 @@ A data set called \data{baby\_\hspace{0.3mm}smoke} represents a random sample of
 \centering
 \begin{tabular}{rrrrrll}
   \hline
- & fAge & mAge & weeks & weight & sexBaby & smoke \\ 
+ & fAge & mAge & weeks & weight & sexBaby & smoke \\
   \hline
-1 & NA & 13 &  37 & 5.00 & female & nonsmoker \\ 
-  2 & NA & 14 &  36 & 5.88 & female & nonsmoker \\ 
-  3 & 19 & 15 &  41 & 8.13 & male & smoker \\ 
+1 & NA & 13 &  37 & 5.00 & female & nonsmoker \\
+  2 & NA & 14 &  36 & 5.88 & female & nonsmoker \\
+  3 & 19 & 15 &  41 & 8.13 & male & smoker \\
   $\vdots$ &   $\vdots$ &   $\vdots$ &   $\vdots$ &   $\vdots$ &   $\vdots$ \\
-  150 & 45 & 50 &  36 & 9.25 & female & nonsmoker \\ 
+  150 & 45 & 50 &  36 & 9.25 & female & nonsmoker \\
    \hline
 \end{tabular}
 \caption{Four cases from the \data{baby\_\hspace{0.3mm}smoke} data set. The value ``NA'', shown for the first two entries of the first variable, indicates that piece of data is missing.\textC{-2mm}}
@@ -553,7 +545,7 @@ A data set called \data{baby\_\hspace{0.3mm}smoke} represents a random sample of
 
 \begin{figure}[hhh]
 \centering
-\includegraphics[width=0.63\textwidth]{ch_inference_for_means/figures/babySmokePlotOfTwoGroupsToExamineSkew/babySmokePlotOfTwoGroupsToExamineSkew}
+\includegraphics[width=0.63\textwidth]{ch_inference_means/figures/babySmokePlotOfTwoGroupsToExamineSkew/babySmokePlotOfTwoGroupsToExamineSkew}
 \caption{The top panel represents birth weights for infants whose mothers smoked. The bottom panel represents the birth weights for infants whose mothers who did not smoke. The distributions exhibit moderate-to-strong and strong~skew, respectively.\index{skew!example: strong}}
 \label{babySmokePlotOfTwoGroupsToExamineSkew}
 \end{figure}
@@ -600,7 +592,7 @@ SE = \sqrt{\frac{\sigma_n^2}{n_n} + \frac{\sigma_s^2}{n_s}}
 \begin{example}{Draw a picture to represent the p-value for the hypothesis test from Example~\ref{babySmokeHTForWeight}.} \label{pictureOfPValueForEstimateOfDiffOfMeansOfBirthWeights}
 To depict the p-value, we draw the distribution of the point estimate as though $H_0$ were true and shade areas representing at least as much evidence against $H_0$ as what was observed. Both tails are shaded because it is a two-sided test.
 \begin{center}
-\includegraphics[width=0.6\textwidth]{ch_inference_for_means/figures/distOfDiffOfSampleMeansForBWOfBabySmokeData/distOfDiffOfSampleMeansForBWOfBabySmokeData}
+\includegraphics[width=0.6\textwidth]{ch_inference_means/figures/distOfDiffOfSampleMeansForBWOfBabySmokeData/distOfDiffOfSampleMeansForBWOfBabySmokeData}
 \end{center}
 \end{example}
 
@@ -671,11 +663,11 @@ Finally, we construct the test statistic:
 \begin{eqnarray*}
 T = \frac{\text{point estimate} - \text{null value}}{SE} = \frac{(79.4-74.1) - 0}{4.62} = 1.15
 \end{eqnarray*}
-If we have a computer handy, we can identify the degrees of freedom as 45.97. Otherwise we use the smaller of $n_1-1$ and $n_2-1$: $df=26$. 
+If we have a computer handy, we can identify the degrees of freedom as 45.97. Otherwise we use the smaller of $n_1-1$ and $n_2-1$: $df=26$.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.63\textwidth]{ch_inference_for_means/figures/pValueOfTwoTailAreaOfExamVersionsWhereDFIs26/pValueOfTwoTailAreaOfExamVersionsWhereDFIs26}
+\includegraphics[width=0.63\textwidth]{ch_inference_means/figures/pValueOfTwoTailAreaOfExamVersionsWhereDFIs26/pValueOfTwoTailAreaOfExamVersionsWhereDFIs26}
 \caption{The $t$-distribution with 26 degrees of freedom. The shaded right tail represents values with $T \geq 1.15$. Because it is a two-sided test, we also shade the corresponding lower tail.}
 \label{pValueOfTwoTailAreaOfExamVersionsWhereDFIs26}
 \end{figure}
@@ -811,7 +803,7 @@ This may be an imperfect estimate of $SE_{\bar{x}_{trmt} - \bar{x}_{ctrl}}$, sin
 \begin{example}{What does the null distribution of $\bar{x}_{trmt} - \bar{x}_{ctrl}$ look like?}
 The degrees of freedom are greater than 30, so the distribution of $\bar{x}_{trmt} - \bar{x}_{ctrl}$ will be approximately normal. The standard deviation of this distribution (the standard error) would be about 1.70, and under the null hypothesis, its mean would be 0.
 \begin{center}
-\includegraphics[width=0.93\textwidth]{ch_inference_for_means/figures/power_null_0_1-7/power_null_A_0_1-7}
+\includegraphics[width=0.93\textwidth]{ch_inference_means/figures/power_null_0_1-7/power_null_A_0_1-7}
 \end{center}
 \end{example}
 
@@ -825,7 +817,7 @@ For $\alpha = 0.05$, we would reject $H_0$ if the difference is in the lower 2.5
 \end{description}
 The boundaries of these \term{rejection regions} are shown below:
 \begin{center}
-\includegraphics[width=0.93\textwidth]{ch_inference_for_means/figures/power_null_0_1-7/power_null_B_0_1-7_with_rejection_region}
+\includegraphics[width=0.93\textwidth]{ch_inference_means/figures/power_null_0_1-7/power_null_B_0_1-7_with_rejection_region}
 \end{center}
 \end{example}
 
@@ -846,14 +838,14 @@ To calculate the probability that we will reject $H_0$, we need to determine a f
 \setlength{\itemsep}{0mm}
 \item The sampling distribution for $\bar{x}_{trmt} - \bar{x}_{ctrl}$ when the true difference is -3~mmHg. This is the same as the null distribution, except it is shifted to the left by~3:
 \begin{center}
-\includegraphics[width=0.87\textwidth]{ch_inference_for_means/figures/power_null_0_1-7/power_null_C_0_1-7_with_alt_at_3}
+\includegraphics[width=0.87\textwidth]{ch_inference_means/figures/power_null_0_1-7/power_null_C_0_1-7_with_alt_at_3}
 \end{center}
 \item The rejection regions, which are outside of the dotted lines above.
 \item The fraction of the distribution that falls in the rejection region.
 \end{itemize}
 In short, we need to calculate the probability that $x < -3.332$ for a normal distribution with mean -3 and standard deviation~1.7. To do so, we first shade the area we want to calculate:
 \begin{center}
-\includegraphics[width=0.93\textwidth]{ch_inference_for_means/figures/power_null_0_1-7/power_null_D_0_1-7_with_alt_at_3_and_shaded}
+\includegraphics[width=0.93\textwidth]{ch_inference_means/figures/power_null_0_1-7/power_null_D_0_1-7_with_alt_at_3_and_shaded}
 \end{center}
 Then we calculate the Z-score and find the tail area using either the normal probability table or statistical software:
 \begin{align*}
@@ -873,7 +865,7 @@ In Example~\ref{PowerFor100AtNeg3}, we ignored the upper rejection region in the
 In the last example, we found that if we have a sample size of 100 in each group, we can only detect an effect size of 3~mmHg with a probability of about 0.42. Suppose the researchers moved forward and only used 100 patients per group, and the data did not support the alternative hypothesis, i.e. the researchers did not reject $H_0$. This is a very bad situation to be in for a few reasons:
 \begin{itemize}
 \setlength{\itemsep}{0mm}
-\item In the back of the researchers' minds, they'd all be wondering, \emph{maybe there is a real and meaningful difference, but we weren't able to detect it with such a small sample}. 
+\item In the back of the researchers' minds, they'd all be wondering, \emph{maybe there is a real and meaningful difference, but we weren't able to detect it with such a small sample}.
 \item The company probably invested hundreds of millions of dollars in developing the new drug, so now they are left with great uncertainty about its potential since the experiment didn't have a great shot at detecting effects that could still be important.
 \item Patients were subjected to the drug, and we can't even say with much certainty that the drug doesn't help (or harm) patients.
 \item Another clinical trial may need to be run to get a more conclusive answer as to whether the drug does hold any practical value, and conducting a second clinical trial may take years and many millions of dollars.
@@ -883,7 +875,7 @@ We want to avoid this situation, so we need to determine an appropriate sample s
 \begin{exercise}
 Calculate the power to detect a change of -3~mmHg when using a sample size of 500 per group.\footnote{(a) The standard error is given as $SE = \sqrt{\frac{12^2}{500} + \frac{12^2}{500}} = 0.76$.\\
 (b) \& (c) The null distribution, rejection boundaries, and alternative distribution are shown below: \\
-\includegraphics[width=0.9\textwidth]{ch_inference_for_means/figures/power_null_0_0-76/power_null_0_0-76_with_alt_at_3_and_shaded} \\
+\includegraphics[width=0.9\textwidth]{ch_inference_means/figures/power_null_0_0-76/power_null_0_0-76_with_alt_at_3_and_shaded} \\
 The rejection regions are the areas on the outside of the two dotted lines and are at $\pm 0.76 \times 1.96 = \pm 1.49$. \\
 (d) The area of the alternative distribution where $\mu_{trmt} - \mu_{ctrl} = -3$ has been shaded. We compute the Z-score and find the tail area: $Z = \frac{-1.49 - (-3)}{0.76} = 1.99 \to 0.9767$, which is the power of the test for a difference of 3 mmHg. With 500 patients per group, we would be about 97.7\% sure (or more) that we'd detect any effects that are at least 3~mmHg in size.}
 \begin{enumerate}[(a)]
@@ -902,7 +894,7 @@ The most common practice is to identify the sample size where the power is aroun
 \begin{example}{What sample size will lead to a power of 80\%?}
 We start by identifying the Z-score that would give us a lower tail of 80\%: it would be about 0.84:
 \begin{center}
-\includegraphics[width=0.93\textwidth]{ch_inference_for_means/figures/power_best_sample_size/power_best_sample_size}
+\includegraphics[width=0.93\textwidth]{ch_inference_means/figures/power_best_sample_size/power_best_sample_size}
 \end{center}
 Additionally, the rejection region always extends $1.96\times SE$ from the center of the null distribution for $\alpha = 0.05$. This allows us to calculate the target distance between the center of the null and alternative distributions in terms of the standard error:
 \begin{align*}
@@ -938,7 +930,7 @@ Figure~\ref{power_curve_neg-3} shows the power for sample sizes from 20~patients
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.9\textwidth]{ch_inference_for_means/figures/power_curve/power_curve_neg-3}
+\includegraphics[width=0.9\textwidth]{ch_inference_means/figures/power_curve/power_curve_neg-3}
 \caption{The curve shows the power for different sample sizes in the context of the blood pressure example when the true difference is -3. Having more than about 250 to 350 observations doesn't provide much additional value in detecting an effect when $\alpha = 0.05$.}
 \label{power_curve_neg-3}
 \end{figure}
@@ -994,7 +986,7 @@ Any real difference in the means of groups I, II, and III is difficult to discer
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.68\textwidth]{ch_inference_for_means/figures/toyANOVA/toyANOVA}
+\includegraphics[width=0.68\textwidth]{ch_inference_means/figures/toyANOVA/toyANOVA}
 \caption{Side-by-side dot plot for the outcomes for six groups.}
 \label{toyANOVA}
 \end{figure}
@@ -1010,15 +1002,15 @@ We would like to discern whether there are real differences between the batting 
 \centering
 \begin{tabular}{rlllrrrrrr}
   \hline
- & name & team & position & AB & H & HR &RBI & AVG & OBP \\ 
+ & name & team & position & AB & H & HR &RBI & AVG & OBP \\
   \hline
-1 & I Suzuki & SEA & OF & 680 & 214 & 6 & 43 & 0.315 & 0.359 \\ 
-  2 & D Jeter & NYY & IF & 663 & 179 & 10 & 67 & 0.270 & 0.340 \\ 
-  3 & M Young & TEX & IF & 656 & 186 & 21 & 91 & 0.284 & 0.330 \\ 
+1 & I Suzuki & SEA & OF & 680 & 214 & 6 & 43 & 0.315 & 0.359 \\
+  2 & D Jeter & NYY & IF & 663 & 179 & 10 & 67 & 0.270 & 0.340 \\
+  3 & M Young & TEX & IF & 656 & 186 & 21 & 91 & 0.284 & 0.330 \\
   $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\
-  325 & B Molina & SF & C & 202 & 52 & 3 & 17 & 0.257 & 0.312 \\ 
-  326 & J Thole & NYM & C & 202 & 56 & 3 & 17 & 0.277 & 0.357 \\ 
-  327 & C Heisey & CIN & OF & 201 & 51 & 8 & 21 & 0.254 & 0.324 \\ 
+  325 & B Molina & SF & C & 202 & 52 & 3 & 17 & 0.257 & 0.312 \\
+  326 & J Thole & NYM & C & 202 & 56 & 3 & 17 & 0.277 & 0.357 \\
+  327 & C Heisey & CIN & OF & 201 & 51 & 8 & 21 & 0.254 & 0.324 \\
    \hline
 \end{tabular}
 \caption{Six cases from the \data{bat10} data matrix.}
@@ -1076,7 +1068,7 @@ Sample SD ($s_i$)	& 0.029 & 0.037 & 0.036 & 0.045 \\
 
 \begin{figure}
 \centering
-\includegraphics[width=0.7\textwidth]{ch_inference_for_means/figures/mlbANOVA/mlbANOVABoxPlot}
+\includegraphics[width=0.7\textwidth]{ch_inference_means/figures/mlbANOVA/mlbANOVABoxPlot}
 \caption{Side-by-side box plot of the on-base percentage for 327 players across four groups. There is one prominent outlier visible in the infield group, but with 154 observations in the infield group, this outlier is not a concern.}
 \label{mlbANOVABoxPlot}
 \end{figure}
@@ -1134,7 +1126,7 @@ We can use the $F$ statistic to evaluate the hypotheses in what is called an \te
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.65\textwidth]{ch_inference_for_means/figures/fDist3And323/fDist3And323}
+\includegraphics[width=0.65\textwidth]{ch_inference_means/figures/fDist3And323/fDist3And323}
 \caption{An $F$ distribution with $df_1=3$ and $df_2=323$.}
 \label{fDist3And323}
 \end{figure}
@@ -1146,7 +1138,7 @@ Analysis of variance (ANOVA) is used to test whether the mean outcome differs ac
 \end{termBox}
 
 \begin{exercise}\label{describePValueAreaForFDistributionInMLBOBPExample}
-The test statistic for the baseball example is $F=1.994$. Shade the area corresponding to the p-value in Figure~\ref{fDist3And323}. \footnote{\ \vspace{-4mm}\\\includegraphics[height=20mm]{ch_inference_for_means/figures/fDist3And323/fDist3And323Shaded}}
+The test statistic for the baseball example is $F=1.994$. Shade the area corresponding to the p-value in Figure~\ref{fDist3And323}. \footnote{\ \vspace{-4mm}\\\includegraphics[height=20mm]{ch_inference_means/figures/fDist3And323/fDist3And323Shaded}}
 \end{exercise}
 
 \begin{example}{The p-value corresponding to the shaded area in the solution of Guided Practice~\ref{describePValueAreaForFDistributionInMLBOBPExample} is equal to about 0.115. Does this provide strong evidence against the null hypothesis?}
@@ -1164,9 +1156,9 @@ An ANOVA can be summarized in a table very similar to that of a regression summa
 \centering
 \begin{tabular}{lrrrrr}
   \hline
- & Df & Sum Sq & Mean Sq & F value & Pr($>$F) \\ 
+ & Df & Sum Sq & Mean Sq & F value & Pr($>$F) \\
   \hline
-position & 3 & 0.0076 & 0.0025 & 1.9943 & 0.1147 \\ 
+position & 3 & 0.0076 & 0.0025 & 1.9943 & 0.1147 \\
   Residuals & 323 & 0.4080 & 0.0013 &  &  \\    \hline
 \multicolumn{6}{r}{$s_{pooled} = 0.036$ on $df=323$}
 \end{tabular}
@@ -1185,7 +1177,7 @@ There are three conditions we must check for an ANOVA analysis: all observations
 
 \begin{figure}[hhh]
 \centering
-\includegraphics[width=\textwidth]{ch_inference_for_means/figures/mlbANOVA/mlbANOVADiagNormalityGroups}
+\includegraphics[width=\textwidth]{ch_inference_means/figures/mlbANOVA/mlbANOVADiagNormalityGroups}
 \caption{Normal probability plot of OBP for each field position.}
 \label{mlbANOVADiagNormalityGroups}
 \end{figure}
@@ -1223,11 +1215,11 @@ The box plots show approximately equal variability, which can be verified in Tab
 \centering
 \begin{tabular}{lrrr}
   \hline
-Class $i$	& A	& B	& C \\ 
+Class $i$	& A	& B	& C \\
   \hline
-$n_i$		& 58	& 55	& 51 \\ 
-$\bar{x}_i$	& 75.1	& 72.0	& 78.9 \\ 
-$s_i$		& 13.9	& 13.8	& 13.1 \\ 
+$n_i$		& 58	& 55	& 51 \\
+$\bar{x}_i$	& 75.1	& 72.0	& 78.9 \\
+$s_i$		& 13.9	& 13.8	& 13.1 \\
 \hline
 \end{tabular}
 \caption{Summary statistics for the first midterm scores in three different lectures of the same course.}
@@ -1236,7 +1228,7 @@ $s_i$		& 13.9	& 13.8	& 13.1 \\
 
 \begin{figure}
 \centering
-\includegraphics[width=0.72\textwidth]{ch_inference_for_means/figures/classData/classDataSBSBoxPlot}
+\includegraphics[width=0.72\textwidth]{ch_inference_means/figures/classData/classDataSBSBoxPlot}
 \caption{Side-by-side box plot for the first midterm scores in three different  lectures of the same course.}
 \label{classDataSBSBoxPlot}
 \end{figure}
@@ -1249,10 +1241,10 @@ An ANOVA was conducted for the midterm data, and summary results are shown in Ta
 \centering
 \begin{tabular}{lrrrrr}
   \hline
- & Df & Sum Sq & Mean Sq & F value & Pr($>$F) \\ 
+ & Df & Sum Sq & Mean Sq & F value & Pr($>$F) \\
   \hline
-lecture & 2 & 1290.11 & 645.06 & 3.48 & 0.0330 \\ 
-  Residuals & 161 & 29810.13 & 185.16 &  &  \\ 
+lecture & 2 & 1290.11 & 645.06 & 3.48 & 0.0330 \\
+  Residuals & 161 & 29810.13 & 185.16 &  &  \\
    \hline
 \multicolumn{6}{r}{$s_{pooled}=13.61$ on $df=161$}
 \end{tabular}
@@ -1304,4 +1296,3 @@ Consider the following analogy: we observe a Wall Street firm that makes large q
 
 \index{significance level!multiple comparisons|)}
 \index{analysis of variance (ANOVA)|)}
-

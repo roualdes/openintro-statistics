@@ -1,4 +1,4 @@
-
+% -*- compile-command: "cd ../ && make" -*-
 \chapter{Inference for categorical data}
 \label{inferenceForCategoricalData}
 
@@ -125,7 +125,7 @@ The upper tail area, representing the p-value, is about 0.0001. Because the p-va
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.48\textwidth]{ch_inference_for_props/figures/nuclearArmsReduction/nuclearArmsReductionPValue}
+\includegraphics[width=0.48\textwidth]{ch_inference_props/figures/nuclearArmsReduction/nuclearArmsReductionPValue}
 \caption{Sampling distribution for Example~\ref{NuclearArmsInferenceExample}.}
 \label{nuclearArmsReductionPValue}
 \end{figure}
@@ -380,7 +380,7 @@ Z = \frac{\text{point estimate} - \text{null value}}{SE}
 	= -0.17
 \end{align*}
 \begin{center}
-\includegraphics[width=0.6\textwidth]{ch_inference_for_props/figures/mammograms/mammogramPValue}
+\includegraphics[width=0.6\textwidth]{ch_inference_props/figures/mammograms/mammogramPValue}
 \end{center}
 The lower tail area is 0.4325, which we double to get the p-value:~0.8650. Because this p-value is larger than 0.05, we do not reject the null hypothesis. That is, the difference in breast cancer death rates is reasonably explained by chance, and we do not observe benefits or harm from mammograms relative to a regular breast exam.
 \end{example}
@@ -412,7 +412,7 @@ A quadcopter company is considering a new manufacturer for rotor blades. The new
 
 \begin{figure}
 \centering
-\includegraphics[width=0.6\textwidth]{ch_inference_for_props/figures/quadcopter/quadcopter_david_j}
+\includegraphics[width=0.6\textwidth]{ch_inference_props/figures/quadcopter/quadcopter_david_j}
 \caption{A Phantom quadcopter.\vspace{-1mm} \\
    -----------------------------\vspace{-2mm}\\
    {\footnotesize Photo by David J (\oiRedirect{textbook-quadcopter_david_j}{http://flic.kr/p/oiWLNu}). \oiRedirect{textbook-CC_BY_2}{CC-BY 2.0 license.} This photo has been cropped and a border has been added.}}
@@ -439,7 +439,7 @@ Using the normal model for this test statistic, we identify the right tail area 
 
 \begin{figure}
 \centering
-\includegraphics[width=0.5\textwidth]{ch_inference_for_props/figures/bladesTwoSampleHTPValueQC/bladesTwoSampleHTPValueQC}
+\includegraphics[width=0.5\textwidth]{ch_inference_props/figures/bladesTwoSampleHTPValueQC/bladesTwoSampleHTPValueQC}
 \caption{Distribution of the test statistic if the null hypothesis was true. The p-value is represented by the shaded area.}
 \label{bladesTwoSampleHTPValueQC}
 \end{figure}
@@ -560,8 +560,8 @@ Z_1 = \frac{205 - 198}{\sqrt{198}} = 0.50
 The fraction is very similar to previous test statistics: first compute a difference, then standardize it. These computations should also be completed for the black, Hispanic, and other groups:
 \begin{align*}
 &Black && Hispanic	&&Other \\
-& Z_2 = \frac{26-19.25}{\sqrt{19.25}}=1.54\ \ \ \ 
-	&& Z_3 = \frac{25-33}{\sqrt{33}}=-1.39\ \ \ \ 
+& Z_2 = \frac{26-19.25}{\sqrt{19.25}}=1.54\ \ \ \
+	&& Z_3 = \frac{25-33}{\sqrt{33}}=-1.39\ \ \ \
 	&& Z_4 = \frac{19-24.75}{\sqrt{24.75}}=-1.16 \\
 \end{align*}
 We would like to use a single test statistic to determine if these four standardized differences are irregularly far from zero. That is, $Z_1$, $Z_2$, $Z_3$, and $Z_4$ must be combined somehow to help determine if they -- as a group -- tend to be unusually far from zero. A first thought might be to take the absolute value of these four standardized differences and add them~up:
@@ -606,7 +606,7 @@ Figure~\ref{chiSquareDistributionWithInceasingDF} shows three chi-square distrib
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.9\textwidth]{ch_inference_for_props/figures/chiSquareDistributionWithInceasingDF/chiSquareDistributionWithInceasingDF}
+\includegraphics[width=0.9\textwidth]{ch_inference_props/figures/chiSquareDistributionWithInceasingDF/chiSquareDistributionWithInceasingDF}
 \caption{Three chi-square distributions with varying degrees of freedom.}
 \label{chiSquareDistributionWithInceasingDF}
 \end{figure}
@@ -619,16 +619,16 @@ Our principal interest in the chi-square distribution is the calculation of p-va
 \centering
 \begin{tabular}{r | rrrr | rrrr |}
   \hline
-Upper tail & 0.3 & 0.2 & 0.1 & 0.05 & 0.02 & 0.01 & 0.005 & 0.001 \\ 
+Upper tail & 0.3 & 0.2 & 0.1 & 0.05 & 0.02 & 0.01 & 0.005 & 0.001 \\
   \hline
-%df \hfill 1 & \footnotesize 1.07 & \footnotesize 1.64 & \footnotesize 2.71 & \footnotesize 3.84 & \footnotesize 5.41 & \footnotesize 6.63 & \footnotesize 7.88 & \footnotesize 10.83 \\ 
-df \hfill 2 & \footnotesize 2.41 & \footnotesize \highlightO{3.22} & \footnotesize \highlightO{4.61} & \footnotesize 5.99 & \footnotesize 7.82 & \footnotesize 9.21 & \footnotesize 10.60 & \footnotesize 13.82 \\ 
-  \em3 & \em\footnotesize 3.66 & \em\footnotesize 4.64 & \em\footnotesize \highlightT{6.25} & \em\footnotesize 7.81 & \em\footnotesize 9.84 & \em\footnotesize 11.34 & \em\footnotesize 12.84 & \em\footnotesize 16.27 \\ 
-  4 & \footnotesize 4.88 & \footnotesize 5.99 & \footnotesize 7.78 & \footnotesize 9.49 & \footnotesize 11.67 & \footnotesize 13.28 & \footnotesize 14.86 & \footnotesize 18.47 \\ 
-  5 & \footnotesize 6.06 & \footnotesize 7.29 & \footnotesize 9.24 & \footnotesize 11.07 & \footnotesize 13.39 & \footnotesize 15.09 & \footnotesize 16.75 & \footnotesize 20.52 \\ 
+%df \hfill 1 & \footnotesize 1.07 & \footnotesize 1.64 & \footnotesize 2.71 & \footnotesize 3.84 & \footnotesize 5.41 & \footnotesize 6.63 & \footnotesize 7.88 & \footnotesize 10.83 \\
+df \hfill 2 & \footnotesize 2.41 & \footnotesize \highlightO{3.22} & \footnotesize \highlightO{4.61} & \footnotesize 5.99 & \footnotesize 7.82 & \footnotesize 9.21 & \footnotesize 10.60 & \footnotesize 13.82 \\
+  \em3 & \em\footnotesize 3.66 & \em\footnotesize 4.64 & \em\footnotesize \highlightT{6.25} & \em\footnotesize 7.81 & \em\footnotesize 9.84 & \em\footnotesize 11.34 & \em\footnotesize 12.84 & \em\footnotesize 16.27 \\
+  4 & \footnotesize 4.88 & \footnotesize 5.99 & \footnotesize 7.78 & \footnotesize 9.49 & \footnotesize 11.67 & \footnotesize 13.28 & \footnotesize 14.86 & \footnotesize 18.47 \\
+  5 & \footnotesize 6.06 & \footnotesize 7.29 & \footnotesize 9.24 & \footnotesize 11.07 & \footnotesize 13.39 & \footnotesize 15.09 & \footnotesize 16.75 & \footnotesize 20.52 \\
   \hline
-  6 & \footnotesize 7.23 & \footnotesize 8.56 & \footnotesize 10.64 & \footnotesize 12.59 & \footnotesize 15.03 & \footnotesize 16.81 & \footnotesize 18.55 & \footnotesize 22.46 \\ 
-  7 & \footnotesize 8.38 & \footnotesize 9.80 & \footnotesize 12.02 & \footnotesize 14.07 & \footnotesize 16.62 & \footnotesize 18.48 & \footnotesize 20.28 & \footnotesize 24.32 \\ 
+  6 & \footnotesize 7.23 & \footnotesize 8.56 & \footnotesize 10.64 & \footnotesize 12.59 & \footnotesize 15.03 & \footnotesize 16.81 & \footnotesize 18.55 & \footnotesize 22.46 \\
+  7 & \footnotesize 8.38 & \footnotesize 9.80 & \footnotesize 12.02 & \footnotesize 14.07 & \footnotesize 16.62 & \footnotesize 18.48 & \footnotesize 20.28 & \footnotesize 24.32 \\
   \hline
 \end{tabular}
 \caption{A section of the chi-square table. A complete table is in Appendix~\vref{chiSquareProbabilityTable}.}
@@ -644,27 +644,27 @@ This distribution has three degrees of freedom, so only the row with 3 degrees o
 \begin{figure}
 \centering
 \subfigure[]{
-\includegraphics[width=0.475\textwidth]{ch_inference_for_props/figures/arrayOfFigureAreasForChiSquareDistribution/chiSquareAreaAbove6Point25WithDF3/chiSquareAreaAbove6Point25WithDF3}
+\includegraphics[width=0.475\textwidth]{ch_inference_props/figures/arrayOfFigureAreasForChiSquareDistribution/chiSquareAreaAbove6Point25WithDF3/chiSquareAreaAbove6Point25WithDF3}
 \label{chiSquareAreaAbove6Point25WithDF3}
 }
 \subfigure[]{
-\includegraphics[width=0.475\textwidth]{ch_inference_for_props/figures/arrayOfFigureAreasForChiSquareDistribution/chiSquareAreaAbove4Point3WithDF2/chiSquareAreaAbove4Point3WithDF2}
+\includegraphics[width=0.475\textwidth]{ch_inference_props/figures/arrayOfFigureAreasForChiSquareDistribution/chiSquareAreaAbove4Point3WithDF2/chiSquareAreaAbove4Point3WithDF2}
 \label{chiSquareAreaAbove4Point3WithDF2}
 }
 \subfigure[]{
-\includegraphics[width=0.475\textwidth]{ch_inference_for_props/figures/arrayOfFigureAreasForChiSquareDistribution/chiSquareAreaAbove5Point1WithDF5/chiSquareAreaAbove5Point1WithDF5}
+\includegraphics[width=0.475\textwidth]{ch_inference_props/figures/arrayOfFigureAreasForChiSquareDistribution/chiSquareAreaAbove5Point1WithDF5/chiSquareAreaAbove5Point1WithDF5}
 \label{chiSquareAreaAbove5Point1WithDF5}
 }
 \subfigure[]{
-\includegraphics[width=0.475\textwidth]{ch_inference_for_props/figures/arrayOfFigureAreasForChiSquareDistribution/chiSquareAreaAbove11Point7WithDF7/chiSquareAreaAbove11Point7WithDF7}
+\includegraphics[width=0.475\textwidth]{ch_inference_props/figures/arrayOfFigureAreasForChiSquareDistribution/chiSquareAreaAbove11Point7WithDF7/chiSquareAreaAbove11Point7WithDF7}
 \label{chiSquareAreaAbove11Point7WithDF7}
 }
 \subfigure[]{
-\includegraphics[width=0.475\textwidth]{ch_inference_for_props/figures/arrayOfFigureAreasForChiSquareDistribution/chiSquareAreaAbove10WithDF4/chiSquareAreaAbove10WithDF4}
+\includegraphics[width=0.475\textwidth]{ch_inference_props/figures/arrayOfFigureAreasForChiSquareDistribution/chiSquareAreaAbove10WithDF4/chiSquareAreaAbove10WithDF4}
 \label{chiSquareAreaAbove10WithDF4}
 }
 \subfigure[]{
-\includegraphics[width=0.475\textwidth]{ch_inference_for_props/figures/arrayOfFigureAreasForChiSquareDistribution/chiSquareAreaAbove9Point21WithDF3/chiSquareAreaAbove9Point21WithDF3}
+\includegraphics[width=0.475\textwidth]{ch_inference_props/figures/arrayOfFigureAreasForChiSquareDistribution/chiSquareAreaAbove9Point21WithDF3/chiSquareAreaAbove9Point21WithDF3}
 \label{chiSquareAreaAbove9Point21WithDF3}
 }
 \caption{
@@ -720,7 +720,7 @@ The chi-square distribution and p-value are shown in Figure~\ref{jurorHTPValueSh
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.55\textwidth]{ch_inference_for_props/figures/jurorHTPValueShown/jurorHTPValueShown}
+\includegraphics[width=0.55\textwidth]{ch_inference_props/figures/jurorHTPValueShown/jurorHTPValueShown}
 \caption{The p-value for the juror hypothesis test is shaded in the chi-square distribution with $df=3$.}
 \label{jurorHTPValueShown}
 \end{figure}
@@ -809,7 +809,7 @@ Geometric Model &		& 1569 & 734 & 343 & 161 & 75 & 35 & 31 & & 2948 \\
 
 \begin{figure}
 \centering
-\includegraphics[width=0.98\textwidth]{ch_inference_for_props/figures/geomFitEvaluationForSP500For1990To2011/geomFitEvaluationForSP500For1990To2011}
+\includegraphics[width=0.98\textwidth]{ch_inference_props/figures/geomFitEvaluationForSP500For1990To2011/geomFitEvaluationForSP500For1990To2011}
 \caption{Side-by-side bar plot of the observed and expected counts for each waiting time.}
 \label{geomFitEvaluationForSP500For1990To2011}
 \end{figure}
@@ -834,7 +834,7 @@ Figure~\ref{geomFitPValueForSP500For1990To2011} shows the chi-square distributio
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.9\textwidth]{ch_inference_for_props/figures/geomFitPValueForSP500For1990To2011/geomFitPValueForSP500For1990To2011}
+\includegraphics[width=0.9\textwidth]{ch_inference_props/figures/geomFitPValueForSP500For1990To2011/geomFitPValueForSP500For1990To2011}
 \caption{Chi-square distribution with 6 degrees of freedom. The p-value for the stock analysis is shaded.}
 \label{geomFitPValueForSP500For1990To2011}
 \end{figure}
@@ -928,8 +928,8 @@ Search algorithm\hspace{2mm} & \multicolumn{2}{l}{current} &&
 No new search		   & 3511 &\highlightO{\footnotesize(3539)}    &&
 					1749 &\highlightO{\footnotesize(1769.5)}	&&
 					1818 &\highlightO{\footnotesize(1769.5)} &	& 7078 \\
-New search		   & 1489 &\highlightO{\footnotesize(1461)}    && 
-					751 &\highlightO{\footnotesize(730.5)}	&& 
+New search		   & 1489 &\highlightO{\footnotesize(1461)}    &&
+					751 &\highlightO{\footnotesize(730.5)}	&&
 					682 &\highlightO{\footnotesize(730.5)}    &		& 2922 \\
 \hline
 Total				   & 5000 &&& 	2500 &&& 	2500 &&& 	10000 \\
@@ -996,7 +996,7 @@ When analyzing 2-by-2 contingency tables, use the two-proportion methods introdu
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\textwidth]{ch_inference_for_props/figures/googleHTForDiffAlgPerformancePValue/googleHTForDiffAlgPerformancePValue}
+\includegraphics[width=0.7\textwidth]{ch_inference_props/figures/googleHTForDiffAlgPerformancePValue/googleHTForDiffAlgPerformancePValue}
 \caption{Computing the p-value for the Google hypothesis test.}
 \label{googleHTForDiffAlgPerformancePValue}
 \end{figure}
@@ -1117,7 +1117,7 @@ Figure~\ref{nullDistForPHatIfLiverTransplantConsultantIsNotHelpful} shows the re
 Of the 10,000 simulated $\hat{p}_{sim}$, 1222 were equal to or smaller than $\hat{p}$. Since the hypothesis test is one-sided, the estimated p-value is equal to this tail area: 0.1222.
 \begin{figure}
 \centering
-\includegraphics[width=0.9\textwidth]{ch_inference_for_props/figures/nullDistForPHatIfLiverTransplantConsultantIsNotHelpful/nullDistForPHatIfLiverTransplantConsultantIsNotHelpful}
+\includegraphics[width=0.9\textwidth]{ch_inference_props/figures/nullDistForPHatIfLiverTransplantConsultantIsNotHelpful/nullDistForPHatIfLiverTransplantConsultantIsNotHelpful}
 \caption{The null distribution for $\hat{p}$, created from 10,000 simulated studies. The left tail, representing the p-value for the hypothesis test, contains 12.22\% of the simulations.}
 \label{nullDistForPHatIfLiverTransplantConsultantIsNotHelpful}
 \end{figure}
@@ -1184,7 +1184,7 @@ Since the minimum bin count condition was satisfied, the chi-square distribution
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.9\textwidth]{ch_inference_for_props/figures/jurorChiSquareSimulated/jurorChiSquareSimulated}
+\includegraphics[width=0.9\textwidth]{ch_inference_props/figures/jurorChiSquareSimulated/jurorChiSquareSimulated}
 \caption{The precise null distribution for the juror example from Section~\ref{oneWayChiSquare} is shown as a histogram of simulated $X_{sim}^2$ statistics, and the theoretical chi-square distribution is also shown.}
 \label{jurorChiSquareSimulated}
 \end{figure}
@@ -1256,7 +1256,7 @@ If we look this Z-score up in Appendix~\ref{normalProbabilityTable}, we see that
 \end{example}
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.67\textwidth]{ch_inference_for_props/figures/pValueCPRStudyLargeSampleAnalysisInSmallSampleSection/pValueCPRStudyLargeSampleAnalysisInSmallSampleSection}
+\includegraphics[width=0.67\textwidth]{ch_inference_props/figures/pValueCPRStudyLargeSampleAnalysisInSmallSampleSection/pValueCPRStudyLargeSampleAnalysisInSmallSampleSection}
 \caption{The null distribution of the point estimate $\hat{p}_t - \hat{p}_c$ under the large sample framework is a normal distribution with mean $0$ and standard deviation equal to the standard error, in this case $SE=0.095$. The p-value is represented by the shaded areas.}
 \label{pValueCPRStudyLargeSampleAnalysisInSmallSampleSection}
 \end{figure}
@@ -1301,7 +1301,7 @@ The difference computed in Guided Practice~\ref{exerciseComputingDifferenceForCP
 We build up an approximation to the null distribution by repeatedly creating tables like the one shown in Table~\ref{resultsForCPRStudyInSmallSampleSectionFake1} and computing the sample differences. The null distribution from 10,000 simulations is shown in Figure~\ref{pValueCPRStudySmallSampleAnalysisInSmallSampleSection}.
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{ch_inference_for_props/figures/pValueCPRStudySmallSampleAnalysisInSmallSampleSection/pValueCPRStudySmallSampleAnalysisInSmallSampleSection}
+\includegraphics[width=\textwidth]{ch_inference_props/figures/pValueCPRStudySmallSampleAnalysisInSmallSampleSection/pValueCPRStudySmallSampleAnalysisInSmallSampleSection}
 \caption{An approximation of the null distribution of the point estimate, $\hat{p}_t - \hat{p}_c$. The p-value is twice the right tail area.}
 \label{pValueCPRStudySmallSampleAnalysisInSmallSampleSection}
 \end{figure}
@@ -1321,6 +1321,3 @@ In general, small sample methods produce more accurate results since they rely o
 \subsection{Randomization for two-way tables and chi-square}
 
 Randomization methods may also be used for the contingency tables. In short, we create a randomized contingency table, then compute a chi-square test statistic $X_{sim}^2$. We repeat this many times using a computer, and then we examine the distribution of these simulated test statistics. This randomization approach is valid for any sized sample, and it will be more accurate for cases where one or more expected bin counts do not meet the minimum threshold of~5. When the minimum threshold is met, the simulated null distribution will very closely resemble the chi-square distribution. As before, we use the upper tail of the null distribution to calculate the p-value.
-
-
-

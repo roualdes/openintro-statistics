@@ -1,3 +1,4 @@
+% -*- compile-command: "cd ../ && make" -*-
 \chapter{Multiple and logistic regression}
 \label{multipleRegressionAndANOVA}
 \label{multipleAndLogisticRegression}
@@ -24,13 +25,13 @@ The data set \data{mario\_\hspace{0.3mm}kart} includes results from 141 auctions
 \centering
 \begin{tabular}{rrrrlr}
   \hline
- & price & cond\_\hspace{0.3mm}new & stock\_\hspace{0.3mm}photo & duration & wheels \\ 
+ & price & cond\_\hspace{0.3mm}new & stock\_\hspace{0.3mm}photo & duration & wheels \\
   \hline
-1 & 51.55 &   1 & 1 & 3 &   1 \\ 
-  2 & 37.04 &  0 &  1 & 7 &   1 \\ 
+1 & 51.55 &   1 & 1 & 3 &   1 \\
+  2 & 37.04 &  0 &  1 & 7 &   1 \\
 $\vdots$ &$\vdots$ &$\vdots$ &$\vdots$ &$\vdots$ &$\vdots$ \\
-  140 & 38.76 &  0 &  0 & 7 &   0 \\ 
-  141 & 54.51 &  1 &  1 & 1 &   2 \\ 
+  140 & 38.76 &  0 &  0 & 7 &   0 \\
+  141 & 54.51 &  1 &  1 & 1 &   2 \\
    \hline
 \end{tabular}
 \caption{Four observations from the \data{mario\_\hspace{0.3mm}kart} data set.}
@@ -69,11 +70,11 @@ Results of this model are shown in Table~\ref{singleVarModelsForPriceUsingCond} 
 \begin{tabular}{rrrrr}
   \hline
   \vspace{-3.7mm} & & & & \\
- & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\
   \hline
   \vspace{-3.8mm} & & & & \\
-(Intercept) & 42.8711 & 0.8140 & 52.67 & 0.0000 \\ 
-  cond\_\hspace{0.3mm}new & 10.8996 & 1.2583 & 8.66 & 0.0000 \\ 
+(Intercept) & 42.8711 & 0.8140 & 52.67 & 0.0000 \\
+  cond\_\hspace{0.3mm}new & 10.8996 & 1.2583 & 8.66 & 0.0000 \\
    \hline
    &&&\multicolumn{2}{r}{$df=139$}
 \end{tabular}
@@ -133,14 +134,14 @@ Here there are 141 residuals, one for each observation. We typically use a compu
 \begin{tabular}{rrrrr}
   \hline
   \vspace{-3.7mm} & & & & \\
- & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\
   \hline
   \vspace{-3.8mm} & & & & \\
-(Intercept) & 36.2110 & 1.5140 & 23.92 & 0.0000 \\ 
-  cond\_\hspace{0.3mm}new & 5.1306 & 1.0511 & 4.88 & 0.0000 \\ 
-  stock\_\hspace{0.3mm}photo & 1.0803 & 1.0568 & 1.02 & 0.3085 \\ 
-  duration & -0.0268 & 0.1904 & -0.14 & 0.8882 \\ 
-  wheels & 7.2852 & 0.5547 & 13.13 & 0.0000 \\ 
+(Intercept) & 36.2110 & 1.5140 & 23.92 & 0.0000 \\
+  cond\_\hspace{0.3mm}new & 5.1306 & 1.0511 & 4.88 & 0.0000 \\
+  stock\_\hspace{0.3mm}photo & 1.0803 & 1.0568 & 1.02 & 0.3085 \\
+  duration & -0.0268 & 0.1904 & -0.14 & 0.8882 \\
+  wheels & 7.2852 & 0.5547 & 13.13 & 0.0000 \\
    \hline
    &&&\multicolumn{2}{r}{$df=136$}
 \end{tabular}
@@ -230,7 +231,7 @@ Adjusted $R^2$ could have been used in Chapter~\ref{linRegrForTwoVar}. However, 
 
 %__________________
 \section[Model selection]{Model selection \sectionvideohref{youtube-VB1qSwoF-l0&list=PLkIselvEzpM5f1HYzIjFt52SD4izsJ2_I}}
-\label{introductionToMultipleRegression}
+\label{introductionToModelSelection}
 
 
 \label{modelSelection}
@@ -253,14 +254,14 @@ Let's consider two models, which are shown in Tables~\ref{outputForMultipleRegrO
 \begin{tabular}{rrrrr}
   \hline
   \vspace{-3.7mm} & & & & \\
- & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\
   \hline
   \vspace{-3.8mm} & & & & \\
-(Intercept) & 36.2110 & 1.5140 & 23.92 & 0.0000 \\ 
-  cond\_\hspace{0.3mm}new & 5.1306 & 1.0511 & 4.88 & 0.0000 \\ 
-  stock\_\hspace{0.3mm}photo & 1.0803 & 1.0568 & 1.02 & 0.3085 \\ 
-  duration & -0.0268 & 0.1904 & -0.14 & 0.8882 \\ 
-  wheels & 7.2852 & 0.5547 & 13.13 & 0.0000 \\ 
+(Intercept) & 36.2110 & 1.5140 & 23.92 & 0.0000 \\
+  cond\_\hspace{0.3mm}new & 5.1306 & 1.0511 & 4.88 & 0.0000 \\
+  stock\_\hspace{0.3mm}photo & 1.0803 & 1.0568 & 1.02 & 0.3085 \\
+  duration & -0.0268 & 0.1904 & -0.14 & 0.8882 \\
+  wheels & 7.2852 & 0.5547 & 13.13 & 0.0000 \\
    \hline
   \vspace{-3.6mm} & & & & \\
 \multicolumn{3}{l}{$R_{adj}^2 = 0.7108$}&\multicolumn{2}{r}{$df=136$}
@@ -274,13 +275,13 @@ Let's consider two models, which are shown in Tables~\ref{outputForMultipleRegrO
 \begin{tabular}{rrrrr}
   \hline
   \vspace{-3.7mm} & & & & \\
- & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\
   \hline
   \vspace{-3.8mm} & & & & \\
-(Intercept) & 36.0483 & 0.9745 & 36.99 & 0.0000 \\ 
-  cond\_\hspace{0.3mm}new & 5.1763 & 0.9961 & 5.20 & 0.0000 \\ 
-  stock\_\hspace{0.3mm}photo & 1.1177 & 1.0192 & 1.10 & 0.2747 \\ 
-  wheels & 7.2984 & 0.5448 & 13.40 & 0.0000 \\ 
+(Intercept) & 36.0483 & 0.9745 & 36.99 & 0.0000 \\
+  cond\_\hspace{0.3mm}new & 5.1763 & 0.9961 & 5.20 & 0.0000 \\
+  stock\_\hspace{0.3mm}photo & 1.1177 & 1.0192 & 1.10 & 0.2747 \\
+  wheels & 7.2984 & 0.5448 & 13.40 & 0.0000 \\
    \hline
   \vspace{-3.6mm} & & & & \\
 \multicolumn{3}{l}{$R_{adj}^2 = 0.7128$}&\multicolumn{2}{r}{$df=137$}
@@ -526,7 +527,7 @@ GLMs can be thought of as a two-stage modeling approach. We first model the resp
 
 \index{data!email|(}
 
-In Section~\ref{logisticRegression} we will revisit the \data{email} data set from Chapter~\ref{introductionToData}. These emails were collected from a single email account, and we will work on developing a basic spam filter using these data. The response variable, \var{spam}, has been encoded to take value~0 when a message is not spam and~1 when it is spam. Our task will be to build an appropriate model that classifies messages as spam or not spam using email characteristics coded as predictor variables. While this model will not be the same as those used in large-scale spam filters, it shares many of the same features. 
+In Section~\ref{logisticRegression} we will revisit the \data{email} data set from Chapter~\ref{introductionToData}. These emails were collected from a single email account, and we will work on developing a basic spam filter using these data. The response variable, \var{spam}, has been encoded to take value~0 when a message is not spam and~1 when it is spam. Our task will be to build an appropriate model that classifies messages as spam or not spam using email characteristics coded as predictor variables. While this model will not be the same as those used in large-scale spam filters, it shares many of the same features.
 
 \subsection{Email data}
 
@@ -624,20 +625,20 @@ We used statistical software to fit the logistic regression model with all ten p
 \begin{tabular}{rrrrr}
   \hline
   \vspace{-3.7mm} & & & & \\
- & Estimate & Std. Error & z value & Pr($>$$|$z$|$) \\ 
+ & Estimate & Std. Error & z value & Pr($>$$|$z$|$) \\
   \hline
   \vspace{-3.8mm} & & & & \\
-(Intercept) & -0.8362 & 0.0962 & -8.69 & 0.0000 \\ 
-  to\_\hspace{0.3mm}multiple & -2.8836 & 0.3121 & -9.24 & 0.0000 \\ 
-  winner & 1.7038 & 0.3254 & 5.24 & 0.0000 \\ 
-  format & -1.5902 & 0.1239 & -12.84 & 0.0000 \\ 
-  re\_\hspace{0.3mm}subj & -2.9082 & 0.3708 & -7.84 & 0.0000 \\ 
-  exclaim\_\hspace{0.3mm}subj & 0.1355 & 0.2268 & 0.60 & 0.5503 \\ 
-  cc & -0.4863 & 0.3054 & -1.59 & 0.1113 \\ 
-  attach & 0.9790 & 0.2170 & 4.51 & 0.0000 \\ 
-  dollar & -0.0582 & 0.1589 & -0.37 & 0.7144 \\ 
-  inherit & 0.2093 & 0.3197 & 0.65 & 0.5127 \\ 
-  password & -1.4929 & 0.5295 & -2.82 & 0.0048 \\ 
+(Intercept) & -0.8362 & 0.0962 & -8.69 & 0.0000 \\
+  to\_\hspace{0.3mm}multiple & -2.8836 & 0.3121 & -9.24 & 0.0000 \\
+  winner & 1.7038 & 0.3254 & 5.24 & 0.0000 \\
+  format & -1.5902 & 0.1239 & -12.84 & 0.0000 \\
+  re\_\hspace{0.3mm}subj & -2.9082 & 0.3708 & -7.84 & 0.0000 \\
+  exclaim\_\hspace{0.3mm}subj & 0.1355 & 0.2268 & 0.60 & 0.5503 \\
+  cc & -0.4863 & 0.3054 & -1.59 & 0.1113 \\
+  attach & 0.9790 & 0.2170 & 4.51 & 0.0000 \\
+  dollar & -0.0582 & 0.1589 & -0.37 & 0.7144 \\
+  inherit & 0.2093 & 0.3197 & 0.65 & 0.5127 \\
+  password & -1.4929 & 0.5295 & -2.82 & 0.0048 \\
 \hline
 \end{tabular}
 \caption{Summary table for the full logistic regression model for the spam filter example.}
@@ -653,16 +654,16 @@ Just like multiple regression, we could trim some variables from the model using
 \begin{tabular}{rrrrr}
   \hline
   \vspace{-3.7mm} & & & & \\
- & Estimate & Std. Error & z value & Pr($>$$|$z$|$) \\ 
+ & Estimate & Std. Error & z value & Pr($>$$|$z$|$) \\
   \hline
   \vspace{-3.8mm} & & & & \\
-(Intercept) & -0.8595 & 0.0910 & -9.44 & 0.0000 \\ 
-  to\_\hspace{0.3mm}multiple & -2.8372 & 0.3092 & -9.18 & 0.0000 \\ 
-  winner & 1.7370 & 0.3218 & 5.40 & 0.0000 \\ 
-  format & -1.5569 & 0.1207 & -12.90 & 0.0000 \\ 
-  re\_\hspace{0.3mm}subj & -3.0482 & 0.3630 & -8.40 & 0.0000 \\ 
-  attach & 0.8643 & 0.2042 & 4.23 & 0.0000 \\ 
-  password & -1.4871 & 0.5290 & -2.81 & 0.0049 \\ 
+(Intercept) & -0.8595 & 0.0910 & -9.44 & 0.0000 \\
+  to\_\hspace{0.3mm}multiple & -2.8372 & 0.3092 & -9.18 & 0.0000 \\
+  winner & 1.7370 & 0.3218 & 5.40 & 0.0000 \\
+  format & -1.5569 & 0.1207 & -12.90 & 0.0000 \\
+  re\_\hspace{0.3mm}subj & -3.0482 & 0.3630 & -8.40 & 0.0000 \\
+  attach & 0.8643 & 0.2042 & 4.23 & 0.0000 \\
+  password & -1.4871 & 0.5290 & -2.81 & 0.0049 \\
 \hline
 \end{tabular}
 \caption{Summary table for the logistic regression model for the spam filter, where variable selection has been performed.}

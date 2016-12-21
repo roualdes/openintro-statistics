@@ -25,6 +25,15 @@ To compile the book with R code knit into the text, specify the make option
 $ make build=code
 ```
 
-There are some errors along the way, but the book appears to compile.  Any help on reducing the number of compilation errors is welcome.
-
 - - -
+
+Dependencies
+------------
+LaTeX
+Make
+R
+KnitR
+tidyverse
+openintro
+
+extra CSV files

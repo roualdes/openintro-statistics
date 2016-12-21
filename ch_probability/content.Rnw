@@ -1,3 +1,4 @@
+% -*- compile-command: "cd ../ && make" -*-
 \chapter{Probability (special topic)}
 \label{probability}
 
@@ -41,7 +42,7 @@ Roll a die &$\rightarrow$ & \resp{1}, \resp{2}, \resp{3}, \resp{4}, \resp{5}, or
 Flip a coin &$\rightarrow$ & \resp{H} or \resp{T} \\
 \end{tabular}
 \end{center}
-Rolling a die or flipping a coin is a seemingly random process and each gives rise to an outcome. 
+Rolling a die or flipping a coin is a seemingly random process and each gives rise to an outcome.
 
 \begin{termBox}{\tBoxTitle{Probability}
 The \term{probability} of an outcome is the proportion of times the outcome would occur if we observed the random process an infinite number of times.}
@@ -49,7 +50,7 @@ The \term{probability} of an outcome is the proportion of times the outcome woul
 
 Probability is defined as a proportion, and it always takes values between 0~and~1 (inclusively). It may also be displayed as a percentage between 0\% and 100\%.
 
-Probability can be illustrated by rolling a die many times. Let $\hat{p}_n$ be the proportion of outcomes that are \resp{1} after the first $n$ rolls. As the number of rolls increases, $\hat{p}_n$ will converge to the probability of rolling a \resp{1}, $p = 1/6$. Figure~\ref{dieProp} shows this convergence for 100,000 die rolls. The tendency of $\hat{p}_n$ to stabilize around $p$ is described by the \term{Law of Large Numbers}. 
+Probability can be illustrated by rolling a die many times. Let $\hat{p}_n$ be the proportion of outcomes that are \resp{1} after the first $n$ rolls. As the number of rolls increases, $\hat{p}_n$ will converge to the probability of rolling a \resp{1}, $p = 1/6$. Figure~\ref{dieProp} shows this convergence for 100,000 die rolls. The tendency of $\hat{p}_n$ to stabilize around $p$ is described by the \term{Law of Large Numbers}.
 
 \begin{figure}[bt]
 \centering
@@ -72,13 +73,13 @@ P(\text{rolling a \resp{1}})
 
 $P(A)$\vspace{1mm}\\\footnotesize Probability of\\outcome $A$]{\raggedright\vspace{-13mm}
 
-$P(A)$\vspace{1mm}\\\footnotesize Probability of\\outcome $A$}As we become more comfortable with this notation, we will abbreviate it further. For instance, if it is clear that the process is ``rolling a die'', we could abbreviate $P($rolling a \resp{1}$)$ as~$P($\resp{1}$)$. 
+$P(A)$\vspace{1mm}\\\footnotesize Probability of\\outcome $A$}As we become more comfortable with this notation, we will abbreviate it further. For instance, if it is clear that the process is ``rolling a die'', we could abbreviate $P($rolling a \resp{1}$)$ as~$P($\resp{1}$)$.
 
 \begin{exercise} \label{randomProcessExercise}
 Random processes include rolling a die and flipping a coin. (a) Think of another random process. (b) Describe all the possible outcomes of that process. For instance, rolling a die is a random process with possible outcomes \mbox{\resp{1}, \resp{2}, ..., \resp{6}}.\footnote{Here are four examples. (i) Whether someone gets sick in the next month or not is an apparently random process with outcomes \resp{sick} and \resp{not}. (ii) We can \emph{generate} a random process by randomly picking a person and measuring that person's height. The outcome of this process will be a positive number. (iii) Whether the stock market goes up or down next week is a seemingly random process with possible outcomes \resp{up}, \resp{down}, and \resp{no\_\hspace{0.3mm}change}. Alternatively, we could have used the percent change in the stock market as a numerical outcome. (iv) Whether your roommate cleans her dishes tonight probably seems like a random process with possible outcomes \resp{cleans\_\hspace{0.3mm}dishes} and \resp{leaves\_\hspace{0.3mm}dishes}.}
 \end{exercise}
 
-What we think of as random processes are not necessarily random, but they may just be too difficult to understand exactly. The fourth example in the footnote solution to Guided Practice~\ref{randomProcessExercise} suggests a roommate's behavior is a random process. However, even if a roommate's behavior is not truly random, modeling her behavior as a random process can still be useful. 
+What we think of as random processes are not necessarily random, but they may just be too difficult to understand exactly. The fourth example in the footnote solution to Guided Practice~\ref{randomProcessExercise} suggests a roommate's behavior is a random process. However, even if a roommate's behavior is not truly random, modeling her behavior as a random process can still be useful.
 
 \begin{tipBox}{\tipBoxTitle{Modeling a process as random}
 It can be helpful to model a process as random even if it is not truly random.}
@@ -103,7 +104,7 @@ What about  the probability of rolling a \resp{1}, \resp{2}, \resp{3}, \resp{4},
 	&&\quad= P(\text{\resp{1}})+P(\text{\resp{2}})+P(\text{\resp{3}})+P(\text{\resp{4}})+P(\text{\resp{5}})+P(\text{\resp{6}}) \\
 	&&\quad= 1/6 + 1/6 + 1/6 + 1/6 + 1/6 + 1/6 = 1.
 \end{eqnarray*}
-The \term{Addition Rule} guarantees the accuracy of this approach when the outcomes are disjoint. 
+The \term{Addition Rule} guarantees the accuracy of this approach when the outcomes are disjoint.
 
 \begin{termBox}{\tBoxTitle{Addition Rule of disjoint outcomes} If $A_1$ and $A_2$ represent two disjoint outcomes, then the probability that one of them occurs is given by
 \begin{eqnarray*}
@@ -205,7 +206,7 @@ P(A\text{ or } B) &=&P({\color{redcards}\diamondsuit}\text{ or face card})  \not
   &=& 13/52 + 12/52 - 3/52 \notag \\
   &=& 22/52 = 11/26 \notag
 \end{eqnarray}
-Equation~(\ref{diamondFace}) is an example of the \term{General Addition Rule}. 
+Equation~(\ref{diamondFace}) is an example of the \term{General Addition Rule}.
 
 \begin{termBox}{\tBoxTitle{General Addition Rule} If $A$ and $B$ are any two events, disjoint or not, then the probability that at least one of them will occur is
 \begin{eqnarray}
@@ -246,7 +247,7 @@ Both the counts and corresponding {\color{oiB}probabilities} (e.g. $2659/3921 = 
 \subsection{Probability distributions}
 
 
-A \term{probability distribution} is a table of all disjoint outcomes and their associated probabilities. Table~\ref{diceProb} shows the probability distribution for the sum of two dice. 
+A \term{probability distribution} is a table of all disjoint outcomes and their associated probabilities. Table~\ref{diceProb} shows the probability distribution for the sum of two dice.
 
 \begin{table}[h] \small
 \centering
@@ -321,7 +322,7 @@ Let $D=\{$\resp{2}, \resp{3}$\}$ represent the event that the outcome of a die r
 
 $A^c$\\\footnotesize Complement\\of outcome $A$]{\raggedright\vspace{0.2mm}
 
-$A^c$\\\footnotesize Complement\\of outcome $A$}\index{Ac@$A^c$} of $D$ represents all outcomes in our sample space that are not in $D$, which is denoted by $D^c = \{$\resp{1}, \resp{4}, \resp{5}, \resp{6}$\}$. That is, $D^c$ is the set of all possible outcomes not already included in $D$. Figure~\ref{complementOfD} shows the relationship between $D$, $D^c$, and the sample space $S$. 
+$A^c$\\\footnotesize Complement\\of outcome $A$}\index{Ac@$A^c$} of $D$ represents all outcomes in our sample space that are not in $D$, which is denoted by $D^c = \{$\resp{1}, \resp{4}, \resp{5}, \resp{6}$\}$. That is, $D^c$ is the set of all possible outcomes not already included in $D$. Figure~\ref{complementOfD} shows the relationship between $D$, $D^c$, and the sample space $S$.
 
 \begin{figure}[hht]
 \centering
@@ -376,7 +377,7 @@ Let $A$ represent the event where we roll two dice and their total is less than 
 
 Just as variables and observations can be independent, random processes can be independent, too. Two processes are \term{independent} if knowing the outcome of one provides no useful information about the outcome of the other. For instance, flipping a coin and rolling a die are two independent processes -- knowing the coin was heads does not help determine the outcome of a die roll. On the other hand, stock prices usually move up or down together, so they are not independent.
 
-Example~\ref{probOf2Ones} provides a basic example of two independent processes: rolling two dice. We want to determine the probability that both will be \resp{1}. Suppose one of the dice is red and the other white. If the outcome of the red die is a \resp{1}, it provides no information about the outcome of the white die. We first encountered this same question in Example~\ref{probOf2Ones} (page~\pageref{probOf2Ones}), where we calculated the probability using the following reasoning: $1/6^{th}$ of the time the red die is a \resp{1}, and $1/6^{th}$ of \emph{those} times the white die will also be \resp{1}. This is illustrated in Figure~\ref{indepForRollingTwo1s}. Because the rolls are independent, the probabilities of the corresponding outcomes can be multiplied to get the final answer: $(1/6)\times(1/6)=1/36$. This can be generalized to many independent processes. 
+Example~\ref{probOf2Ones} provides a basic example of two independent processes: rolling two dice. We want to determine the probability that both will be \resp{1}. Suppose one of the dice is red and the other white. If the outcome of the red die is a \resp{1}, it provides no information about the outcome of the white die. We first encountered this same question in Example~\ref{probOf2Ones} (page~\pageref{probOf2Ones}), where we calculated the probability using the following reasoning: $1/6^{th}$ of the time the red die is a \resp{1}, and $1/6^{th}$ of \emph{those} times the white die will also be \resp{1}. This is illustrated in Figure~\ref{indepForRollingTwo1s}. Because the rolls are independent, the probabilities of the corresponding outcomes can be multiplied to get the final answer: $(1/6)\times(1/6)=1/36$. This can be generalized to many independent processes.
 
 \begin{figure}[hht]
 \centering
@@ -395,7 +396,7 @@ P(white=\text{\small\resp{1} and } red=\text{\small\resp{1} and } blue=\text{\sm
 \end{align*}} \vspace{-7mm}
 \end{example}
 
-Example~\ref{threeDice} illustrates what is called the Multiplication Rule for independent processes. 
+Example~\ref{threeDice} illustrates what is called the Multiplication Rule for independent processes.
 
 \begin{termBox}{\tBoxTitle{\term{Multiplication Rule} for independent processes}
 If $A$ and $B$ represent events from two different and independent processes, then the probability that both $A$ and $B$ occur can be calculated as the product of their separate probabilities: \vspace{-1.5mm}
@@ -464,7 +465,7 @@ Sometimes we wonder if one outcome provides useful information about another out
 \begin{example}{If we shuffle up a deck of cards and draw one, is the event that the card is a heart independent of the event that the card is an ace?}
 The probability the card is a heart is $1/4$ and the probability that it is an ace is $1/13$. The probability the card is the ace of hearts is $1/52$. We check whether Equation~\ref{eqForIndependentEvents} is satisfied:
 \begin{align*}
-P({\color{redcards}\heartsuit})\times P(\text{ace}) = \frac{1}{4}\times \frac{1}{13} = \frac{1}{52} 
+P({\color{redcards}\heartsuit})\times P(\text{ace}) = \frac{1}{4}\times \frac{1}{13} = \frac{1}{52}
 					= P({\color{redcards}\heartsuit}\text{ and ace})
 \end{align*}
 Because the equation holds, the event that the card is a heart and the event that the card is an ace are independent events.
@@ -869,7 +870,7 @@ The probability the student also earned an A on the midterm is about 0.39.
 \begin{exercise}
 After an introductory statistics course, 78\% of students can successfully construct tree diagrams. Of those who can construct tree diagrams, 97\% passed, while only 57\% of those students who could not construct tree diagrams passed. (a)~Organize this information into a tree diagram. (b)~What is the probability that a randomly selected student passed? (c)~Compute the probability a student is able to construct a tree diagram if it is known that she passed.\footnote{\begin{minipage}[t]{0.47\linewidth}
 (a) The tree diagram is shown to the right.
-(b)~Identify which two joint probabilities represent students who passed, and add them: $P($passed$) = 0.7566+0.1254= 0.8820$. (c)~$P($construct tree diagram $|$ passed$) = \frac{0.7566}{0.8820} = 0.8578$. \vspace{15mm} \\\ 
+(b)~Identify which two joint probabilities represent students who passed, and add them: $P($passed$) = 0.7566+0.1254= 0.8820$. (c)~$P($construct tree diagram $|$ passed$) = \frac{0.7566}{0.8820} = 0.8578$. \vspace{15mm} \\\
 \end{minipage}
 \begin{minipage}[c]{0.5\linewidth}
 \includegraphics[width=\textwidth]{ch_probability/figures/treeDiagramAndPass/treeDiagramAndPass} \vspace{-25mm}
@@ -894,7 +895,7 @@ Tree diagrams can be used to find the second conditional probability when given 
 
 We first take a critical look at an example of inverting conditional probabilities where we still apply a tree diagram.
 
-\begin{example}{In Canada, about 0.35\% of women over 40 will develop breast cancer in any given year. A common screening test for cancer is the mammogram, but this test is not perfect. In about 11\% of patients with breast cancer, the test gives a \term{false negative}: it indicates a woman does not have breast cancer when she does have breast cancer. Similarly, the test gives a \term{false positive} in 7\% of patients who do not have breast cancer: it indicates these patients have breast cancer when they actually do not.\footnote{The probabilities reported here were obtained using studies reported at \oiRedirect{textbook-breastCancerDotOrg_20090831b}{www.breastcancer.org} and \oiRedirect{textbook-ncbi_nih_breast_cancer}{www.ncbi.nlm.nih.gov/pmc/articles/PMC1173421}.} If we tested a random woman over 40 for breast cancer using a mammogram and the test came back positive -- that is, the test suggested the patient has cancer -- what is the probability that the patient actually has breast cancer?} 
+\begin{example}{In Canada, about 0.35\% of women over 40 will develop breast cancer in any given year. A common screening test for cancer is the mammogram, but this test is not perfect. In about 11\% of patients with breast cancer, the test gives a \term{false negative}: it indicates a woman does not have breast cancer when she does have breast cancer. Similarly, the test gives a \term{false positive} in 7\% of patients who do not have breast cancer: it indicates these patients have breast cancer when they actually do not.\footnote{The probabilities reported here were obtained using studies reported at \oiRedirect{textbook-breastCancerDotOrg_20090831b}{www.breastcancer.org} and \oiRedirect{textbook-ncbi_nih_breast_cancer}{www.ncbi.nlm.nih.gov/pmc/articles/PMC1173421}.} If we tested a random woman over 40 for breast cancer using a mammogram and the test came back positive -- that is, the test suggested the patient has cancer -- what is the probability that the patient actually has breast cancer?}
 
 \label{probabilityOfBreastCancerGivenPositiveTestExample}
 
@@ -989,7 +990,7 @@ Drawing a tree diagram makes it easier to understand how two variables are conne
 
 \begin{exercise} \label{exerciseForParkingLotOnCampusBeingFullAndWhetherOrNotThereIsASportingEvent}
 Jose visits campus every Thursday evening. However, some days the parking garage is full, often due to college events. There are academic events on 35\% of evenings, sporting events on 20\% of evenings, and no events on 45\% of evenings. When there is an academic event, the garage fills up about 25\% of the time, and it fills up 70\% of evenings with sporting events. On evenings when there are no events, it only fills up about 5\% of the time. If Jose comes to campus and finds the garage full, what is the probability that there is a sporting event? Use a tree diagram to solve this problem.\footnote{\begin{minipage}[t]{0.47\linewidth}
-The tree diagram, with three primary branches, is shown to the right. Next, we identify two probabilities from the tree diagram. (1) The probability that there is a sporting event and the garage is full: 0.14. (2) The probability the garage is full: $0.0875 + 0.14 + 0.0225 = 0.25$. Then the solution is the ratio of these probabilities: $\frac{0.14}{0.25} = 0.56$. If the garage is full, there is a 56\% probability that there is a sporting event. \vspace{0.1mm} \\\ 
+The tree diagram, with three primary branches, is shown to the right. Next, we identify two probabilities from the tree diagram. (1) The probability that there is a sporting event and the garage is full: 0.14. (2) The probability the garage is full: $0.0875 + 0.14 + 0.0225 = 0.25$. Then the solution is the ratio of these probabilities: $\frac{0.14}{0.25} = 0.56$. If the garage is full, there is a 56\% probability that there is a sporting event. \vspace{0.1mm} \\\
 \end{minipage}
 \begin{minipage}[c]{0.5\linewidth}
 \includegraphics[width=\textwidth]{ch_probability/figures/treeDiagramGarage/treeDiagramGarage}\vspace{-30mm}
@@ -1006,7 +1007,7 @@ Bayes' Theorem can be used to compute the probability of a sporting event ($A_1$
 \begin{align*}
 P(A_1 | B) &= \frac{P(B | A_1) P(A_1)}{P(B | A_1) P(A_1) + P(B | A_2) P(A_2) + P(B | A_3) P(A_3)} \\
 		&= \frac{(0.7)(0.2)}{(0.7)(0.2) + (0.25)(0.35) + (0.05)(0.45)} \\
-		&= 0.56 
+		&= 0.56
 \end{align*}
 Based on the information that the garage is full, there is a 56\% probability that a sporting event is being held on campus that evening.
 \end{example}
@@ -1075,7 +1076,7 @@ You have a slightly higher chance of not being picked compared to when she picke
 Under the setup of Example~\ref{3wRep}, what is the probability of being picked to answer all three questions?\footnote{$P($being picked to answer all three questions$) = \left(\frac{1}{15}\right)^3 = 0.00030$.}
 \end{exercise}
 
-If we sample from a small population \term{without replacement}, we no longer have independence between our observations. In Example~\ref{3woRep}, the probability of not being picked for the second question was conditioned on the event that you were not picked for the first question. In Example~\ref{3wRep}, the professor sampled her students \term{with replacement}: she repeatedly sampled the entire class without regard to who she already picked. 
+If we sample from a small population \term{without replacement}, we no longer have independence between our observations. In Example~\ref{3woRep}, the probability of not being picked for the second question was conditioned on the event that you were not picked for the first question. In Example~\ref{3wRep}, the professor sampled her students \term{with replacement}: she repeatedly sampled the entire class without regard to who she already picked.
 
 \begin{exercise} \label{raffleOf30TicketsWWOReplacement}
 Your department is holding a raffle. They sell 30 tickets and offer seven prizes. (a) They place the tickets in a hat and draw one for each prize. The tickets are sampled without replacement, i.e. the selected tickets are not placed back in the hat. What is the probability of winning a prize if you buy one ticket? (b)~What if the tickets are sampled with replacement?\footnote{(a) First determine the probability of not winning. The tickets are sampled without replacement, which means the probability you do not win on the first draw is $29/30$, $28/29$ for the second, ..., and $23/24$ for the seventh. The probability you win no prize is the product of these separate probabilities: $23/30$. That is, the probability of winning a prize is $1 - 23/30 = 7/30 = 0.233$. (b)~When the tickets are sampled with replacement, there are seven independent draws. Again we first find the probability of not winning a prize: $(29/30)^7 = 0.789$. Thus, the probability of winning (at least) one prize when drawing with replacement is 0.211.}
@@ -1200,7 +1201,7 @@ In physics, the expectation holds the same meaning as the center of gravity. The
 
 \subsection{Variability in random variables}
 
-Suppose you ran the university bookstore. Besides how much revenue you expect to generate, you might also want to know the volatility (variability) in your revenue. 
+Suppose you ran the university bookstore. Besides how much revenue you expect to generate, you might also want to know the volatility (variability) in your revenue.
 
 The \indexthis{variance}{variance} and \indexthis{standard deviation}{standard deviation} can be used to describe the variability of a random variable. Section~\ref{variability}
 introduced a method for finding the variance and standard deviation for a data set. We first computed deviations from the mean ($x_i - \mu$), squared those deviations, and took an average to get the variance. In the case of a random variable, we again compute squared deviations. However, we take their sum weighted by their corresponding probabilities, just like we did for the expectation. This weighted sum of squared deviations equals the variance, and we calculate the standard deviation by taking the square root of the variance, just as we did in Section~\ref{variability}.
@@ -1270,7 +1271,7 @@ $(y_i-E(Y))^2\times P(Y)$ & 3828.0 & 0.1 & 972.0 & $Var(Y) \approx 4800$ \\
 \begin{enumerate}
 \item[(a)] What proportion of students don't buy either book? Assume no students buy the supplement without the textbook.
 \item[(b)] Let $Y$ represent the revenue from a single student. Write out the probability distribution of $Y$, i.e. a table for each outcome and its associated probability.
-\item[(c)] Compute the expected revenue from a single chemistry student. 
+\item[(c)] Compute the expected revenue from a single chemistry student.
 \item[(d)] Find the standard deviation to describe the variability associated with the revenue from a single student.
 \end{enumerate}
 \end{exercise}
@@ -1463,7 +1464,7 @@ This fraction is the same as the proportion of the histogram's area that falls i
 
 Examine the transition from a boxy hollow histogram in the top-left of Figure~\ref{fdicHistograms} to the much smoother plot in the lower-right. In this last plot, the bins are so slim that the hollow histogram is starting to resemble a smooth curve. This suggests the population height as a \emph{continuous} numerical variable might best be explained by a curve that represents the outline of extremely slim bins.
 
-This smooth curve represents a \term{probability density function} (also called a \term{density} or \term{distribution}), and such a curve is shown in Figure~\ref{fdicHeightContDist} overlaid on a histogram of the sample. A density has a special property: the total area under the density's curve is 1. 
+This smooth curve represents a \term{probability density function} (also called a \term{density} or \term{distribution}), and such a curve is shown in Figure~\ref{fdicHeightContDist} overlaid on a histogram of the sample. A density has a special property: the total area under the density's curve is 1.
 
 \begin{figure}[tbh]
 \centering
@@ -1486,7 +1487,7 @@ P(\text{\var{height} between \resp{180} and \resp{185}})
 	= \text{area between \resp{180} and \resp{185}}
 	= 0.1157
 \end{eqnarray*}
-The probability that a randomly selected person is between \resp{180} and \resp{185} cm is 0.1157. This is very close to the estimate from Example~\ref{contDistProb}: 0.1172. 
+The probability that a randomly selected person is between \resp{180} and \resp{185} cm is 0.1157. This is very close to the estimate from Example~\ref{contDistProb}: 0.1172.
 
 \begin{figure}
 \centering

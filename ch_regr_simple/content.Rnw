@@ -1,3 +1,4 @@
+% -*- compile-command: "cd ../ && make" -*-
 \chapter{Introduction to linear regression}
 \label{linRegrForTwoVar}
 
@@ -13,7 +14,7 @@ Imagine what a perfect linear relationship would mean: you would know the exact 
 
 \begin{figure}
    \centering
-   \includegraphics[width=0.65\textwidth]{ch_regr_simple_linear/figures/perfLinearModel/perfLinearModel}
+   \includegraphics[width=0.65\textwidth]{ch_regr_simple/figures/perfLinearModel/perfLinearModel}
    \caption{Requests from twelve separate buyers were simultaneously placed with a trading company to purchase Target Corporation stock (ticker \texttt{TGT}, April 26th, 2012), and the total cost of the shares were reported. Because the cost is computed using a linear formula, the linear fit is perfect.}
    \label{perfLinearModel}
 \end{figure}
@@ -33,7 +34,7 @@ It is rare for all of the data to fall on a straight line, as seen in the three 
 
 \begin{figure}
    \centering
-   \includegraphics[width=\textwidth]{ch_regr_simple_linear/figures/imperfLinearModel/imperfLinearModel}
+   \includegraphics[width=\textwidth]{ch_regr_simple/figures/imperfLinearModel/imperfLinearModel}
    \caption{Three data sets where a linear model may be useful even though the data do not all fall exactly on the line.}
    \label{imperfLinearModel}
 \end{figure}
@@ -42,7 +43,7 @@ We will also see examples in this chapter where fitting a straight line to the d
 
 \begin{figure}
    \centering
-   \includegraphics[width=0.9\textwidth]{ch_regr_simple_linear/figures/notGoodAtAllForALinearModel/notGoodAtAllForALinearModel}
+   \includegraphics[width=0.9\textwidth]{ch_regr_simple/figures/notGoodAtAllForALinearModel/notGoodAtAllForALinearModel}
    \caption{A linear model is not useful in this nonlinear case. These data are from an introductory physics experiment.}
    \label{notGoodAtAllForALinearModel}
 \end{figure}
@@ -67,7 +68,7 @@ Scatterplots were introduced in Chapter~\ref{introductionToData} as a graphical 
 
 \begin{figure}
    \centering
-   \includegraphics[width=0.85\textwidth]{ch_regr_simple_linear/figures/scattHeadLTotalL/scattHeadLTotalL}
+   \includegraphics[width=0.85\textwidth]{ch_regr_simple/figures/scattHeadLTotalL/scattHeadLTotalL}
    \caption{A scatterplot showing head length against total length for 104 brushtail possums. A point representing a possum with head length 94.1mm and total length 89cm is highlighted.}
    \label{scattHeadLTotalL}
 \end{figure}
@@ -75,7 +76,7 @@ Scatterplots were introduced in Chapter~\ref{introductionToData} as a graphical 
 \setlength{\captionwidth}{0.83\mycaptionwidth}
 \begin{figure}
    \centering
-   \includegraphics[width=0.9\textwidth]{ch_regr_simple_linear/figures/brushtail_possum/brushtail_possum}
+   \includegraphics[width=0.9\textwidth]{ch_regr_simple/figures/brushtail_possum/brushtail_possum}
    \caption{The common brushtail possum of Australia.\vspace{-1mm} \\
    -----------------------------\vspace{-2mm}\\
    {\footnotesize Photo by Greg Schechter (\oiRedirect{textbook-flickr_com_schechter_brushtail_possum_5653697137}{https://flic.kr/p/9BAFbR}). \oiRedirect{textbook-CC_BY_2}{CC~BY~2.0~license}.}\vspace{-8mm}}
@@ -87,7 +88,7 @@ The head and total length variables are associated. Possums with an above averag
 
 \begin{figure}
    \centering
-   \includegraphics[width=\textwidth]{ch_regr_simple_linear/figures/scattHeadLTotalLTube/scattHeadLTotalLTube}
+   \includegraphics[width=\textwidth]{ch_regr_simple/figures/scattHeadLTotalLTube/scattHeadLTotalLTube}
    \caption{The figure on the left shows head length versus total length, and reveals that many of the points could be captured by a straight band. On the right, we see that a curved band is more appropriate in the scatterplot for \var{weight} and \var{mpgCity} from the \data{cars} data set.}
    \label{scattHeadLTotalLTube}
 \end{figure}
@@ -117,7 +118,7 @@ A ``hat'' on $y$ is used to signify that this is an estimate. This estimate may 
 
 \begin{figure}
    \centering
-   \includegraphics[width=0.71\textwidth]{ch_regr_simple_linear/figures/scattHeadLTotalLLine/scattHeadLTotalLLine}
+   \includegraphics[width=0.71\textwidth]{ch_regr_simple/figures/scattHeadLTotalLLine/scattHeadLTotalLLine}
    \caption{A reasonable linear model was fit to represent the relationship between head length and total length.\textC{\vspace{-2mm}}}
    \label{scattHeadLTotalLLine}
 \end{figure}
@@ -164,12 +165,12 @@ Compute the residuals for the observations $(85.0, 98.6)$ (``$+$'' in the figure
 ($\triangle$) $\hat{y}_{\triangle} = 41+0.59x_{\triangle} = 97.3$. $e_{\triangle} = y_{\triangle} - \hat{y}_{\triangle} = -3.3$, close to the estimate of -4.}
 \end{exercise}
 
-Residuals are helpful in evaluating how well a linear model fits a data set. We often display them in a \term{residual plot} such as the one shown in Figure~\ref{scattHeadLTotalLResidualPlot} for the regression line in Figure~\ref{scattHeadLTotalLLine}. The residuals are plotted at their original horizontal locations but with the vertical coordinate as the residual. For instance, the point $(85.0,98.6)_{+}$ had a residual of 7.45, so in the residual plot it is placed at $(85.0, 7.45)$. Creating a residual plot is sort of like tipping the scatterplot over so the regression line is horizontal. 
+Residuals are helpful in evaluating how well a linear model fits a data set. We often display them in a \term{residual plot} such as the one shown in Figure~\ref{scattHeadLTotalLResidualPlot} for the regression line in Figure~\ref{scattHeadLTotalLLine}. The residuals are plotted at their original horizontal locations but with the vertical coordinate as the residual. For instance, the point $(85.0,98.6)_{+}$ had a residual of 7.45, so in the residual plot it is placed at $(85.0, 7.45)$. Creating a residual plot is sort of like tipping the scatterplot over so the regression line is horizontal.
 \index{data!possum|)}
 
 \begin{figure}
    \centering
-   \includegraphics[width=0.73\textwidth]{ch_regr_simple_linear/figures/scattHeadLTotalLResidualPlot/scattHeadLTotalLResidualPlot}
+   \includegraphics[width=0.73\textwidth]{ch_regr_simple/figures/scattHeadLTotalLResidualPlot/scattHeadLTotalLResidualPlot}
    \caption{Residual plot for the model in Figure~\ref{scattHeadLTotalLLine}.}
    \label{scattHeadLTotalLResidualPlot}
 \end{figure}
@@ -178,7 +179,7 @@ Residuals are helpful in evaluating how well a linear model fits a data set. We 
 
 \begin{figure}
    \centering
-   \includegraphics[width=0.95\textwidth]{ch_regr_simple_linear/figures/sampleLinesAndResPlots/sampleLinesAndResPlots}
+   \includegraphics[width=0.95\textwidth]{ch_regr_simple/figures/sampleLinesAndResPlots/sampleLinesAndResPlots}
    \caption{Sample data with their best fitting lines (top row) and their corresponding residual plots (bottom row).}
    \label{sampleLinesAndResPlots}
 \end{figure}
@@ -211,7 +212,7 @@ where $\bar{x}$, $\bar{y}$, $s_x$, and $s_y$ are the sample means and standard d
 
 \begin{figure}
    \centering
-   \includegraphics[width=0.95\textwidth]{ch_regr_simple_linear/figures/posNegCorPlots/posNegCorPlots}
+   \includegraphics[width=0.95\textwidth]{ch_regr_simple/figures/posNegCorPlots/posNegCorPlots}
    \caption{Sample scatterplots and their correlations. The first row shows variables with a positive relationship, represented by the trend up and to the right. The second row shows variables with a negative trend, where a large value in one variable is associated with a low value in the other.}
    \label{posNegCorPlots}
 \end{figure}
@@ -220,7 +221,7 @@ The correlation is intended to quantify the strength of a linear trend. Nonlinea
 
 \begin{figure}
    \centering
-   \includegraphics[width=0.96\textwidth]{ch_regr_simple_linear/figures/posNegCorPlots/corForNonLinearPlots}
+   \includegraphics[width=0.96\textwidth]{ch_regr_simple/figures/posNegCorPlots/corForNonLinearPlots}
    \caption{Sample scatterplots and their correlations. In each case, there is a strong relationship between the variables. However, the correlation is not very strong, and the relationship is not linear.}
    \label{corForNonLinearPlots}
 \end{figure}
@@ -243,7 +244,7 @@ This section considers family income and gift aid data from a random sample of f
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.75\textwidth]{ch_regr_simple_linear/figures/elmhurstPlots/elmhurstScatterW2Lines}
+\includegraphics[width=0.75\textwidth]{ch_regr_simple/figures/elmhurstPlots/elmhurstScatterW2Lines}
 \caption{Gift aid and family income for a random sample of 50 freshman students from Elmhurst College. Two lines are fit to the data, the solid line being the \emph{least squares line}.}
 \label{elmhurstScatterW2Lines}
 \end{figure}
@@ -286,7 +287,7 @@ When this condition is found to be unreasonable, it is usually because of outlie
 
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{ch_regr_simple_linear/figures/whatCanGoWrongWithLinearModel/whatCanGoWrongWithLinearModel}
+\includegraphics[width=\textwidth]{ch_regr_simple/figures/whatCanGoWrongWithLinearModel/whatCanGoWrongWithLinearModel}
 \caption{Four examples showing when the methods in this chapter are insufficient to apply to the data. In the left panel, a straight line does not fit the data. In the second panel, there are outliers; two points on the left are relatively distant from the rest of the data, and one of these points is very far away from the line. In the third panel, the variability of the data around the line increases with larger values of $x$. In the last panel, a time series data set is shown, where successive observations are highly correlated.}
 \label{whatCanGoWrongWithLinearModel}
 \end{figure}
@@ -315,7 +316,7 @@ As in Chapters~4-6, the parameters are estimated using observed data. In practic
 b_1 = \frac{s_y}{s_x} R
 \label{slopeOfLSRLine}
 \end{eqnarray}
-where $R$ is the correlation between the two variables, and $s_x$ and $s_y$ are the sample standard deviations of the explanatory variable %(variable on the horizontal axis) 
+where $R$ is the correlation between the two variables, and $s_x$ and $s_y$ are the sample standard deviations of the explanatory variable %(variable on the horizontal axis)
 and response% (variable on the vertical axis)
 , respectively.
 \item If $\bar{x}$ is the mean of the horizontal variable (from the data) and $\bar{y}$ is the mean of the vertical variable, then the point $(\bar{x}, \bar{y})$ is on the least squares line.
@@ -361,7 +362,7 @@ You might recall the \term{point-slope} form of a line from math class (another 
 y - y_0 = slope\times (x - x_0)
 \label{pointSlopeFormForALine}
 \end{eqnarray}
-A common exercise to become more familiar with foundations of least squares regression is to use basic summary statistics and point-slope form to produce the least squares line. 
+A common exercise to become more familiar with foundations of least squares regression is to use basic summary statistics and point-slope form to produce the least squares line.
 
 \begin{tipBox}{\tipBoxTitle{Identifying the least squares line from summary statistics}
 To identify the least squares line from summary statistics:\vspace{-1mm}
@@ -392,11 +393,11 @@ We mentioned earlier that a computer is usually used to compute the least square
 \begin{tabular}{l rrrr}
   \hline
   \vspace{-3.7mm} & & & & \\
- & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\
   \hline
   \vspace{-3.6mm} & & & & \\
-(Intercept) & 24.3193 & 1.2915 & 18.83 & 0.0000 \\ 
-family\_\hspace{0.3mm}income & -0.0431 & 0.0108 & -3.98 & 0.0002 \\ 
+(Intercept) & 24.3193 & 1.2915 & 18.83 & 0.0000 \\
+family\_\hspace{0.3mm}income & -0.0431 & 0.0108 & -3.98 & 0.0002 \\
   \hline
 \end{tabular}
 \caption{Summary of least squares fit for the Elmhurst data. Compare the parameter estimates in the first column to the results of Example~\ref{exampleToFindLSRLineOfElmhurstData}.}
@@ -410,7 +411,7 @@ We'll describe the meaning of the columns using the second row, which correspond
 \begin{example}{Suppose a high school senior is considering Elmhurst College. Can she simply use the linear equation that we have estimated to calculate her financial aid from the university?}
 She may use it as an estimate, though some qualifiers on this approach are important. First, the data all come from one freshman class, and the way aid is determined by the university may change from year to year. Second, the equation will provide an imperfect estimate. While the linear equation is good at capturing the trend in the data, no individual student's aid will be perfectly predicted.
 \index{least squares regression|)}
-\end{example} 
+\end{example}
 
 
 \textC{\newpage}
@@ -467,7 +468,7 @@ We evaluated the strength of the linear relationship between two variables earli
 
 \begin{figure}
 \centering
-\includegraphics[width=0.75\textwidth]{ch_regr_simple_linear/figures/elmhurstPlots/elmhurstScatterWLSROnly}
+\includegraphics[width=0.75\textwidth]{ch_regr_simple/figures/elmhurstPlots/elmhurstScatterWLSROnly}
 \caption{Gift aid and family income for a random sample of 50 freshman students from Elmhurst College, shown with the least squares regression line.}
 \label{elmhurstScatterWLSROnly}
 \end{figure}
@@ -496,7 +497,7 @@ Categorical variables are also useful in predicting outcomes. Here we consider a
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.65\textwidth]{ch_regr_simple_linear/figures/marioKartNewUsed/marioKartNewUsed}
+\includegraphics[width=0.65\textwidth]{ch_regr_simple/figures/marioKartNewUsed/marioKartNewUsed}
 \caption{Total auction prices for the video game \emph{Mario Kart}, divided into used ($x=0$) and new ($x=1$) condition games. The least squares regression line is also shown.}
 \label{marioKartNewUsed}
 \end{figure}
@@ -516,11 +517,11 @@ For categorical predictors with just two levels, the linearity assumption will a
 \begin{tabular}{rrrrr}
   \hline
   \vspace{-3.7mm} & & & & \\
- & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\
   \hline
   \vspace{-3.6mm} & & & & \\
-(Intercept) & 42.87 & 0.81 & 52.67 & 0.0000 \\ 
-  cond\_\hspace{0.3mm}new & 10.90 & 1.26 & 8.66 & 0.0000 \\ 
+(Intercept) & 42.87 & 0.81 & 52.67 & 0.0000 \\
+  cond\_\hspace{0.3mm}new & 10.90 & 1.26 & 8.66 & 0.0000 \\
    \hline
 \end{tabular}
 \caption{Least squares regression summary for the final auction price against the condition of the game.}
@@ -548,7 +549,7 @@ The estimated intercept is the value of the response variable for the first cate
 \section[Types of outliers in linear regression]{Types of outliers in linear regression \sectionvideohref{youtube-jZEKAlo1E54&list=PLkIselvEzpM63ikRfN41DNIhSgzboELOM}}
 \label{typesOfOutliersInLinearRegression}
 
-In this section, we identify criteria for determining which outliers are important and influential. Outliers in regression are observations that fall far from the ``cloud'' of points. These points are especially important because they can have a strong influence on the least squares line. 
+In this section, we identify criteria for determining which outliers are important and influential. Outliers in regression are observations that fall far from the ``cloud'' of points. These points are especially important because they can have a strong influence on the least squares line.
 
 \begin{example}{There are six plots shown in Figure~\ref{outlierPlots} along with the least squares line and residual plots. For each scatterplot and residual plot pair, identify the outliers and note how they influence the least squares line. Recall that an outlier is any point that doesn't appear to belong with the vast majority of the other points.}\label{outlierPlotsExample}
 \begin{itemize}
@@ -564,13 +565,13 @@ In this section, we identify criteria for determining which outliers are importa
 
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{ch_regr_simple_linear/figures/outlierPlots/outlierPlots}
+\includegraphics[width=\textwidth]{ch_regr_simple/figures/outlierPlots/outlierPlots}
 \caption{Six plots, each with a least squares line and residual plot. All data sets have at least one outlier.}
 \label{outlierPlots}
 \end{figure}
 
 Examine the residual plots in Figure~\ref{outlierPlots}. You will probably find that there is some trend in the main clouds of (3) and (4). In these cases, the outliers influenced the slope of the least squares lines. In (5), data with no clear trend were assigned a line with a large trend simply due to one outlier (!).
- 
+
  \begin{termBox}{\tBoxTitle{Leverage}
 Points that fall horizontally away from the center of the cloud tend to pull harder on the line, so we call them points with \term{high leverage}.}
 \end{termBox}
@@ -611,7 +612,7 @@ Examining the data, there are no clear deviations from linearity, the constant v
 
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{ch_regr_simple_linear/figures/unemploymentAndChangeInHouse/unemploymentAndChangeInHouse}
+\includegraphics[width=\textwidth]{ch_regr_simple/figures/unemploymentAndChangeInHouse/unemploymentAndChangeInHouse}
 \caption{The percent change in House seats for the President's party in each election from 1898 to 2010 plotted against the unemployment rate. The two points for the Great Depression have been removed, and a least squares regression line has been fit to the data.}
 \label{unemploymentAndChangeInHouse}
 \end{figure}
@@ -645,11 +646,11 @@ We will rely on statistical software to compute the standard error and leave the
 \begin{tabular}{rrrrr}
   \hline
   \vspace{-3.7mm} & & & & \\
- & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\
   \hline
   \vspace{-3.6mm} & & & & \\
-(Intercept) & -6.7142 & 5.4567 & -1.23 & 0.2300 \\ 
-  unemp & -1.0010 & 0.8717 & -1.15 & 0.2617 \\ 
+(Intercept) & -6.7142 & 5.4567 & -1.23 & 0.2300 \\
+  unemp & -1.0010 & 0.8717 & -1.15 & 0.2617 \\
    \hline
    \multicolumn{5}{r}{$df=25$} \\
 \end{tabular}
@@ -669,7 +670,7 @@ We can look for the one-sided p-value -- shown in Figure~\ref{oneSidedTailForMid
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.82\textwidth]{ch_regr_simple_linear/figures/oneSidedTailForMidtermUnemploymentHT/oneSidedTailForMidtermUnemploymentHT}
+\includegraphics[width=0.82\textwidth]{ch_regr_simple/figures/oneSidedTailForMidtermUnemploymentHT/oneSidedTailForMidtermUnemploymentHT}
 \caption{The distribution shown here is the sampling distribution for $b_1$, if the null hypothesis was true. The shaded tail represents the p-value for the hypothesis test evaluating whether there is convincing evidence that higher unemployment corresponds to a greater loss of House seats for the President's party during a midterm election.}
 \label{oneSidedTailForMidtermUnemploymentHT}
 \end{figure}
@@ -703,11 +704,11 @@ Table~\ref{rOutputForIncomeAidLSRLineInInferenceSection} shows statistical softw
 \begin{tabular}{rrrrr}
   \hline
   \vspace{-3.7mm} & & & & \\
- & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\
   \hline
   \vspace{-3.6mm} & & & & \\
-(Intercept) & 24.3193 & 1.2915 & 18.83 & 0.0000 \\ 
-family\_\hspace{0.3mm}income & -0.0431 & 0.0108 & -3.98 & 0.0002 \\ 
+(Intercept) & 24.3193 & 1.2915 & 18.83 & 0.0000 \\
+family\_\hspace{0.3mm}income & -0.0431 & 0.0108 & -3.98 & 0.0002 \\
    \hline
    \multicolumn{5}{r}{$df=48$} \\
 \end{tabular}
@@ -720,5 +721,3 @@ If conditions for fitting the regression line do not hold, then the methods pres
 \end{tipBox}
 
 \CalculatorVideos{hypothesis testing for a regression coefficient}
-
-

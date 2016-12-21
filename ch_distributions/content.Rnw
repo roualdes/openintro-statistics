@@ -1,3 +1,4 @@
+% -*- compile-command: "cd ../ && make" -*-
 \chapter{Distributions of random variables}
 \label{modeling}
 
@@ -17,10 +18,10 @@ Among all the distributions we see in practice, one is overwhelmingly the most c
 % \end{figure}
 
 <<stdNormal, opts.label="plot", fig.cap="Standard normal distribution">>=
-ggplot(data.frame(x=c(-4,4)), aes(x)) +
-    stat_function(fun=dnorm, geom="line") +
-    labs(y="", x="")
-@ 
+ggplot2::ggplot(data.frame(x=c(-4,4)), ggplot2::aes(x)) +
+    ggplot2::stat_function(fun=dnorm, geom="line") +
+        ggplot2::labs(y="", x="")
+@
 
 \begin{termBox}{\tBoxTitle{Normal distribution facts}
 Many variables are nearly normal, but none are exactly normal. Thus the normal distribution, while not perfect for any single problem, is very useful for a variety of problems. We will use it in data exploration and to solve important problems in statistics.\vspace{0.7mm}}
@@ -627,7 +628,7 @@ The quantity ${n\choose k}$ is read \term{n choose k}.\footnote{Other notation f
 \end{eqnarray*}
 Using the formula, we can compute the number of ways to choose $k=1$ successes in $n=4$ trials:
 \begin{eqnarray*}
-{4 \choose 1} = \frac{4!}{1!(4-1)!} =  \frac{4!}{1!3!} 
+{4 \choose 1} = \frac{4!}{1!(4-1)!} =  \frac{4!}{1!3!}
 	= \frac{4\times3\times2\times1}{(1)(3\times2\times1)} = 4
 \end{eqnarray*}
 This result is exactly what we found by carefully thinking of each possible scenario in Example~\ref{oneRefuser}.
@@ -915,9 +916,9 @@ where $p$ is the probability an individual trial is a success. All trials are as
 \begin{example}{Show using Equation~\eqref{negativeBinomialEquation} that the probability Brian kicks his fourth successful field goal on the sixth attempt is 0.164.}
 The probability of a single success is $p=0.8$, the number of successes is $k=4$, and the number of necessary attempts under this scenario is $n=6$.
 \begin{align*}
-{n-1 \choose k-1}p^k(1-p)^{n-k}\ 
-	=\ \frac{5!}{3!2!} (0.8)^4 (0.2)^2\ 
-	=\ 10\times 0.0164\ 
+{n-1 \choose k-1}p^k(1-p)^{n-k}\
+	=\ \frac{5!}{3!2!} (0.8)^4 (0.2)^2\
+	=\ 10\times 0.0164\
 	=\ 0.164
 \end{align*}
 \end{example}

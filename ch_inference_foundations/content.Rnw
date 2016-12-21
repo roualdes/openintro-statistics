@@ -1,3 +1,4 @@
+% -*- compile-command: "cd ../ && make" -*-
 \chapter{Foundations for inference}
 \label{foundationsForInference}
 
@@ -11,14 +12,14 @@ Throughout the next few sections we consider a data set called \data{yrbss}, whi
 \centering
 \begin{tabular}{rrllrrlrr}
   \hline
-ID & age & gender & grade & height & weight & helmet & active & lifting \\ 
+ID & age & gender & grade & height & weight & helmet & active & lifting \\
   \hline
-1 &  14 & female & 9 &  &  & never &   4 &   0 \\ 
-  2 &  14 & female & 9 &  &  & never &   2 &   0 \\ 
-  3 &  15 & female & 9 & 1.73 & 84.37 & never &   7 &   0 \\ 
+1 &  14 & female & 9 &  &  & never &   4 &   0 \\
+  2 &  14 & female & 9 &  &  & never &   2 &   0 \\
+  3 &  15 & female & 9 & 1.73 & 84.37 & never &   7 &   0 \\
   $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\
-  13582 &  17 & female & 12 & 1.60 & 77.11 & sometimes &   5 &  \\ 
-  13583 &  17 & female & 12 & 1.57 & 52.16 & did not ride &   5 &  \\ 
+  13582 &  17 & female & 12 & 1.60 & 77.11 & sometimes &   5 &  \\
+  13583 &  17 & female & 12 & 1.57 & 52.16 & did not ride &   5 &  \\
   \hline
 \end{tabular}
 \caption{Five cases from the \data{yrbss} data set. Some observations are blank since there are missing data. For example, the height and weight of students 1 and 2 are missing.\textC{\vspace{-2mm}}}
@@ -53,13 +54,13 @@ We're going to consider the population of high school students who participated 
 \centering
 \begin{tabular}{rrllrrlrr}
   \hline
-ID & age & gender & grade & height & weight & helmet & active & lifting \\ 
+ID & age & gender & grade & height & weight & helmet & active & lifting \\
   \hline
-5653 &  16 & female & 11 & 1.50 & 52.62 & never &   0 &   0 \\ 
-  9437 &  17 & male & 11 & 1.78 & 74.84 & rarely &   7 &   5 \\ 
-  2021 &  17 & male & 11 & 1.75 & 106.60 & never &   7 &   0 \\ 
+5653 &  16 & female & 11 & 1.50 & 52.62 & never &   0 &   0 \\
+  9437 &  17 & male & 11 & 1.78 & 74.84 & rarely &   7 &   5 \\
+  2021 &  17 & male & 11 & 1.75 & 106.60 & never &   7 &   0 \\
   $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\
-  2325 &  14 & male & 9 & 1.70 & 55.79 & never &   1 &   0 \\ 
+  2325 &  14 & male & 9 & 1.70 & 55.79 & never &   1 &   0 \\
    \hline
 \end{tabular}
 \caption{Four observations for the \data{yrbss\_samp} data set, which represents a simple random sample of 100 high schoolers from the 2013 YRBSS.}
@@ -71,13 +72,12 @@ ID & age & gender & grade & height & weight & helmet & active & lifting \\
 % WARNING: This figure is referenced in Section 4.2
 \begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth]{ch_inference_foundations/figures/yrbssSampHistograms/yrbssSampHistograms} 
+\includegraphics[width=0.8\textwidth]{ch_inference_foundations/figures/yrbssSampHistograms/yrbssSampHistograms}
 \caption{Histograms of \var{height}, \var{weight}, \var{activity}, and \var{lifting} for the sample YRBSS data. The \var{height} distribution is approximately symmetric, \var{weight} is moderately skewed to the right, \var{activity} is bimodal or multimodal (with unclear skew), and \var{lifting} is strongly right skewed.\index{skew!example: moderate}\index{skew!example: strong}}
 \label{yrbssSampHistograms}
 \end{figure}
 
 
-%__________________
 \section[Variability in estimates]{Variability in estimates \sectionvideohref{youtube-DNIauUrRIEM&list=PLkIselvEzpM7Pjo94m1e7J5jkIZkbQAl4}}
 \label{variabilityInEstimates}
 
@@ -189,7 +189,7 @@ $SE$\\\footnotesize standard\\error} of the estimate.
 The standard deviation associated with an estimate is called the \emph{standard error}. It describes the typical error or uncertainty associated with the estimate.}
 \end{termBox}
 
-When considering the case of the point estimate $\bar{x}$, there is one problem: there is no obvious way to estimate its standard error from a single sample. However, statistical theory provides a helpful tool to address this issue. 
+When considering the case of the point estimate $\bar{x}$, there is one problem: there is no obvious way to estimate its standard error from a single sample. However, statistical theory provides a helpful tool to address this issue.
 
 \textC{\newpage}
 
@@ -254,7 +254,7 @@ A plausible range of values for the population parameter is called a \term{confi
 
 Using only a point estimate is like fishing in a murky lake with a spear, and using a confidence interval is like fishing with a net. We can throw a spear where we saw a fish, but we will probably miss. On the other hand, if we toss a net in that area, we have a good chance of catching the fish.
 
-If we report a point estimate, we probably will not hit the exact population parameter. On the other hand, if we report a range of plausible values -- a confidence interval -- we have a good shot at capturing the parameter. 
+If we report a point estimate, we probably will not hit the exact population parameter. On the other hand, if we report a range of plausible values -- a confidence interval -- we have a good shot at capturing the parameter.
 
 \begin{exercise}
 If we want to be very certain we capture the population parameter, should we use a wider interval or a smaller interval?\footnote{If we want to be more certain we will capture the fish, we might use a wider net. Likewise, we use a wider confidence interval if we want to be more certain that we capture the parameter.}
@@ -286,7 +286,7 @@ But what does ``95\% confident'' mean? Suppose we took many samples and built a 
 In Figure~\ref{95PercentConfidenceInterval}, one interval does not contain 3.90 minutes. Does this imply that the mean cannot be 3.90?\footnote{Just as some observations occur more than 2 standard deviations from the mean, some point estimates will be more than 2 standard errors from the parameter. A confidence interval only provides a plausible range of values for a parameter. While we might say other values are implausible based on the data, this does not mean they are impossible.}
 \end{exercise}
 
-The rule where about 95\% of observations are within 2 standard deviations of the mean is only approximately true. However, it holds very well for the normal distribution. As we will soon see, the mean tends to be normally distributed when the sample size is sufficiently large. 
+The rule where about 95\% of observations are within 2 standard deviations of the mean is only approximately true. However, it holds very well for the normal distribution. As we will soon see, the mean tends to be normally distributed when the sample size is sufficiently large.
 
 \begin{example}{The sample mean of days active per week from \data{yrbss\_samp} is 3.75~days. The standard error, as estimated using the sample standard deviation, is $SE=\frac{2.6}{\sqrt{100}} = 0.26$~days. (The population SD is unknown in most applications, so we use the sample SD here.) Calculate an approximate 95\% confidence interval for the average days active per week for all YRBSS students.}
 We apply Equation~(\ref{95PercentConfidenceIntervalFormula}):
@@ -340,7 +340,7 @@ The 95\% confidence interval structure provides guidance in how to make interval
 \begin{eqnarray}
 \text{point estimate}\ \pm\ 1.96\times SE
 \end{eqnarray}
-There are three components to this interval: the point estimate, ``1.96'', and the standard error. The choice of $1.96\times SE$ was based on capturing 95\% of the data since the estimate is within 1.96 standard deviations of the parameter about 95\% of the time. The choice of 1.96 corresponds to a 95\% confidence level. 
+There are three components to this interval: the point estimate, ``1.96'', and the standard error. The choice of $1.96\times SE$ was based on capturing 95\% of the data since the estimate is within 1.96 standard deviations of the parameter about 95\% of the time. The choice of 1.96 corresponds to a 95\% confidence level.
 
 \begin{exercise} \label{leadInForMakingA99PercentCIExercise}
 If $X$ is a normally distributed random variable, how often will $X$ be within 2.58 standard deviations of the mean?\footnote{This is equivalent to asking how often the Z-score will be larger than -2.58 but less than 2.58. (For a picture, see Figure~\ref{choosingZForCI}.) To determine this probability, look up -2.58 and 2.58 in the normal probability table (0.0049 and 0.9951). Thus, there is a $0.9951-0.0049 \approx 0.99$ probability that the unobserved random variable $X$ will be within 2.58 standard deviations of $\mu$.}
@@ -399,7 +399,7 @@ If the point estimate follows the normal model with standard error $SE$, then a 
 where $z^{\star}$ corresponds to the confidence level selected.}
 \end{termBox}
 
-Figure~\ref{choosingZForCI} provides a picture of how to identify $z^{\star}$ based on a confidence level. We~select $z^{\star}$ so that the area between -$z^{\star}$ and $z^{\star}$ in the normal model corresponds to the confidence level. 
+Figure~\ref{choosingZForCI} provides a picture of how to identify $z^{\star}$ based on a confidence level. We~select $z^{\star}$ so that the area between -$z^{\star}$ and $z^{\star}$ in the normal model corresponds to the confidence level.
 
 \begin{termBox}{\tBoxTitle{Margin of error}
 \label{marginOfErrorTermBox}In a confidence interval, $z^{\star}\times SE$ is called the \term{margin of error}.}
@@ -457,13 +457,13 @@ $H_0$\\\footnotesize null hypothesis\vspace{3mm}\\\normalsize $H_A$\\\footnotesi
 {\small The \term{null hypothesis ($H_0$)} often represents either a skeptical perspective or a claim to be tested. The \term{alternative hypothesis ($H_A$)} represents an alternative claim under consideration and is often represented by a range of possible parameter values.}}
 \end{termBox}
 
-The null hypothesis often represents a skeptical position or a perspective of no difference. The alternative hypothesis often represents a new perspective, such as the possibility that there has been a change. 
+The null hypothesis often represents a skeptical position or a perspective of no difference. The alternative hypothesis often represents a new perspective, such as the possibility that there has been a change.
 
 \begin{tipBox}{\tipBoxTitle{Hypothesis testing framework}
 The skeptic will not reject the null hypothesis ($H_0$), unless the evidence in favor of the alternative hypothesis ($H_A$) is so strong that she rejects $H_0$ in favor of $H_A$.}
 \end{tipBox}
 
-The hypothesis testing framework is a very general tool, and we often use it without a second thought. If a person makes a somewhat unbelievable claim, we are initially skeptical. However, if there is sufficient evidence that supports the claim, we set aside our skepticism and reject the null hypothesis in favor of the alternative. The hallmarks of hypothesis testing are also found in the US court system. 
+The hypothesis testing framework is a very general tool, and we often use it without a second thought. If a person makes a somewhat unbelievable claim, we are initially skeptical. However, if there is sufficient evidence that supports the claim, we set aside our skepticism and reject the null hypothesis in favor of the alternative. The hallmarks of hypothesis testing are also found in the US court system.
 
 \begin{exercise} \label{hypTestCourtExample}
 A US court considers two possible claims about a defendant: she is either innocent or guilty. If we set these claims up in a hypothesis framework, which would be the null hypothesis and which the alternative?\footnote{The jury considers whether the evidence is so convincing (strong) that there is no reasonable doubt regarding the person's guilt; in such a case, the jury rejects innocence (the null hypothesis) and concludes the defendant is guilty (alternative hypothesis).}
@@ -637,7 +637,7 @@ We can set up the null hypothesis for this test as a skeptical perspective: the 
 \end{itemize}
 Using $\mu > 7$ as the alternative is an example of a \term{one-sided} hypothesis test. In this investigation, there is no apparent interest in learning whether the mean is less than 7~hours.\footnote{This is entirely based on the interests of the researchers. Had they been only interested in the opposite case -- showing that their students were actually averaging fewer than seven hours of sleep but not interested in showing more than 7 hours -- then our setup would have set the alternative as $\mu < 7$.} Earlier we encountered a \term{two-sided} hypothesis where we looked for any clear difference, greater than or less than the null value.
 
-Always use a two-sided test unless it was made clear prior to data collection that the test should be one-sided. Switching a two-sided test to a one-sided test after observing the data is dangerous because it can inflate the Type~1 Error rate. 
+Always use a two-sided test unless it was made clear prior to data collection that the test should be one-sided. Switching a two-sided test to a one-sided test after observing the data is dangerous because it can inflate the Type~1 Error rate.
 
 \begin{tipBox}{\tipBoxTitle{One-sided and two-sided tests}
 When you are interested in checking for an increase or a decrease, but not both, use a one-sided test. When you are interested in any difference from the null value~--~an increase or decrease~--~then the test should be two-sided.\vspace{0.5mm}}
@@ -699,7 +699,7 @@ The ideas below review the process of evaluating hypothesis tests with p-values:
 \item We should always state the conclusion of the hypothesis test in plain language so non-statisticians can also understand the results.
 \end{itemize}
 
-The p-value is constructed in such a way that we can directly compare it to the significance level ($\alpha$) to determine whether or not to reject $H_0$. This method ensures that the Type~1 Error rate does not exceed the significance level standard. 
+The p-value is constructed in such a way that we can directly compare it to the significance level ($\alpha$) to determine whether or not to reject $H_0$. This method ensures that the Type~1 Error rate does not exceed the significance level standard.
 
 \begin{figure}[ht]
    \centering
@@ -1036,7 +1036,7 @@ Strong evidence against the null hypothesis and in favor of the alternative woul
 \begin{eqnarray*}
 \text{point estimate} = \hat{p}_{control} - \hat{p}_{treatment}
 \end{eqnarray*}
-being larger than we would expect from chance alone. This difference in sample proportions represents a point estimate that is useful in evaluating the hypotheses. 
+being larger than we would expect from chance alone. This difference in sample proportions represents a point estimate that is useful in evaluating the hypotheses.
 
 \begin{example}{We want to evaluate the hypothesis setup from Guided Practice~\ref{fdaHypSetupForSulph} using data from the actual study.\footnote{Anturane Reinfarction Trial Research Group. 1980. Sulfinpyrazone in the prevention of sudden death after myocardial infarction. New England Journal of Medicine 302(5):250-256.} In the control group, 60 of 742 patients died. In the treatment group, 41 of 733 patients died. The sample difference in death rates can be summarized as
 \begin{eqnarray*}
@@ -1109,4 +1109,3 @@ When the sample size becomes larger, point estimates become more precise and any
 Statistically significant differences are sometimes so minor that they are not practically relevant. This is especially important to research: if we conduct a study, we want to focus on finding a meaningful result. We don't want to spend lots of money finding results that hold no practical value.
 
 The role of a statistician in conducting a study often includes planning the size of the study. The statistician might first consult experts or scientific literature to learn what would be the smallest meaningful difference from the null value. She also would obtain some reasonable estimate for the standard deviation. With these important pieces of information, she would choose a sufficiently large sample size so that the power for the meaningful difference is perhaps 80\% or 90\%. While larger sample sizes may still be used, she might advise against using them in some cases, especially in sensitive areas of research.
-
