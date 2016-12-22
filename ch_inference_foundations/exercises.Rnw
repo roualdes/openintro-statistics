@@ -748,35 +748,34 @@ agree with the values you compute.
 <<penniesAgesData, include=FALSE>>=
 pennies <- suppressMessages(readr::read_csv("../data/penniesAges.csv"))
 
-nr <- nrow(pennies)
-pa <- pennies$age
-resample <- function(x) {
-    R <- 5000
+resample <- function(n, x, R) {
+    nr <- length(x)
     xbar <- vector("list", R)
     for (i in seq_len(R)) {
-        xbar[[i]] <- mean(pa[sample(nr, size=x, replace=TRUE)])
+        xbar[[i]] <- mean(x[sample(nr, size=n, replace=TRUE)])
     }
     unlist(xbar)
 }
 
-df <- tidyr::gather(tibble::data_frame("n=5"=resample(5),
-                         "n=30"=resample(30),
-                         "n=100"=resample(100)),
+pa <- pennies$age
+r <- 5000
+df <- tidyr::gather(tibble::data_frame("n=5"=resample(5, pa, r),
+                         "n=30"=resample(30, pa, r),
+                         "n=100"=resample(100, pa, r)),
                    ss, xbar)
 @
 
 <<penniesAgesPopHist, opts.label="plot">>=
 ggplot2::ggplot(data=pennies, ggplot2::aes(x=age)) +
     ggplot2::geom_histogram(bins=10) +
-        ggplot2::labs(x="Pennies ages (years)")
+        ggplot2::labs(x="Age of pennies (years)")
 @
-
 <<penniesAgesSampleHist, opts.label="plot", fig.width=7>>=
 ggplot2::ggplot(data=df, ggplot2::aes(x=xbar)) +
+    ggplot2::labs(x="xbar") +              # TODO make symbol xbar
     ggplot2::geom_histogram(bins=10) +
         ggplot2::facet_wrap(~factor(ss, levels=c("n=5", "n=30", "n=100")),
                             scales="free_x", nrow=1)
-
 @
 }{}
 
@@ -830,43 +829,77 @@ the mean?
 
 % 37
 
-\eoce{\qt{Identify distributions, Part I\label{identify_dist_symm_pop}} Four plots
-are presented below. The plot at the top is a distribution for a population. The
-mean is 10 and the standard deviation is 3. Also shown below is a distribution
-of (1) a single random sample of 100 values from this population, (2) a
-distribution of 100 sample means from random samples with size 5, and (3) a
-distribution of 100 sample means from random samples with size 25. Determine
-which plot (A, B, or C) is which and explain your reasoning.
+\eoce{\qt{Identify distributions, Part I \label{identify_dist_symm_pop}}
 
-% TODO pick up here for replacing plots; 2016-12-21
+  Four plots are presented below. The plot at the top is a
+  distribution for a population.  The mean is 10 and the standard
+  deviation is 3.  Also shown below is a distribution of (1) a single
+  random sample of 100 values from this population, (2) a distribution
+  of 100 sample means from random samples with size 5, and (3) a
+  distribution of 100 sample means from random samples with size
+  25.  Determine which plot (A, B, or C) is which and explain your
+  reasoning.
 
-\begin{center}
-\includegraphics[width=0.55\textwidth]{ch_inference_foundations/figures/eoce/identify_dist_symm_pop/identify_dist_symm_pop.pdf} \\
-\includegraphics[width=0.325\textwidth]{ch_inference_foundations/figures/eoce/identify_dist_symm_pop/identify_dist_symm_sampling_n5.pdf}
-\includegraphics[width=0.325\textwidth]{ch_inference_foundations/figures/eoce/identify_dist_symm_pop/identify_dist_symm_samp.pdf}
-\includegraphics[width=0.325\textwidth]{ch_inference_foundations/figures/eoce/identify_dist_symm_pop/identify_dist_symm_sampling_n25.pdf}
-\end{center}
+<<identifyDistSymmPop, opts.label="plot">>=
+df <- data.frame(x=rnorm(1e6, 10, 3))
+## TODO remove y axis
+ggplot2::ggplot(df, ggplot2::aes(x=x, y=..density..)) +
+    ggplot2::labs(x="", y="") +
+    ggplot2::geom_histogram(bins=60) +
+        ggplot2::annotate("text", x=17, y=0.100, label="Population") +
+        ggplot2::annotate("text", x=17, y=0.085, label="mu == 10", parse=TRUE) +
+        ggplot2::annotate("text", x=17, y=0.07, label="sigma == 3", parse=TRUE)
+@
+
+<<identifyDistSymmSamp, opts.label="plot">>=
+sdf <- dplyr::sample_n(df, 100)
+df <- tidyr::gather(tibble::data_frame("Plot A"=resample(5, sdf[["x"]], 100),
+                         "Plot C"=resample(25, sdf[["x"]], 100),
+                         "Plot B"=sdf[["x"]]),
+                   ss, xbar)
+ggplot2::ggplot(data=df, ggplot2::aes(x=xbar)) +
+    ggplot2::labs(x="xbar") +           # TODO change to symbol xbar
+    ggplot2::geom_histogram(bins=7) +
+        ggplot2::facet_wrap(~factor(ss, levels=c("Plot A", "Plot B", "Plot C")), scales="free_x", nrow=1)
+
+@
 }{}
-
-\textC{\newpage}
 
 % 38
 
-\eoce{\qt{Identify distributions, Part II\label{identify_dist_ls_pop}} Four plots are presented below. The plot at
-the top is a distribution for a population. The mean is 60 and the standard
-deviation is 18. Also shown below is a distribution of (1) a single random
-sample of 500 values from this population, (2) a distribution of 500 sample
-means from random samples of each size 18, and (3) a distribution of 500 sample
-means from random samples of each size 81. Determine which plot (A, B, or C) is
-which and explain your reasoning.
-\begin{center}
-\includegraphics[width=0.55\textwidth]{ch_inference_foundations/figures/eoce/identify_dist_ls_pop/identify_dist_ls_pop.pdf}
-\end{center}
-\begin{center}
-\includegraphics[width=0.325\textwidth]{ch_inference_foundations/figures/eoce/identify_dist_ls_pop/identify_dist_ls_sampling_n81.pdf}
-\includegraphics[width=0.325\textwidth]{ch_inference_foundations/figures/eoce/identify_dist_ls_pop/identify_dist_ls_samp.pdf}
-\includegraphics[width=0.325\textwidth]{ch_inference_foundations/figures/eoce/identify_dist_ls_pop/identify_dist_ls_sampling_n18.pdf}
-\end{center}
+\eoce{\qt{Identify distributions, Part II\label{identify_dist_ls_pop}}
+  Four plots are presented below. The plot at the top is a
+  distribution for a population. The mean is 60 and the standard
+  deviation is 18. Also shown below is a distribution of (1) a single
+  random sample of 500 values from this population, (2) a distribution
+  of 500 sample means from random samples of each size 18, and (3) a
+  distribution of 500 sample means from random samples of each size
+  81. Determine which plot (A, B, or C) is which and explain your
+  reasoning.
+
+<<identifyDistLsPop, opts.label="plot">>=
+df <- data.frame(x=rbeta(1e6, 3.5, 2)*94)
+## TODO remove y axis
+ggplot2::ggplot(df, ggplot2::aes(x=x, y=..density..)) +
+    ggplot2::labs(x="", y="") +
+    ggplot2::geom_histogram(bins=60) +
+        ggplot2::annotate("text", x=10, y=0.015, label="Population") +
+        ggplot2::annotate("text", x=10, y=0.0125, label="mu == 60", parse=TRUE) +
+        ggplot2::annotate("text", x=10, y=0.01, label="sigma == 18", parse=TRUE)
+@
+
+<<identifyDistLsSamp, opts.label="plot">>=
+sdf <- dplyr::sample_n(df, 500)
+df <- tidyr::gather(tibble::data_frame("Plot A"=resample(25, sdf[["x"]], 500),
+                         "Plot C"=resample(5, sdf[["x"]], 500),
+                         "Plot B"=sdf[["x"]]),
+                   ss, xbar)
+ggplot2::ggplot(data=df, ggplot2::aes(x=xbar)) +
+    ggplot2::labs(x="xbar") +           # TODO change to symbol xbar
+    ggplot2::geom_histogram(bins=10) +
+        ggplot2::facet_wrap(~factor(ss, levels=c("Plot A", "Plot B", "Plot C")), scales="free_x", nrow=1)
+
+@
 }{}
 
 % 39
