@@ -187,7 +187,7 @@ the variability of the original distribution?
 \end{parts}
 }{}
 
-\textC{\newpage}
+
 
 \subsection{Confidence intervals}
 
@@ -257,7 +257,7 @@ will be wider than a corresponding 99\% confidence interval.
 \end{parts}
 }{}
 
-\textC{\newpage}
+
 
 % 11
 
@@ -324,7 +324,7 @@ half of what it is now, we would need to double the sample size.
 \end{parts}
 }{}
 
-\textC{\newpage}
+
 
 % 14
 
@@ -516,7 +516,7 @@ provide an accurate measure of calories in the bags of potato chips? We have
 verified the independence, sample size, and skew conditions are satisfied.
 }{}
 
-\textC{\newpage}
+
 
 % 24
 
@@ -583,7 +583,7 @@ level was changed to $\alpha = 0.01$?
 \end{parts}
 }{}
 
-\textC{\newpage}
+
 
 % 26
 
@@ -667,7 +667,7 @@ started taking the anti-depressants.
 \end{parts}
 }{}
 
-\textC{\newpage}
+
 
 % 30
 
@@ -725,7 +725,7 @@ the true value of the parameter, a difference often called the effect size
 }{}
 
 
-\textC{\newpage}
+
 
 \subsection{Examining the Central Limit Theorem}
 
@@ -803,8 +803,6 @@ Topanga is more than \$1.4 million?
 mean?
 \end{parts}
 }{}
-
-\textC{\newpage}
 
 % 36
 
@@ -936,17 +934,22 @@ lifespans of light bulbs had a skewed distribution?
 \end{parts}
 }{}
 
-\textC{\pagebreak}
 
 % 41
 
-\eoce{\qt{Songs on an iPod\label{songs_on_ipod}} Suppose an iPod has 3,000 songs. The
-histogram below shows the distribution of the lengths of these songs. We also
-know that, for this iPod, the mean length is 3.45 minutes and the standard
-deviation is 1.63 minutes.
-\begin{center}
-\includegraphics[width=0.5\textwidth]{ch_inference_foundations/figures/eoce/songs_on_ipod/songs_on_ipod_pop_hist.pdf}
-\end{center}
+\eoce{\qt{Songs on an iPod\label{songs_on_ipod}}
+
+  Suppose an iPod has 3,000 songs. The histogram below shows the
+  distribution of the lengths of these songs. We also know that, for
+  this iPod, the mean length is 3.45 minutes and the standard
+  deviation is 1.63 minutes.
+
+<<songsIpodHist, opts.label="plot">>=
+ggplot2::ggplot(openintro::ipod, ggplot2::aes(x=songLength)) +
+    ggplot2::geom_histogram(bins=10) +
+        ggplot2::labs(x="Length of song")
+@
+
 \begin{parts}
 \item Calculate the probability that a randomly selected song lasts more than 5
 minutes.
