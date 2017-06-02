@@ -28,8 +28,10 @@ Icon[^/]
 *.dropbox
 *-deprecated*
 _README
+play.R
+notes.org
 
-### R nonsense ### 
+### R nonsense ###
 .Rhistory
 *-Ex.R
 *.Rapp.history

@@ -1,38 +1,45 @@
-This nascent project attempts to [knit](http://yihui.name/knitr/) R code into [OpenIntro Statistics](https://github.com/OpenIntroOrg/openintro-statistics), the book from which this project is derived.
+WARNING: The word nascent below is to mean that only the *structure* of this project is complete. I have not, yet, upated all the exercises and solutions. See Roadmap below.
 
-Project Organization
---------------------
+This nascent project attempts to use [R](https://cran.r-project.org/) and [knitr](https://cran.r-project.org/web/packages/knitr/index.html) to randomly generate numbers for the exercises (and their solutions naturally follow) for the book [OpenIntro Statistics](https://github.com/OpenIntroOrg/openintro-statistics), the book from which this project is derived.
 
-- Each chapter's content is in one of the eight chapter folders that start with "ch_". Within each folder, there is a "figures" folder, and files named content.Rnw and exercises.Rnw, which contain the content and exercises for the respective chapter. The Rnw files contain the text that are used to typeset the chapters in the textbook.
-- In many cases, R code is supplied with figures to regenerate the figure. It will often be necessary to install the "openintro" R package that is available from GitHub (https://github.com/OpenIntroOrg) if you would like to regenerate a figure. Other packages may also occasionally be required.
-- Exercise figures may be found in [chapter folder] > figures > eoce > [exercise figure folders]. "EOCE" means end-of-chapter exercises.
-- The extraTeX folder contains files for the front and back matter of the textbook and also the style files. Note that use of any style files, like all other files here, is under the Creative Commons license cited in the LICENSE file.
+This derivative work grew out of a need for "new" problems.  All exercises' contexts remain the same, only the numbers within the exercises and their solutions change.  Since valuable lessons are often learned from the sign and/or the magnitude of the numbers, there has been an attempt to maintain (with respect to the original work) the sign and relative magnitudes of all the randomly generated numbers.
 
-- - -
 
-Typesetting the Textbook
-------------------------
+## Other Changes
+   - Converted .tex to .Rnw files
+   - Reorganized the original file structure
+   - Simplified typesetting with a Makefile
+   - Allowed R code to be included within the text
+   - Replaced some plots (mostly in solutions) to match the randomly generated numbers
 
-The textbook may be typeset using the files main.Rnw and Makefile.  From the command line, run
+
+## Typesetting the Textbook
+
+From the command line, run
 
 ```
 $ make
 ```
 
-To compile the book with R code knit into the text, specify the make option
 
-```
-$ make build=code
-```
+## Dependencies
+   - [LaTeX](https://www.latex-project.org/)
+   - [Make](https://www.gnu.org/software/make/)
+   - [R](https://cran.r-project.org/)
+   - [knitr](https://cran.r-project.org/web/packages/knitr/index.html)
+   - [tidyverse](https://cran.r-project.org/web/packages/tidyverse/index.html)
+   - [OpenIntro](https://cran.r-project.org/web/packages/openintro/index.html)
+   - [gridExtra](https://cran.r-project.org/web/packages/gridExtra/index.html)
 
-- - -
 
-Dependencies
-------------
+## Roadmap
+   So far only the structure of this project is complete.  Here's a task list of completed chapters.
 
-- [LaTeX](https://www.latex-project.org/)
-- [Make](https://www.gnu.org/software/make/)
-- [R](https://cran.r-project.org/)
-- [knitr](http://yihui.name/knitr/)
-- [tidyverse](https://cran.r-project.org/web/packages/tidyverse/index.html)
-- [openintro](https://cran.r-project.org/web/packages/openintro/index.html)
+   - [] Chapter 1
+   - [] Chapter 2
+   - [] Chapter 3
+   - [] Chapter 4
+   - [] Chapter 5
+   - [] Chapter 6
+   - [] Chapter 7
+   - [] Chapter 8

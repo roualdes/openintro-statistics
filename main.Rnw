@@ -2,8 +2,10 @@
 
 \usepackage{geometry, graphicx, varioref, soul, verbatim, amsmath, calc, caption, wasysym, footmisc, makeidx, ifthen, subfigure, multicol, epstopdf, enumerate, wrapfig, textcomp, multirow, changepage, setspace, lscape, titlesec}
 % \usepackage[]{color}
-%\newcommand{\href}[2]{#2} \newcommand{\url}[1]{#1} \newcommand{\urlstyle}[1]{}
-\include{extraTeX/style/colorsV1}
+% \newcommand{\href}[2]{#2} \newcommand{\url}[1]{#1} \newcommand{\urlstyle}[1]{}
+<<colorsV1, child="extraTeX/style/colorsV1.Rnw">>=
+@
+
 
 % _____ Online Version _____ %
 %\usepackage[bookmarksnumbered, colorlinks = false, pdfborder = {0 0 0}, urlcolor = oiGB, colorlinks=true, linkcolor = oiGB, citecolor = oiGB, backref = true]{hyperref}
@@ -20,96 +22,75 @@
 \bibliography{main}
 
 \makeindex
-\include{extraTeX/style/style}
-%\include{extraTeX/style/tablet}
-\include{extraTeX/preamble/title_derivative}
+
+<<style, child="extraTeX/style/style.Rnw">>=
+@
+
+<<title_derivative, child="extraTeX/preamble/title_derivative.Rnw">>=
+@
+
 \date{}
 \setcounter{tocdepth}{1}
 
 \begin{document}
 
-% TODO drop awkward page breaks
-
 <<setup, include=FALSE>>=
 options(replace.assign=TRUE, width=40)
 opts_knit$set(progress=FALSE)
 old <- ggplot2::theme_set(ggplot2::theme_bw())
-buildstyle <- opts_chunk[["get"]]("build")
 plot <- list(
+    ## dictate whether or not plots are included
+    eval=FALSE,
     echo=FALSE, fig.width=5, fig.height=2.5,
     fig.align="center", fig.pos="h", cache=TRUE
 )
-if (grepl("code", buildstyle)) {
-    plot[["echo"]] <- TRUE
-}
-code <- plot["echo"]
-opts_template[["set"]](plot=plot, code=code)
+
+## TODO allow build opts specified as arguments to make
+## if (grepl("code", buildstyle)) {
+##     plot[["echo"]] <- TRUE
+## }
+## code <- plot[["echo"]]
+## opts_template[["set"]](plot=plot, code=code)
+
+opts_template[["set"]](plot=plot)
+@
+
+% extra R code to use throughout
+<<extraR, child="extraR/fns.Rnw">>=
 @
 
 \renewcommand{\thepage}{}
 \maketitle
-\include{extraTeX/preamble/copyright_derivative}
+<<copyright_derivative, child="extraTeX/preamble/copyright_derivative.Rnw">>=
+@
+
 \renewcommand{\thepage}{\arabic{page}}
 \tableofcontents
-\include{extraTeX/preamble/preface}
+<<preface, child="extraTeX/preamble/preface.Rnw">>=
+@
+
 \normalsize
 
-% Chapter 1
-<<ch01Content, child="ch_intro_to_data/content.Rnw">>=
-@
-<<ch01Exercises, child="ch_intro_to_data/exercises.Rnw">>=
-@
-
-% Chapter 2
-<<ch02Content, child="ch_probability/content.Rnw">>=
-@
-<<ch03Exercises, child="ch_probability/exercises.Rnw">>=
-@
-
-% Chapter 3
-<<ch03Content, child="ch_distributions/content.Rnw">>=
-@
-<<ch03Exercises, child="ch_distributions/exercises.Rnw">>=
-@
-
-% Chapter 4
-<<ch04Content, child="ch_inference_foundations/content.Rnw">>=
-@
-<<ch04Exercises, child="ch_inference_foundations/exercises.Rnw">>=
-@
-
-% Chapter 5
-<<ch05Content, child="ch_inference_means/content.Rnw">>=
-@
-<<ch05Exercises, child="ch_inference_means/exercises.Rnw">>=
-@
-
-% Chapter 6
-<<ch06Content, child="ch_inference_props/content.Rnw">>=
-@
-<<ch06Exercises, child="ch_inference_props/exercises.Rnw">>=
-@
-
-% Chapter 7
-<<ch07Content, child="ch_regr_simple/content.Rnw">>=
-@
-<<ch07, child="ch_regr_simple/exercises.Rnw">>=
-@
-
-% Chapter 8
-<<ch08Content, child="ch_regr_mult_and_log/content.Rnw">>=
-@
-<<ch08Exercises, child="ch_regr_mult_and_log/exercises.Rnw">>=
+<<chapters, child="chapters/chapters.Rnw">>=
 @
 
 \appendix
 
-<<solutions, child="solutions/content.Rnw">>=
+<<solutions, child="chapters/solutions.Rnw">>=
 @
-\include{extraTeX/appendix/TeX/zTable}
-\include{extraTeX/appendix/TeX/tTable}
-\include{extraTeX/appendix/TeX/chiSquareTable}
-\include{extraTeX/index/index}
+
+<<zTable, child="extraTeX/appendix/TeX/zTable.Rnw">>=
+@
+
+<<tTable, child="extraTeX/appendix/TeX/tTable.Rnw">>=
+@
+
+<<chiSquareTable, child="extraTeX/appendix/TeX/chiSquareTable.Rnw">>=
+@
+
+<<index, child="extraTeX/index/index.Rnw">>=
+@
+
 \printindex
 
 \end{document}

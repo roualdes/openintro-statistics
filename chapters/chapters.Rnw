@@ -1,0 +1,49 @@
+% -*- compile-command: "cd ../ && make" -*-
+
+% Chapter 1
+<<ch01Content, child="intro_to_data/content.Rnw">>=
+@
+<<ch01Exercises, child="intro_to_data/exercises.Rnw">>=
+@
+
+% Chapter 2
+<<ch02Content, child="probability/content.Rnw">>=
+@
+<<ch03Exercises, child="probability/exercises.Rnw">>=
+@
+
+% Chapter 3
+<<ch03Content, child="distributions/content.Rnw">>=
+@
+<<ch03Exercises, child="distributions/exercises.Rnw">>=
+@
+
+% Chapter 4
+<<ch04Content, child="inference_foundations/content.Rnw">>=
+@
+<<ch04Exercises, child="inference_foundations/exercises.Rnw">>=
+@
+
+% Chapter 5
+<<ch05Content, child="inference_means/content.Rnw">>=
+@
+<<ch05Exercises, child="inference_means/exercises.Rnw">>=
+@
+
+% Chapter 6
+<<ch06Content, child="inference_props/content.Rnw">>=
+@
+<<ch06Exercises, child="inference_props/exercises.Rnw">>=
+@
+
+% Chapter 7
+<<ch07Content, child="regr_simple/content.Rnw">>=
+@
+<<ch07, child="regr_simple/exercises.Rnw">>=
+@
+
+% Chapter 8
+<<ch08Content, child="regr_mult_and_log/content.Rnw">>=
+@
+<<ch08Exercises, child="regr_mult_and_log/exercises.Rnw">>=
+@

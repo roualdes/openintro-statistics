@@ -1,0 +1,29 @@
+% -*- compile-command: "cd ../ && make" -*-
+
+\chapter{End of chapter exercise solutions}
+\label{eoceSolutions}
+
+
+<<solIntroData, child="intro_to_data/solutions.Rnw">>=
+@
+
+<<solProbability, child="probability/solutions.Rnw">>=
+@
+
+<<solDistributions, child="distributions/solutions.Rnw">>=
+@
+
+<<solInferenceFoundations, child="inference_foundations/solutions.Rnw">>=
+@
+
+<<solInferenceMeans, child="inference_means/solutions.Rnw">>=
+@
+
+<<solInferenceProps, child="inference_props/solutions.Rnw">>=
+@
+
+<<solRegrSimple, child="regr_simple/solutions.Rnw">>=
+@
+
+<<solRegrMultLog, child="regr_mult_and_log/solutions.Rnw">>=
+@

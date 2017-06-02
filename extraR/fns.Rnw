@@ -1,0 +1,28 @@
+<<fns, cache=TRUE, echo=FALSE>>=
+
+shade_stdNormal <- function(expr1, expr2) {
+    ## TODO put x-axis label at the numbers is expr1/2
+
+    p <- ggplot2::ggplot(data.frame(x=c(-3, 3)), ggplot2::aes(x)) +
+        ggplot2::stat_function(fun=dnorm, geom="line", args=list(mean=0, sd=1)) +
+        ggplot2::labs(x="", y="")
+
+    ssubset <- deparse(substitute(expr1))
+    d <- ggplot2::ggplot_build(p)$data[[1]]
+    p <- p + ggplot2::geom_area(data=subset(d, eval(parse(text=ssubset))),
+                                            ggplot2::aes(x=x, y=y),
+                                            fill="black", colour="black")
+
+    if (!missing(expr2)) {
+        ssubset <- deparse(substitute(expr2))
+        p <- p + ggplot2::geom_area(data=subset(d, eval(parse(text=ssubset))),
+                                    ggplot2::aes(x=x, y=y),
+                                    fill="black", colour="black")
+    }
+
+    p + ggplot2::scale_x_continuous(breaks=c(0)) +
+        ggplot2::theme(axis.text.y=ggplot2::element_blank(),
+                       axis.ticks=ggplot2::element_blank())
+}
+
+@
