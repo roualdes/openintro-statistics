@@ -5,43 +5,54 @@
 
 % 1
 \eocesol{
-    (a)~$\Sexpr{z_3.6_1a_ans}\%$.
-    (b)~$\Sexpr{z_3.6_1b_ans}\%$.
-    (c)~$\Sexpr{z_3.6_1c_ans}\%$.
-    (d)~$\Sexpr{z_3.6_1d_ans}\%$. \\
 
-<<ex_3.6_1_ans, fig.width=3, fig.height=3, fig.align="center", echo=FALSE>>=
-p_3.6_1a_ans <- shade_stdNormal(x<z_3.6_1a)
-p_3.6_1b_ans <- shade_stdNormal(x>z_3.6_1b)
-p_3.6_1c_ans <- shade_stdNormal(x>z_3.6_1c[1] & x<z_3.6_1c[2])
-p_3.6_1d_ans <- shade_stdNormal(x>abs(z_3.6_1d), x< -1*abs(z_3.6_1d))
+  (a)~$\Sexpr{z_3.6_1a_ans}\%$. \\
+  (b)~$\Sexpr{z_3.6_1b_ans}\%$.\\
+  (c)~$\Sexpr{z_3.6_1c_ans}\%$. \\
+  (d)~$\Sexpr{z_3.6_1d_ans}\%$. \\
 
-gridExtra::grid.arrange(p_3.6_1a_ans, p_3.6_1b_ans,
-                        p_3.6_1c_ans, p_3.6_1d_ans,
-                        ncol=2)
+
+<<ex3_6_1_plots, echo=FALSE, fig.width=3, fig.height=3, fig.align="center", fig.show="hold">>=
+gridExtra::grid.arrange(p_3.6_1a, p_3.6_1b, p_3.6_1c, p_3.6_1d, ncol=2)
 @
+  % \includegraphics[width=0.23\textwidth]{ch_distributions/figures/eoce/area_under_curve_1/zltNeg}
+  % \includegraphics[width=0.23\textwidth]{ch_distributions/figures/eoce/area_under_curve_1/zgtPos}
+  % \includegraphics[width=0.23\textwidth]{ch_distributions/figures/eoce/area_under_curve_1/zBet}
+  % \includegraphics[width=0.23\textwidth]{ch_distributions/figures/eoce/area_under_curve_1/zgtAbs}
 
 }
+
+
+
 % 3
-% TODO here
-\eocesol{(a)~Verbal: $N(\mu = 151, \sigma = 7)$, Quant: $N(\mu = 153, \sigma = 7.67)$.
-(b)~$Z_{VR} = 1.29$, $Z_{QR} = 0.52$. \\
-\includegraphics[width=0.3\textwidth]{chapters/distributions/figures/eoce/GRE_intro/GRE_intro.pdf} \\
-(c)~She scored 1.29 standard deviations above the mean on the Verbal
-Reasoning section and 0.52 standard deviations above the mean on the
-Quantitative Reasoning section.
-(d)~She did better on the Verbal Reasoning section since her Z-score on that
-section was higher.
-(e)~$Perc_{VR} = 0.9007 \approx 90\%$, $Perc_{QR} = 0.6990 \approx 70\%$.
-(f)~$100\% - 90\% = 10\%$ did better than her on VR, and $100\% - 70\% = 30\%$
- did better than her on QR.
-(g)~We cannot compare the raw scores since they are on different scales.
-Comparing her percentile scores is more appropriate when comparing her
-performance to others.
-(h)~Answer to part (b) would not change as Z-scores can be calculated for
-distributions that are not normal. However, we could not answer parts~(d)-(f)
-since we cannot use the normal probability table to calculate probabilities
-and percentiles without a normal model.}
+
+\eocesol{
+
+  (a)~Verbal: $N(\mu = \Sexpr{p_m_3.6_3[1]}, \sigma = \Sexpr{p_sd_3.6_3[1]})$, Quant: $N(\mu = \Sexpr{p_m_3.6_3[2]}, \sigma = \Sexpr{p_sd_3.6_3[2]})$.
+  (b)~$Z_{VR}=\Sexpr{z_3.6_3[1]}$, ~$Z_{QR}=\Sexpr{z_3.6_3[2]}$. \\
+
+<<echo=FALSE, fig.width=3, fig.height=2, fig.align="center">>=
+annotate_stdNormal(z_3.6_3, dnorm(z_3.6_3))
+@
+
+  % \includegraphics[width=0.3\textwidth]{chapters/distributions/figures/eoce/GRE_intro/GRE_intro.pdf} \\
+  (c)~She scored $\Sexpr{abs(z_3.6_3[1])}$ standard deviations \Sexpr{ifelse(z_3.6_3[1] > 0, "above", "below")} the mean on the Verbal
+  Reasoning section and $\Sexpr{abs(z_3.6_3[2])}$ standard deviations \Sexpr{ifelse(z_3.6_3[2] > 0, "above", "below")} the mean on the
+  Quantitative Reasoning section.
+  (d)~She did better on the \Sexpr{which_better_3.6_3} Reasoning section since her Z-score on that
+  section was higher.
+  (e)~$Perc_{VR} \approx \Sexpr{perc_vr_3.6_3}\%$, $Perc_{QR} \approx \Sexpr{perc_qr_3.6_3}\%$.
+  (f)~$100\% - \Sexpr{perc_vr_3.6_3}\% = \Sexpr{100 - perc_vr_3.6_3}\%$ did better than her on VR, and $100\% - \Sexpr{perc_qr_3.6_3}\% = \Sexpr{100 - perc_qr_3.6_3}\%$
+  did better than her on QR.
+  (g)~We cannot compare the raw scores since they are on different scales.
+  Comparing her percentile scores is more appropriate when comparing her
+  performance to others.
+  (h)~Answer to part (b) would not change as Z-scores can be calculated for
+  distributions that are not normal. However, we could not answer parts~(d)-(f)
+  since we cannot use the normal probability table to calculate probabilities
+  and percentiles without a normal model.
+
+}
 
 % 5
 

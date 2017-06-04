@@ -33,8 +33,8 @@ $(FIGUREDIR):
 $(MAINTEX):%: $(MAINRNW) $(RNWFILES)
 	Rscript \
 	  -e "library(knitr)" \
-	  -e "knitr::opts_chunk[['set']](fig.path='$(FIGUREDIR)/$*-')" \
-	  -e "knitr::opts_chunk[['set']](cache.path='$(CACHEDIR)/$*-')" \
+	  -e "knitr::opts_chunk[['set']](fig.path='$(FIGUREDIR)/')" \
+	  -e "knitr::opts_chunk[['set']](cache.path='$(CACHEDIR)/')" \
 	  -e "knitr::knit('$<','$@')"
 #	  -e "knitr::opts_chunk[['set']](build='$(BUILD)')" \ # todo allow build opts
 

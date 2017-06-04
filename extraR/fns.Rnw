@@ -1,28 +1,66 @@
 <<fns, cache=TRUE, echo=FALSE>>=
 
+stdNormal <- function(border_decoration = FALSE) {
+    p <- ggplot2::ggplot(data.frame(x=c(-3, 3)), ggplot2::aes(x)) +
+        ggplot2::stat_function(fun=dnorm, geom="line", args=list(mean=0, sd=1))
+
+    if (!border_decoration) {
+        p <- p + ggplot2::theme(axis.text.x=ggplot2::element_blank(),
+                                axis.text.y=ggplot2::element_blank(),
+                                axis.ticks.x=ggplot2::element_blank(),
+                                axis.ticks.y=ggplot2::element_blank()) +
+            ggplot2::labs(x="", y="")
+    }
+
+    p
+}
+
 shade_stdNormal <- function(expr1, expr2) {
     ## TODO put x-axis label at the numbers is expr1/2
 
-    p <- ggplot2::ggplot(data.frame(x=c(-3, 3)), ggplot2::aes(x)) +
-        ggplot2::stat_function(fun=dnorm, geom="line", args=list(mean=0, sd=1)) +
-        ggplot2::labs(x="", y="")
+    p <- stdNormal()
 
-    ssubset <- deparse(substitute(expr1))
+    ssubset1 <- deparse(substitute(expr1))
     d <- ggplot2::ggplot_build(p)$data[[1]]
-    p <- p + ggplot2::geom_area(data=subset(d, eval(parse(text=ssubset))),
-                                            ggplot2::aes(x=x, y=y),
-                                            fill="black", colour="black")
+    p <- p + ggplot2::geom_area(data=subset(d, eval(parse(text=ssubset1))),
+                                ggplot2::aes(x=x, y=y),
+                                fill="black", colour="black") +
+        ggplot2::scale_x_continuous(breaks=c(0))
 
     if (!missing(expr2)) {
-        ssubset <- deparse(substitute(expr2))
-        p <- p + ggplot2::geom_area(data=subset(d, eval(parse(text=ssubset))),
+        ssubset2 <- deparse(substitute(expr2))
+        p <- p + ggplot2::geom_area(data=subset(d, eval(parse(text=ssubset2))),
                                     ggplot2::aes(x=x, y=y),
                                     fill="black", colour="black")
     }
 
-    p + ggplot2::scale_x_continuous(breaks=c(0)) +
-        ggplot2::theme(axis.text.y=ggplot2::element_blank(),
-                       axis.ticks=ggplot2::element_blank())
+    p
+}
+
+annotate_stdNormal <- function(x, y) {
+
+    if (length(x) != length(y)) {
+        stop("annotate_stdNormal requires arguments x and y to have same length.")
+    }
+    p <- stdNormal()
+
+
+    ## TODO pad the labels, not the segments
+    o <- order(x)
+    pad <- c(-0.5, 0.5)
+    for (i in seq_along(x)) {
+        p <- p + ggplot2::annotate("segment", x=x[i], xend=x[i],
+                              y=0,  yend=y[i],
+                              linetype="dashed") +
+            ggplot2::annotation_custom(
+                         grob=grid::textGrob(bquote(.(round(x[o[i]], 2)))),
+                         xmin=(x[o[i]] + pad[i]), xmax=(x[o[i]] + pad[i]),
+                         ymin=-0.05, ymax=-0.05)
+    }
+
+    gt <- ggplot2::ggplotGrob(p)
+    gt$layout$clip[gt$layout$name=="panel"] <- "off"
+    grid::grid.draw(gt)
 }
 
 @
