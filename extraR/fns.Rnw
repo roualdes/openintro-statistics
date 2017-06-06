@@ -63,4 +63,17 @@ annotate_stdNormal <- function(x, y) {
     grid::grid.draw(gt)
 }
 
+clock_time <- function(t) {
+    ## change t seconds to clock time
+
+    if (t >= 86400) {
+        stop(sprintf("time %f must be less than 86400", t))
+    }
+    hours <- t/3600
+    minutes <- (hours %% 1)*60
+    seconds <- (minutes %% 1)*60
+
+    sprintf("%d:%d:%d", floor(hours), floor(minutes), ceiling(seconds))
+}
+
 @

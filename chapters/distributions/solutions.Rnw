@@ -4,6 +4,7 @@
 \begin{multicols}{2}
 
 % 1
+
 \eocesol{
 
   (a)~$\Sexpr{z_3.6_1a_ans}\%$. \\
@@ -28,7 +29,7 @@ gridExtra::grid.arrange(p_3.6_1a, p_3.6_1b, p_3.6_1c, p_3.6_1d, ncol=2)
 
 \eocesol{
 
-  (a)~Verbal: $N(\mu = \Sexpr{p_m_3.6_3[1]}, \sigma = \Sexpr{p_sd_3.6_3[1]})$, Quant: $N(\mu = \Sexpr{p_m_3.6_3[2]}, \sigma = \Sexpr{p_sd_3.6_3[2]})$.
+  (a)~Verbal: $N(\mu = \Sexpr{pm_3.6_3[1]}, \sigma = \Sexpr{psd_3.6_3[1]})$, Quant: $N(\mu = \Sexpr{pm_3.6_3[2]}, \sigma = \Sexpr{psd_3.6_3[2]})$.
   (b)~$Z_{VR}=\Sexpr{z_3.6_3[1]}$, ~$Z_{QR}=\Sexpr{z_3.6_3[2]}$. \\
 
 <<echo=FALSE, fig.width=3, fig.height=2, fig.align="center">>=
@@ -56,35 +57,39 @@ annotate_stdNormal(z_3.6_3, dnorm(z_3.6_3))
 
 % 5
 
-\eocesol{(a)~$Z = 0.84$, which corresponds to approximately 160 on QR.
-(b)~$Z = -0.52$, which corresponds to approximately 147 on VR.}
+\eocesol{
+
+  (a)~$Z = 0.84$, which corresponds to approximately $\Sexpr{q80_3.6_5}$ on QR.
+  (b)~$Z = -0.52$, which corresponds to approximately $\Sexpr{q30_3.6_5}$ on VR.
+
+}
 
 % 7
 
-\eocesol{(a)~$Z=1.2 \to 0.1151$. \\
-(b)~$Z= -1.28 \to 70.6\degree$F or colder.}
+\eocesol{
 
+  (a)~$Z=\Sexpr{z_3.6_7a} \to \Sexpr{p83_3.6_7}1$. \\
+  (b)~$Z= \Sexpr{z_3.6_7b}8 \to \Sexpr{q10_3.6_7}\degree$F or colder.
 
-
-\textC{
-\end{multicols}
-\newpage
-\begin{multicols}{2}
 }
-
-
 
 % 9
 
-\eocesol{(a)~$N(25, 2.78)$.
-(b)~$Z = 1.08 \to 0.1401$.
-(c)~The answers are very close because only the units were changed. (The only
-reason why they differ at all is because 28\degree C is
-82.4\degree F, not precisely 83\degree F.)
-(d)~Since $IQR = Q3 - Q1$, we first need to find $Q3$ and $Q1$ and take the
-difference between the two. Remember that $Q3$ is the $75^{th}$ and $Q1$ is
-the $25^{th}$ percentile of a distribution. Q1 = 23.13, Q3 = 26.86, IQR = 26.
-86 - 23.13 = 3.73.}
+\eocesol{
+
+  (a)~$N(\Sexpr{pm_3.6_9}, \Sexpr{psd_3.6_9})$.
+  (b)~$Z = \Sexpr{z_3.6_9} \to \Sexpr{p_3.6_9}$.
+  (c)~The answers are very close, if not exact, because only the units
+  were changed. (The only reason why they might differ at all is
+  because rounding during the change of units.)
+  (d)~Since $IQR = Q3 - Q1$, we first need to find $Q3$ and $Q1$ and
+  take the difference between the two. Remember that $Q3$ is the
+  $75^{th}$ and $Q1$ is the $25^{th}$ percentile of a distribution. Q1
+  = $\Sexpr{q25_3.6_9}$, Q3 = $\Sexpr{q75_3.6_9}$, IQR =
+  $\Sexpr{iqr_3.6_9}$. $\Sexpr{q75_3.6_9} - \Sexpr{q25_3.6_9} = \Sexpr{iqr_3.6_9}$.
+
+  }
+
 
 % 11
 

@@ -2,8 +2,11 @@
 \section{Exercises}
 \subsection{Normal distribution}
 
+% Solutions are next to exercises, not in solutions.Rnw
+
 % 1
 <<ex3_6_1, echo=FALSE>>=
+
 z_3.6_1a <- round(runif(1,-3,0), 2)
 z_3.6_1a_ans <- round(pnorm(z_3.6_1a)*100, 2)
 
@@ -20,6 +23,7 @@ p_3.6_1a <- shade_stdNormal(x<z_3.6_1a)
 p_3.6_1b <- shade_stdNormal(x>z_3.6_1b)
 p_3.6_1c <- shade_stdNormal(x>z_3.6_1c[1] & x<z_3.6_1c[2])
 p_3.6_1d <- shade_stdNormal(x>abs(z_3.6_1d), x< -1*abs(z_3.6_1d))
+
 @
 
 \eoce{
@@ -41,6 +45,7 @@ p_3.6_1d <- shade_stdNormal(x>abs(z_3.6_1d), x< -1*abs(z_3.6_1d))
 
 % 2
 <<ex3_6_2, echo=FALSE>>=
+
 z_3.6_2a <- round(runif(1, -3, 0), 2)
 z_3.6_2a_ans <- round(1-pnorm(z_3.6_2a)*100, 2)
 
@@ -52,6 +57,7 @@ z_3.6_2c_ans <- round((1-pnorm(z_3.6_2c)), 2)
 
 z_3.6_2d <- round(runif(1, 0, 2), 2)
 z_3.6_2d_ans <- round((pnorm(z_3.6_2d) - pnorm(-1*z_3.6_2d))*100, 2)
+
 @
 
 \eoce{
@@ -82,156 +88,261 @@ z_3.6_3 <- round((x_3.6_3 - m_3.6_3)/sd_3.6_3, 2)
 which_better_3.6_3 <- names(sort(z_3.6_3)[length(z_3.6_3)])
 
 ## new population parameters
-p_m_3.6_3 <- round(c(Verbal=runif(1, 148, 154), Quantitative=runif(1, 150, 156)))
-p_sd_3.6_3 <- round(c(Verbal=runif(1, 6, 8), Quantitative=runif(1, 6.67, 8.67)))
+pm_3.6_3 <- round(c(Verbal=runif(1, 148, 154), Quantitative=runif(1, 150, 156)))
+psd_3.6_3 <- round(c(Verbal=runif(1, 6, 8), Quantitative=runif(1, 6.67, 8.67)))
 
 perc_vr_3.6_3 <- round(pnorm(z_3.6_3["Verbal"])*100, 2)
 perc_qr_3.6_3 <- round(pnorm(z_3.6_3["Quantitative"])*100, 2)
+
 @
 
 \eoce{
 
   \qt{GRE scores, Part I\label{GRE_intro}} Sophia who took the
-  Graduate Record Examination (GRE) scored $\Sexpr{x_3.6_3[1]}$ on
-  the Verbal Reasoning section and $\Sexpr{x_3.6_3[2]}$ on the
+  Graduate Record Examination (GRE) scored $\Sexpr{x_3.6_3[1]}$ on the
+  Verbal Reasoning section and $\Sexpr{x_3.6_3[2]}$ on the
   Quantitpative Reasoning section. The mean score for Verbal Reasoning
-  section for all test takers was $\Sexpr{p_m_3.6_3[1]}$ with a standard
-  deviation of $\Sexpr{p_sd_3.6_3[1]}$, and the mean score for the
-  Quantitative Reasoning was $\Sexpr{p_m_3.6_3[2]}$ with a standard deviation of
-  $\Sexpr{p_sd_3.6_3[2]}$. Suppose that both distributions are nearly normal.
+  section for all test takers was $\Sexpr{pm_3.6_3[1]}$ with a
+  standard deviation of $\Sexpr{psd_3.6_3[1]}$, and the mean score
+  for the Quantitative Reasoning was $\Sexpr{pm_3.6_3[2]}$ with a
+  standard deviation of $\Sexpr{psd_3.6_3[2]}$. Suppose that both
+  distributions are nearly normal.
 
-\begin{parts}
-\item Write down the short-hand for these two normal distributions.
-\item What is Sophia's Z-score on the Verbal Reasoning section? On the
-  Quantitative Reasoning section? Draw a standard normal distribution
-  curve and mark these two Z-scores.
-\item What do these Z-scores tell you?
-\item Relative to others, which section did she do better on?
-\item Find her percentile scores for the two exams.
-\item What percent of the test takers did better than her on the
-  Verbal Reasoning section? On the Quantitative Reasoning section?
-\item Explain why simply comparing raw scores from the two sections could
-lead to an incorrect conclusion as to which section a student did better on.
-\item If the distributions of the scores on these exams are not nearly
-normal, would your answers to parts (b) - (f) change? Explain your reasoning.
-\end{parts}
+  \begin{parts}
+  \item Write down the short-hand for these two normal distributions.
+  \item What is Sophia's Z-score on the Verbal Reasoning section? On the
+    Quantitative Reasoning section? Draw a standard normal distribution
+    curve and mark these two Z-scores.
+  \item What do these Z-scores tell you?
+  \item Relative to others, which section did she do better on?
+  \item Find her percentile scores for the two exams.
+  \item What percent of the test takers did better than her on the
+    Verbal Reasoning section? On the Quantitative Reasoning section?
+  \item Explain why simply comparing raw scores from the two sections could
+    lead to an incorrect conclusion as to which section a student did better on.
+  \item If the distributions of the scores on these exams are not nearly
+    normal, would your answers to parts (b) - (f) change? Explain your reasoning.
+  \end{parts}
+
 }{}
 
 % 4
 
-\eoce{\qt{Triathlon times, Part I\label{triathlon_times_intro}} In triathlons, it
-is common for racers to be placed into age and gender groups. Friends Leo and
-Mary both completed the Hermosa Beach Triathlon, where Leo competed in the
-\textit{Men, Ages 30 - 34} group while Mary competed in the \textit{Women,
-Ages 25 - 29} group. Leo completed the race in 1:22:28 (4948 seconds), while
-Mary completed the race in 1:31:53 (5513 seconds). Obviously Leo finished
-faster, but they are curious about how they did within their respective
-groups. Can you help them? Here is some information on the performance of
-their groups:
-\begin{itemize}
-\setlength{\itemsep}{0mm}
-\item The finishing times of the \textit{Men, Ages 30 - 34} group has a mean
-of 4313 seconds with a standard deviation of 583 seconds.
-\item The finishing times of the \textit{Women, Ages 25 - 29} group has a
-mean of 5261 seconds with a standard deviation of 807 seconds.
-\item The distributions of finishing times for both groups are approximately
-Normal.
-\end{itemize}
-Remember: a better performance corresponds to a faster finish.
-\begin{parts}
-\item Write down the short-hand for these two normal distributions.
-\item What are the Z-scores for Leo's and Mary's finishing times? What do
-these Z-scores tell you?
-\item Did Leo or Mary rank better in their respective groups? Explain your
-reasoning.
-\item What percent of the triathletes did Leo finish faster than in his group?
-\item What percent of the triathletes did Mary finish faster than in her
-group?
-\item If the distributions of finishing times are not nearly normal, would
-your answers to parts (b)~-~(e) change? Explain your reasoning.
-\end{parts}
+<<ex3.6_4, echo=FALSE>>=
+
+pmm_3.6_4 <- round(runif(1, 5000, 5500))
+psdm_3.6_4 <- round(runif(1, 700, 900))
+
+pml_3.6_4 <- round(runif(1, 4000, 4500))
+psdl_3.6_4 <- round(runif(1, 500, 600))
+
+xm_3.6_4 <- rnorm(1, pmm_3.6_4, psdm_3.6_4)
+xl_3.6_4 <- rnorm(1, pml_3.6_4, psdl_3.6_4)
+
+while(xl_3.6_4 >= xm_3.6_4) {
+    xm_3.6_4 <- rnorm(1, pmm_3.6_4, psdm_3.6_4)
+    xl_3.6_4 <- rnorm(1, pml_3.6_4, psdl_3.6_4)
+}
+
+@
+
+
+\eoce{
+
+  \qt{Triathlon times, Part I\label{triathlon_times_intro}} In
+  triathlons, it is common for racers to be placed into age and gender
+  groups.  Friends Leo and Mary both completed the Hermosa Beach
+  Triathlon, where Leo competed in the \textit{Men, Ages 30 - 34}
+  group while Mary competed in the \textit{Women, Ages 25 - 29} group.
+  Leo completed the race in \Sexpr{clock_time(xl_3.6_4)}
+  ($\Sexpr{round(xl_3.6_4)}$ seconds), while Mary completed the race in
+  \Sexpr{clock_time(xm_3.6_4)} ($\Sexpr{round(xm_3.6_4)}$
+  seconds). Obviously Leo finished faster, but they are curious about
+  how they did within their respective groups. Can you help them? Here
+  is some information on the performance of their groups:
+
+  \begin{itemize}
+    \setlength{\itemsep}{0mm}
+  \item The finishing times of the \textit{Men, Ages 30 - 34} group
+    has a mean of $\Sexpr{pml_3.6_4}$ seconds with a standard
+    deviation of $\Sexpr{psdl_3.6_4}$ seconds.
+  \item The finishing times of the \textit{Women, Ages 25 - 29} group
+    has a mean of $\Sexpr{pmm_3.6_4}$ seconds with a standard
+    deviation of $\Sexpr{psdm_3.6_4}$ seconds.
+  \item The distributions of finishing times for both groups are approximately
+    Normal.
+  \end{itemize}
+  Remember: a better performance corresponds to a faster finish.
+  \begin{parts}
+  \item Write down the short-hand for these two normal distributions.
+  \item What are the Z-scores for Leo's and Mary's finishing times? What do
+    these Z-scores tell you?
+  \item Did Leo or Mary rank better in their respective groups? Explain your
+    reasoning.
+  \item What percent of the triathletes did Leo finish faster than in his group?
+  \item What percent of the triathletes did Mary finish faster than in her
+    group?
+  \item If the distributions of finishing times are not nearly normal, would
+    your answers to parts (b)~-~(e) change? Explain your reasoning.
+  \end{parts}
+
 }{}
 
 % 5
 
-\eoce{\qt{GRE scores, Part II\label{GRE_cutoffs}} In Exercise~\ref{GRE_intro} we
-saw two distributions for GRE scores: $N(\mu=151, \sigma=7)$ for the verbal
-part of the exam and $N(\mu=153, \sigma=7.67)$ for the quantitative part. Use
-this information to compute each of the following:
-\begin{parts}
-\item The score of a student who scored in the $80^{th}$ percentile on the
-Quantitative Reasoning section.
-\item The score of a student who scored worse than 70\% of the test takers in
-the Verbal Reasoning section.
-\end{parts}
+<<ex3.6_5, echo=FALSE>>=
+
+q80_3.6_5 <- round(qnorm(.8, pm_3.6_3[2], psd_3.6_3[2]), 2)
+q30_3.6_5 <- round(qnorm(.7, pm_3.6_3[1], psd_3.6_3[1]), 2)
+
+@
+
+\eoce{
+
+  \qt{GRE scores, Part II\label{GRE_cutoffs}} In
+  Exercise~\ref{GRE_intro} we saw two distributions for GRE scores:
+  $N(\mu=\Sexpr{pm_3.6_3[1]}, \sigma=\Sexpr{psd_3.6_3[1]})$ for the verbal part of the exam and
+  $N(\mu=\Sexpr{psd_3.6_3[2]}, \sigma=\Sexpr{psd_3.6_3[2]})$ for the quantitative part. Use this
+  information to compute each of the following:
+
+  \begin{parts}
+  \item The score of a student who scored in the $80^{th}$ percentile on the
+    Quantitative Reasoning section.
+  \item The score of a student who scored worse than 70\% of the test takers in
+    the Verbal Reasoning section.
+  \end{parts}
+
 }{}
 
 % 6
 
-\eoce{\qt{Triathlon times, Part II\label{triathlon_times_cutoffs}} In
-Exercise~\ref{triathlon_times_intro} we saw two distributions for triathlon
-times: $N(\mu=4313, \sigma=583)$ for \emph{Men, Ages 30 - 34} and
-$N(\mu=5261, \sigma=807)$ for the \emph{Women, Ages 25 - 29} group. Times are
-listed in seconds. Use this information to compute each of the following:
-\begin{parts}
-\item The cutoff time for the fastest 5\% of athletes in the men's group, i.e.
- those who took the shortest 5\% of time to finish.
-\item The cutoff time for the slowest 10\% of athletes in the women's group.
-\end{parts}
+\eoce{
+
+  \qt{Triathlon times, Part II\label{triathlon_times_cutoffs}} In
+  Exercise~\ref{triathlon_times_intro} we saw two distributions for
+  triathlon times: $N(\mu=\Sexpr{pml_3.6_4}, \sigma=\Sexpr{psdl_3.6_4})$ for \emph{Men, Ages 30 -34} and $N(\mu=\Sexpr{pmm_3.6_4}, \sigma=\Sexpr{psdm_3.6_4})$ for the \emph{Women, Ages 25 -29} group. Times are listed in seconds. Use this information to compute each of the following:
+
+
+  \begin{parts}
+  \item The cutoff time for the fastest 5\% of athletes in the men's group, i.e.
+    those who took the shortest 5\% of time to finish.
+  \item The cutoff time for the slowest 10\% of athletes in the women's group.
+  \end{parts}
+
 }{}
 
 % 7
 
-\eoce{\qt{LA weather, Part I\label{la_weather_intro}} The average daily high
-temperature in June in LA is 77\degree F with a standard deviation of
-5\degree F. Suppose that the temperatures in June closely follow a normal
-distribution.
-\begin{parts}
-\item What is the probability of observing an 83\degree F temperature or
-higher in LA during a randomly chosen day in June?
-%\item How cold are the coldest 10\% of the days during June in LA?
-\item How cool are the coldest 10\% of the days (days with lowest average high temperature) during June in LA?
-\end{parts}
+<<ex3.6_7, echo=FALSE>>=
+
+m_3.6_7 <- 77
+sd_3.6_7 <- 5
+
+pm_3.6_7 <- round(runif(1, 74, 80))
+psd_3.6_7 <- round(runif(1, 2, 6))
+
+z_3.6_7a <- round((83-pm_3.6_7)/psd_3.6_7, 2)
+p83_3.6_7 <- round(1-pnorm(z_3.6_7a), 2)
+
+z_3.6_7b <- round(qnorm(.1), 2)
+q10_3.6_7 <- round(z_3.6_7b*psd_3.6_7 + pm_3.6_7, 2)
+
+@
+
+\eoce{
+
+  \qt{LA weather, Part I\label{la_weather_intro}} The average daily
+  high temperature in June in LA is $\Sexpr{pm_3.6_7}$\degree F with a standard
+  deviation of $\Sexpr{psd_3.6_7}$\degree F. Suppose that the temperatures in June
+  closely follow a normal distribution.
+
+  \begin{parts}
+  \item What is the probability of observing an 83\degree F temperature or
+    higher in LA during a randomly chosen day in June?
+    % \item How cold are the coldest 10\% of the days during June in LA?
+  \item How cool are the coldest 10\% of the days (days with lowest average high temperature) during June in LA?
+  \end{parts}
+
 }{}
 
 % 8
 
-\eoce{\qt{CAPM\label{CAPM}} The Capital Asset Pricing Model (CAPM) is a financial
-model that assumes returns on a portfolio are normally distributed. Suppose a
-portfolio has an average annual return of 14.7\% (i.e. an average gain of
-14.7\%) with a standard deviation of 33\%. A return of 0\% means the value of
-the portfolio doesn't change, a negative return means that the portfolio
-loses money, and a positive return means that the portfolio gains money.
-\begin{parts}
-\item What percent of years does this portfolio lose money, i.e. have a
-return less than 0\%?
-\item What is the cutoff for the highest 15\% of annual returns with this
-portfolio?
-\end{parts}
+<<ex_3.6_8, echo=FALSE>>=
+
+m_3.6_8 <- 14.7
+sd_3.6_8 <- 33
+
+pm_3.6_8 <- round(runif(1, 13, 17), 2)
+psd_3.6_8 <- round(runif(1, 30, 35), 2)
+
+p0_3.6_8 <- round(pnorm(0, pm_3.6_8, psd_3.6_8), 2)
+q85_3.6_8 <- round(qnorm(.85, pm_3.6_8, psd_3.6_8), 2)
+
+@
+
+\eoce{
+
+  \qt{CAPM\label{CAPM}} The Capital Asset Pricing Model (CAPM) is a
+  financial model that assumes returns on a portfolio are normally
+  distributed. Suppose a portfolio has an average annual return of
+  $\Sexpr{pm_3.6_8}$\% (i.e. an average gain of $\Sexpr{pm_3.6_8}$\%)
+  with a standard deviation of $\Sexpr{psd_3.6_8}$\%. A return of 0\%
+  means the value of the portfolio doesn't change, a negative return
+  means that the portfolio loses money, and a positive return means
+  that the portfolio gains money.
+
+  \begin{parts}
+  \item What percent of years does this portfolio lose money, i.e. have a
+    return less than 0\%?
+  \item What is the cutoff for the highest 15\% of annual returns with this
+    portfolio?
+  \end{parts}
+
 }{}
 
 % 9
 
-\eoce{\qt{LA weather, Part II\label{la_weather_unit_change}}
-Exercise~\ref{la_weather_intro} states that average daily high temperature in
-June in LA is 77\degree F with a standard deviation of 5\degree F, and it can
-be assumed that they to follow a normal distribution. We use the following
-equation to convert \degree F (Fahrenheit) to \degree C (Celsius):
-\[ C = (F - 32) \times \frac{5}{9}. \]
-\begin{parts}
-\item Write the probability model for the distribution of temperature in
-\degree C in June in LA.
-\item What is the probability of observing a 28\degree C (which roughly
-corresponds to 83\degree F) temperature or higher in June in LA? Calculate
-using the \degree C model from part (a).
-\item Did you get the same answer or different answers in part (b) of this
-question and part (a) of Exercise~\ref{la_weather_intro}? Are you surprised? Explain.
-\item Estimate the IQR of the temperatures (in \degree C) in June in LA.
-\end{parts}
+<<ex_3.6_9, echo=FALSE>>=
+
+pm_3.6_9 <- round((pm_3.6_7-32)*5/9, 2)
+psd_3.6_9 <- round(psd_3.6_7*5/9, 2)
+
+z_3.6_9 <- round((28.34-pm_3.6_9)/psd_3.6_9, 2)
+p_3.6_9 <- round(1-pnorm(z_3.6_9), 2)
+
+q25_3.6_9 <- round(qnorm(.25, pm_3.6_9, psd_3.6_9), 2)
+q75_3.6_9 <- round(qnorm(.75, pm_3.6_9, psd_3.6_9), 2)
+
+iqr_3.6_9 <- q75_3.6_9 - q25_3.6_9
+
+@
+
+\eoce{
+
+  \qt{LA weather, Part II\label{la_weather_unit_change}}
+  Exercise~\ref{la_weather_intro} states that average daily high
+  temperature in June in LA is $\Sexpr{pm_3.6_7}$\degree F with a standard deviation
+  of $\Sexpr{psd_3.6_7}$\degree F, and it can be assumed that they to follow a normal
+  distribution. We use the following equation to convert \degree F
+  (Fahrenheit) to \degree C (Celsius):
+
+  \[ C = (F - 32) \times \frac{5}{9}. \]
+
+  \begin{parts}
+  \item Write the probability model for the distribution of temperature in
+    \degree C in June in LA.
+  \item What is the probability of observing a $28.34$\degree C (which roughly
+    corresponds to 83\degree F) temperature or higher in June in LA? Calculate
+    using the \degree C model from part (a).
+  \item Did you get the same answer or different answers in part (b) of this
+    question and part (a) of Exercise~\ref{la_weather_intro}? Are you surprised? Explain.
+  \item Estimate the IQR of the temperatures (in \degree C) in June in LA.
+  \end{parts}
+
 }{}
 
 % 10
-
+% TODO here
 \eoce{\qt{Heights of 10 year olds\label{heights_10_yrs}} Heights of 10 year olds,
 regardless of gender, closely follow a normal distribution with mean 55
 inches and standard deviation 6 inches.
