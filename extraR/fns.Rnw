@@ -76,4 +76,31 @@ clock_time <- function(t) {
     sprintf("%d:%d:%d", floor(hours), floor(minutes), ceiling(seconds))
 }
 
+hist_density <- function(x, xlab="") {
+    df <- data.frame(x=x)
+    s <- sd(x)
+    ggplot2::ggplot(data=df, ggplot2::aes(x)) +
+        ggplot2::geom_histogram(bins=7, ggplot2::aes(y=..density..)) +
+            ggplot2::stat_function(fun=dnorm, geom="line",
+                                   args=list(mean=mean(x), sd=sd(x)),
+                                   xlim=c(c(min(x)-s, max(x)+s))) +
+            ggplot2::theme(axis.text.y=ggplot2::element_blank(),
+                           axis.ticks.y=ggplot2::element_blank()) +
+            ggplot2::labs(x=xlab, y="")
+}
+
+quant_plot <- function(x, xlab="Theoretical Quantiles", ylab="Sample Quantiles") {
+    df <- data.frame(x=x)
+    xq <- quantile(x, c(0.25, 0.75))
+    zq <- qnorm(c(0.25, 0.75))
+    slope <- diff(xq) / diff(zq)
+    int   <- xq[1] - slope * zq[1]
+    ggplot2::ggplot(df, ggplot2::aes(sample=x)) +
+        ggplot2::stat_qq(distribution=qnorm) +
+            ggplot2::geom_abline(intercept=int, slope=slope) +
+            ggplot2::labs(x=xlab, y=ylab)
+}
+
+
+
 @

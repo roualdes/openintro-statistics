@@ -7,14 +7,14 @@
 
 \eocesol{
 
-  (a)~$\Sexpr{z_3.6_1a_ans}\%$. \\
-  (b)~$\Sexpr{z_3.6_1b_ans}\%$.\\
-  (c)~$\Sexpr{z_3.6_1c_ans}\%$. \\
-  (d)~$\Sexpr{z_3.6_1d_ans}\%$. \\
+  (a)~$\Sexpr{z_3.6.1a_ans}\%$. \\
+  (b)~$\Sexpr{z_3.6.1b_ans}\%$.\\
+  (c)~$\Sexpr{z_3.6.1c_ans}\%$. \\
+  (d)~$\Sexpr{z_3.6.1d_ans}\%$. \\
 
 
 <<ex3_6_1_plots, echo=FALSE, fig.width=3, fig.height=3, fig.align="center", fig.show="hold">>=
-gridExtra::grid.arrange(p_3.6_1a, p_3.6_1b, p_3.6_1c, p_3.6_1d, ncol=2)
+gridExtra::grid.arrange(p_3.6.1a, p_3.6.1b, p_3.6.1c, p_3.6.1d, ncol=2)
 @
   % \includegraphics[width=0.23\textwidth]{ch_distributions/figures/eoce/area_under_curve_1/zltNeg}
   % \includegraphics[width=0.23\textwidth]{ch_distributions/figures/eoce/area_under_curve_1/zgtPos}
@@ -29,21 +29,21 @@ gridExtra::grid.arrange(p_3.6_1a, p_3.6_1b, p_3.6_1c, p_3.6_1d, ncol=2)
 
 \eocesol{
 
-  (a)~Verbal: $N(\mu = \Sexpr{pm_3.6_3[1]}, \sigma = \Sexpr{psd_3.6_3[1]})$, Quant: $N(\mu = \Sexpr{pm_3.6_3[2]}, \sigma = \Sexpr{psd_3.6_3[2]})$.
-  (b)~$Z_{VR}=\Sexpr{z_3.6_3[1]}$, ~$Z_{QR}=\Sexpr{z_3.6_3[2]}$. \\
+  (a)~Verbal: $N(\mu = \Sexpr{pm_3.6.3[1]}, \sigma = \Sexpr{psd_3.6.3[1]})$, Quant: $N(\mu = \Sexpr{pm_3.6.3[2]}, \sigma = \Sexpr{psd_3.6.3[2]})$.
+  (b)~$Z_{VR}=\Sexpr{z_3.6.3[1]}$, ~$Z_{QR}=\Sexpr{z_3.6.3[2]}$. \\
 
 <<echo=FALSE, fig.width=3, fig.height=2, fig.align="center">>=
-annotate_stdNormal(z_3.6_3, dnorm(z_3.6_3))
+annotate_stdNormal(z_3.6.3, dnorm(z_3.6.3))
 @
 
   % \includegraphics[width=0.3\textwidth]{chapters/distributions/figures/eoce/GRE_intro/GRE_intro.pdf} \\
-  (c)~She scored $\Sexpr{abs(z_3.6_3[1])}$ standard deviations \Sexpr{ifelse(z_3.6_3[1] > 0, "above", "below")} the mean on the Verbal
-  Reasoning section and $\Sexpr{abs(z_3.6_3[2])}$ standard deviations \Sexpr{ifelse(z_3.6_3[2] > 0, "above", "below")} the mean on the
+  (c)~She scored $\Sexpr{abs(z_3.6.3[1])}$ standard deviations \Sexpr{ifelse(z_3.6.3[1] > 0, "above", "below")} the mean on the Verbal
+  Reasoning section and $\Sexpr{abs(z_3.6.3[2])}$ standard deviations \Sexpr{ifelse(z_3.6.3[2] > 0, "above", "below")} the mean on the
   Quantitative Reasoning section.
-  (d)~She did better on the \Sexpr{which_better_3.6_3} Reasoning section since her Z-score on that
+  (d)~She did better on the \Sexpr{which_better_3.6.3} Reasoning section since her Z-score on that
   section was higher.
-  (e)~$Perc_{VR} \approx \Sexpr{perc_vr_3.6_3}\%$, $Perc_{QR} \approx \Sexpr{perc_qr_3.6_3}\%$.
-  (f)~$100\% - \Sexpr{perc_vr_3.6_3}\% = \Sexpr{100 - perc_vr_3.6_3}\%$ did better than her on VR, and $100\% - \Sexpr{perc_qr_3.6_3}\% = \Sexpr{100 - perc_qr_3.6_3}\%$
+  (e)~$Perc_{VR} \approx \Sexpr{perc_vr_3.6.3}\%$, $Perc_{QR} \approx \Sexpr{perc_qr_3.6.3}\%$.
+  (f)~$100\% - \Sexpr{perc_vr_3.6.3}\% = \Sexpr{100 - perc_vr_3.6.3}\%$ did better than her on VR, and $100\% - \Sexpr{perc_qr_3.6.3}\% = \Sexpr{100 - perc_qr_3.6.3}\%$
   did better than her on QR.
   (g)~We cannot compare the raw scores since they are on different scales.
   Comparing her percentile scores is more appropriate when comparing her
@@ -59,8 +59,8 @@ annotate_stdNormal(z_3.6_3, dnorm(z_3.6_3))
 
 \eocesol{
 
-  (a)~$Z = 0.84$, which corresponds to approximately $\Sexpr{q80_3.6_5}$ on QR.
-  (b)~$Z = -0.52$, which corresponds to approximately $\Sexpr{q30_3.6_5}$ on VR.
+  (a)~$Z = 0.84$, which corresponds to approximately $\Sexpr{q80_3.6.5}$ on QR.
+  (b)~$Z = -0.52$, which corresponds to approximately $\Sexpr{q30_3.6.5}$ on VR.
 
 }
 
@@ -68,8 +68,8 @@ annotate_stdNormal(z_3.6_3, dnorm(z_3.6_3))
 
 \eocesol{
 
-  (a)~$Z=\Sexpr{z_3.6_7a} \to \Sexpr{p83_3.6_7}1$. \\
-  (b)~$Z= \Sexpr{z_3.6_7b}8 \to \Sexpr{q10_3.6_7}\degree$F or colder.
+  (a)~$Z=\Sexpr{z_3.6.7a} \to \Sexpr{p83_3.6.7}1$. \\
+  (b)~$Z= \Sexpr{z_3.6.7b}8 \to \Sexpr{q10_3.6.7}\degree$F or colder.
 
 }
 
@@ -77,56 +77,72 @@ annotate_stdNormal(z_3.6_3, dnorm(z_3.6_3))
 
 \eocesol{
 
-  (a)~$N(\Sexpr{pm_3.6_9}, \Sexpr{psd_3.6_9})$.
-  (b)~$Z = \Sexpr{z_3.6_9} \to \Sexpr{p_3.6_9}$.
+  (a)~$N(\Sexpr{pm_3.6.9}, \Sexpr{psd_3.6.9})$.
+  (b)~$Z = \Sexpr{z_3.6.9} \to \Sexpr{p_3.6.9}$.
   (c)~The answers are very close, if not exact, because only the units
   were changed. (The only reason why they might differ at all is
   because rounding during the change of units.)
   (d)~Since $IQR = Q3 - Q1$, we first need to find $Q3$ and $Q1$ and
   take the difference between the two. Remember that $Q3$ is the
   $75^{th}$ and $Q1$ is the $25^{th}$ percentile of a distribution. Q1
-  = $\Sexpr{q25_3.6_9}$, Q3 = $\Sexpr{q75_3.6_9}$, IQR =
-  $\Sexpr{iqr_3.6_9}$. $\Sexpr{q75_3.6_9} - \Sexpr{q25_3.6_9} = \Sexpr{iqr_3.6_9}$.
+  = $\Sexpr{q25_3.6.9}$, Q3 = $\Sexpr{q75_3.6.9}$, IQR =
+  $\Sexpr{iqr_3.6.9}$. $\Sexpr{q75_3.6.9} - \Sexpr{q25_3.6.9} = \Sexpr{iqr_3.6.9}$.
 
-  }
+}
 
 
 % 11
 
-\eocesol{(a)~$Z=0.67$.
-(b)~$\mu=\$1650$, $x=\$1800$.
-(c)~$0.67 = \frac{1800-1650}{\sigma} \to \sigma=\$223.88$.}
+\eocesol{
+
+  (a)~$Z=0.67$.
+  (b)~$\mu=\$\Sexpr{pm_3.6.11}$, $x=\$\Sexpr{q75_3.6.11}$.
+  (c)~$0.67 = \frac{\Sexpr{q75_3.6.11}-\Sexpr{pm_3.6.11}}{\sigma} \to \sigma=\$\Sexpr{sd_3.6.11}$.
+
+}
 
 % 13
 
-\eocesol{$Z = 1.56 \to 0.0594$, i.e. 6\%.}
+\eocesol{
+
+  $Z = \Sexpr{z_3.6.13} \to \Sexpr{pz_3.6.13}$, i.e. $\Sexpr{round(pz_3.6.13*100,2)}$\%.
+
+}
 
 % 15
 
-\eocesol{(a)~$Z=0.73 \to 0.2327$.
-(b)~If you are bidding on only one auction and set a low maximum bid price,
-someone will probably outbid you. If you set a high maximum bid price, you
-may win the auction but pay more than is necessary. If bidding on more than
-one auction, and you set your maximum bid price very low, you probably won't
-win any of the auctions. However, if the maximum bid price is even modestly
-high, you are likely to win multiple auctions.
-(c)~An answer roughly equal to the 10th percentile would be reasonable.
-Regrettably, no percentile cutoff point guarantees beyond any possible event
-that you win at least one auction. However, you may pick a higher percentile
-if you want to be more sure of winning an auction.
-(d)~Answers will vary a little but should correspond to the answer in
-part~(c). We use the 10$^{th}$ percentile: $Z = -1.28 \to \$69.80$.}
+\eocesol{
+
+  (a)~$Z=\Sexpr{z_3.6.15} \to \Sexpr{p_3.6.15}$.
+  (b)~If you are bidding on only one auction and set a low maximum bid price,
+  someone will probably outbid you. If you set a high maximum bid price, you
+  may win the auction but pay more than is necessary. If bidding on more than
+  one auction, and you set your maximum bid price very low, you probably won't
+  win any of the auctions. However, if the maximum bid price is even modestly
+  high, you are likely to win multiple auctions.
+  (c)~An answer roughly equal to the 10th percentile would be reasonable.
+  Regrettably, no percentile cutoff point guarantees beyond any possible event
+  that you win at least one auction. However, you may pick a higher percentile
+  if you want to be more sure of winning an auction.
+  (d)~Answers will vary a little but should correspond to the answer in
+  part~(c). We use the 10$^{th}$ percentile: $Z = -1.28 \to \$\Sexpr{q10_3.6.15}$.
+
+}
 
 % 17
 
-\eocesol{(a)~70\% of the data are within 1 standard deviation of the mean, 95\% are
-within 2 and 100\% are within 3 standard deviations of the mean. Therefore,
-we can say that the data approximately follow the 68-95-99.7\% Rule.
-(b)~The distribution is unimodal and symmetric. The superimposed normal
-curve seems to approximate the distribution pretty well. The points on the
-normal probability plot also seem to follow a straight line. There is one
-possible outlier on the lower end that is apparent in both graphs, but it is
-not too extreme. We can say that the distribution is nearly normal.}
+\eocesol{
+
+  (a)~70\% of the data are within 1 standard deviation of the mean, 95\% are
+  within 2 and 100\% are within 3 standard deviations of the mean. Therefore,
+  we can say that the data approximately follow the 68-95-99.7\% Rule.
+  (b)~The distribution is unimodal and symmetric. The superimposed normal
+  curve seems to approximate the distribution pretty well. The points on the
+  normal probability plot also seem to follow a straight line. There is one
+  possible outlier on the lower end that is apparent in both graphs, but it is
+  not too extreme. We can say that the distribution is nearly normal.
+
+}
 
 % 19
 

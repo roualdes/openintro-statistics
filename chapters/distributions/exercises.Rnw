@@ -5,24 +5,24 @@
 % Solutions are next to exercises, not in solutions.Rnw
 
 % 1
-<<ex3_6_1, echo=FALSE>>=
+<<ex3.6.1, echo=FALSE>>=
 
-z_3.6_1a <- round(runif(1,-3,0), 2)
-z_3.6_1a_ans <- round(pnorm(z_3.6_1a)*100, 2)
+z_3.6.1a <- round(runif(1,-3,0), 2)
+z_3.6.1a_ans <- round(pnorm(z_3.6.1a)*100, 2)
 
-z_3.6_1b <- round(runif(1,0,3), 2)
-z_3.6_1b_ans <- round((1-pnorm(z_3.6_1b))*100, 2)
+z_3.6.1b <- round(runif(1,0,3), 2)
+z_3.6.1b_ans <- round((1-pnorm(z_3.6.1b))*100, 2)
 
-z_3.6_1c <- sort(c(round(runif(1,-3,0), 2), round(runif(1,0,3), 2)))
-z_3.6_1c_ans <- round(((pnorm(z_3.6_1c[2] - pnorm(z_3.6_1c[1]))))*100, 2)
+z_3.6.1c <- sort(c(round(runif(1,-3,0), 2), round(runif(1,0,3), 2)))
+z_3.6.1c_ans <- round(((pnorm(z_3.6.1c[2] - pnorm(z_3.6.1c[1]))))*100, 2)
 
-z_3.6_1d <- round(runif(1,0,3), 2)
-z_3.6_1d_ans <- round((1-pnorm(abs(z_3.6_1d)))*200, 2)
+z_3.6.1d <- round(runif(1,0,3), 2)
+z_3.6.1d_ans <- round((1-pnorm(abs(z_3.6.1d)))*200, 2)
 
-p_3.6_1a <- shade_stdNormal(x<z_3.6_1a)
-p_3.6_1b <- shade_stdNormal(x>z_3.6_1b)
-p_3.6_1c <- shade_stdNormal(x>z_3.6_1c[1] & x<z_3.6_1c[2])
-p_3.6_1d <- shade_stdNormal(x>abs(z_3.6_1d), x< -1*abs(z_3.6_1d))
+p_3.6.1a <- shade_stdNormal(x<z_3.6.1a)
+p_3.6.1b <- shade_stdNormal(x>z_3.6.1b)
+p_3.6.1c <- shade_stdNormal(x>z_3.6.1c[1] & x<z_3.6.1c[2])
+p_3.6.1d <- shade_stdNormal(x>abs(z_3.6.1d), x< -1*abs(z_3.6.1d))
 
 @
 
@@ -34,29 +34,29 @@ p_3.6_1d <- shade_stdNormal(x>abs(z_3.6_1d), x< -1*abs(z_3.6_1d))
 
   \begin{multicols}{4}
     \begin{parts}
-    \item $Z < \Sexpr{z_3.6_1a}$
-    \item $Z > \Sexpr{z_3.6_1b}$
-    \item $\Sexpr{z_3.6_1c[1]} < Z < \Sexpr{z_3.6_1c[2]}$
-    \item $|Z| > \Sexpr{z_3.6_1d}$
+    \item $Z < \Sexpr{z_3.6.1a}$
+    \item $Z > \Sexpr{z_3.6.1b}$
+    \item $\Sexpr{z_3.6.1c[1]} < Z < \Sexpr{z_3.6.1c[2]}$
+    \item $|Z| > \Sexpr{z_3.6.1d}$
     \end{parts}
   \end{multicols}
 
 }{}
 
 % 2
-<<ex3_6_2, echo=FALSE>>=
+<<ex3.6.2, echo=FALSE>>=
 
-z_3.6_2a <- round(runif(1, -3, 0), 2)
-z_3.6_2a_ans <- round(1-pnorm(z_3.6_2a)*100, 2)
+z_3.6.2a <- round(runif(1, -3, 0), 2)
+z_3.6.2a_ans <- round(1-pnorm(z_3.6.2a)*100, 2)
 
-z_3.6_2b <- round(runif(1, 0, 3), 2)
-z_3.6_2b_ans <- round(pnorm(z_3.6_2a)*100, 2)
+z_3.6.2b <- round(runif(1, 0, 3), 2)
+z_3.6.2b_ans <- round(pnorm(z_3.6.2a)*100, 2)
 
-z_3.6_2c <- round(runif(1, 4, 9), 2)
-z_3.6_2c_ans <- round((1-pnorm(z_3.6_2c)), 2)
+z_3.6.2c <- round(runif(1, 4, 9), 2)
+z_3.6.2c_ans <- round((1-pnorm(z_3.6.2c)), 2)
 
-z_3.6_2d <- round(runif(1, 0, 2), 2)
-z_3.6_2d_ans <- round((pnorm(z_3.6_2d) - pnorm(-1*z_3.6_2d))*100, 2)
+z_3.6.2d <- round(runif(1, 0, 2), 2)
+z_3.6.2d_ans <- round((pnorm(z_3.6.2d) - pnorm(-1*z_3.6.2d))*100, 2)
 
 @
 
@@ -68,44 +68,44 @@ z_3.6_2d_ans <- round((pnorm(z_3.6_2d) - pnorm(-1*z_3.6_2d))*100, 2)
 
   \begin{multicols}{4}
     \begin{parts}
-    \item $Z > \Sexpr{z_3.6_2a}$
-    \item $Z < \Sexpr{z_3.6_2b}$
-    \item $Z > \Sexpr{z_3.6_2c}$
-    \item $|Z| < \Sexpr{z_3.6_2d}$
+    \item $Z > \Sexpr{z_3.6.2a}$
+    \item $Z < \Sexpr{z_3.6.2b}$
+    \item $Z > \Sexpr{z_3.6.2c}$
+    \item $|Z| < \Sexpr{z_3.6.2d}$
     \end{parts}
   \end{multicols}
 
 }{}
 
 % 3
-<<ex3.6_3, echo=FALSE>>=
+<<ex3.6.3, echo=FALSE>>=
 
 ## new numbers for sophia, from original population parameters
-m_3.6_3 <- c(Verbal=151, Quantitative=153)
-sd_3.6_3 <- c(7, 7.67)
-x_3.6_3 <- round(c(rnorm(1, m_3.6_3[1], sd_3.6_3[1]), rnorm(1, m_3.6_3[2], sd_3.6_3[2])), 2)
-z_3.6_3 <- round((x_3.6_3 - m_3.6_3)/sd_3.6_3, 2)
-which_better_3.6_3 <- names(sort(z_3.6_3)[length(z_3.6_3)])
+m_3.6.3 <- c(Verbal=151, Quantitative=153)
+sd_3.6.3 <- c(7, 7.67)
+x_3.6.3 <- round(c(rnorm(1, m_3.6.3[1], sd_3.6.3[1]), rnorm(1, m_3.6.3[2], sd_3.6.3[2])), 2)
+z_3.6.3 <- round((x_3.6.3 - m_3.6.3)/sd_3.6.3, 2)
+which_better_3.6.3 <- names(sort(z_3.6.3)[length(z_3.6.3)])
 
 ## new population parameters
-pm_3.6_3 <- round(c(Verbal=runif(1, 148, 154), Quantitative=runif(1, 150, 156)))
-psd_3.6_3 <- round(c(Verbal=runif(1, 6, 8), Quantitative=runif(1, 6.67, 8.67)))
+pm_3.6.3 <- round(c(Verbal=runif(1, 148, 154), Quantitative=runif(1, 150, 156)))
+psd_3.6.3 <- round(c(Verbal=runif(1, 6, 8), Quantitative=runif(1, 6.67, 8.67)))
 
-perc_vr_3.6_3 <- round(pnorm(z_3.6_3["Verbal"])*100, 2)
-perc_qr_3.6_3 <- round(pnorm(z_3.6_3["Quantitative"])*100, 2)
+perc_vr_3.6.3 <- round(pnorm(z_3.6.3["Verbal"])*100, 2)
+perc_qr_3.6.3 <- round(pnorm(z_3.6.3["Quantitative"])*100, 2)
 
 @
 
 \eoce{
 
   \qt{GRE scores, Part I\label{GRE_intro}} Sophia who took the
-  Graduate Record Examination (GRE) scored $\Sexpr{x_3.6_3[1]}$ on the
-  Verbal Reasoning section and $\Sexpr{x_3.6_3[2]}$ on the
+  Graduate Record Examination (GRE) scored $\Sexpr{x_3.6.3[1]}$ on the
+  Verbal Reasoning section and $\Sexpr{x_3.6.3[2]}$ on the
   Quantitpative Reasoning section. The mean score for Verbal Reasoning
-  section for all test takers was $\Sexpr{pm_3.6_3[1]}$ with a
-  standard deviation of $\Sexpr{psd_3.6_3[1]}$, and the mean score
-  for the Quantitative Reasoning was $\Sexpr{pm_3.6_3[2]}$ with a
-  standard deviation of $\Sexpr{psd_3.6_3[2]}$. Suppose that both
+  section for all test takers was $\Sexpr{pm_3.6.3[1]}$ with a
+  standard deviation of $\Sexpr{psd_3.6.3[1]}$, and the mean score
+  for the Quantitative Reasoning was $\Sexpr{pm_3.6.3[2]}$ with a
+  standard deviation of $\Sexpr{psd_3.6.3[2]}$. Suppose that both
   distributions are nearly normal.
 
   \begin{parts}
@@ -128,20 +128,20 @@ perc_qr_3.6_3 <- round(pnorm(z_3.6_3["Quantitative"])*100, 2)
 
 % 4
 
-<<ex3.6_4, echo=FALSE>>=
+<<ex3.6.4, echo=FALSE>>=
 
-pmm_3.6_4 <- round(runif(1, 5000, 5500))
-psdm_3.6_4 <- round(runif(1, 700, 900))
+pmm_3.6.4 <- round(runif(1, 5000, 5500))
+psdm_3.6.4 <- round(runif(1, 700, 900))
 
-pml_3.6_4 <- round(runif(1, 4000, 4500))
-psdl_3.6_4 <- round(runif(1, 500, 600))
+pml_3.6.4 <- round(runif(1, 4000, 4500))
+psdl_3.6.4 <- round(runif(1, 500, 600))
 
-xm_3.6_4 <- rnorm(1, pmm_3.6_4, psdm_3.6_4)
-xl_3.6_4 <- rnorm(1, pml_3.6_4, psdl_3.6_4)
+xm_3.6.4 <- rnorm(1, pmm_3.6.4, psdm_3.6.4)
+xl_3.6.4 <- rnorm(1, pml_3.6.4, psdl_3.6.4)
 
-while(xl_3.6_4 >= xm_3.6_4) {
-    xm_3.6_4 <- rnorm(1, pmm_3.6_4, psdm_3.6_4)
-    xl_3.6_4 <- rnorm(1, pml_3.6_4, psdl_3.6_4)
+while(xl_3.6.4 >= xm_3.6.4) {
+    xm_3.6.4 <- rnorm(1, pmm_3.6.4, psdm_3.6.4)
+    xl_3.6.4 <- rnorm(1, pml_3.6.4, psdl_3.6.4)
 }
 
 @
@@ -154,9 +154,9 @@ while(xl_3.6_4 >= xm_3.6_4) {
   groups.  Friends Leo and Mary both completed the Hermosa Beach
   Triathlon, where Leo competed in the \textit{Men, Ages 30 - 34}
   group while Mary competed in the \textit{Women, Ages 25 - 29} group.
-  Leo completed the race in \Sexpr{clock_time(xl_3.6_4)}
-  ($\Sexpr{round(xl_3.6_4)}$ seconds), while Mary completed the race in
-  \Sexpr{clock_time(xm_3.6_4)} ($\Sexpr{round(xm_3.6_4)}$
+  Leo completed the race in \Sexpr{clock_time(xl_3.6.4)}
+  ($\Sexpr{round(xl_3.6.4)}$ seconds), while Mary completed the race in
+  \Sexpr{clock_time(xm_3.6.4)} ($\Sexpr{round(xm_3.6.4)}$
   seconds). Obviously Leo finished faster, but they are curious about
   how they did within their respective groups. Can you help them? Here
   is some information on the performance of their groups:
@@ -164,11 +164,11 @@ while(xl_3.6_4 >= xm_3.6_4) {
   \begin{itemize}
     \setlength{\itemsep}{0mm}
   \item The finishing times of the \textit{Men, Ages 30 - 34} group
-    has a mean of $\Sexpr{pml_3.6_4}$ seconds with a standard
-    deviation of $\Sexpr{psdl_3.6_4}$ seconds.
+    has a mean of $\Sexpr{pml_3.6.4}$ seconds with a standard
+    deviation of $\Sexpr{psdl_3.6.4}$ seconds.
   \item The finishing times of the \textit{Women, Ages 25 - 29} group
-    has a mean of $\Sexpr{pmm_3.6_4}$ seconds with a standard
-    deviation of $\Sexpr{psdm_3.6_4}$ seconds.
+    has a mean of $\Sexpr{pmm_3.6.4}$ seconds with a standard
+    deviation of $\Sexpr{psdm_3.6.4}$ seconds.
   \item The distributions of finishing times for both groups are approximately
     Normal.
   \end{itemize}
@@ -190,10 +190,10 @@ while(xl_3.6_4 >= xm_3.6_4) {
 
 % 5
 
-<<ex3.6_5, echo=FALSE>>=
+<<ex3.6.5, echo=FALSE>>=
 
-q80_3.6_5 <- round(qnorm(.8, pm_3.6_3[2], psd_3.6_3[2]), 2)
-q30_3.6_5 <- round(qnorm(.7, pm_3.6_3[1], psd_3.6_3[1]), 2)
+q80_3.6.5 <- round(qnorm(.8, pm_3.6.3[2], psd_3.6.3[2]), 2)
+q30_3.6.5 <- round(qnorm(.7, pm_3.6.3[1], psd_3.6.3[1]), 2)
 
 @
 
@@ -201,8 +201,8 @@ q30_3.6_5 <- round(qnorm(.7, pm_3.6_3[1], psd_3.6_3[1]), 2)
 
   \qt{GRE scores, Part II\label{GRE_cutoffs}} In
   Exercise~\ref{GRE_intro} we saw two distributions for GRE scores:
-  $N(\mu=\Sexpr{pm_3.6_3[1]}, \sigma=\Sexpr{psd_3.6_3[1]})$ for the verbal part of the exam and
-  $N(\mu=\Sexpr{psd_3.6_3[2]}, \sigma=\Sexpr{psd_3.6_3[2]})$ for the quantitative part. Use this
+  $N(\mu=\Sexpr{pm_3.6.3[1]}, \sigma=\Sexpr{psd_3.6.3[1]})$ for the verbal part of the exam and
+  $N(\mu=\Sexpr{psd_3.6.3[2]}, \sigma=\Sexpr{psd_3.6.3[2]})$ for the quantitative part. Use this
   information to compute each of the following:
 
   \begin{parts}
@@ -220,7 +220,7 @@ q30_3.6_5 <- round(qnorm(.7, pm_3.6_3[1], psd_3.6_3[1]), 2)
 
   \qt{Triathlon times, Part II\label{triathlon_times_cutoffs}} In
   Exercise~\ref{triathlon_times_intro} we saw two distributions for
-  triathlon times: $N(\mu=\Sexpr{pml_3.6_4}, \sigma=\Sexpr{psdl_3.6_4})$ for \emph{Men, Ages 30 -34} and $N(\mu=\Sexpr{pmm_3.6_4}, \sigma=\Sexpr{psdm_3.6_4})$ for the \emph{Women, Ages 25 -29} group. Times are listed in seconds. Use this information to compute each of the following:
+  triathlon times: $N(\mu=\Sexpr{pml_3.6.4}, \sigma=\Sexpr{psdl_3.6.4})$ for \emph{Men, Ages 30 -34} and $N(\mu=\Sexpr{pmm_3.6.4}, \sigma=\Sexpr{psdm_3.6.4})$ for the \emph{Women, Ages 25 -29} group. Times are listed in seconds. Use this information to compute each of the following:
 
 
   \begin{parts}
@@ -233,27 +233,27 @@ q30_3.6_5 <- round(qnorm(.7, pm_3.6_3[1], psd_3.6_3[1]), 2)
 
 % 7
 
-<<ex3.6_7, echo=FALSE>>=
+<<ex3.6.7, echo=FALSE>>=
 
-m_3.6_7 <- 77
-sd_3.6_7 <- 5
+m_3.6.7 <- 77
+sd_3.6.7 <- 5
 
-pm_3.6_7 <- round(runif(1, 74, 80))
-psd_3.6_7 <- round(runif(1, 2, 6))
+pm_3.6.7 <- round(runif(1, 74, 80))
+psd_3.6.7 <- round(runif(1, 2, 6))
 
-z_3.6_7a <- round((83-pm_3.6_7)/psd_3.6_7, 2)
-p83_3.6_7 <- round(1-pnorm(z_3.6_7a), 2)
+z_3.6.7a <- round((83-pm_3.6.7)/psd_3.6.7, 2)
+p83_3.6.7 <- round(1-pnorm(z_3.6.7a), 2)
 
-z_3.6_7b <- round(qnorm(.1), 2)
-q10_3.6_7 <- round(z_3.6_7b*psd_3.6_7 + pm_3.6_7, 2)
+z_3.6.7b <- round(qnorm(.1), 2)
+q10_3.6.7 <- round(z_3.6.7b*psd_3.6.7 + pm_3.6.7, 2)
 
 @
 
 \eoce{
 
   \qt{LA weather, Part I\label{la_weather_intro}} The average daily
-  high temperature in June in LA is $\Sexpr{pm_3.6_7}$\degree F with a standard
-  deviation of $\Sexpr{psd_3.6_7}$\degree F. Suppose that the temperatures in June
+  high temperature in June in LA is $\Sexpr{pm_3.6.7}$\degree F with a standard
+  deviation of $\Sexpr{psd_3.6.7}$\degree F. Suppose that the temperatures in June
   closely follow a normal distribution.
 
   \begin{parts}
@@ -267,16 +267,16 @@ q10_3.6_7 <- round(z_3.6_7b*psd_3.6_7 + pm_3.6_7, 2)
 
 % 8
 
-<<ex_3.6_8, echo=FALSE>>=
+<<ex_3.6.8, echo=FALSE>>=
 
-m_3.6_8 <- 14.7
-sd_3.6_8 <- 33
+m_3.6.8 <- 14.7
+sd_3.6.8 <- 33
 
-pm_3.6_8 <- round(runif(1, 13, 17), 2)
-psd_3.6_8 <- round(runif(1, 30, 35), 2)
+pm_3.6.8 <- round(runif(1, 13, 17), 2)
+psd_3.6.8 <- round(runif(1, 30, 35), 2)
 
-p0_3.6_8 <- round(pnorm(0, pm_3.6_8, psd_3.6_8), 2)
-q85_3.6_8 <- round(qnorm(.85, pm_3.6_8, psd_3.6_8), 2)
+p0_3.6.8 <- round(pnorm(0, pm_3.6.8, psd_3.6.8), 2)
+q85_3.6.8 <- round(qnorm(.85, pm_3.6.8, psd_3.6.8), 2)
 
 @
 
@@ -285,8 +285,8 @@ q85_3.6_8 <- round(qnorm(.85, pm_3.6_8, psd_3.6_8), 2)
   \qt{CAPM\label{CAPM}} The Capital Asset Pricing Model (CAPM) is a
   financial model that assumes returns on a portfolio are normally
   distributed. Suppose a portfolio has an average annual return of
-  $\Sexpr{pm_3.6_8}$\% (i.e. an average gain of $\Sexpr{pm_3.6_8}$\%)
-  with a standard deviation of $\Sexpr{psd_3.6_8}$\%. A return of 0\%
+  $\Sexpr{pm_3.6.8}$\% (i.e. an average gain of $\Sexpr{pm_3.6.8}$\%)
+  with a standard deviation of $\Sexpr{psd_3.6.8}$\%. A return of 0\%
   means the value of the portfolio doesn't change, a negative return
   means that the portfolio loses money, and a positive return means
   that the portfolio gains money.
@@ -302,18 +302,18 @@ q85_3.6_8 <- round(qnorm(.85, pm_3.6_8, psd_3.6_8), 2)
 
 % 9
 
-<<ex_3.6_9, echo=FALSE>>=
+<<ex_3.6.9, echo=FALSE>>=
 
-pm_3.6_9 <- round((pm_3.6_7-32)*5/9, 2)
-psd_3.6_9 <- round(psd_3.6_7*5/9, 2)
+pm_3.6.9 <- round((pm_3.6.7-32)*5/9, 2)
+psd_3.6.9 <- round(psd_3.6.7*5/9, 2)
 
-z_3.6_9 <- round((28.34-pm_3.6_9)/psd_3.6_9, 2)
-p_3.6_9 <- round(1-pnorm(z_3.6_9), 2)
+z_3.6.9 <- round((28.34-pm_3.6.9)/psd_3.6.9, 2)
+p_3.6.9 <- round(1-pnorm(z_3.6.9), 4)
 
-q25_3.6_9 <- round(qnorm(.25, pm_3.6_9, psd_3.6_9), 2)
-q75_3.6_9 <- round(qnorm(.75, pm_3.6_9, psd_3.6_9), 2)
+q25_3.6.9 <- round(qnorm(.25, pm_3.6.9, psd_3.6.9), 2)
+q75_3.6.9 <- round(qnorm(.75, pm_3.6.9, psd_3.6.9), 2)
 
-iqr_3.6_9 <- q75_3.6_9 - q25_3.6_9
+iqr_3.6.9 <- q75_3.6.9 - q25_3.6.9
 
 @
 
@@ -321,8 +321,8 @@ iqr_3.6_9 <- q75_3.6_9 - q25_3.6_9
 
   \qt{LA weather, Part II\label{la_weather_unit_change}}
   Exercise~\ref{la_weather_intro} states that average daily high
-  temperature in June in LA is $\Sexpr{pm_3.6_7}$\degree F with a standard deviation
-  of $\Sexpr{psd_3.6_7}$\degree F, and it can be assumed that they to follow a normal
+  temperature in June in LA is $\Sexpr{pm_3.6.7}$\degree F with a standard deviation
+  of $\Sexpr{psd_3.6.7}$\degree F, and it can be assumed that they to follow a normal
   distribution. We use the following equation to convert \degree F
   (Fahrenheit) to \degree C (Celsius):
 
@@ -342,116 +342,220 @@ iqr_3.6_9 <- q75_3.6_9 - q25_3.6_9
 }{}
 
 % 10
-% TODO here
-\eoce{\qt{Heights of 10 year olds\label{heights_10_yrs}} Heights of 10 year olds,
-regardless of gender, closely follow a normal distribution with mean 55
-inches and standard deviation 6 inches.
-\begin{parts}
-\item What is the probability that a randomly chosen 10 year old is shorter
-than 48 inches?
-\item What is the probability that a randomly chosen 10 year old is between
-60 and 65 inches?
-\item If the tallest 10\% of the class is considered ``very tall", what is
-the height cutoff for ``very tall"?
-\item The height requirement for \textit{Batman the Ride} at Six Flags Magic
-Mountain is 54 inches. What percent of 10 year olds cannot go on this ride?
-\end{parts}
+
+<<ex3.6.10, echo=FALSE>>=
+
+pm_3.6.10 <- round(rnorm(1, 55, 6), 2)
+psd_3.6.10 <- round(rnorm(1, 6, 2), 2)
+
+p48_3.6.10 <- round(pnorm(40, pm_3.6.10, psd_3.6.10), 2)
+p60_65_3.6.10 <- round(diff(pnorm(c(60, 65), pm_3.6.10, psd_3.6.10)), 2)
+q90_3.6.10 <- round(qnorm(.9, pm_3.6.10, psd_3.6.10), 2)
+p54_3.6.10 <- round(pnorm(54, pm_3.6.10, psd_3.6.10), 2)
+
+@
+
+\eoce{
+
+  \qt{Heights of 10 year olds\label{heights_10_yrs}} Heights of 10
+  year olds, regardless of gender, closely follow a normal
+  distribution with mean $\Sexpr{pm_3.6.10}$ inches and standard
+  deviation $\Sexpr{psd_3.6.10}$ inches.
+
+  \begin{parts}
+  \item What is the probability that a randomly chosen 10 year old is shorter
+    than 48 inches?
+  \item What is the probability that a randomly chosen 10 year old is between
+    60 and 65 inches?
+  \item If the tallest 10\% of the class is considered ``very tall", what is
+    the height cutoff for ``very tall"?
+  \item The height requirement for \textit{Batman the Ride} at Six Flags Magic
+    Mountain is 54 inches. What percent of 10 year olds cannot go on this ride?
+  \end{parts}
+
 }{}
 
 % 11
 
-\eoce{\qt{Auto insurance premiums\label{auto_insurance_premiums}} Suppose a
-newspaper article states that the distribution of auto insurance premiums for
-residents of California is approximately normal with a mean of \$1,650. The
-article also states that 25\% of California residents pay more than \$1,800.
-\begin{parts}
-\item What is the Z-score that corresponds to the top 25\% (or the $75^{th}$
-percentile) of the standard normal distribution?
-\item What is the mean insurance cost? What is the cutoff for the 75th
-percentile?
-\item Identify the standard deviation of insurance premiums in LA.
-\end{parts}
+<<ex_3.6.11, echo=FALSE>>=
+
+pm_3.6.11 <- round(rnorm(1, 1650, 224), 2)
+q75_3.6.11 <- round(rnorm(1, 1800, 50), 2)
+
+sd_3.6.11 <- round((q75_3.6.11 - pm_3.6.11)/.67, 2)
+
+@
+
+\eoce{
+
+  \qt{Auto insurance premiums\label{auto_insurance_premiums}} Suppose
+  a newspaper article states that the distribution of auto insurance
+  premiums for residents of California is approximately normal with a
+  mean of \$$\Sexpr{pm_3.6.11}$. The article also states that 25\% of California
+  residents pay more than \$$\Sexpr{q75_3.6.11}$.
+
+  \begin{parts}
+  \item What is the Z-score that corresponds to the top 25\% (or the $75^{th}$
+    percentile) of the standard normal distribution?
+  \item What is the mean insurance cost? What is the cutoff for the 75th
+    percentile?
+  \item Identify the standard deviation of insurance premiums in LA.
+  \end{parts}
+
 }{}
 
 % 12
 
-\eoce{\qt{Speeding on the I-5, Part I\label{speeding_i5_intro}} The distribution of
-passenger vehicle speeds traveling on the Interstate 5 Freeway (I-5) in
-California is nearly normal with a mean of 72.6 miles/hour and a standard
-deviation of 4.78 miles/hour.\footfullcite{Johnson+Murray:2010}
-\begin{parts}
-\item What percent of passenger vehicles travel slower than 80 miles/hour?
-\item What percent of passenger vehicles travel between 60 and 80 miles/hour?
-\item How fast do the fastest 5\% of passenger vehicles travel?
-\item The speed limit on this stretch of the I-5 is 70 miles/hour.
-Approximate what percentage of the passenger vehicles travel above the speed
-limit on this stretch of the I-5.
-\end{parts}
+<<ex_3.7.12, echo=FALSE>>=
+
+xa_3.6.12 <- round(runif(1, 77, 83))
+xb_3.6.12 <- round(runif(1, 57, 63))
+pc_3.6.12 <- round(runif(1, 2, 8))
+
+@
+
+\eoce{
+
+  \qt{Speeding on the I-5, Part I\label{speeding_i5_intro}} The
+  distribution of passenger vehicle speeds traveling on the Interstate
+  5 Freeway (I-5) in California is nearly normal with a mean of 72.6
+  miles/hour and a standard deviation of 4.78
+  miles/hour.\footfullcite{Johnson+Murray:2010}
+  % these numbers not randomly generated since they come from a study
+
+  \begin{parts}
+  \item What percent of passenger vehicles travel slower than $\Sexpr{xa_3.6.12}$ miles/hour?
+  \item What percent of passenger vehicles travel between
+    $\Sexpr{xb_3.6.12}$ and $\Sexpr{xa_3.6.12}$ miles/hour?
+  \item How fast do the fastest $Sexpr{pc_3.6.12}$\% of passenger vehicles travel?
+  \item The speed limit on this stretch of the I-5 is 70 miles/hour.
+    Approximate what percentage of the passenger vehicles travel above the speed
+    limit on this stretch of the I-5.
+  \end{parts}
+
 }{}
 
 % 13
 
-\eoce{\qt{Overweight baggage\label{overweight_baggage}} Suppose weights of the
-checked baggage of airline passengers follow a nearly normal distribution
-with mean 45 pounds and standard deviation 3.2 pounds. Most airlines charge a
-fee for baggage that weigh in excess of 50 pounds. Determine what percent of
-airline passengers incur this fee.
+<<ex3.6.13, echo=FALSE>>=
+
+pm_3.6.13 <- round(runif(1, 42, 48))
+psd_3.6.13 <- round(runif(1, 2, 5), 1)
+x_3.6.13 <- round(runif(1, 48, 50), 2)
+
+z_3.6.13 <- round((x_3.6.13 - pm_3.6.13)/psd_3.6.13, 2)
+pz_3.6.13 <- round(1-pnorm(z_3.6.13), 4)
+
+@
+
+\eoce{
+
+  \qt{Overweight baggage\label{overweight_baggage}} Suppose weights of
+  the checked baggage of airline passengers follow a nearly normal
+  distribution with mean $\Sexpr{pm_3.6.13}$ pounds and standard
+  deviation $\Sexpr{psd_3.6.13}$ pounds. Most airlines charge a fee
+  for baggage that weigh in excess of $\Sexpr{x_3.6.13}$
+  pounds. Determine what percent of airline passengers incur this fee.
+
 }{}
 
 % 14
 
-\eoce{\qt{Find the SD\label{find_sd}} Find the standard deviation of the
-distribution in the following situations.
-\begin{parts}
-\item  MENSA is an organization whose members have IQs in the top 2\% of the
-population. IQs are normally distributed with mean 100, and the minimum IQ
-score required for admission to MENSA is 132.
-\item Cholesterol levels for women aged 20 to 34 follow an approximately
-normal distribution with mean 185 milligrams per deciliter (mg/dl). Women
-with cholesterol levels above 220 mg/dl are considered to have high
-cholesterol and about 18.5\% of women fall into this category.
-\end{parts}
+<<ex3.6.14, echo=FALSE>>=
+
+pm_3.6.14a <- round(runif(1, 98, 104))
+x_3.6.14a <- round(runif(1, 130, 134))
+
+pm_3.6.14b <- round(runif(1, 180, 190))
+x_3.6.14b <- round(runif(1, 115, 125))
+
+@
+
+\eoce{
+
+  \qt{Find the SD\label{find_sd}} Find the standard deviation of the
+  distribution in the following situations.
+
+  \begin{parts}
+  \item  MENSA is an organization whose members have IQs in the top 2\% of the
+    population. IQs are normally distributed with mean $\Sexpr{pm_3.6.14a}$, and the minimum IQ
+    score required for admission to MENSA is $\Sexpr{x_3.6.14a}$.
+  \item Cholesterol levels for women aged 20 to 34 follow an approximately
+    normal distribution with mean $\Sexpr{pm_3.6.14b}$ milligrams per deciliter (mg/dl). Women
+    with cholesterol levels above $\Sexpr{x_3.6.14b}$ mg/dl are considered to have high
+    cholesterol and about 18.5\% of women fall into this category.
+  \end{parts}
+
 }{}
 
 % 15
 
-\eoce{\qt{Buying books on Ebay\label{buy_boooks_ebay}} The textbook you need to buy
-for your chemistry class is expensive at the college bookstore, so you
-consider buying it on Ebay instead. A look at past auctions suggest that the
-prices of that chemistry textbook have an approximately normal distribution
-with mean \$89 and standard deviation \$15.
-\begin{parts}
+<<ex3.6.15, echo=FALSE>>=
 
-\item What is the probability that a randomly selected auction for this book
-closes at more than \$100?
+pm_3.6.15 <- round(runif(1, 86, 92))
+psd_3.6.15 <- round(runif(1, 13, 17))
+x_3.6.15 <- round(runif(1, 97, 103))
 
-\item Ebay allows you to set your maximum bid price so that if someone
-outbids you on an auction you can automatically outbid them, up to the
-maximum bid price you set. If you are only bidding on one auction, what are
-the advantages and disadvantages of setting a bid price too high or too low?
-What if you are bidding on multiple auctions?
+z_3.6.15 <- round((x_3.6.15 - pm_3.6.15)/psd_3.6.15, 2)
+p_3.6.15 <- round(1-pnorm(z_3.6.13), 4)
+q10_3.6.15 <- round(qnorm(.1)*psd_3.6.15 + pm_3.6.15, 2)
 
-\item If you watched 10 auctions, roughly what percentile might you use for a
-maximum bid cutoff to be somewhat sure that you will win one of these ten
-auctions? Is it possible to find a cutoff point that will ensure that you win
-an auction?
+@
 
-\item If you are willing to track up to ten auctions closely, about what
-price might you use as your maximum bid price if you want to be somewhat sure
-that you will buy one of these ten books?
+\eoce{
 
-\end{parts}
+  \qt{Buying books on Ebay\label{buy_boooks_ebay}} The textbook you
+  need to buy for your chemistry class is expensive at the college
+  bookstore, so you consider buying it on Ebay instead. A look at past
+  auctions suggest that the prices of that chemistry textbook have an
+  approximately normal distribution with mean \$$\Sexpr{pm_3.6.15}$ and standard
+  deviation \$$\Sexpr{psd_3.6.15}$.
+
+  \begin{parts}
+
+  \item What is the probability that a randomly selected auction for this book
+    closes at more than \$$\Sexpr{x_3.6.15}$?
+
+  \item Ebay allows you to set your maximum bid price so that if someone
+    outbids you on an auction you can automatically outbid them, up to the
+    maximum bid price you set. If you are only bidding on one auction, what are
+    the advantages and disadvantages of setting a bid price too high or too low?
+    What if you are bidding on multiple auctions?
+
+  \item If you watched 10 auctions, roughly what percentile might you use for a
+    maximum bid cutoff to be somewhat sure that you will win one of these ten
+    auctions? Is it possible to find a cutoff point that will ensure that you win
+    an auction?
+
+  \item If you are willing to track up to ten auctions closely, about what
+    price might you use as your maximum bid price if you want to be somewhat sure
+    that you will buy one of these ten books?
+
+  \end{parts}
+
 }{}
 
 % 16
 
-\eoce{\qt{SAT scores\label{sat_scores}} SAT scores (out of 2400) are distributed
-normally with a mean of 1500 and a standard deviation of 300. Suppose a
-school council awards a certificate of excellence to all students who score
-at least 1900 on the SAT, and suppose we pick one of the recognized students
-at random. What is the probability this student's score will be at least
-2100? (The material covered in Section~\ref{conditionalProbabilitySection}
-would be useful for this question.)
+<<ex3.6.16, echo=FALSE>>=
+
+pm_3.6.16 <- round(runif(1, 1490, 1510))
+psd_3.6.16 <- round(runif(1, 290, 310))
+
+@
+
+\eoce{
+
+  \qt{SAT scores\label{sat_scores}} SAT scores (out of 2400) are
+  distributed normally with a mean of $\Sexpr{pm_3.6.16}$ and a
+  standard deviation of $\Sexpr{psd_3.6.16}$. Suppose a school council
+  awards a certificate of excellence to all students who score at
+  least 1900 on the SAT, and suppose we pick one of the recognized
+  students at random. What is the probability this student's score
+  will be at least 2100? (The material covered in
+  Section~\ref{conditionalProbabilitySection} would be useful for this
+  question.)
+
 }{}
 
 
@@ -460,49 +564,128 @@ would be useful for this question.)
 \subsection{Evaluating the normal approximation}
 
 % 17
+<<ex3.6.17, echo=FALSE>>=
 
-\eoce{\qt{Scores on stats final\label{stats_scores}} Below are final exam scores of
-20 Introductory Statistics students.
-\[ \stackrel{1}{57}, \stackrel{2}{66}, \stackrel{3}{69}, \stackrel{4}{71},
-\stackrel{5}{72}, \stackrel{6}{73}, \stackrel{7}{74}, \stackrel{8}{77},
-\stackrel{9}{78}, \stackrel{10}{78}, \stackrel{11}{79}, \stackrel{12}{79},
-\stackrel{13}{81}, \stackrel{14}{81}, \stackrel{15}{82}, \stackrel{16}{83},
-\stackrel{17}{83}, \stackrel{18}{88}, \stackrel{19}{89}, \stackrel{20}{94} \]
-\begin{parts}
-\item The mean score is 77.7 points. with a standard deviation of 8.44
-points. Use this information to determine if the scores approximately follow
-the 68-95-99.7\% Rule.
-\item Do these data appear to follow a normal distribution? Explain your
-reasoning using the graphs provided below.
-\begin{center}
-\includegraphics[width=0.46\textwidth]{chapters/distributions/figures/eoce/stats_scores/stats_scores_hist.pdf}\ \ \ \
-\includegraphics[width= 0.46\textwidth]{chapters/distributions/figures/eoce/stats_scores/stats_scores_qq.pdf}
-\end{center}
+x_3.6.17 <- round(rnorm(20, 77, 8))
+sm_3.6.17 <- round(mean(x_3.6.17), 2)
+ssd_3.6.17 <- round(sd(x_3.6.17), 2)
+
+@
+
+\eoce{
+
+  \qt{Scores on stats final\label{stats_scores}} Below are final exam
+  scores of 20 Introductory Statistics students.
+  \[
+    \stackrel{01}{\Sexpr{x_3.6.17[01]}},
+    \stackrel{02}{\Sexpr{x_3.6.17[02]}},
+    \stackrel{03}{\Sexpr{x_3.6.17[03]}},
+    \stackrel{04}{\Sexpr{x_3.6.17[04]}},
+    \stackrel{05}{\Sexpr{x_3.6.17[05]}},
+    \stackrel{06}{\Sexpr{x_3.6.17[06]}},
+    \stackrel{07}{\Sexpr{x_3.6.17[07]}},
+    \stackrel{08}{\Sexpr{x_3.6.17[08]}},
+    \stackrel{09}{\Sexpr{x_3.6.17[09]}},
+    \stackrel{10}{\Sexpr{x_3.6.17[10]}},
+    \stackrel{11}{\Sexpr{x_3.6.17[11]}},
+    \stackrel{12}{\Sexpr{x_3.6.17[12]}},
+    \stackrel{13}{\Sexpr{x_3.6.17[13]}},
+    \stackrel{14}{\Sexpr{x_3.6.17[14]}},
+    \stackrel{15}{\Sexpr{x_3.6.17[15]}},
+    \stackrel{16}{\Sexpr{x_3.6.17[16]}},
+    \stackrel{17}{\Sexpr{x_3.6.17[17]}},
+    \stackrel{18}{\Sexpr{x_3.6.17[18]}},
+    \stackrel{19}{\Sexpr{x_3.6.17[19]}},
+    \stackrel{20}{\Sexpr{x_3.6.17[20]}}
+  \]
+
+  \begin{parts}
+  \item The mean score is $\Sexpr{sm_3.6.17}$ points. with a standard
+    deviation of $\Sexpr{ssd_3.6.17}$ points. Use this information to
+    determine if the scores approximately follow the 68-95-99.7\%
+    Rule.
+  \item Do these data appear to follow a normal distribution? Explain
+    your reasoning using the graphs provided below.
+
+<<ex3_6_17_plot, echo=FALSE, fig.width=2.5, fig.height=2, fig.align="center", fig.show="hold">>=
+
+hist_density(x_3.6.17, xlab="Scores")
+quant_plot(x_3.6.17)
+
+@
+
+% \begin{center}
+% \includegraphics[width=0.46\textwidth]{chapters/distributions/figures/eoce/stats_scores/stats_scores_hist.pdf}\ \ \ \
+% \includegraphics[width= 0.46\textwidth]{chapters/distributions/figures/eoce/stats_scores/stats_scores_qq.pdf}
+% \end{center}
 \end{parts}
+
 }{}
 
 % 18
 
-\eoce{\qt{Heights of female college students\label{college_fem_heights}} Below are
-heights of 25 female college students.
-\[ \stackrel{1}{54}, \stackrel{2}{55}, \stackrel{3}{56}, \stackrel{4}{56},
-\stackrel{5}{57}, \stackrel{6}{58}, \stackrel{7}{58}, \stackrel{8}{59},
-\stackrel{9}{60}, \stackrel{10}{60}, \stackrel{11}{60}, \stackrel{12}{61},
-\stackrel{13}{61}, \stackrel{14}{62}, \stackrel{15}{62}, \stackrel{16}{63},
-\stackrel{17}{63}, \stackrel{18}{63}, \stackrel{19}{64}, \stackrel{20}{65},
-\stackrel{21}{65}, \stackrel{22}{67}, \stackrel{23}{67}, \stackrel{24}{69},
-\stackrel{25}{73} \]
-\begin{parts}
-\item The mean height is 61.52 inches with a standard deviation of 4.58
-inches. Use this information to determine if the heights approximately follow
-the 68-95-99.7\% Rule.
-\item Do these data appear to follow a normal distribution? Explain your
-reasoning using the graphs provided below.
-\begin{center}
-\includegraphics[width= 0.46\textwidth]{chapters/distributions/figures/eoce/college_fem_heights/college_fem_heights_hist.pdf}\ \ \ \
-\includegraphics[width= 0.46\textwidth]{chapters/distributions/figures/eoce/college_fem_heights/college_fem_heights_qq.pdf}
-\end{center}
+<<ex3.6.18, echo=FALSE>>=
+
+x_3.6.18 <- round(rnorm(25, 61, 5))
+sm_3.6.18 <- round(mean(x_3.6.18), 2)
+ssd_3.6.18 <- round(sd(x_3.6.18), 2)
+
+@
+
+\eoce{
+
+  \qt{Heights of female college students\label{college_fem_heights}}
+  Below are heights of 25 female college students.
+  \[
+    \stackrel{01}{\Sexpr{x_3.6.18[01]}},
+    \stackrel{02}{\Sexpr{x_3.6.18[02]}},
+    \stackrel{03}{\Sexpr{x_3.6.18[03]}},
+    \stackrel{04}{\Sexpr{x_3.6.18[04]}},
+    \stackrel{05}{\Sexpr{x_3.6.18[05]}},
+    \stackrel{06}{\Sexpr{x_3.6.18[06]}},
+    \stackrel{07}{\Sexpr{x_3.6.18[07]}},
+    \stackrel{08}{\Sexpr{x_3.6.18[08]}},
+    \stackrel{09}{\Sexpr{x_3.6.18[09]}},
+    \stackrel{10}{\Sexpr{x_3.6.18[10]}},
+    \stackrel{11}{\Sexpr{x_3.6.18[11]}},
+    \stackrel{12}{\Sexpr{x_3.6.18[12]}},
+    \stackrel{13}{\Sexpr{x_3.6.18[13]}},
+    \stackrel{14}{\Sexpr{x_3.6.18[14]}},
+    \stackrel{15}{\Sexpr{x_3.6.18[15]}},
+    \stackrel{16}{\Sexpr{x_3.6.18[16]}},
+    \stackrel{17}{\Sexpr{x_3.6.18[17]}},
+    \stackrel{18}{\Sexpr{x_3.6.18[18]}},
+    \stackrel{19}{\Sexpr{x_3.6.18[19]}},
+    \stackrel{20}{\Sexpr{x_3.6.18[20]}},
+    \stackrel{21}{\Sexpr{x_3.6.18[21]}},
+    \stackrel{22}{\Sexpr{x_3.6.18[22]}},
+    \stackrel{23}{\Sexpr{x_3.6.18[23]}},
+    \stackrel{24}{\Sexpr{x_3.6.18[24]}},
+    \stackrel{25}{\Sexpr{x_3.6.18[25]}}
+  \]
+
+  \begin{parts}
+  \item The mean height is $\Sexpr{sm_3.6.18}$ inches with a standard
+    deviation of $\Sexpr{ssd_3.6.18}$ inches. Use this information to
+    determine if the heights approximately follow the 68-95-99.7\%
+    Rule.
+  \item Do these data appear to follow a normal distribution? Explain
+    your reasoning using the graphs provided below.
+
+<<ex3_6_18_plot, echo=FALSE, fig.width=2.5, fig.height=2, fig.align="center", fig.show="hold">>=
+
+hist_density(x_3.6.18, xlab="Heights")
+quant_plot(x_3.6.18)
+
+@
+
+% \begin{center}
+%   \includegraphics[width= 0.46\textwidth]{chapters/distributions/figures/eoce/college_fem_heights/college_fem_heights_hist.pdf}\ \ \ \
+%   \includegraphics[width= 0.46\textwidth]{chapters/distributions/figures/eoce/college_fem_heights/college_fem_heights_qq.pdf}
+% \end{center}
+
 \end{parts}
+
 }{}
 
 
@@ -513,7 +696,7 @@ reasoning using the graphs provided below.
 \subsection{Geometric distribution}
 
 % 19
-
+% TODO here
 \eoce{\qtq{Is it Bernoulli\label{is_it_bernouilli}} Determine if each trial can be
 considered an independent Bernoulli trial for the following situations.
 \begin{parts}
