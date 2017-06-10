@@ -696,107 +696,176 @@ quant_plot(x_3.6.18)
 \subsection{Geometric distribution}
 
 % 19
-% TODO here
-\eoce{\qtq{Is it Bernoulli\label{is_it_bernouilli}} Determine if each trial can be
-considered an independent Bernoulli trial for the following situations.
-\begin{parts}
-\item Cards dealt in a hand of poker.
-\item Outcome of each roll of a die.
-\end{parts}
+
+\eoce{
+
+  \qtq{Is it Bernoulli\label{is_it_bernouilli}} Determine if each
+  trial can be considered an independent Bernoulli trial for the
+  following situations.
+
+  \begin{parts}
+  \item Cards dealt in a hand of poker.
+  \item Outcome of each roll of a die.
+  \end{parts}
+
 }{}
 
 % 20
 
-\eoce{\qt{With and without replacement\label{with_without_replacement}} In the
-following situations assume that half of the specified population is male and
-the other half is female.
-\begin{parts}
-\item Suppose you're sampling from a room with 10 people. What is the
-probability of sampling two females in a row when sampling with replacement?
-What is the probability when sampling without replacement?
-\item Now suppose you're sampling from a stadium with 10,000 people. What is
-the probability of sampling two females in a row when sampling with
-replacement? What is the probability when sampling without replacement?
-\item We often treat individuals who are sampled from a large population as
-independent. Using your findings from parts~(a) and~(b), explain whether or
-not this assumption is reasonable.
-\end{parts}
+<<ex3.6.20, echo=FALSE>>=
+
+xa_3.6.20 <- round(runif(1, 8, 12))
+xb_3.6.20 <- round(runif(1, 9750, 10250))
+
+@
+
+\eoce{
+
+  \qt{With and without replacement\label{with_without_replacement}} In
+  the following situations assume that half of the specified
+  population is male and the other half is female.
+
+  \begin{parts}
+  \item Suppose you're sampling from a room with $\Sexpr{xa_3.6.20}$ people. What is the
+    probability of sampling two females in a row when sampling with replacement?
+    What is the probability when sampling without replacement?
+  \item Now suppose you're sampling from a stadium with $\Sexpr{xb_3.6.20}$ people. What is
+    the probability of sampling two females in a row when sampling with
+    replacement? What is the probability when sampling without replacement?
+  \item We often treat individuals who are sampled from a large population as
+    independent. Using your findings from parts~(a) and~(b), explain whether or
+    not this assumption is reasonable.
+  \end{parts}
+
 }{}
 
 % 21
 
-\eoce{\qt{Married women} \label{married_women} The 2010 American Community Survey
-estimates that 47.1\% of women ages 15 years and over are married.
-\footfullcite{marWomenACS}
-\begin{parts}
-\item We randomly select three women between these ages. What is the
-probability that the third woman selected is the only one who is married?
-\item What is the probability that all three randomly selected women are
-married?
-\item On average, how many women would you expect to sample before selecting
-a married woman? What is the standard deviation?
-\item If the proportion of married women was actually 30\%, how many women
-would you expect to sample before selecting a married woman? What is the
-standard deviation?
-\item Based on your answers to parts (c) and (d), how does decreasing the
-probability of an event affect the mean and standard deviation of the wait
-time until success?
-\end{parts}
+<<ex3.6.21, echo=FALSE>>=
+
+x_3.6.21 <- round(runif(1, 27, 33))
+
+@
+
+\eoce{
+
+  \qt{Married women} \label{married_women} The 2010 American Community
+  Survey estimates that 47.1\% of women ages 15 years and over are
+  married.  \footfullcite{marWomenACS}
+  % this number not randomly generated since it comes from a study
+
+  \begin{parts}
+  \item We randomly select three women between these ages. What is the
+    probability that the third woman selected is the only one who is married?
+  \item What is the probability that all three randomly selected women are
+    married?
+  \item On average, how many women would you expect to sample before selecting
+    a married woman? What is the standard deviation?
+  \item If the proportion of married women was actually $\Sexpr{x_3.6.21}$\%, how many women
+    would you expect to sample before selecting a married woman? What is the
+    standard deviation?
+  \item Based on your answers to parts (c) and (d), how does decreasing the
+    probability of an event affect the mean and standard deviation of the wait
+    time until success?
+  \end{parts}
+
 }{}
 
 % 22
 
-\eoce{\qt{Defective rate\label{defective_rate}} A machine that produces a special
-type of transistor (a component of computers) has a 2\% defective rate. The
-production is considered a random process where each transistor is
-independent of the others.
-\begin{parts}
-\item What is the probability that the $10^{th}$ transistor produced is the
-first with a defect?
-\item What is the probability that the machine produces no defective
-transistors in a batch of 100?
-\item On average, how many transistors would you expect to be produced before
-the first with a defect? What is the standard deviation?
-\item Another machine that also produces transistors has a 5\% defective rate
-where each transistor is produced independent of the others. On average how
-many transistors would you expect to be produced with this machine before the
-first with a defect? What is the standard deviation?
-\item Based on your answers to parts (c) and (d), how does increasing the
-probability of an event affect the mean and standard deviation of the wait
-time until success?
-\end{parts}
+<<ex3.6.22, echo=FALSE>>=
+
+pa_3.6.22 <- round(runif(1, .01, .03), 4)
+xa_3.6.22 <- round(runif(1, 8, 12))
+xb_3.6.22 <- round(runif(1, 90, 110))
+
+pb_3.6.22 <- round(runif(1, 0.025, 0.075), 4)
+
+@
+
+\eoce{
+
+  \qt{Defective rate\label{defective_rate}} A machine that produces a
+  special type of transistor (a component of computers) has a $\Sexpr{pa_3.6.22}$\%
+  defective rate. The production is considered a random process where
+  each transistor is independent of the others.
+
+  \begin{parts}
+  \item What is the probability that the $\Sexpr{xa_3.6.22}^{th}$ transistor produced is the
+    first with a defect?
+  \item What is the probability that the machine produces no defective
+    transistors in a batch of $\Sexpr{xb_3.6.22}$?
+  \item On average, how many transistors would you expect to be produced before
+    the first with a defect? What is the standard deviation?
+  \item Another machine that also produces transistors has a $\Sexpr{pb_3.6.22}$\% defective rate
+    where each transistor is produced independent of the others. On average how
+    many transistors would you expect to be produced with this machine before the
+    first with a defect? What is the standard deviation?
+  \item Based on your answers to parts (c) and (d), how does increasing the
+    probability of an event affect the mean and standard deviation of the wait
+    time until success?
+  \end{parts}
+
 }{}
 
 % 23
 
-\eoce{\qt{Eye color, Part I\label{eye_color_geometric}} A husband and wife both
-have brown eyes but carry genes that make it possible for their children to
-have brown eyes (probability 0.75), blue eyes (0.125), or green eyes (0.125).
-\begin{parts}
-\item What is the probability the first blue-eyed child they have is their
-third child? Assume that the eye colors of the children are independent of
-each other.
-\item On average, how many children would such a pair of parents have before
-having a blue-eyed child? What is the standard deviation of the number of
-children they would expect to have until the first blue-eyed child?
-\end{parts}
+<<ex3.6.23, echo=FALSE>>=
+
+pbr_3.6.23 <- round(runif(1, 0.7, 0.8), 2)
+pbl_3.6.23 <- round(runif(1, 0.1, 0.15), 2)
+pgr_3.6.23 <- 1 - pbr_3.6.23 - pbl_3.6.23
+
+pa_3.6.23 <- round((1-pbl_3.6.23)^2*pbl_3.6.23, 2)
+m_3.6.23 <- round(1/pbl_3.6.23, 2)
+sd_3.6.23 <- round(sqrt((1-pbl_3.6.23)/(pbl_3.6.23*pbl_3.6.23)), 2)
+
+@
+
+\eoce{
+
+  \qt{Eye color, Part I\label{eye_color_geometric}} A husband and wife
+  both have brown eyes but carry genes that make it possible for their
+  children to have brown eyes (probability 0.75), blue eyes (0.125),
+  or green eyes (0.125).
+
+  \begin{parts}
+  \item What is the probability the first blue-eyed child they have is their
+    third child? Assume that the eye colors of the children are independent of
+    each other.
+  \item On average, how many children would such a pair of parents have before
+    having a blue-eyed child? What is the standard deviation of the number of
+    children they would expect to have until the first blue-eyed child?
+  \end{parts}
+
 }{}
 
 % 24
 
-\eoce{\qt{Speeding on the I-5, Part II\label{speeding_i5_geometric}}
-Exercise~\ref{speeding_i5_intro} states that the distribution of speeds of
-cars traveling on the Interstate 5 Freeway (I-5) in California is nearly
-normal with a mean of 72.6 miles/hour and a standard deviation of 4.78
-miles/hour. The speed limit on this stretch of the I-5 is 70 miles/hour.
-\begin{parts}
-\item A highway patrol officer is hidden on the side of the freeway. What is
-the probability that 5~cars pass and none are speeding? Assume that the
-speeds of the cars are independent of each other.
-\item On average, how many cars would the highway patrol officer expect to
-watch until the first car that is speeding? What is the standard deviation of
-the number of cars he would expect to watch?
-\end{parts}
+<<ex3.6.24, echo=FALSE>>=
+
+x_3.6.24 <- round(runif(1, 3, 7))
+
+@
+
+\eoce{
+
+  \qt{Speeding on the I-5, Part II\label{speeding_i5_geometric}}
+  Exercise~\ref{speeding_i5_intro} states that the distribution of
+  speeds of cars traveling on the Interstate 5 Freeway (I-5) in
+  California is nearly normal with a mean of 72.6 miles/hour and a
+  standard deviation of 4.78 miles/hour. The speed limit on this
+  stretch of the I-5 is 70 miles/hour.
+
+  \begin{parts}
+  \item A highway patrol officer is hidden on the side of the freeway. What is
+    the probability that $\Sexpr{x_3.6.24}$~cars pass and none are speeding? Assume that the
+    speeds of the cars are independent of each other.
+  \item On average, how many cars would the highway patrol officer expect to
+    watch until the first car that is speeding? What is the standard deviation of
+    the number of cars he would expect to watch?
+  \end{parts}
+
 }{}
 
 
@@ -806,112 +875,236 @@ the number of cars he would expect to watch?
 
 % 25
 
-\eoce{\qt{Underage drinking, Part I\label{underage_drinking_intro}} Data collected
-by the Substance Abuse and Mental Health Services Administration (SAMSHA)
-suggests that 69.7\% of 18-20 year olds consumed alcoholic beverages in 2008.
-\footfullcite{webpage:alcohol}
-\begin{parts}
-\item Suppose a random sample of ten 18-20 year olds is taken. Is the use
-of the binomial distribution appropriate for calculating the probability that
-exactly six consumed alcoholic beverages? Explain.
-\item Calculate the probability that exactly 6 out of 10 randomly sampled 18-
-20 year olds consumed an alcoholic drink.
-\item What is the probability that exactly four out of ten 18-20 year
-olds have \textit{not} consumed an alcoholic beverage?
-\item What is the probability that at most 2 out of 5 randomly sampled 18-20
-year olds have consumed alcoholic beverages?
-\item What is the probability that at least 1 out of 5 randomly sampled 18-20
-year olds have consumed alcoholic beverages?
-\end{parts}
+<<ex3.6.25, echo=FALSE>>=
+
+k_3.6.25 <- round(runif(1, 8, 12))
+x_3.6.25 <- round(runif(1, 3, 7))
+x1_3.6.25 <- k_3.6.25 - x_3.6.25
+
+p_3.6.25 <- round(dbinom(x_3.6.25, k_3.6.25, 0.697), 4)
+
+l_3.6.25 <- round(runif(1, 3, 7))
+y_3.6.25 <- round(runif(1, 0, 3))
+y1_3.6.25 <- round(runif(1, 1, 3))
+
+pmost_3.6.25 <- round(pbinom(y_3.6.25, l_3.6.25, 0.697), 4)
+pleast_3.6.25 <- round(1-pbinom(y1_3.6.25 - 1, l_3.6.25, 0.697), 4)
+
+@
+
+\eoce{
+
+  \qt{Underage drinking, Part I\label{underage_drinking_intro}} Data
+  collected by the Substance Abuse and Mental Health Services
+  Administration (SAMSHA) suggests that 69.7\% of 18-20 year olds
+  consumed alcoholic beverages in 2008.
+  \footfullcite{webpage:alcohol}
+  % these numbers not randomly generated since they come from a study
+
+  \begin{parts}
+  \item Suppose a random sample of $\Sexpr{k_3.6.25}$ 18-20 year olds is taken. Is the use
+    of the binomial distribution appropriate for calculating the probability that
+    exactly $\Sexpr{x_3.6.25}$ consumed alcoholic beverages? Explain.
+  \item Calculate the probability that exactly $\Sexpr{x_3.6.25}$ out
+    of $\Sexpr{k_3.6.25}$ randomly sampled 18-20 year olds consumed
+    an alcoholic drink.
+  \item What is the probability that exactly $\Sexpr{x1_3.6.25}$ out
+    of $\Sexpr{k_3.6.25}$ 18-20 year olds have \textit{not} consumed
+    an alcoholic beverage?
+  \item What is the probability that at most $\Sexpr{l_3.6.25}$ out of
+    $\Sexpr{y_3.6.25}$ randomly sampled 18-20 year olds have consumed
+    alcoholic beverages?
+  \item What is the probability that at least $\Sexpr{y1_3.6.25}$ out
+    of $\Sexpr{l_3.6.25}$ randomly sampled 18-20 year olds have
+    consumed alcoholic beverages?
+  \end{parts}
+
 }{}
 
 % 26
 
-\eoce{\qt{Chicken pox, Part I\label{chicken_pox_intro}} The National Vaccine
-Information Center estimates that 90\% of Americans have had chickenpox by
-the time they reach adulthood.  \footfullcite{webpage:chickenpox}
-\begin{parts}
-\item Is the use of the binomial distribution appropriate for calculating the probability that exactly 97 out of 100 randomly sampled American adults had chickenpox during childhood.
-\item Calculate the probability that exactly 97 out of 100 randomly sampled
-American adults had chickenpox during childhood.
-\item What is the probability that exactly 3 out of a new sample of 100
-American adults have \textit{not} had chickenpox in their childhood?
-\item What is the probability that at least 1 out of 10 randomly sampled
-American adults have had chickenpox?
-\item What is the probability that at most 3 out of 10 randomly sampled
-American adults have \textit{not} had chickenpox?
-\end{parts}
-}{}
+<<ex3.6.26, echo=FALSE>>=
 
-\textC{\pagebreak}
+k_3.6.26 <- round(runif(1, 96, 104))
+x_3.6.26 <- round(runif(1, 90, 95))
+x1_3.6.26 <- k_3.6.26 - x_3.6.26
+
+l_3.6.26 <- round(runif(1, 7, 13))
+y_3.6.26 <- round(runif(1, 0, 3))
+y1_3.6.26 <- round(runif(1, 1, 5))
+
+@
+
+\eoce{
+
+  \qt{Chicken pox, Part I\label{chicken_pox_intro}} The National
+  Vaccine Information Center estimates that 90\% of Americans have had
+  chickenpox by the time they reach adulthood.
+  \footfullcite{webpage:chickenpox}
+  % this number not randomly generated since it comes from a study
+
+  \begin{parts}
+  \item Is the use of the binomial distribution appropriate for
+    calculating the probability that exactly $\Sexpr{x_3.6.26}$ out of
+    $\Sexpr{k_3.6.26}$ randomly sampled American adults had chickenpox
+    during childhood.
+  \item Calculate the probability that exactly $\Sexpr{x_3.6.26}$ out
+    of $\Sexpr{k_3.6.26}$ randomly sampled American adults had
+    chickenpox during childhood.
+  \item What is the probability that exactly $\Sexpr{x1_3.6.26}$ out
+    of a new sample of $\Sexpr{k_3.6.26}$ American adults have
+    \textit{not} had chickenpox in their childhood?
+  \item What is the probability that at least $\Sexpr{y_3.6.26}$ out
+    of $\Sexpr{l_3.6.26}$ randomly sampled American adults have had
+    chickenpox?
+  \item What is the probability that at most $\Sexpr{y1_3.6.26}$ out
+    of $\Sexpr{l_3.6.26}$ randomly sampled American adults have
+    \textit{not} had chickenpox?
+  \end{parts}
+
+}{}
 
 % 27
 
-\eoce{\qt{Underage drinking, Part II\label{underage_drinking_normal_approx}} We
-learned in Exercise~\ref{underage_drinking_intro} that about 70\% of 18-20
-year olds consumed alcoholic beverages in 2008. We now consider a random
-sample of fifty 18-20 year olds.
-\begin{parts}
-\item How many people would you expect to have consumed alcoholic beverages?
-And with what standard deviation?
-\item Would you be surprised if there were 45 or more people who have
-consumed alcoholic beverages?
-\item What is the probability that 45 or more people in this sample have
-consumed alcoholic beverages? How does this probability relate to your answer
-to part (b)?
-\end{parts}
+<<ex3.6.27, echo=FALSE>>=
+
+k_3.6.27 <- round(runif(1, 46, 54))
+x_3.6.27 <- round(runif(1, 40, 45))
+
+m_3.6.27 <- round(.697*k_3.6.27, 2)
+sd_3.6.27 <- round(sqrt(.697*k_3.6.27*(1-.697)), 2)
+z_3.6.27 <- round((x_3.6.27 - m_3.6.27)/sd_3.6.27, 2)
+p_3.6.27 <- round(1-pbinom(x_3.6.27-1, k_3.6.27, .697), 6)
+zp_3.6.27 <- round(1-pnorm((x_3.6.27-0.5 - m_3.6.27)/sd_3.6.27), 6)
+
+not <- ifelse(z_3.6.27 > 3, "", "not")
+
+@
+
+\eoce{
+
+  \qt{Underage drinking, Part
+    II\label{underage_drinking_normal_approx}} We learned in
+  Exercise~\ref{underage_drinking_intro} that about 70\% of 18-20 year
+  olds consumed alcoholic beverages in 2008. We now consider a random
+  sample of $\Sexpr{k_3.6.27}$ 18-20 year olds.
+
+  \begin{parts}
+  \item How many people would you expect to have consumed alcoholic beverages?
+    And with what standard deviation?
+  \item Would you be surprised if there were $\Sexpr{x_3.6.27}$ or more people who have
+    consumed alcoholic beverages?
+  \item What is the probability that $\Sexpr{x_3.6.27}$ or more people in this sample have
+    consumed alcoholic beverages? How does this probability relate to your answer
+    to part (b)?
+  \end{parts}
+
 }{}
 
 % 28
 
-\eoce{\qt{Chickenpox, Part II\label{chicken_pox_normal_approx}} We learned in
-Exercise~\ref{chicken_pox_intro} that about 90\% of American adults had
-chickenpox before adulthood. We now consider a random sample of 120 American
-adults.
-\begin{parts}
-\item How many people in this sample would you expect to have had chickenpox
-in their childhood? And with what standard deviation?
-\item Would you be surprised if there were 105 people who have had chickenpox
-in their childhood?
-\item What is the probability that 105 or fewer people in this sample have
-had chickenpox in their childhood? How does this probability relate to your
-answer to part (b)?
-\end{parts}
+<<ex3.6.28, echo=FALSE>>=
+
+k_3.6.28 <- round(runif(1, 115, 125))
+x_3.6.28 <- round(runif(1, 95, 114))
+
+@
+
+\eoce{
+
+  \qt{Chickenpox, Part II\label{chicken_pox_normal_approx}} We learned
+  in Exercise~\ref{chicken_pox_intro} that about 90\% of American
+  adults had chickenpox before adulthood. We now consider a random
+  sample of $\Sexpr{k_3.6.28}$ American adults.
+
+  \begin{parts}
+  \item How many people in this sample would you expect to have had chickenpox
+    in their childhood? And with what standard deviation?
+  \item Would you be surprised if there were $\Sexpr{x_3.6.28}$ people
+    who have had chickenpox in their childhood?
+  \item What is the probability that $\Sexpr{x_3.6.28}$ or fewer people in this sample have
+    had chickenpox in their childhood? How does this probability relate to your
+    answer to part (b)?
+  \end{parts}
+
 }{}
 
 % 29
 
-\eoce{\qt{University admissions\label{university_admissions}} Suppose a university
-announced that it admitted 2,500 students for the following year's freshman
-class. However, the university has dorm room spots for only 1,786 freshman
-students. If there is a 70\% chance that an admitted student will decide to
-accept the offer and attend this university, what is the approximate
-probability that the university will not have enough dormitory room spots for
-the freshman class?
+<<ex3.6.29, echo=FALSE>>=
+
+k_3.6.29 <- round(runif(1, 2250, 2750))
+x_3.6.29 <- round(runif(1, 1500, 1900))
+pp_3.6.29 <- round(runif(1, 0.65, 0.75), 4)
+pp100_3.6.29 <- pp_3.6.29*100
+
+p_3.6.29 <- round(1-pbinom(x_3.6.29-1, k_3.6.29, pp_3.6.29), 4)
+zp_3.6.29 <- round(1-pnorm((x_3.6.29-0.5 - pp_3.6.29*k_3.6.29)/sqrt(pp_3.6.29*(1-pp_3.6.29)*k_3.6.29)), 4)
+
+@
+
+\eoce{
+
+  \qt{University admissions\label{university_admissions}} Suppose a
+  university announced that it admitted $\Sexpr{k_3.6.29}$ students
+  for the following year's freshman class. However, the university has
+  dorm room spots for only $\Sexpr{x_3.6.29}$ freshman students. If
+  there is a $\Sexpr{pp100_3.6.29}$\% chance that an admitted student
+  will decide to accept the offer and attend this university, what is
+  the approximate probability that the university will not have enough
+  dormitory room spots for the freshman class?
+
 }{}
 
 % 30
 
-\eoce{\qt{Survey response rate\label{survey_response_rate}} Pew Research reported
-in 2012 that the typical response rate to their surveys is only 9\%. If for a
-particular survey 15,000 households are contacted, what is the probability
-that at least 1,500 will agree to respond? \footfullcite{surveysPew}
+<<ex3.6.30, echo=FALSE>>=
+
+k_3.6.30 <- round(runif(1, 14000, 16000))
+x_3.6.30 <- round(runif(1, 1250, 1750))
+
+@
+
+\eoce{
+
+  \qt{Survey response rate\label{survey_response_rate}} Pew
+  Research reported in 2012 that the typical response rate to their
+  surveys is only 9\%. If for a particular survey $\Sexpr{k_3.6.30}$ households
+  are contacted, what is the probability that at least $\Sexpr{x_3.6.30}$ will
+  agree to respond? \footfullcite{surveysPew}
+
 }{}
 
 % 31
 
-\eoce{\qt{Game of dreidel\label{dreidel}} A dreidel is a four-sided spinning top
-with the Hebrew letters \textit{nun}, \textit{gimel}, \textit{hei}, and
-\textit{shin}, one on each side. Each side is equally likely to come up in a
-single spin of the dreidel. Suppose you spin a dreidel three times. Calculate
-the probability of getting
+<<ex3.6.31, echo=FALSE>>=
+
+xa_3.6.31 <- round(runif(1, 1, 3))
+xb_3.6.31 <- round(runif(1, 1, 3))
+xc_3.6.31 <- round(runif(1, 1, 3))
+xd_3.6.31 <- round(runif(1, 1, 3))
+
+pa_3.6.31 <- round(1-pbinom(xa_3.6.31-1, 3, .25), 4)
+pb_3.6.31 <- round(dbinom(xb_3.6.31, 3, .25), 4)
+pc_3.6.31 <- round(dbinom(xc_3.6.31, 3, .25), 4)
+pd_3.6.31 <- round(pbinom(xd_3.6.31, 3, .25), 4)
+
+@
+
+\eoce{
+
+  \qt{Game of dreidel\label{dreidel}} A dreidel is a four-sided
+  spinning top with the Hebrew letters \textit{nun}, \textit{gimel},
+  \textit{hei}, and \textit{shin}, one on each side. Each side is
+  equally likely to come up in a single spin of the dreidel. Suppose
+  you spin a dreidel three times. Calculate the probability of getting
 
 \noindent\begin{minipage}[c]{0.38\textwidth}
 \begin{parts}
-\item at least one \textit{nun}?
-\item exactly 2 \textit{nun}s?
-\item exactly 1 \textit{hei}?
-\item at most 2 \textit{gimel}s? \vspace{3mm}
+\item at least $\Sexpr{xa_3.6.31}$ \textit{nun}?
+\item exactly $\Sexpr{xb_3.6.31}$ \textit{nun}s?
+\item exactly $\Sexpr{xc_3.6.31}$ \textit{hei}?
+\item at most $\Sexpr{xd_3.6.31}$ \textit{gimel}s? \vspace{3mm}
 \end{parts}
 \end{minipage}%
 \begin{minipage}[c]{0.32\textwidth}
@@ -922,31 +1115,47 @@ the probability of getting
   (\oiRedirect{textbook-flickr_staccabees_dreidels}{http://flic.kr/p/7gLZTf}) \\
   \oiRedirect{textbook-CC_BY_2}{CC~BY~2.0~license}} \\
 \end{minipage}
+
+
 }{}
 
 % 32
 
-\eoce{\qt{Arachnophobia\label{arachnophobia}} A 2005 Gallup Poll found that 7\% of
-teenagers (ages 13 to 17) suffer from arachnophobia and are extremely afraid
-of spiders. At a summer camp there are 10 teenagers sleeping in each tent.
-Assume that these 10 teenagers are independent of each other.
-\footfullcite{webpage:spiders}
-\begin{parts}
-\item Calculate the probability that at least one of them suffers from
-arachnophobia.
-\item Calculate the probability that exactly 2 of them suffer from
-arachnophobia.
-\item Calculate the probability that at most 1 of them suffers from
-arachnophobia.
-\item If the camp counselor wants to make sure no more than 1 teenager in
-each tent is afraid of spiders, does it seem reasonable for him to randomly
-assign teenagers to tents?
-\end{parts}
+<<ex3.6.32, echo=FALSE>>=
+
+k_3.6.32 <- round(runif(1, 8, 12))
+xa_3.6.32 <- round(runif(1, 1, 3))
+xb_3.6.32 <- round(runif(1, 1, 3))
+xc_3.6.32 <- round(runif(1, 1, 3))
+
+@
+
+\eoce{
+
+  \qt{Arachnophobia\label{arachnophobia}} A 2005 Gallup Poll found
+  that 7\% of teenagers (ages 13 to 17) suffer from arachnophobia and
+  are extremely afraid of spiders. At a summer camp there are $\Sexpr{k_3.6.32}$
+  teenagers sleeping in each tent.  Assume that these $\Sexpr{k_3.6.32}$ teenagers are
+  independent of each other.  \footfullcite{webpage:spiders}
+
+  \begin{parts}
+  \item Calculate the probability that at least $\Sexpr{xa_3.6.32}$ of them suffers from
+    arachnophobia.
+  \item Calculate the probability that exactly $\Sexpr{xb_3.6.32}$ of them suffer from
+    arachnophobia.
+  \item Calculate the probability that at most $\Sexpr{xc_3.6.32}$ of them suffers from
+    arachnophobia.
+  \item If the camp counselor wants to make sure no more than 1 teenager in
+    each tent is afraid of spiders, does it seem reasonable for him to randomly
+    assign teenagers to tents?
+  \end{parts}
+
 }{}
 
-\textC{\pagebreak}
 
 % 33
+
+% TODO here
 
 \eoce{\qt{Eye color, Part II\label{eye_color_binomial}}
 Exercise~\ref{eye_color_geometric} introduces a husband and wife with brown

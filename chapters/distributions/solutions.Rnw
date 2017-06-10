@@ -146,62 +146,92 @@ annotate_stdNormal(z_3.6.3, dnorm(z_3.6.3))
 
 % 19
 
-\eocesol{(a)~No. The cards are not independent. For example, if the first card is an
-ace of clubs, that implies the second card cannot be an ace of clubs.
-Additionally, there are many possible categories, which would need to be
-simplified.
-(b)~No. There are six events under consideration. The Bernoulli distribution
-allows for only two events or categories. Note that rolling a die could be a
-Bernoulli trial if we simply to two events, e.g. rolling a 6 and not rolling
-a 6, though specifying such details would be necessary.}
+\eocesol{
+
+  (a)~No. The cards are not independent. For example, if the first card is an
+  ace of clubs, that implies the second card cannot be an ace of clubs.
+  Additionally, there are many possible categories, which would need to be
+  simplified.
+  (b)~No. There are six events under consideration. The Bernoulli distribution
+  allows for only two events or categories. Note that rolling a die could be a
+  Bernoulli trial if we simply to two events, e.g. rolling a 6 and not rolling
+  a 6, though specifying such details would be necessary.
+
+}
 
 % 21
 
-\eocesol{(a)~$(1-0.471)^2\times0.471 = 0.1318$.
-(b)~$0.471^3 = 0.1045$.
-(c)~$\mu = 1/0.471 = 2.12$, $\sigma=\sqrt{2.38} = 1.54$.
-(d)~$\mu = 1/0.30 = 3.33$, $\sigma=2.79$.
-(e)~When $p$ is smaller, the event is rarer, meaning the expected number of
-trials before a success and the standard deviation of the waiting time are
-higher.}
+\eocesol{
+
+  (a)~$(1-0.471)^2\times0.471 = 0.1318$.
+  (b)~$0.471^3 = 0.1045$.
+  (c)~$\mu = 1/0.471 = 2.12$, $\sigma=\sqrt{2.38} = 1.54$.
+  (d)~$\mu = 1/0.30 = 3.33$, $\sigma=2.79$.
+  (e)~When $p$ is smaller, the event is rarer, meaning the expected number of
+  trials before a success and the standard deviation of the waiting time are
+  higher.
+
+}
 
 % 23
 
-\eocesol{(a)~$0.875^2\times 0.125 = 0.096$. \\
-(b)~$\mu=8$, $\sigma=7.48$.}
+\eocesol{
+
+  (a)~$\Sexpr{1-pbl_3.6.23}^2\times \Sexpr{pbl_3.6.23} = \Sexpr{pa_3.6.23}$. \\
+  (b)~$\mu=\Sexpr{m_3.6.23}$, $\sigma=sd_3.6.23$.
+
+}
 
 % 25
 
-\eocesol{(a)~Binomial conditions are met:
-(1)~Independent trials: In a random sample, whether or not one 18-20 year
-old has consumed alcohol does not depend on whether or not another one has.
-(2)~Fixed number of trials: $n = 10$.
-(3)~Only two outcomes at each trial: Consumed or did not consume alcohol.
-(4)~Probability of a success is the same for each trial: $p = 0.697$.
-(b)~0.203.
-(c)~0.203.
-(d)~0.167.
-(e)~0.997.}
+\eocesol{
+
+  (a)~Binomial conditions are met:
+  (1)~Independent trials: In a random sample, whether or not one 18-20 year
+  old has consumed alcohol does not depend on whether or not another one has.
+  (2)~Fixed number of trials: $n = \Sexpr{k_3.6.25}$.
+  (3)~Only two outcomes at each trial: Consumed or did not consume alcohol.
+  (4)~Probability of a success is the same for each trial: $p = 0.697$.
+  (b)~$\Sexpr{p_3.6.25}$.
+  (c)~$\Sexpr{p_3.6.25}$.
+  (d)~$\Sexpr{pmost_3.6.25}$.
+  (e)~$\Sexpr{pleast_3.6.25}$.
+
+}
 
 % 27
 
-\eocesol{(a)~$\mu = 34.85$, $\sigma = 3.25$
-(b)~$Z = \frac{45 - 34.85}{3.25} = 3.12$. 45 is more than 3 standard
-deviations away from the mean, we can assume that it is an unusual
-observation. Therefore yes, we would be surprised.
-(c)~Using the normal approximation, 0.0009. With 0.5 correction, 0.0015.}
+\eocesol{
+
+  (a)~$\mu = \Sexpr{m_3.6.27}$, $\sigma = \Sexpr{sd_3.6.27}$
+  (b)~$Z = \Sexpr{z_3.6.27}$. Since the z-score is \Sexpr{not} greater
+  than $3$ standard deviations away from the mean we are \Sexpr{not}
+  surprised.
+  (c)~$\Sexpr{p_3.6.27}$, or $\Sexpr{zp_3.6.27}$ with the
+  normal approximation and $0.5$ correction.
+
+}
 
 % 29
 
-\eocesol{Want to find the probability that there will be 1,786 or more enrollees.
-Using the normal approximation: 0.0582. With a 0.5 correction: 0.0559.}
+\eocesol{
+
+  Want to find the probability that there will be $\Sexpr{x_3.6.29}$
+  or more enrollees: $\Sexpr{pp_3.6.29}$.  Or using the normal
+  approximation with a $0.5$ correction: $\Sexpr{zp_3.6.29}$.
+
+}
 
 % 31
 
-\eocesol{(a)~$1-0.75^3 = 0.5781$.
-(b)~0.1406.
-(c)~0.4219.
-(d)~$1-0.25^3=0.9844$.}
+\eocesol{
+
+  (a)~$\Sexpr{pa_3.6.31}$.
+  (b)~$\Sexpr{pb_3.6.31}$.
+  (c)~$\Sexpr{pc_3.6.31}$.
+  (d)~$\Sexpr{pd_3.6.31}$.
+
+}
 
 % 33
 
