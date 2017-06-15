@@ -1,4 +1,5 @@
 % -*- compile-command: "cd ../../ && make" -*-
+
 \section{Exercises}
 \subsection{Normal distribution}
 
@@ -26,11 +27,9 @@ p_3.6.1d <- shade_stdNormal(x>abs(z_3.6.1d), x< -1*abs(z_3.6.1d))
 
 @
 
-\eoce{
-
-  \qt{Area under the curve, Part I\label{area_under_curve_1}} What
-  percent of a standard normal distribution $N(\mu=0, \sigma=1)$ is
-  found in each region?  Be sure to draw a graph. \vspace{-3mm}
+\eoce{ \qt{Area under the curve, Part I\label{area_under_curve_1}}
+  What percent of a standard normal distribution $N(\mu=0, \sigma=1)$
+  is found in each region?  Be sure to draw a graph. \vspace{-3mm}
 
   \begin{multicols}{4}
     \begin{parts}
@@ -60,11 +59,9 @@ z_3.6.2d_ans <- round((pnorm(z_3.6.2d) - pnorm(-1*z_3.6.2d))*100, 2)
 
 @
 
-\eoce{
-
-  \qt{Area under the curve, Part II\label{area_under_curve_2}} What
-  percent of a standard normal distribution $N(\mu=0, \sigma=1)$ is
-  found in each region?  Be sure to draw a graph. \vspace{-3mm}
+\eoce{ \qt{Area under the curve, Part II\label{area_under_curve_2}}
+  What percent of a standard normal distribution $N(\mu=0, \sigma=1)$
+  is found in each region?  Be sure to draw a graph. \vspace{-3mm}
 
   \begin{multicols}{4}
     \begin{parts}
@@ -96,17 +93,15 @@ perc_qr_3.6.3 <- round(pnorm(z_3.6.3["Quantitative"])*100, 2)
 
 @
 
-\eoce{
-
-  \qt{GRE scores, Part I\label{GRE_intro}} Sophia who took the
+\eoce{ \qt{GRE scores, Part I\label{GRE_intro}} Sophia who took the
   Graduate Record Examination (GRE) scored $\Sexpr{x_3.6.3[1]}$ on the
   Verbal Reasoning section and $\Sexpr{x_3.6.3[2]}$ on the
   Quantitpative Reasoning section. The mean score for Verbal Reasoning
   section for all test takers was $\Sexpr{pm_3.6.3[1]}$ with a
-  standard deviation of $\Sexpr{psd_3.6.3[1]}$, and the mean score
-  for the Quantitative Reasoning was $\Sexpr{pm_3.6.3[2]}$ with a
-  standard deviation of $\Sexpr{psd_3.6.3[2]}$. Suppose that both
-  distributions are nearly normal.
+  standard deviation of $\Sexpr{psd_3.6.3[1]}$, and the mean score for
+  the Quantitative Reasoning was $\Sexpr{pm_3.6.3[2]}$ with a standard
+  deviation of $\Sexpr{psd_3.6.3[2]}$. Suppose that both distributions
+  are nearly normal.
 
   \begin{parts}
   \item Write down the short-hand for these two normal distributions.
@@ -147,16 +142,14 @@ while(xl_3.6.4 >= xm_3.6.4) {
 @
 
 
-\eoce{
-
-  \qt{Triathlon times, Part I\label{triathlon_times_intro}} In
+\eoce{ \qt{Triathlon times, Part I\label{triathlon_times_intro}} In
   triathlons, it is common for racers to be placed into age and gender
   groups.  Friends Leo and Mary both completed the Hermosa Beach
   Triathlon, where Leo competed in the \textit{Men, Ages 30 - 34}
   group while Mary competed in the \textit{Women, Ages 25 - 29} group.
   Leo completed the race in \Sexpr{clock_time(xl_3.6.4)}
-  ($\Sexpr{round(xl_3.6.4)}$ seconds), while Mary completed the race in
-  \Sexpr{clock_time(xm_3.6.4)} ($\Sexpr{round(xm_3.6.4)}$
+  ($\Sexpr{round(xl_3.6.4)}$ seconds), while Mary completed the race
+  in \Sexpr{clock_time(xm_3.6.4)} ($\Sexpr{round(xm_3.6.4)}$
   seconds). Obviously Leo finished faster, but they are curious about
   how they did within their respective groups. Can you help them? Here
   is some information on the performance of their groups:
@@ -173,6 +166,7 @@ while(xl_3.6.4 >= xm_3.6.4) {
     Normal.
   \end{itemize}
   Remember: a better performance corresponds to a faster finish.
+
   \begin{parts}
   \item Write down the short-hand for these two normal distributions.
   \item What are the Z-scores for Leo's and Mary's finishing times? What do
@@ -197,13 +191,13 @@ q30_3.6.5 <- round(qnorm(.7, pm_3.6.3[1], psd_3.6.3[1]), 2)
 
 @
 
-\eoce{
-
-  \qt{GRE scores, Part II\label{GRE_cutoffs}} In
+\eoce{ \qt{GRE scores, Part II\label{GRE_cutoffs}} In
   Exercise~\ref{GRE_intro} we saw two distributions for GRE scores:
-  $N(\mu=\Sexpr{pm_3.6.3[1]}, \sigma=\Sexpr{psd_3.6.3[1]})$ for the verbal part of the exam and
-  $N(\mu=\Sexpr{psd_3.6.3[2]}, \sigma=\Sexpr{psd_3.6.3[2]})$ for the quantitative part. Use this
-  information to compute each of the following:
+  $N(\mu=\Sexpr{pm_3.6.3[1]}, \sigma=\Sexpr{psd_3.6.3[1]})$ for the
+  verbal part of the exam and
+  $N(\mu=\Sexpr{psd_3.6.3[2]}, \sigma=\Sexpr{psd_3.6.3[2]})$ for the
+  quantitative part. Use this information to compute each of the
+  following:
 
   \begin{parts}
   \item The score of a student who scored in the $80^{th}$ percentile on the
@@ -216,11 +210,13 @@ q30_3.6.5 <- round(qnorm(.7, pm_3.6.3[1], psd_3.6.3[1]), 2)
 
 % 6
 
-\eoce{
-
-  \qt{Triathlon times, Part II\label{triathlon_times_cutoffs}} In
+\eoce{ \qt{Triathlon times, Part II\label{triathlon_times_cutoffs}} In
   Exercise~\ref{triathlon_times_intro} we saw two distributions for
-  triathlon times: $N(\mu=\Sexpr{pml_3.6.4}, \sigma=\Sexpr{psdl_3.6.4})$ for \emph{Men, Ages 30 -34} and $N(\mu=\Sexpr{pmm_3.6.4}, \sigma=\Sexpr{psdm_3.6.4})$ for the \emph{Women, Ages 25 -29} group. Times are listed in seconds. Use this information to compute each of the following:
+  triathlon times:
+  $N(\mu=\Sexpr{pml_3.6.4}, \sigma=\Sexpr{psdl_3.6.4})$ for \emph{Men, Ages 30 -34} and
+  $N(\mu=\Sexpr{pmm_3.6.4}, \sigma=\Sexpr{psdm_3.6.4})$ for the
+  \emph{Women, Ages 25 -29} group. Times are listed in seconds. Use
+  this information to compute each of the following:
 
 
   \begin{parts}
@@ -249,18 +245,17 @@ q10_3.6.7 <- round(z_3.6.7b*psd_3.6.7 + pm_3.6.7, 2)
 
 @
 
-\eoce{
-
-  \qt{LA weather, Part I\label{la_weather_intro}} The average daily
-  high temperature in June in LA is $\Sexpr{pm_3.6.7}$\degree F with a standard
-  deviation of $\Sexpr{psd_3.6.7}$\degree F. Suppose that the temperatures in June
-  closely follow a normal distribution.
+\eoce{ \qt{LA weather, Part I\label{la_weather_intro}} The average
+  daily high temperature in June in LA is $\Sexpr{pm_3.6.7}$\degree F
+  with a standard deviation of $\Sexpr{psd_3.6.7}$\degree F. Suppose
+  that the temperatures in June closely follow a normal distribution.
 
   \begin{parts}
   \item What is the probability of observing an 83\degree F temperature or
     higher in LA during a randomly chosen day in June?
     % \item How cold are the coldest 10\% of the days during June in LA?
-  \item How cool are the coldest 10\% of the days (days with lowest average high temperature) during June in LA?
+  \item How cool are the coldest 10\% of the days (days with lowest
+    average high temperature) during June in LA?
   \end{parts}
 
 }{}
@@ -280,10 +275,8 @@ q85_3.6.8 <- round(qnorm(.85, pm_3.6.8, psd_3.6.8), 2)
 
 @
 
-\eoce{
-
-  \qt{CAPM\label{CAPM}} The Capital Asset Pricing Model (CAPM) is a
-  financial model that assumes returns on a portfolio are normally
+\eoce{ \qt{CAPM\label{CAPM}} The Capital Asset Pricing Model (CAPM) is
+  a financial model that assumes returns on a portfolio are normally
   distributed. Suppose a portfolio has an average annual return of
   $\Sexpr{pm_3.6.8}$\% (i.e. an average gain of $\Sexpr{pm_3.6.8}$\%)
   with a standard deviation of $\Sexpr{psd_3.6.8}$\%. A return of 0\%
@@ -317,14 +310,13 @@ iqr_3.6.9 <- q75_3.6.9 - q25_3.6.9
 
 @
 
-\eoce{
-
-  \qt{LA weather, Part II\label{la_weather_unit_change}}
+\eoce{ \qt{LA weather, Part II\label{la_weather_unit_change}}
   Exercise~\ref{la_weather_intro} states that average daily high
-  temperature in June in LA is $\Sexpr{pm_3.6.7}$\degree F with a standard deviation
-  of $\Sexpr{psd_3.6.7}$\degree F, and it can be assumed that they to follow a normal
-  distribution. We use the following equation to convert \degree F
-  (Fahrenheit) to \degree C (Celsius):
+  temperature in June in LA is $\Sexpr{pm_3.6.7}$\degree F with a
+  standard deviation of $\Sexpr{psd_3.6.7}$\degree F, and it can be
+  assumed that they to follow a normal distribution. We use the
+  following equation to convert \degree F (Fahrenheit) to \degree C
+  (Celsius):
 
   \[ C = (F - 32) \times \frac{5}{9}. \]
 
@@ -334,8 +326,9 @@ iqr_3.6.9 <- q75_3.6.9 - q25_3.6.9
   \item What is the probability of observing a $28.34$\degree C (which roughly
     corresponds to 83\degree F) temperature or higher in June in LA? Calculate
     using the \degree C model from part (a).
-  \item Did you get the same answer or different answers in part (b) of this
-    question and part (a) of Exercise~\ref{la_weather_intro}? Are you surprised? Explain.
+  \item Did you get the same answer or different answers in part (b)
+    of this question and part (a) of Exercise~\ref{la_weather_intro}?
+    Are you surprised? Explain.
   \item Estimate the IQR of the temperatures (in \degree C) in June in LA.
   \end{parts}
 
@@ -355,10 +348,8 @@ p54_3.6.10 <- round(pnorm(54, pm_3.6.10, psd_3.6.10), 2)
 
 @
 
-\eoce{
-
-  \qt{Heights of 10 year olds\label{heights_10_yrs}} Heights of 10
-  year olds, regardless of gender, closely follow a normal
+\eoce{ \qt{Heights of 10 year olds\label{heights_10_yrs}} Heights of
+  10 year olds, regardless of gender, closely follow a normal
   distribution with mean $\Sexpr{pm_3.6.10}$ inches and standard
   deviation $\Sexpr{psd_3.6.10}$ inches.
 
@@ -386,13 +377,12 @@ sd_3.6.11 <- round((q75_3.6.11 - pm_3.6.11)/.67, 2)
 
 @
 
-\eoce{
-
-  \qt{Auto insurance premiums\label{auto_insurance_premiums}} Suppose
-  a newspaper article states that the distribution of auto insurance
-  premiums for residents of California is approximately normal with a
-  mean of \$$\Sexpr{pm_3.6.11}$. The article also states that 25\% of California
-  residents pay more than \$$\Sexpr{q75_3.6.11}$.
+\eoce{ \qt{Auto insurance premiums\label{auto_insurance_premiums}}
+  Suppose a newspaper article states that the distribution of auto
+  insurance premiums for residents of California is approximately
+  normal with a mean of
+  \$$\Sexpr{pm_3.6.11}$. The article also states that 25\% of
+  California residents pay more than \$$\Sexpr{q75_3.6.11}$.
 
   \begin{parts}
   \item What is the Z-score that corresponds to the top 25\% (or the $75^{th}$
@@ -414,9 +404,7 @@ pc_3.6.12 <- round(runif(1, 2, 8))
 
 @
 
-\eoce{
-
-  \qt{Speeding on the I-5, Part I\label{speeding_i5_intro}} The
+\eoce{ \qt{Speeding on the I-5, Part I\label{speeding_i5_intro}} The
   distribution of passenger vehicle speeds traveling on the Interstate
   5 Freeway (I-5) in California is nearly normal with a mean of 72.6
   miles/hour and a standard deviation of 4.78
@@ -424,7 +412,8 @@ pc_3.6.12 <- round(runif(1, 2, 8))
   % these numbers not randomly generated since they come from a study
 
   \begin{parts}
-  \item What percent of passenger vehicles travel slower than $\Sexpr{xa_3.6.12}$ miles/hour?
+  \item What percent of passenger vehicles travel slower than
+    $\Sexpr{xa_3.6.12}$ miles/hour?
   \item What percent of passenger vehicles travel between
     $\Sexpr{xb_3.6.12}$ and $\Sexpr{xa_3.6.12}$ miles/hour?
   \item How fast do the fastest $Sexpr{pc_3.6.12}$\% of passenger vehicles travel?
@@ -448,13 +437,11 @@ pz_3.6.13 <- round(1-pnorm(z_3.6.13), 4)
 
 @
 
-\eoce{
-
-  \qt{Overweight baggage\label{overweight_baggage}} Suppose weights of
-  the checked baggage of airline passengers follow a nearly normal
-  distribution with mean $\Sexpr{pm_3.6.13}$ pounds and standard
-  deviation $\Sexpr{psd_3.6.13}$ pounds. Most airlines charge a fee
-  for baggage that weigh in excess of $\Sexpr{x_3.6.13}$
+\eoce{ \qt{Overweight baggage\label{overweight_baggage}} Suppose
+  weights of the checked baggage of airline passengers follow a nearly
+  normal distribution with mean $\Sexpr{pm_3.6.13}$ pounds and
+  standard deviation $\Sexpr{psd_3.6.13}$ pounds. Most airlines charge
+  a fee for baggage that weigh in excess of $\Sexpr{x_3.6.13}$
   pounds. Determine what percent of airline passengers incur this fee.
 
 }{}
@@ -471,18 +458,17 @@ x_3.6.14b <- round(runif(1, 115, 125))
 
 @
 
-\eoce{
-
-  \qt{Find the SD\label{find_sd}} Find the standard deviation of the
-  distribution in the following situations.
-
+\eoce{ \qt{Find the SD\label{find_sd}} Find the standard deviation of
+  the distribution in the following situations.
   \begin{parts}
-  \item  MENSA is an organization whose members have IQs in the top 2\% of the
-    population. IQs are normally distributed with mean $\Sexpr{pm_3.6.14a}$, and the minimum IQ
-    score required for admission to MENSA is $\Sexpr{x_3.6.14a}$.
-  \item Cholesterol levels for women aged 20 to 34 follow an approximately
-    normal distribution with mean $\Sexpr{pm_3.6.14b}$ milligrams per deciliter (mg/dl). Women
-    with cholesterol levels above $\Sexpr{x_3.6.14b}$ mg/dl are considered to have high
+  \item MENSA is an organization whose members have IQs in the top 2\%
+    of the population. IQs are normally distributed with mean
+    $\Sexpr{pm_3.6.14a}$, and the minimum IQ score required for
+    admission to MENSA is $\Sexpr{x_3.6.14a}$.
+  \item Cholesterol levels for women aged 20 to 34 follow an
+    approximately normal distribution with mean $\Sexpr{pm_3.6.14b}$
+    milligrams per deciliter (mg/dl). Women with cholesterol levels
+    above $\Sexpr{x_3.6.14b}$ mg/dl are considered to have high
     cholesterol and about 18.5\% of women fall into this category.
   \end{parts}
 
@@ -502,35 +488,28 @@ q10_3.6.15 <- round(qnorm(.1)*psd_3.6.15 + pm_3.6.15, 2)
 
 @
 
-\eoce{
-
-  \qt{Buying books on Ebay\label{buy_boooks_ebay}} The textbook you
-  need to buy for your chemistry class is expensive at the college
+\eoce{ \qt{Buying books on Ebay\label{buy_boooks_ebay}} The textbook
+  you need to buy for your chemistry class is expensive at the college
   bookstore, so you consider buying it on Ebay instead. A look at past
   auctions suggest that the prices of that chemistry textbook have an
-  approximately normal distribution with mean \$$\Sexpr{pm_3.6.15}$ and standard
-  deviation \$$\Sexpr{psd_3.6.15}$.
+  approximately normal distribution with mean
+  \$$\Sexpr{pm_3.6.15}$ and standard deviation \$$\Sexpr{psd_3.6.15}$.
 
   \begin{parts}
-
   \item What is the probability that a randomly selected auction for this book
     closes at more than \$$\Sexpr{x_3.6.15}$?
-
   \item Ebay allows you to set your maximum bid price so that if someone
     outbids you on an auction you can automatically outbid them, up to the
     maximum bid price you set. If you are only bidding on one auction, what are
     the advantages and disadvantages of setting a bid price too high or too low?
     What if you are bidding on multiple auctions?
-
   \item If you watched 10 auctions, roughly what percentile might you use for a
     maximum bid cutoff to be somewhat sure that you will win one of these ten
     auctions? Is it possible to find a cutoff point that will ensure that you win
     an auction?
-
   \item If you are willing to track up to ten auctions closely, about what
     price might you use as your maximum bid price if you want to be somewhat sure
     that you will buy one of these ten books?
-
   \end{parts}
 
 }{}
@@ -544,9 +523,7 @@ psd_3.6.16 <- round(runif(1, 290, 310))
 
 @
 
-\eoce{
-
-  \qt{SAT scores\label{sat_scores}} SAT scores (out of 2400) are
+\eoce{ \qt{SAT scores\label{sat_scores}} SAT scores (out of 2400) are
   distributed normally with a mean of $\Sexpr{pm_3.6.16}$ and a
   standard deviation of $\Sexpr{psd_3.6.16}$. Suppose a school council
   awards a certificate of excellence to all students who score at
@@ -572,10 +549,8 @@ ssd_3.6.17 <- round(sd(x_3.6.17), 2)
 
 @
 
-\eoce{
-
-  \qt{Scores on stats final\label{stats_scores}} Below are final exam
-  scores of 20 Introductory Statistics students.
+\eoce{ \qt{Scores on stats final\label{stats_scores}} Below are final
+  exam scores of 20 Introductory Statistics students.
   \[
     \stackrel{01}{\Sexpr{x_3.6.17[01]}},
     \stackrel{02}{\Sexpr{x_3.6.17[02]}},
@@ -632,10 +607,9 @@ ssd_3.6.18 <- round(sd(x_3.6.18), 2)
 
 @
 
-\eoce{
-
-  \qt{Heights of female college students\label{college_fem_heights}}
-  Below are heights of 25 female college students.
+\eoce{ \qt{Heights of female college
+    students\label{college_fem_heights}} Below are heights of 25
+  female college students.
   \[
     \stackrel{01}{\Sexpr{x_3.6.18[01]}},
     \stackrel{02}{\Sexpr{x_3.6.18[02]}},
@@ -688,18 +662,12 @@ quant_plot(x_3.6.18)
 
 }{}
 
-
-\textC{\newpage}
-
-
 %_______________
 \subsection{Geometric distribution}
 
 % 19
 
-\eoce{
-
-  \qtq{Is it Bernoulli\label{is_it_bernouilli}} Determine if each
+\eoce{ \qtq{Is it Bernoulli\label{is_it_bernouilli}} Determine if each
   trial can be considered an independent Bernoulli trial for the
   following situations.
 
@@ -719,11 +687,10 @@ xb_3.6.20 <- round(runif(1, 9750, 10250))
 
 @
 
-\eoce{
-
-  \qt{With and without replacement\label{with_without_replacement}} In
-  the following situations assume that half of the specified
-  population is male and the other half is female.
+\eoce{ \qt{With and without
+    replacement\label{with_without_replacement}} In the following
+  situations assume that half of the specified population is male and
+  the other half is female.
 
   \begin{parts}
   \item Suppose you're sampling from a room with $\Sexpr{xa_3.6.20}$ people. What is the
@@ -747,11 +714,9 @@ x_3.6.21 <- round(runif(1, 27, 33))
 
 @
 
-\eoce{
-
-  \qt{Married women} \label{married_women} The 2010 American Community
-  Survey estimates that 47.1\% of women ages 15 years and over are
-  married.  \footfullcite{marWomenACS}
+\eoce{ \qt{Married women \label{married_women}} The 2010 American
+  Community Survey estimates that 47.1\% of women ages 15 years and
+  over are married.  \footfullcite{marWomenACS}
   % this number not randomly generated since it comes from a study
 
   \begin{parts}
@@ -783,24 +748,23 @@ pb_3.6.22 <- round(runif(1, 0.025, 0.075), 4)
 
 @
 
-\eoce{
-
-  \qt{Defective rate\label{defective_rate}} A machine that produces a
-  special type of transistor (a component of computers) has a $\Sexpr{pa_3.6.22}$\%
-  defective rate. The production is considered a random process where
-  each transistor is independent of the others.
+\eoce{ \qt{Defective rate\label{defective_rate}} A machine that
+  produces a special type of transistor (a component of computers) has
+  a $\Sexpr{pa_3.6.22}$\% defective rate. The production is considered
+  a random process where each transistor is independent of the others.
 
   \begin{parts}
-  \item What is the probability that the $\Sexpr{xa_3.6.22}^{th}$ transistor produced is the
-    first with a defect?
+  \item What is the probability that the $\Sexpr{xa_3.6.22}^{th}$
+    transistor produced is the first with a defect?
   \item What is the probability that the machine produces no defective
     transistors in a batch of $\Sexpr{xb_3.6.22}$?
   \item On average, how many transistors would you expect to be produced before
     the first with a defect? What is the standard deviation?
-  \item Another machine that also produces transistors has a $\Sexpr{pb_3.6.22}$\% defective rate
-    where each transistor is produced independent of the others. On average how
-    many transistors would you expect to be produced with this machine before the
-    first with a defect? What is the standard deviation?
+  \item Another machine that also produces transistors has a
+    $\Sexpr{pb_3.6.22}$\% defective rate where each transistor is
+    produced independent of the others. On average how many
+    transistors would you expect to be produced with this machine
+    before the first with a defect? What is the standard deviation?
   \item Based on your answers to parts (c) and (d), how does increasing the
     probability of an event affect the mean and standard deviation of the wait
     time until success?
@@ -822,12 +786,10 @@ sd_3.6.23 <- round(sqrt((1-pbl_3.6.23)/(pbl_3.6.23*pbl_3.6.23)), 2)
 
 @
 
-\eoce{
-
-  \qt{Eye color, Part I\label{eye_color_geometric}} A husband and wife
-  both have brown eyes but carry genes that make it possible for their
-  children to have brown eyes (probability 0.75), blue eyes (0.125),
-  or green eyes (0.125).
+\eoce{ \qt{Eye color, Part I\label{eye_color_geometric}} A husband and
+  wife both have brown eyes but carry genes that make it possible for
+  their children to have brown eyes (probability 0.75), blue eyes
+  (0.125), or green eyes (0.125).
 
   \begin{parts}
   \item What is the probability the first blue-eyed child they have is their
@@ -848,9 +810,7 @@ x_3.6.24 <- round(runif(1, 3, 7))
 
 @
 
-\eoce{
-
-  \qt{Speeding on the I-5, Part II\label{speeding_i5_geometric}}
+\eoce{ \qt{Speeding on the I-5, Part II\label{speeding_i5_geometric}}
   Exercise~\ref{speeding_i5_intro} states that the distribution of
   speeds of cars traveling on the Interstate 5 Freeway (I-5) in
   California is nearly normal with a mean of 72.6 miles/hour and a
@@ -858,12 +818,13 @@ x_3.6.24 <- round(runif(1, 3, 7))
   stretch of the I-5 is 70 miles/hour.
 
   \begin{parts}
-  \item A highway patrol officer is hidden on the side of the freeway. What is
-    the probability that $\Sexpr{x_3.6.24}$~cars pass and none are speeding? Assume that the
-    speeds of the cars are independent of each other.
-  \item On average, how many cars would the highway patrol officer expect to
-    watch until the first car that is speeding? What is the standard deviation of
-    the number of cars he would expect to watch?
+  \item A highway patrol officer is hidden on the side of the
+    freeway. What is the probability that $\Sexpr{x_3.6.24}$~cars pass
+    and none are speeding? Assume that the speeds of the cars are
+    independent of each other.
+  \item On average, how many cars would the highway patrol officer
+    expect to watch until the first car that is speeding? What is the
+    standard deviation of the number of cars he would expect to watch?
   \end{parts}
 
 }{}
@@ -892,19 +853,18 @@ pleast_3.6.25 <- round(1-pbinom(y1_3.6.25 - 1, l_3.6.25, 0.697), 4)
 
 @
 
-\eoce{
-
-  \qt{Underage drinking, Part I\label{underage_drinking_intro}} Data
-  collected by the Substance Abuse and Mental Health Services
+\eoce{ \qt{Underage drinking, Part I\label{underage_drinking_intro}}
+  Data collected by the Substance Abuse and Mental Health Services
   Administration (SAMSHA) suggests that 69.7\% of 18-20 year olds
   consumed alcoholic beverages in 2008.
   \footfullcite{webpage:alcohol}
   % these numbers not randomly generated since they come from a study
 
   \begin{parts}
-  \item Suppose a random sample of $\Sexpr{k_3.6.25}$ 18-20 year olds is taken. Is the use
-    of the binomial distribution appropriate for calculating the probability that
-    exactly $\Sexpr{x_3.6.25}$ consumed alcoholic beverages? Explain.
+  \item Suppose a random sample of $\Sexpr{k_3.6.25}$ 18-20 year olds
+    is taken. Is the use of the binomial distribution appropriate for
+    calculating the probability that exactly $\Sexpr{x_3.6.25}$
+    consumed alcoholic beverages? Explain.
   \item Calculate the probability that exactly $\Sexpr{x_3.6.25}$ out
     of $\Sexpr{k_3.6.25}$ randomly sampled 18-20 year olds consumed
     an alcoholic drink.
@@ -935,9 +895,7 @@ y1_3.6.26 <- round(runif(1, 1, 5))
 
 @
 
-\eoce{
-
-  \qt{Chicken pox, Part I\label{chicken_pox_intro}} The National
+\eoce{ \qt{Chicken pox, Part I\label{chicken_pox_intro}} The National
   Vaccine Information Center estimates that 90\% of Americans have had
   chickenpox by the time they reach adulthood.
   \footfullcite{webpage:chickenpox}
@@ -977,26 +935,24 @@ z_3.6.27 <- round((x_3.6.27 - m_3.6.27)/sd_3.6.27, 2)
 p_3.6.27 <- round(1-pbinom(x_3.6.27-1, k_3.6.27, .697), 6)
 zp_3.6.27 <- round(1-pnorm((x_3.6.27-0.5 - m_3.6.27)/sd_3.6.27), 6)
 
-not <- ifelse(z_3.6.27 > 3, "", "not")
+not_3.6.27 <- ifelse(z_3.6.27 > 3, "", "not")
 
 @
 
-\eoce{
-
-  \qt{Underage drinking, Part
+\eoce{ \qt{Underage drinking, Part
     II\label{underage_drinking_normal_approx}} We learned in
   Exercise~\ref{underage_drinking_intro} that about 70\% of 18-20 year
   olds consumed alcoholic beverages in 2008. We now consider a random
   sample of $\Sexpr{k_3.6.27}$ 18-20 year olds.
 
   \begin{parts}
-  \item How many people would you expect to have consumed alcoholic beverages?
-    And with what standard deviation?
-  \item Would you be surprised if there were $\Sexpr{x_3.6.27}$ or more people who have
-    consumed alcoholic beverages?
-  \item What is the probability that $\Sexpr{x_3.6.27}$ or more people in this sample have
-    consumed alcoholic beverages? How does this probability relate to your answer
-    to part (b)?
+  \item How many people would you expect to have consumed alcoholic
+    beverages?  And with what standard deviation?
+  \item Would you be surprised if there were $\Sexpr{x_3.6.27}$ or
+    more people who have consumed alcoholic beverages?
+  \item What is the probability that $\Sexpr{x_3.6.27}$ or more people
+    in this sample have consumed alcoholic beverages? How does this
+    probability relate to your answer to part (b)?
   \end{parts}
 
 }{}
@@ -1010,21 +966,19 @@ x_3.6.28 <- round(runif(1, 95, 114))
 
 @
 
-\eoce{
-
-  \qt{Chickenpox, Part II\label{chicken_pox_normal_approx}} We learned
-  in Exercise~\ref{chicken_pox_intro} that about 90\% of American
-  adults had chickenpox before adulthood. We now consider a random
-  sample of $\Sexpr{k_3.6.28}$ American adults.
+\eoce{ \qt{Chickenpox, Part II\label{chicken_pox_normal_approx}} We
+  learned in Exercise~\ref{chicken_pox_intro} that about 90\% of
+  American adults had chickenpox before adulthood. We now consider a
+  random sample of $\Sexpr{k_3.6.28}$ American adults.
 
   \begin{parts}
-  \item How many people in this sample would you expect to have had chickenpox
-    in their childhood? And with what standard deviation?
+  \item How many people in this sample would you expect to have had
+    chickenpox in their childhood? And with what standard deviation?
   \item Would you be surprised if there were $\Sexpr{x_3.6.28}$ people
     who have had chickenpox in their childhood?
-  \item What is the probability that $\Sexpr{x_3.6.28}$ or fewer people in this sample have
-    had chickenpox in their childhood? How does this probability relate to your
-    answer to part (b)?
+  \item What is the probability that $\Sexpr{x_3.6.28}$ or fewer
+    people in this sample have had chickenpox in their childhood? How
+    does this probability relate to your answer to part (b)?
   \end{parts}
 
 }{}
@@ -1043,10 +997,8 @@ zp_3.6.29 <- round(1-pnorm((x_3.6.29-0.5 - pp_3.6.29*k_3.6.29)/sqrt(pp_3.6.29*(1
 
 @
 
-\eoce{
-
-  \qt{University admissions\label{university_admissions}} Suppose a
-  university announced that it admitted $\Sexpr{k_3.6.29}$ students
+\eoce{ \qt{University admissions\label{university_admissions}} Suppose
+  a university announced that it admitted $\Sexpr{k_3.6.29}$ students
   for the following year's freshman class. However, the university has
   dorm room spots for only $\Sexpr{x_3.6.29}$ freshman students. If
   there is a $\Sexpr{pp100_3.6.29}$\% chance that an admitted student
@@ -1065,13 +1017,11 @@ x_3.6.30 <- round(runif(1, 1250, 1750))
 
 @
 
-\eoce{
-
-  \qt{Survey response rate\label{survey_response_rate}} Pew
+\eoce{ \qt{Survey response rate\label{survey_response_rate}} Pew
   Research reported in 2012 that the typical response rate to their
-  surveys is only 9\%. If for a particular survey $\Sexpr{k_3.6.30}$ households
-  are contacted, what is the probability that at least $\Sexpr{x_3.6.30}$ will
-  agree to respond? \footfullcite{surveysPew}
+  surveys is only 9\%. If for a particular survey $\Sexpr{k_3.6.30}$
+  households are contacted, what is the probability that at least
+  $\Sexpr{x_3.6.30}$ will agree to respond?  \footfullcite{surveysPew}
 
 }{}
 
@@ -1091,9 +1041,7 @@ pd_3.6.31 <- round(pbinom(xd_3.6.31, 3, .25), 4)
 
 @
 
-\eoce{
-
-  \qt{Game of dreidel\label{dreidel}} A dreidel is a four-sided
+\eoce{ \qt{Game of dreidel\label{dreidel}} A dreidel is a four-sided
   spinning top with the Hebrew letters \textit{nun}, \textit{gimel},
   \textit{hei}, and \textit{shin}, one on each side. Each side is
   equally likely to come up in a single spin of the dreidel. Suppose
@@ -1130,24 +1078,23 @@ xc_3.6.32 <- round(runif(1, 1, 3))
 
 @
 
-\eoce{
-
-  \qt{Arachnophobia\label{arachnophobia}} A 2005 Gallup Poll found
-  that 7\% of teenagers (ages 13 to 17) suffer from arachnophobia and
-  are extremely afraid of spiders. At a summer camp there are $\Sexpr{k_3.6.32}$
-  teenagers sleeping in each tent.  Assume that these $\Sexpr{k_3.6.32}$ teenagers are
-  independent of each other.  \footfullcite{webpage:spiders}
+\eoce{ \qt{Arachnophobia\label{arachnophobia}} A 2005 Gallup Poll
+  found that 7\% of teenagers (ages 13 to 17) suffer from
+  arachnophobia and are extremely afraid of spiders. At a summer camp
+  there are $\Sexpr{k_3.6.32}$ teenagers sleeping in each tent.
+  Assume that these $\Sexpr{k_3.6.32}$ teenagers are independent of
+  each other.  \footfullcite{webpage:spiders}
 
   \begin{parts}
-  \item Calculate the probability that at least $\Sexpr{xa_3.6.32}$ of them suffers from
-    arachnophobia.
-  \item Calculate the probability that exactly $\Sexpr{xb_3.6.32}$ of them suffer from
-    arachnophobia.
-  \item Calculate the probability that at most $\Sexpr{xc_3.6.32}$ of them suffers from
-    arachnophobia.
-  \item If the camp counselor wants to make sure no more than 1 teenager in
-    each tent is afraid of spiders, does it seem reasonable for him to randomly
-    assign teenagers to tents?
+  \item Calculate the probability that at least $\Sexpr{xa_3.6.32}$ of
+    them suffers from arachnophobia.
+  \item Calculate the probability that exactly $\Sexpr{xb_3.6.32}$ of
+    them suffer from arachnophobia.
+  \item Calculate the probability that at most $\Sexpr{xc_3.6.32}$ of
+    them suffers from arachnophobia.
+  \item If the camp counselor wants to make sure no more than 1
+    teenager in each tent is afraid of spiders, does it seem
+    reasonable for him to randomly assign teenagers to tents?
   \end{parts}
 
 }{}
@@ -1155,111 +1102,173 @@ xc_3.6.32 <- round(runif(1, 1, 3))
 
 % 33
 
-% TODO here
+<<ex3.6.33, echo=FALSE>>=
 
-\eoce{\qt{Eye color, Part II\label{eye_color_binomial}}
-Exercise~\ref{eye_color_geometric} introduces a husband and wife with brown
-eyes who have 0.75 probability of having children with brown eyes, 0.125
-probability of having children with blue eyes, and 0.125 probability of
-having children with green eyes.
-\begin{parts}
-\item What is the probability that their first child will have green eyes and
-the second will not?
-\item What is the probability that exactly one of their two children will
-have green eyes?
-\item If they have six children, what is the probability that exactly two
-will have green eyes?
-\item If they have six children, what is the probability that at least one
-will have green eyes?
-\item What is the probability that the first green eyed child will be the
-$4^{th}$ child?
-\item Would it be considered unusual if only 2 out of their 6 children had
-brown eyes?
-\end{parts}
+pa_3.6.33 <- round(pgr_3.6.23*(1-pgr_3.6.23), 4)
+pb_3.6.33 <- round(dbinom(1, 2, pgr_3.6.23), 4)
+pc_3.6.33 <- round(dbinom(2, 6, pgr_3.6.23), 4)
+pd_3.6.33 <- round(1-dbinom(0, 1, pgr_3.6.23), 4)
+pe_3.6.33 <- round((1-pgr_3.6.23)^3*pgr_3.6.23, 4)
+pf_3.6.33 <- round(dbinom(2, 6, pbr_3.6.23), 4)
+
+@
+
+\eoce{ \qt{Eye color, Part II\label{eye_color_binomial}}
+  Exercise~\ref{eye_color_geometric} introduces a husband and wife
+  with brown eyes who have $\Sexpr{pbr_3.6.23}$ probability of having
+  children with brown eyes, $\Sexpr{pbl_3.6.23}$ probability of having
+  children with blue eyes, and $\Sexpr{pgr_3.6.23}$ probability of
+  having children with green eyes.
+
+  \begin{parts}
+  \item What is the probability that their first child will have green eyes and
+    the second will not?
+  \item What is the probability that exactly one of their two children will
+    have green eyes?
+  \item If they have six children, what is the probability that exactly two
+    will have green eyes?
+  \item If they have six children, what is the probability that at least one
+    will have green eyes?
+  \item What is the probability that the first green eyed child will be the
+    $4^{th}$ child?
+  \item Would it be considered unusual if only 2 out of their 6 children had
+    brown eyes?
+  \end{parts}
+
 }{}
 
 % 34
 
-\eoce{\qt{Sickle cell anemia\label{sickle_cell_anemia}} Sickle cell anemia is a
-genetic blood disorder where red blood cells lose their flexibility and
-assume an abnormal, rigid, ``sickle" shape, which results in a risk of
-various complications. If both parents are carriers of the disease, then a
-child has a 25\% chance of having the disease, 50\% chance of being a
-carrier, and 25\% chance of neither having the disease nor being a carrier.
-If two parents who are carriers of the disease have 3 children, what is the
-probability that
-\begin{parts}
-\item two will have the disease?
-\item none will have the disease?
-\item at least one will neither have the disease nor be a carrier?
-\item the first child with the disease will the be $3^{rd}$ child?
-\end{parts}
+<<ex3.6.34, echo=FALSE>>=
+
+pd_3.6.34 <- round(runif(1, .22, .27), 2)*100
+pc_3.6.34 <- round(runif(1, .47, .53), 2)*100
+pn_3.6.34 <- (1-pd_3.6.34-pc_3.6.34)*100
+
+@
+
+\eoce{ \qt{Sickle cell anemia\label{sickle_cell_anemia}} Sickle cell
+  anemia is a genetic blood disorder where red blood cells lose their
+  flexibility and assume an abnormal, rigid, ``sickle" shape, which
+  results in a risk of various complications. If both parents are
+  carriers of the disease, then a child has a $\Sexpr{pd_3.6.34}$\%
+  chance of having the disease, $\Sexpr{pc_3.6.34}$\% chance of being
+  a carrier, and $\Sexpr{pn_3.6.34}$\% chance of neither having the
+  disease nor being a carrier.  If two parents who are carriers of the
+  disease have 3 children, what is the probability that
+
+  \begin{parts}
+  \item two will have the disease?
+  \item none will have the disease?
+  \item at least one will neither have the disease nor be a carrier?
+  \item the first child with the disease will the be $3^{rd}$ child?
+  \end{parts}
+
 }{}
 
 % 35
 
-\eoce{\qt{Roulette winnings\label{roulette_winnings}} In the game of roulette, a
-wheel is spun and you place bets on where it will stop. One popular bet is
-that it will stop on a red slot; such a bet has an 18/38 chance of winning.
-If it stops on red, you double the money you bet. If not, you lose the money
-you bet. Suppose you play 3 times, each time with a \$1 bet. Let Y represent
-the total amount won or lost. Write a probability model for Y.
+<<ex3.6.35, echo=FALSE>>=
+
+m_3.6.35 <- round(runif(1, 1, 5), 2)
+
+@
+
+\eoce{ \qt{Roulette winnings\label{roulette_winnings}} In the game of
+  roulette, a wheel is spun and you place bets on where it will
+  stop. One popular bet is that it will stop on a red slot; such a bet
+  has an 18/38 chance of winning.  If it stops on red, you double the
+  money you bet. If not, you lose the money you bet. Suppose you play
+  3 times, each time with a \$$\Sexpr{m_3.6.35}$ bet. Let Y represent
+  the total amount won or lost. Write a probability model for Y.
+
 }{}
 
 % 36
 
-\eoce{\qt{Multiple choice quiz\label{mc_quiz}} In a multiple choice quiz there are
-5 questions and 4 choices for each question (a, b, c, d). Robin has not
-studied for the quiz at all, and decides to randomly guess the answers. What
-is the probability that
-\begin{parts}
-\item the first question she gets right is the $3^{rd}$ question?
-\item she gets exactly 3 or exactly 4 questions right?
-\item she gets the majority of the questions right?
-\end{parts}
+<<ex3.6.36, echo=FALSE>>=
+
+q_3.6.36 <- round(runif(1, 4, 10))
+a_3.6.36 <- round(runif(1, 2, 5))
+
+@
+
+\eoce{ \qt{Multiple choice quiz\label{mc_quiz}} In a multiple choice
+  quiz there are $\Sexpr{q_3.6.36}$ questions and 4 choices for each
+  question (a, b, c, d). Robin has not studied for the quiz at all,
+  and decides to randomly guess the answers. What is the probability
+  that
+
+  \begin{parts}
+  \item the first question she gets right is question number $\Sexpr{a_3.6.36}$?
+  \item she gets exactly 3 or exactly 4 questions right?
+  \item she gets the majority of the questions right?
+  \end{parts}
+
 }{}
 
 % 37
 
-\eoce{\qt{Exploring permutations\label{explore_combinations}} The formula for the
-number of ways to arrange $n$ objects is $n! = n\times(n-1)\times \cdots
-\times 2 \times 1$. This exercise walks you through the derivation of this
-formula for a couple of special cases.
+<<ex3.6.37, echo=FALSE>>=
 
-\indent A small company has five employees: Anna, Ben, Carl, Damian, and
-Eddy. There are five parking spots in a row at the company, none of which are
-assigned, and each day the employees pull into a random parking spot. That
-is, all possible orderings of the cars in the row of spots are equally likely.
-\begin{parts}
-\item On a given day, what is the probability that the employees park in
-alphabetical order?
-\item If the alphabetical order has an equal chance of occurring relative to
-all other possible orderings, how many ways must there be to arrange the five
-cars?
-\item Now consider a sample of 8 employees instead. How many possible ways
-are there to order these 8 employees' cars?
-\end{parts}
+n_3.6.37 <- round(runif(1, 6, 10))
+
+@
+
+\eoce{ \qt{Exploring permutations\label{explore_combinations}} The
+  formula for the number of ways to arrange $n$ objects is
+  $n! = n\times(n-1)\times \cdots \times 2 \times 1$. This exercise
+  walks you through the derivation of this formula for a couple of
+  special cases.
+
+  \indent A small company has five employees: Anna, Ben, Carl, Damian,
+  and Eddy. There are five parking spots in a row at the company, none
+  of which are assigned, and each day the employees pull into a random
+  parking spot. That is, all possible orderings of the cars in the row
+  of spots are equally likely.
+
+  \begin{parts}
+  \item On a given day, what is the probability that the employees park in
+    alphabetical order?
+  \item If the alphabetical order has an equal chance of occurring relative to
+    all other possible orderings, how many ways must there be to arrange the five
+    cars?
+  \item Now consider a sample of $\Sexpr{n_3.6.37}$ employees instead. How many possible ways
+    are there to order these $\Sexpr{n_3.6.37}$ employees' cars?
+  \end{parts}
+
 }{}
 
-\textC{\pagebreak}
+
 
 % 38
 
-\eoce{\qt{Male children\label{male_children}} While it is often assumed that the
-probabilities of having a boy or a girl are the same, the actual probability
-of having a boy is slightly higher at 0.51. Suppose a couple plans to have 3
-kids.
-\begin{parts}
-\item Use the binomial model to calculate the probability that two of them
-will be boys.
-\item Write out all possible orderings of 3 children, 2 of whom are boys. Use
-these scenarios to calculate the same probability from part (a) but using the
-addition rule for disjoint outcomes. Confirm that your answers from parts (a)
-and (b) match.
-\item If we wanted to calculate the probability that a couple who plans to
-have 8 kids will have 3 boys, briefly describe why the approach from part (b)
-would be more tedious than the approach from part (a).
-\end{parts}
+<<ex3.6.38, echo=FALSE>>=
+
+pb_3.6.38 <- round(runif(1, .501, .54), 3)
+n_3.6.38 <- round(runif(1, 2, 5))
+
+@
+
+\eoce{ \qt{Male children\label{male_children}} While it is often
+  assumed that the probabilities of having a boy or a girl are the
+  same, the actual probability of having a boy is slightly higher at
+  $\Sexpr{pb_3.6.38}$. Suppose a couple plans to have
+  $\Sexpr{n_3.6.38}$ kids.
+
+  \begin{parts}
+  \item Use the binomial model to calculate the probability that two of them
+    will be boys.
+  \item Write out all possible orderings of $\Sexpr{n_3.6.38}$
+    children, 2 of whom are boys. Use these scenarios to calculate the
+    same probability from part (a) but using the addition rule for
+    disjoint outcomes. Confirm that your answers from parts (a) and
+    (b) match.
+  \item If we wanted to calculate the probability that a couple who plans to
+    have 8 kids will have 3 boys, briefly describe why the approach from part (b)
+    would be more tedious than the approach from part (a).
+  \end{parts}
+
 }{}
 
 
@@ -1269,102 +1278,168 @@ would be more tedious than the approach from part (a).
 
 % 39
 
-\eoce{\qt{Rolling a die\label{roll_die}} Calculate the
-following probabilities and indicate which probability distribution model is
-appropriate in each case. You roll a fair die 5 times. What is the
-probability of rolling
-\begin{parts}
-\item the first 6 on the fifth roll?
-\item exactly three 6s?
-\item the third 6 on the fifth roll?
-\end{parts}
+<<ex3.6.39, echo=FALSE>>=
+
+t_3.6.39 <- round(runif(1, 5, 9))
+n_3.6.39 <- round(runif(1, 2, 4))
+
+pa_3.6.39 <- round((5/6)^(t_3.6.39 - 1)/6 , 4)
+pa_3.6.39 <- round(dbinom(n_3.6.39, t_3.6.39, 1/6) , 4)
+pa_3.6.39 <- round(dbinom(2, t_3.6.39 - 1, 1/6)/6 , 4)
+
+@
+
+\eoce{ \qt{Rolling a die\label{roll_die}} Calculate the following
+  probabilities and indicate which probability distribution model is
+  appropriate in each case. You roll a fair die $\Sexpr{t_3.6.39}$
+  times. What is the probability of rolling
+
+  \begin{parts}
+  \item the first and only 6 on roll $\Sexpr{t_3.6.39}$?
+  \item exactly $\Sexpr{n_3.6.39}$ 6s?
+  \item the third and last 6 on roll $\Sexpr{t_3.6.39}$?
+  \end{parts}
+
 }{}
 
 % 40
 
-\eoce{\qt{Playing darts\label{play_darts}} Calculate the following probabilities
-and indicate which probability distribution model is appropriate in each
-case. A very good darts player can hit the bull's eye (red circle in the
-center of the dart board) 65\% of the time. What is the probability that he
-\begin{parts}
-\item hits the bullseye for the $10^{th}$ time on the $15^{th}$ try?
-\item hits the bullseye 10 times in 15 tries?
-\item hits the first bullseye on the third try?
-\end{parts}
+<<ex3.6.40, echo=FALSE>>=
+
+phit_3.6.40 <- round(runif(1, 63, 68))
+
+@
+
+\eoce{ \qt{Playing darts\label{play_darts}} Calculate the following
+  probabilities and indicate which probability distribution model is
+  appropriate in each case. A very good darts player can hit the
+  bull's eye (red circle in the center of the dart board)
+  $\Sexpr{phit_3.6.40}$\% of the time. What is the probability that he
+
+  \begin{parts}
+  \item hits the bullseye for the $10^{th}$ time on the $15^{th}$ try?
+  \item hits the bullseye 10 times in 15 tries?
+  \item hits the first bullseye on the third try?
+  \end{parts}
+
 }{}
 
 % 41
 
-\eoce{\qt{Sampling at school\label{sampling_at_school}} For a sociology class
-project you are asked to conduct a survey on 20 students at your school. You
-decide to stand outside of your dorm's cafeteria and conduct the survey on a
-random sample of 20 students leaving the cafeteria after dinner one evening.
-Your dorm is comprised of 45\% males and 55\% females.
-\begin{parts}
-\item Which probability model is most appropriate for calculating the
-probability that the $4^{th}$ person you survey is the $2^{nd}$ female?
-Explain.
-\item Compute the probability from part (a).
-\item The three possible scenarios that lead to $4^{th}$ person you survey
-being the $2^{nd}$ female are
-\[ \{M, M, F, F\}, \{M, F, M, F\}, \{F, M, M, F\} \]
-One common feature among these scenarios is that the last trial is always
-female. In the first three trials there are 2 males and 1 female. Use the
-binomial coefficient to confirm that there are 3 ways of ordering 2 males and
-1 female.
-\item Use the findings presented in part (c) to explain why the formula for
-the coefficient for the negative binomial is ${n-1 \choose k-1}$ while the
-formula for the binomial coefficient is ${n \choose k}$.
-\end{parts}
+<<ex3.6.41, echo=FALSE>>=
+
+pm_3.6.41 <- round(runif(1, .43, .48), 2)
+pf_3.6.41 <- 1-pm_3.6.41
+
+pb_3.6.41 <- round(dnbinom(2, 4, pf_3.6.41), 4)
+
+@
+
+\eoce{ \qt{Sampling at school\label{sampling_at_school}} For a
+  sociology class project you are asked to conduct a survey on 20
+  students at your school. You decide to stand outside of your dorm's
+  cafeteria and conduct the survey on a random sample of 20 students
+  leaving the cafeteria after dinner one evening.  Your dorm is
+  comprised of $\Sexpr{pm_3.6.41*100}$\% males and
+  $\Sexpr{pf_3.6.41*100}$\% females.
+
+  \begin{parts}
+  \item Which probability model is most appropriate for calculating the
+    probability that the $4^{th}$ person you survey is the $2^{nd}$ female?
+    Explain.
+  \item Compute the probability from part (a).
+  \item The three possible scenarios that lead to $4^{th}$ person you survey
+    being the $2^{nd}$ female are
+    \[ \{M, M, F, F\}, \{M, F, M, F\}, \{F, M, M, F\} \]
+    One common feature among these scenarios is that the last trial is always
+    female. In the first three trials there are 2 males and 1 female. Use the
+    binomial coefficient to confirm that there are 3 ways of ordering 2 males and
+    1 female.
+  \item Use the findings presented in part (c) to explain why the formula for
+    the coefficient for the negative binomial is ${n-1 \choose k-1}$ while the
+    formula for the binomial coefficient is ${n \choose k}$.
+  \end{parts}
+
 }{}
 
 % 42
 
-\eoce{\qt{Serving in volleyball\label{serving_volleyball}} A not-so-skilled
-volleyball player has a 15\% chance of making the serve, which involves
-hitting the ball so it passes over the net on a trajectory such that it will
-land in the opposing team's court. Suppose that her serves are independent of
-each other.
-\begin{parts}
-\item What is the probability that on the $10^{th}$ try she will make her
-$3^{rd}$ successful serve?
-\item Suppose she has made two successful serves in nine attempts. What is
-the probability that her $10^{th}$ serve will be successful?
-\item Even though parts (a) and (b) discuss the same scenario, the
-probabilities you calculated should be different. Can you explain the reason
-for this discrepancy?
-\end{parts}
+<<ex3.6.42, echo=FALSE>>=
+
+ps_3.6.42 <- round(runif(1, 13, 17))
+
+@
+
+\eoce{ \qt{Serving in volleyball\label{serving_volleyball}} A
+  not-so-skilled volleyball player has a $\Sexpr{ps_3.6.42}$\% chance
+  of making the serve, which involves hitting the ball so it passes
+  over the net on a trajectory such that it will land in the opposing
+  team's court. Suppose that her serves are independent of each other.
+
+  \begin{parts}
+  \item What is the probability that on the $10^{th}$ try she will make her
+    $3^{rd}$ successful serve?
+  \item Suppose she has made two successful serves in nine attempts. What is
+    the probability that her $10^{th}$ serve will be successful?
+  \item Even though parts (a) and (b) discuss the same scenario, the
+    probabilities you calculated should be different. Can you explain the reason
+    for this discrepancy?
+  \end{parts}
+
 }{}
 
 % 43
 
-\eoce{\qt{Customers at a coffee shop\label{coffee_shop_customers}} A coffee shop
-serves an average of 75 customers per hour during the morning rush.
-\begin{parts}
-\item Which distribution we have studied is most appropriate for calculating
-the probability of a given number of customers arriving within one hour
-during this time of day?
-\item What are the mean and the standard deviation of the number of customers
-this coffee shop serves in one hour during this time of day?
-\item Would it be considered unusually low if only 60 customers showed up to
-this coffee shop in one hour during this time of day?
-\item Calculate the probability that this coffee shop serves 70 customers in
-one hour during this time of day?
-\end{parts}
+<<ex3.6.43, echo=FALSE>>=
+
+pm_3.6.43 <- round(runif(1, 70, 80))
+psd_3.6.43 <- round(sqrt(pm_3.6.43), 2)
+
+z_3.6.43 <- round((60-pm_3.6.43)/psd_3.6.43, 2)
+not_3.6.43 <- ifelse(abs(z_3.6.43>2), "not", "")
+pd_3.6.43 <- round(dpois(70, pm_3.6.43), 4)
+
+@
+
+\eoce{ \qt{Customers at a coffee shop\label{coffee_shop_customers}} A
+  coffee shop serves an average of $\Sexpr{pm_3.6.43}$ customers per
+  hour during the morning rush.
+
+  \begin{parts}
+  \item Which distribution we have studied is most appropriate for calculating
+    the probability of a given number of customers arriving within one hour
+    during this time of day?
+  \item What are the mean and the standard deviation of the number of customers
+    this coffee shop serves in one hour during this time of day?
+  \item Would it be considered unusually low if only 60 customers showed up to
+    this coffee shop in one hour during this time of day?
+  \item Calculate the probability that this coffee shop serves 70 customers in
+    one hour during this time of day?
+  \end{parts}
+
 }{}
 
 % 44
 
-\eoce{\qt{Stenographer's typos\label{stenographer_typos}} A very skilled
-court stenographer makes one typographical error (typo) per hour on average.
-\begin{parts}
-\item What probability distribution is most appropriate for calculating the
-probability of a given number of typos this stenographer makes in an hour?
-\item What are the mean and the standard deviation of the number of typos
-this stenographer makes?
-\item Would it be considered unusual if this stenographer made 4 typos in a
-given hour?
-\item Calculate the probability that this stenographer makes at most 2 typos
-in a given hour.
-\end{parts}
+<<ex3.6.44, echo=FALSE>>=
+
+e_3.6.44 <- round(runif(1, 2, 7))
+
+@
+
+\eoce{ \qt{Stenographer's typos\label{stenographer_typos}} A very
+  skilled court stenographer makes $\Sexpr{e_3.6.44}$ typographical
+  errors (typo) per hour on average.
+
+  \begin{parts}
+  \item What probability distribution is most appropriate for calculating the
+    probability of a given number of typos this stenographer makes in an hour?
+  \item What are the mean and the standard deviation of the number of typos
+    this stenographer makes?
+  \item Would it be considered unusual if this stenographer made 4 typos in a
+    given hour?
+  \item Calculate the probability that this stenographer makes at most 2 typos
+    in a given hour.
+  \end{parts}
+
 }{}

@@ -1,17 +1,15 @@
 % -*- compile-command: "cd ../../ && make" -*-
+
 \eocesolch{Distributions of random variables}
 
 \begin{multicols}{2}
 
 % 1
 
-\eocesol{
-
-  (a)~$\Sexpr{z_3.6.1a_ans}\%$. \\
+\eocesol{ (a)~$\Sexpr{z_3.6.1a_ans}\%$. \\
   (b)~$\Sexpr{z_3.6.1b_ans}\%$.\\
   (c)~$\Sexpr{z_3.6.1c_ans}\%$. \\
   (d)~$\Sexpr{z_3.6.1d_ans}\%$. \\
-
 
 <<ex3_6_1_plots, echo=FALSE, fig.width=3, fig.height=3, fig.align="center", fig.show="hold">>=
 gridExtra::grid.arrange(p_3.6.1a, p_3.6.1b, p_3.6.1c, p_3.6.1d, ncol=2)
@@ -27,9 +25,10 @@ gridExtra::grid.arrange(p_3.6.1a, p_3.6.1b, p_3.6.1c, p_3.6.1d, ncol=2)
 
 % 3
 
-\eocesol{
-
-  (a)~Verbal: $N(\mu = \Sexpr{pm_3.6.3[1]}, \sigma = \Sexpr{psd_3.6.3[1]})$, Quant: $N(\mu = \Sexpr{pm_3.6.3[2]}, \sigma = \Sexpr{psd_3.6.3[2]})$.
+\eocesol{ (a)~Verbal:
+  $N(\mu = \Sexpr{pm_3.6.3[1]}, \sigma = \Sexpr{psd_3.6.3[1]})$,
+  Quant:
+  $N(\mu = \Sexpr{pm_3.6.3[2]}, \sigma = \Sexpr{psd_3.6.3[2]})$.
   (b)~$Z_{VR}=\Sexpr{z_3.6.3[1]}$, ~$Z_{QR}=\Sexpr{z_3.6.3[2]}$. \\
 
 <<echo=FALSE, fig.width=3, fig.height=2, fig.align="center">>=
@@ -57,27 +56,21 @@ annotate_stdNormal(z_3.6.3, dnorm(z_3.6.3))
 
 % 5
 
-\eocesol{
-
-  (a)~$Z = 0.84$, which corresponds to approximately $\Sexpr{q80_3.6.5}$ on QR.
+\eocesol{(a)~$Z = 0.84$, which corresponds to approximately $\Sexpr{q80_3.6.5}$ on QR.
   (b)~$Z = -0.52$, which corresponds to approximately $\Sexpr{q30_3.6.5}$ on VR.
 
 }
 
 % 7
 
-\eocesol{
-
-  (a)~$Z=\Sexpr{z_3.6.7a} \to \Sexpr{p83_3.6.7}1$. \\
+\eocesol{ (a)~$Z=\Sexpr{z_3.6.7a} \to \Sexpr{p83_3.6.7}1$. \\
   (b)~$Z= \Sexpr{z_3.6.7b}8 \to \Sexpr{q10_3.6.7}\degree$F or colder.
 
 }
 
 % 9
 
-\eocesol{
-
-  (a)~$N(\Sexpr{pm_3.6.9}, \Sexpr{psd_3.6.9})$.
+\eocesol{ (a)~$N(\Sexpr{pm_3.6.9}, \Sexpr{psd_3.6.9})$.
   (b)~$Z = \Sexpr{z_3.6.9} \to \Sexpr{p_3.6.9}$.
   (c)~The answers are very close, if not exact, because only the units
   were changed. (The only reason why they might differ at all is
@@ -93,9 +86,7 @@ annotate_stdNormal(z_3.6.3, dnorm(z_3.6.3))
 
 % 11
 
-\eocesol{
-
-  (a)~$Z=0.67$.
+\eocesol{ (a)~$Z=0.67$.
   (b)~$\mu=\$\Sexpr{pm_3.6.11}$, $x=\$\Sexpr{q75_3.6.11}$.
   (c)~$0.67 = \frac{\Sexpr{q75_3.6.11}-\Sexpr{pm_3.6.11}}{\sigma} \to \sigma=\$\Sexpr{sd_3.6.11}$.
 
@@ -103,17 +94,13 @@ annotate_stdNormal(z_3.6.3, dnorm(z_3.6.3))
 
 % 13
 
-\eocesol{
-
-  $Z = \Sexpr{z_3.6.13} \to \Sexpr{pz_3.6.13}$, i.e. $\Sexpr{round(pz_3.6.13*100,2)}$\%.
+\eocesol{ $Z = \Sexpr{z_3.6.13} \to \Sexpr{pz_3.6.13}$, i.e. $\Sexpr{round(pz_3.6.13*100,2)}$\%.
 
 }
 
 % 15
 
-\eocesol{
-
-  (a)~$Z=\Sexpr{z_3.6.15} \to \Sexpr{p_3.6.15}$.
+\eocesol{ (a)~$Z=\Sexpr{z_3.6.15} \to \Sexpr{p_3.6.15}$.
   (b)~If you are bidding on only one auction and set a low maximum bid price,
   someone will probably outbid you. If you set a high maximum bid price, you
   may win the auction but pay more than is necessary. If bidding on more than
@@ -131,9 +118,7 @@ annotate_stdNormal(z_3.6.3, dnorm(z_3.6.3))
 
 % 17
 
-\eocesol{
-
-  (a)~70\% of the data are within 1 standard deviation of the mean, 95\% are
+\eocesol{ (a)~70\% of the data are within 1 standard deviation of the mean, 95\% are
   within 2 and 100\% are within 3 standard deviations of the mean. Therefore,
   we can say that the data approximately follow the 68-95-99.7\% Rule.
   (b)~The distribution is unimodal and symmetric. The superimposed normal
@@ -146,9 +131,7 @@ annotate_stdNormal(z_3.6.3, dnorm(z_3.6.3))
 
 % 19
 
-\eocesol{
-
-  (a)~No. The cards are not independent. For example, if the first card is an
+\eocesol{ (a)~No. The cards are not independent. For example, if the first card is an
   ace of clubs, that implies the second card cannot be an ace of clubs.
   Additionally, there are many possible categories, which would need to be
   simplified.
@@ -161,9 +144,7 @@ annotate_stdNormal(z_3.6.3, dnorm(z_3.6.3))
 
 % 21
 
-\eocesol{
-
-  (a)~$(1-0.471)^2\times0.471 = 0.1318$.
+\eocesol{ (a)~$(1-0.471)^2\times0.471 = 0.1318$.
   (b)~$0.471^3 = 0.1045$.
   (c)~$\mu = 1/0.471 = 2.12$, $\sigma=\sqrt{2.38} = 1.54$.
   (d)~$\mu = 1/0.30 = 3.33$, $\sigma=2.79$.
@@ -175,18 +156,14 @@ annotate_stdNormal(z_3.6.3, dnorm(z_3.6.3))
 
 % 23
 
-\eocesol{
-
-  (a)~$\Sexpr{1-pbl_3.6.23}^2\times \Sexpr{pbl_3.6.23} = \Sexpr{pa_3.6.23}$. \\
+\eocesol{ (a)~$\Sexpr{1-pbl_3.6.23}^2\times \Sexpr{pbl_3.6.23} = \Sexpr{pa_3.6.23}$. \\
   (b)~$\mu=\Sexpr{m_3.6.23}$, $\sigma=sd_3.6.23$.
 
 }
 
 % 25
 
-\eocesol{
-
-  (a)~Binomial conditions are met:
+\eocesol{ (a)~Binomial conditions are met:
   (1)~Independent trials: In a random sample, whether or not one 18-20 year
   old has consumed alcohol does not depend on whether or not another one has.
   (2)~Fixed number of trials: $n = \Sexpr{k_3.6.25}$.
@@ -201,11 +178,9 @@ annotate_stdNormal(z_3.6.3, dnorm(z_3.6.3))
 
 % 27
 
-\eocesol{
-
-  (a)~$\mu = \Sexpr{m_3.6.27}$, $\sigma = \Sexpr{sd_3.6.27}$
-  (b)~$Z = \Sexpr{z_3.6.27}$. Since the z-score is \Sexpr{not} greater
-  than $3$ standard deviations away from the mean we are \Sexpr{not}
+\eocesol{ (a)~$\mu = \Sexpr{m_3.6.27}$, $\sigma = \Sexpr{sd_3.6.27}$
+  (b)~$Z = \Sexpr{z_3.6.27}$. Since the z-score is \Sexpr{not_3.6.27} greater
+  than $3$ standard deviations away from the mean we are \Sexpr{not_3.6.27}
   surprised.
   (c)~$\Sexpr{p_3.6.27}$, or $\Sexpr{zp_3.6.27}$ with the
   normal approximation and $0.5$ correction.
@@ -214,9 +189,7 @@ annotate_stdNormal(z_3.6.3, dnorm(z_3.6.3))
 
 % 29
 
-\eocesol{
-
-  Want to find the probability that there will be $\Sexpr{x_3.6.29}$
+\eocesol{ Want to find the probability that there will be $\Sexpr{x_3.6.29}$
   or more enrollees: $\Sexpr{pp_3.6.29}$.  Or using the normal
   approximation with a $0.5$ correction: $\Sexpr{zp_3.6.29}$.
 
@@ -224,9 +197,7 @@ annotate_stdNormal(z_3.6.3, dnorm(z_3.6.3))
 
 % 31
 
-\eocesol{
-
-  (a)~$\Sexpr{pa_3.6.31}$.
+\eocesol{ (a)~$\Sexpr{pa_3.6.31}$.
   (b)~$\Sexpr{pb_3.6.31}$.
   (c)~$\Sexpr{pc_3.6.31}$.
   (d)~$\Sexpr{pd_3.6.31}$.
@@ -235,53 +206,63 @@ annotate_stdNormal(z_3.6.3, dnorm(z_3.6.3))
 
 % 33
 
-\eocesol{(a)~Geometric distribution: 0.109.
-(b)~Binomial: 0.219.
-(c)~Binomial: 0.137.
-(d)~$1-0.875^6=0.551$.
-(e)~Geometric: 0.084.
-(f)~Using a binomial distribution with $n = 6$ and $p=0.75$, we see that $\mu=4.5$, $\sigma=1.06$, and $Z = 2.36$. Since this is not within 2 SD, it may be considered unusual.}
+\eocesol{ (a)~Geometric distribution: $\Sexpr{pgr_3.6.23}*\Sexpr{(1-pgr_3.6.23)} = \Sexpr{pa_3.6.33}$.
+  (b)~Binomial: $\Sexpr{pb_3.6.33}$.
+  (c)~Binomial: $\Sexpr{pc_3.6.33}$.
+  (d)~Binomial: $\Sexpr{pd_3.6.33}$.
+  (e)~Geometric: $\Sexpr{pe_3.6.33}$.
+  (f)~Using a binomial distribution with $n = 6$ and $p=0.75$, we find
+  probability $\Sexpr{pf_3.6.33}$.
+
+}
 
 % 35
 
-\eocesol{0 wins (-\$3): 0.1458. 1 win (-\$1): 0.3936. 2 wins (+\$1): 0.3543.
-3 wins (+\$3): 0.1063.}
+\eocesol{ 0 wins (\$$\Sexpr{m_3.6.35*-3}$): 0.1458.
+  1 win (\$$\Sexpr{m_3.6.35 + -2*m_3.6.35 }$): 0.3936.
+  2 wins (\$$\Sexpr{2*m_3.6.35 + -m_3.6.35}$): 0.3543.
+  3 wins (\$$\Sexpr{m_3.6.35*3}$): 0.1063.
 
-
-\textC{
-\end{multicols}
-\newpage
-\begin{multicols}{2}
 }
 
 
 % 37
 
-\eocesol{(a)~$\stackrel{Anna}{1/5}\times\stackrel{Ben}{1/4}\times\stackrel{Carl}{1/3}\times\stackrel{Damian}{1/2}\times\stackrel{Eddy}{1/1} = 1/5!=1/120$.
-(b)~Since the probabilities must add to 1, there must be $5!=120$ possible orderings.
-(c)~$8!=\text{40,320}$.}
+\eocesol{ (a)~$\stackrel{Anna}{1/5}\times\stackrel{Ben}{1/4}\times\stackrel{Carl}{1/3}\times\stackrel{Damian}{1/2}\times\stackrel{Eddy}{1/1} = 1/5!=1/120$.
+  (b)~Since the probabilities must add to 1, there must be $5!=120$ possible orderings.
+  (c)~$\Sexpr{n_3.6.37}!=\Sexpr{gamma(9)}$.
+
+}
 
 % 39
 
-\eocesol{(a)~0.0804.
-(b)~0.0322.
-(c)~0.0193.}
+\eocesol{ (a)~$Sexpr{pa_3.6.39}$
+  (b)~$Sexpr{pb_3.6.39}$
+  (c)~$Sexpr{pc_3.6.39}$
+
+}
 
 % 41
 
-\eocesol{(a)~Negative binomial with $n=4$ and $p=0.55$, where a success is defined here as a female student. The negative binomial setting is appropriate since the last trial is fixed but the order of the first 3 trials is unknown.
-(b)~0.1838.
-(c)~${3 \choose 1} = 3$.
-(d)~In the binomial model there are no restrictions on the outcome of the last trial. In the negative binomial model the last trial is fixed. Therefore we are interested in the number of ways of orderings of the other $k - 1$ successes in the first $n - 1$ trials.}
+\eocesol{ (a)~Negative binomial with $n=4$ and $p=0.\Sexpr{pf_3.6.41}$, where a success is defined here as a female student. The negative binomial setting is appropriate since the last trial is fixed but the order of the first 3 trials is unknown.
+  (b)~$\Sexpr{pb_3.6.41}$.
+  (c)~${3 \choose 1} = 3$.
+  (d)~In the binomial model there are no restrictions on the outcome of the last trial. In the negative binomial model the last trial is fixed. Therefore we are interested in the number of ways of orderings of the other $k - 1$ successes in the first $n - 1$ trials.
+
+}
 
 % 43
 
-\eocesol{(a)~Poisson with $\lambda=75$.
-(b)~$\mu=\lambda=75$, $\sigma=\sqrt{\lambda} = 8.66$.
-(c)~$Z=-1.73$. Since 60 is within 2 standard deviations of the mean, it would not generally be considered unusual. Note that we often use this rule of thumb even when the normal model does not apply.
-(d)~Using Poisson with $\lambda = 75$: 0.0402.}
+\eocesol{ (a)~Poisson with $\lambda=\Sexpr{pm_3.6.43}$.
+  (b)~$\mu=\lambda=\Sexpr{pm_3.6.43}$,
+  $\sigma=\sqrt{\lambda} = \Sexpr{psd_3.6.43}$.
+  (c)~$Z=\Sexpr{z_3.6.43}3$. Since 60 is \Sexpr{not_3.6.43} within 2
+  standard deviations of the mean, it would not generally be
+  considered unusual. Note that we often use this rule of thumb even
+  when the normal model does not apply.
+  (d)~Using Poisson with $\lambda = \Sexpr{pm_3.6.43}$: $\Sexpr{pd_3.6.43}$.
 
-
+}
 
 %_______________
 \end{multicols}

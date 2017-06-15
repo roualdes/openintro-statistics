@@ -1,68 +1,87 @@
 % -*- compile-command: "cd ../../ && make" -*-
+
 \eocesolch{Foundations for inference}
 \begin{multicols}{2}
 
 % 1
 
-\eocesol{(a)~Mean. Each student reports a numerical value: a number of hours.
-(b)~Mean. Each student reports a number, which is a percentage, and we can
-average over these percentages.
-(c)~Proportion. Each student reports Yes or No, so this is a categorical
-variable and we use a proportion.
-(d)~Mean. Each student reports a number, which is a percentage like in part~(b).
-(e)~Proportion. Each student reports whether or not s/he expects to get a job,
-so this is a categorical variable and we use a proportion.}
+\eocesol{ (a)~Mean. Each student reports a numerical value: a number of hours.
+  (b)~Mean. Each student reports a number, which is a percentage, and we can
+  average over these percentages.
+  (c)~Proportion. Each student reports Yes or No, so this is a categorical
+  variable and we use a proportion.
+  (d)~Mean. Each student reports a number, which is a percentage like in part~(b).
+  (e)~Proportion. Each student reports whether or not s/he expects to get a job,
+  so this is a categorical variable and we use a proportion.
+
+}
 
 % 3
 
-\eocesol{(a)~Mean: 13.65. Median:~14.
-(b)~SD: 1.91. IQR: $15-13=2$.
-(c)~$Z_{16} = 1.23$, which is not unusual since it is within 2~SD of the mean.
-$Z_{18} = 2.28$, which is generally considered unusual.
-(d)~No. Point estimates that are based on samples only approximate the
-population parameter, and they vary from one sample to another.
-(e)~We use the SE, which is $1.91/\sqrt{100} = 0.191$ for this sample's mean.}
+\eocesol{ (a)~Mean: $\Sexpr{mean_4.6.3}$. Median:~$\Sexpr{q2_4.6.3}$.
+  (b)~SD: $\Sexpr{sd_4.6.3}$. IQR: $\Sexpr{q3_4.6.3} - \Sexpr{q1_4.6.3} = \Sexpr{q3_4.6.3 - q1_4.6.3}$.
+  (c)The general rule of thumb says z-scores beyond 2 might be
+  unusual.  ~$Z_{\Sexpr{x_4.6.3a}} = \Sexpr{z_4.6.3a}$ is
+  \Sexpr{not_4.6.3a} unusual.  ~$Z_{\Sexpr{z_4.6.3b}} = \Sexpr{z_4.6.3b}$ is
+  \Sexpr{not_4.6.3b} unusual.
+  (d)~No. Point estimates that are based on samples only approximate the
+  population parameter, and they vary from one sample to another.
+  (e)~We use the SE, which is
+  $\Sexpr{sd_4.6.3}/\sqrt{100} = \Sexpr{se_4.6.3}$ for this sample's
+  mean.
+
+}
 
 % 5
 
-\eocesol{(a)~We are building a distribution of sample statistics, in this case the sample
-mean. Such a distribution is called a sampling distribution.
-(b)~Because we are dealing with the distribution of sample means, we need to
-check to see if the Central Limit Theorem applies. Our sample size is greater
-than 30, and we are told that random sampling is employed. With these conditions
-met, we expect that the distribution of the sample mean will be nearly normal
-and therefore symmetric.
-(c)~Because we are dealing with a sampling distribution, we measure its
-variability with the standard error. $SE = 18.2 / \sqrt{45} = 2.713$.
-(d)~The sample means will be more variable with the smaller sample size.}
+\eocesol{ (a)~We are building a distribution of sample statistics, in this case the sample
+  mean. Such a distribution is called a sampling distribution.
+  (b)~Because we are dealing with the distribution of sample means, we need to
+  check to see if the Central Limit Theorem applies. Our sample size is greater
+  than 30, and we are told that random sampling is employed. With these conditions
+  met, we expect that the distribution of the sample mean will be nearly normal
+  and therefore symmetric.
+  (c)~Because we are dealing with a sampling distribution, we measure
+  its variability with the standard error.
+  $SE = \Sexpr{psd_4.6.5} / \sqrt{\Sexpr{n_4.6.5}} =
+  \Sexpr{se_4.6.5}$.
+  (d)~The sample means will be more variable with
+  the smaller sample size.
+
+}
 
 % 7
 
-\eocesol{Recall that the general formula is
-\begin{align*}
-\text{point estimate} \pm Z^{\star} \times SE
-\end{align*}
-First, identify the three different values. The point estimate is 45\%,
-$Z^{\star} = 1.96$ for a 95\% confidence level, and $SE = 1.2\%$. Then, plug the
-values into the formula:
-\begin{align*}
-45\% \pm 1.96 \times 1.2\% \quad\to\quad (42.6\%, 47.4\%)
-\end{align*}
-We are 95\% confident that the proportion of US adults who live with one or more
-chronic conditions is between 42.6\% and 47.4\%.}
+\eocesol{ Recall that the general formula is
+  \begin{align*}
+    \text{point estimate} \pm Z^{\star} \times SE
+  \end{align*}
+  First, identify the three different values. The point estimate is 45\%,
+  $Z^{\star} = 1.96$ for a 95\% confidence level, and $SE = \Sexpr{se_4.6.7}\%$. Then, plug the
+  values into the formula:
+  \begin{align*}
+    45\% \pm 1.96 \times \Sexpr{se_4.6.7}\% \quad\to\quad (\Sexpr{lb_4.6.7}\%, \Sexpr{ub_4.6.7}\%)
+  \end{align*}
+  We are 95\% confident that the proportion of US adults who live with one or more
+  chronic conditions is between $\Sexpr{lb_4.6.7}$\% and $\Sexpr{ub_4.6.7}$\%.
+
+}
 
 % 9
 
-\eocesol{(a)~False. Confidence intervals provide a range of plausible values, and
-sometimes the truth is missed. A 95\% confidence interval ``misses'' about 5\%
-of the time.
-(b)~True. Notice that the description focuses on the true population value.
-(c)~True. If we examine the 95\% confidence interval computed in Exercise~\ref{chronic_illness_tf}, we can see that 50\% is not included in this interval. This
-means that in a hypothesis test, we would reject the null hypothesis that the
-proportion is~0.5.
-(d)~False. The standard error describes the uncertainty in the overall estimate
-from natural fluctuations due to randomness, not the uncertainty corresponding
-to individuals' responses.}
+\eocesol{ (a)~False. Confidence intervals provide a range of plausible values, and
+  sometimes the truth is missed. A 95\% confidence interval ``misses'' about 5\%
+  of the time.
+  (b)~True. Notice that the description focuses on the true population value.
+  (c)~True. If we examine the 95\% confidence interval computed in
+  Exercise~\ref{chronic_illness_tf}, we can see that 50\% is not
+  included in this interval. This means that in a hypothesis test, we
+  would reject the null hypothesis that the proportion is~0.5.
+  (d)~False. The standard error describes the uncertainty in the overall estimate
+  from natural fluctuations due to randomness, not the uncertainty corresponding
+  to individuals' responses.
+
+}
 
 % 11
 
@@ -76,34 +95,42 @@ the standard error decreases, which will decrease the margin of error.}
 
 % 13
 
-\eocesol{(a)~False. Provided the data distribution is not very strongly skewed ($n = 64$ in
-this sample, so we can be slightly lenient with the skew), the sample mean will
-be nearly normal, allowing for the method normal approximation described.
-(b)~False. Inference is made on the population parameter, not the point
-estimate. The point estimate is always in the confidence interval.
-(c)~True.
-(d)~False. The confidence interval is not about a sample mean.
-(e)~False. To be more confident that we capture the parameter, we need a wider
-interval. Think about needing a bigger net to be more sure of catching a fish in
-a murky lake.
-(f)~True. Optional explanation: This is true since the normal model was used to
-model the sample mean. The margin of error is half the width of the interval,
-and the sample mean is the midpoint of the interval.
-(g)~False. In the calculation of the standard error, we divide the standard
-deviation by the square root of the sample size. To cut the SE (or margin of
-error) in half, we would need to sample $2^2 = 4$ times the number of people in
-the initial sample.}
+\eocesol{ (a)~False. Provided the data distribution is not very strongly skewed ($n = 64$ in
+  this sample, so we can be slightly lenient with the skew), the sample mean will
+  be nearly normal, allowing for the method normal approximation described.
+  (b)~False. Inference is made on the population parameter, not the point
+  estimate. The point estimate is always in the confidence interval.
+  (c)~True.
+  (d)~False. The confidence interval is not about a sample mean.
+  (e)~False. To be more confident that we capture the parameter, we need a wider
+  interval. Think about needing a bigger net to be more sure of catching a fish in
+  a murky lake.
+  (f)~True. Optional explanation: This is true since the normal model was used to
+  model the sample mean. The margin of error is half the width of the interval,
+  and the sample mean is the midpoint of the interval.
+  (g)~False. In the calculation of the standard error, we divide the standard
+  deviation by the square root of the sample size. To cut the SE (or margin of
+  error) in half, we would need to sample $2^2 = 4$ times the number of people in
+  the initial sample.
+
+}
 
 % 15
 
-\eocesol{Independence: sample from $<10\%$ of population, and it is a random sample. We
-can assume that the students in this sample are independent of each other with
-respect to number of exclusive relationships they have been in. Notice that
-there are no students who have had no exclusive relationships in the
-sample, which suggests some student responses are likely missing (perhaps only
-positive values were reported). The sample size is at least 30. The skew is
-strong, but the sample is very large so this is not a concern. 90\% CI: (2.97, 3.43).
-We are 90\% confident that undergraduate students have been in 2.97 to 3.43 exclusive relationships, on average.}
+\eocesol{ Independence: sample from $<10\%$ of population, and it is a
+  random sample. We can assume that the students in this sample are
+  independent of each other with respect to number of exclusive
+  relationships they have been in. Notice that there are no students
+  who have had no exclusive relationships in the sample, which
+  suggests some student responses are likely missing (perhaps only
+  positive values were reported). The sample size is at least 30. The
+  skew is strong, but the sample is very large so this is not a
+  concern. 90\% CI: ($\Sexpr{ci_4.6.15[1]}$, $\Sexpr{ci_4.6.15[2]}$).
+  We are 90\% confident that undergraduate students have been in
+  $\Sexpr{ci_4.6.15[1]}$ to $\Sexpr{ci_4.6.15[2]}$ exclusive
+  relationships, on average.
+
+}
 
 % 17
 
