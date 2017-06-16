@@ -134,47 +134,62 @@ the standard error decreases, which will decrease the margin of error.}
 
 % 17
 
-\eocesol{(a)~$H_0: \mu = 8$ (On average, New Yorkers sleep 8 hours a night.) \\
-$H_A: \mu < 8$ (On average, New Yorkers sleep less than 8 hours a night.) \\
-(b)~$H_0: \mu = 15$ (The average amount of company time each employee spends not
-working is 15 minutes for March Madness.) \\
-$H_A: \mu > 15$ (The average amount of
-company time each employee spends not working is greater than 15 minutes for
-March Madness.)}
+\eocesol{ (a)~$H_0: \mu = \Sexpr{xa_4.6.17}$ (On average, New Yorkers sleep 8 hours a night.) \\
+  $H_A: \mu < \Sexpr{xa_4.6.17}$ (On average, New Yorkers sleep less than 8 hours a night.) \\
+  (b)~$H_0: \mu = \Sexpr{xb_4.6.17}$ (The average amount of company time each
+  employee spends not
+  working is 15 minutes for March Madness.) \\
+  $H_A: \mu > \Sexpr{xb_4.6.17}$ (The average amount of company time each employee
+  spends not working is greater than $\Sexpr{xb_4.6.17}$ minutes for March Madness.)
+
+}
 
 % 19
 
-\eocesol{The hypotheses should be about the population mean ($\mu$), not the sample mean.
-The null hypothesis should have an equal sign and the alternative hypothesis
-should be about the null hypothesized value, not the observed sample mean.
-Correction:
-\begin{align*}
-H_0&: \mu = 10~hours \\
-H_A&: \mu > 10~hours
-\end{align*}
-The one-sided test indicates that we are only interested in showing that 10 is an
-underestimate. Here the interest is in only one direction, so a one-sided test
-seems most appropriate. If we would also be interested if the data showed strong
-evidence that 10 was an overestimate, then the test should be two-sided.}
+\eocesol{ The hypotheses should be about the population mean ($\mu$),
+  not the sample mean.  The null hypothesis should have an equal sign
+  and the alternative hypothesis should be about the null hypothesized
+  value, not the observed sample mean.  Correction:
+
+  \begin{align*}
+    H_0&: \mu = \Sexpr{xa_4.6.18}~hours \\
+    H_A&: \mu > \Sexpr{xa_4.6.18}~hours
+  \end{align*}
+
+  The one-sided test indicates that we are only interested in showing
+  that $\Sexpr{xa_4.6.18}$ is an underestimate. Here the interest is
+  in only one direction, so a one-sided test seems most
+  appropriate. If we would also be interested if the data showed
+  strong evidence that $\Sexpr{xa_4.6.18}$ was an overestimate, then
+  the test should be two-sided.
+
+}
 
 % 21
 
-\eocesol{(a)~This claim does is not supported since 3 hours (180 minutes) is not in
-the interval.
-(b)~2.2~hours (132 minutes) is in the 95\% confidence interval, so we do not
-have evidence to say she is wrong. However, it would be more appropriate to use
-the point estimate of the sample.
-(c)~A 99\% confidence interval will be wider than a 95\% confidence interval,
-meaning it would enclose this smaller interval. This means 132 minutes would be
-in the wider interval, and we would not reject her claim based on a 99\%
-confidence level.}
+\eocesol{ (a)~This claim does is not supported since $\Sexpr{xa_4.6.21}$ hours
+  ($\Sexpr{xa_4.6.21*60}$ minutes) is not in the interval.
+  (b)~$\Sexpr{xb_4.6.21}$~hours ($\Sexpr{xb_4.6.21*60}$ minutes) is in
+  the 95\% confidence interval, so we do not have evidence to say she
+  is wrong. However, it would be more appropriate to use the point
+  estimate of the sample.
+  (c)~A 99\% confidence interval will be wider than a 95\% confidence
+  interval, meaning it would enclose this smaller interval. This means
+  132 minutes would be in the wider interval, and we would not reject
+  her claim based on a 99\% confidence level.
+
+}
 
 % 23
 
-\eocesol{$H_0: \mu = 130$. $H_A: \mu \ne 130$. $Z=1.39$ $\to$ p-value $= 0.1646$, which
-is larger than $\alpha=0.05$. The data do not provide convincing evidence that
-the true average calorie content in bags of potato chips is different than 130
-calories.}
+\eocesol{ $H_0: \mu = \Sexpr{pm_4.6.23}$.
+  $H_A: \mu \ne \Sexpr{pm_4.6.23}$. $Z=\Sexpr{z_4.6.23}$ $\to$ p-value
+  $= \Sexpr{p_4.6.23}$, which is \Sexpr{larger_4.6.23} than
+  $\alpha=0.05$. The data do \Sexpr{not_4.6.23} provide convincing
+  evidence that the true average calorie content in bags of potato
+  chips is different than $\Sexpr{pm_4.6.23}$ calories.
+
+}
 
 % 25
 
