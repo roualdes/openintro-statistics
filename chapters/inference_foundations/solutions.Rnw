@@ -193,21 +193,25 @@ the standard error decreases, which will decrease the margin of error.}
 
 % 25
 
-\eocesol{(a)~Independence: The sample is random and 64 patients would almost certainly
-make up less than 10\% of the ER residents. The sample size is at least 30. No
-information is provided about the skew. In practice, we would ask to see the
-data to check this condition, but here we will make the assumption that the skew
-is not very strong.
-(b)~$H_0: \mu = 127$. $H_A: \mu \ne 127$. $Z=2.15$ $\to$ p-value $= 0.0316$.
-Since the p-value is less than $\alpha=0.05$, we reject $H_0$. The data provide
-convincing evidence that the average ER wait time has increased over the
-last year.
-(c)~Yes, it would change. The p-value is greater than 0.01, meaning we would
-fail to reject $H_0$ at $\alpha = 0.01$.}
+\eocesol{ (a)~Independence: The sample is random and 64 patients would almost
+  certainly make up less than 10\% of the ER residents. The sample
+  size is at least 30. No information is provided about the skew. In
+  practice, we would ask to see the data to check this condition, but
+  here we will make the assumption that the skew is not very strong.
+  (b)~$H_0: \mu = \Sexpr{nh_4.6.25}$.
+  $H_A: \mu \ne \Sexpr{nh_4.6.25}$. $Z=\Sexpr{z_4.6.25}$ $\to$ p-value
+  $= \Sexpr{p_4.6.25}$.  Since the p-value is \Sexpr{less_4.6.25} than
+  $\alpha=0.05$, we \Sexpr{reject_4.6.25} reject $H_0$. The data
+  \Sexpr{dont_4.6.25} provide convincing evidence that the average ER
+  wait time has increased over the last year.
+  (c)~The p-value is \Sexpr{less_4.6.25c} than $0.01$, meaning
+  we would \Sexpr{reject_4.6.25c} reject $H_0$ at $\alpha = 0.01$.
+
+}
 
 % 27
 
-\eocesol{$Z = 1.65 = \frac{\bar{x} - 30}{10 / \sqrt{70}} \to \bar{x} = 31.97$.}
+\eocesol{$Z = \Sexpr{z_4.6.27} = \frac{\bar{x} - \Sexpr{nh_4.6.27}}{\Sexpr{ssd_4.6.27} / \sqrt{\Sexpr{n_4.6.27}}} \to \bar{x} = \Sexpr{sm_4.6.27}$.}
 
 
 % 29

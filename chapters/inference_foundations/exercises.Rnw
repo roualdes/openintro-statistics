@@ -161,7 +161,7 @@ x_4.6.4b <- round(runif(1, 50, 55))
   % randomize the numbers
 
 \begin{minipage}[c]{0.7\textwidth}
-<<plot4_6_4, echo=FALSE, fig.width=4, fig.height=2.5>>=
+<<plot4_6_4, echo=FALSE, fig.width=4.5, fig.height=2>>=
 plot_4.6.4
 @
 \end{minipage}
@@ -801,31 +801,48 @@ not_4.6.23 <- ifelse(p_4.6.23>0.05, "not", "")
 
 
 % 24
-% TODO here
-\eoce{\qt{Gifted children, Part I\label{gifted_children_intro}} Researchers
-investigating characteristics of gifted children collected data from schools
-in a large city on a random sample of thirty-six children who were identified
-as gifted children soon after they reached the age of four. The following
-histogram shows the distribution of the ages (in months) at which these
-children first counted to 10 successfully. Also provided are some sample
-statistics. \footfullcite{Graybill:1994} \\
 
-\begin{minipage}[c]{0.73\textwidth}
-
-<<giftedChildrenHist, opts.label="plot">>=
-ggplot2::ggplot(openintro::gifted, ggplot2::aes(x=count)) +
+<<ex4.6.24, echo=FALSE>>=
+n_4.6.24 <- nrow(openintro::gifted)
+df_4.6.24 <- dplyr::sample_n(openintro::gifted, n_4.6.24, replace=TRUE)
+plot_4.6.24 <- ggplot2::ggplot(df_4.6.24, ggplot2::aes(x=count)) +
     ggplot2::geom_histogram(bins=10) +
-        ggplot2::labs(x="Age child first counted to 10 (in months)")
+    ggplot2::labs(x="Age child first counted to 10 (in months)")
+
+min_4.6.24 <- min(df_4.6.24$count)
+mean_4.6.24 <- round(mean(df_4.6.24$count), 2)
+sd_4.6.24 <- round(sd(df_4.6.24$count), 2)
+max_4.6.24 <- max(df_4.6.24$count)
+
+
+@
+
+\eoce{ \qt{Gifted children, Part I\label{gifted_children_intro}}
+  Researchers investigating characteristics of gifted children
+  collected data from schools in a large city on a random sample of
+  thirty-six children who were identified as gifted children soon
+  after they reached the age of four. The following histogram shows
+  the distribution of the ages (in months) at which these children
+  first counted to 10 successfully. Also provided are some sample
+  statistics. \footfullcite{Graybill:1994} \\
+
+  % techinically a bootstrapped sample from this database, to
+  % randomize the numbers
+
+\begin{minipage}[c]{0.7\textwidth}
+
+<<plot_4_6_24, echo=FALSE, fig.height=2, fig.width=4.5>>=
+plot_4.6.24
 @
 \end{minipage}
-\begin{minipage}[c]{0.23\textwidth}
+\begin{minipage}[c]{0.2\textwidth}
   \begin{center}
     \begin{tabular}{l|r}
-      n & 36 \\
-      Min & 21 \\
-      Mean & 30.69 \\
-      SD & 4.31 \\
-      Max & 39 \\
+      n & $\Sexpr{n_4.6.24}$ \\
+      Min & $\Sexpr{min_4.6.24}$ \\
+      Mean & $\Sexpr{mean_4.6.24}$ \\
+      SD & $\Sexpr{sd_4.6.24}$ \\
+      Max & $\Sexpr{max_4.6.24}$ \\
     \end{tabular}
   \end{center}
 \end{minipage}
@@ -834,10 +851,10 @@ ggplot2::ggplot(openintro::gifted, ggplot2::aes(x=count)) +
 \begin{parts}
 \item Are conditions for inference satisfied?
 \item Suppose you read online that children first count to 10 successfully when
-they are 32 months old, on average. Perform a hypothesis test to evaluate if
-these data provide convincing evidence that the average age at which gifted
-children fist count to 10 successfully is less than the general average of 32
-months. Use a significance level of 0.10.
+  they are 32 months old, on average. Perform a hypothesis test to evaluate if
+  these data provide convincing evidence that the average age at which gifted
+  children fist count to 10 successfully is less than the general average of 32
+  months. Use a significance level of 0.10.
 \item Interpret the p-value in context of the hypothesis test and the data.
 \item Calculate a 90\% confidence interval for the average age at which gifted children first count to 10 successfully.
 \item Do your results from the hypothesis test and the confidence interval agree? Explain.
@@ -846,80 +863,133 @@ months. Use a significance level of 0.10.
 
 % 25
 
-\eoce{\qt{Waiting at an ER, Part III\label{er_wait_ht}} The hospital administrator
-mentioned in Exercise~\ref{er_wait_intro} randomly selected 64 patients and
-measured the time (in minutes) between when they checked in to the ER and the
-time they were first seen by a doctor. The average time is 137.5 minutes and
-the standard deviation is 39 minutes. She is getting grief from her supervisor
-on the basis that the wait times in the ER has increased greatly from last
-year's average of 127 minutes. However, she claims that the increase is
-probably just due to chance.
-\begin{parts}
-\item Are conditions for inference met? Note any assumptions you must make to
-proceed.
-\item Using a significance level of $\alpha = 0.05$, is the change in wait times
-statistically significant? Use a two-sided test since it seems the supervisor
-had to inspect the data before she suggested an increase occurred.
-\item Would the conclusion of the hypothesis test change if the significance
-level was changed to $\alpha = 0.01$?
-\end{parts}
+<<ex4.6.25, echo=FALSE>>=
+
+ssd_4.6.25 <- round(8*me_4.6.13/qt(0.975, 63), 2)
+nh_4.6.25 <- round(runif(1, 124, 127), 2)
+
+z_4.6.25 <- round((sm_4.6.13 - nh_4.6.25)/(ssd_4.6.25/8), 2)
+p_4.6.25 <- round(2*(1-pnorm(abs(z_4.6.25))), 4)
+
+less_4.6.25 <- ifelse(p_4.6.25>0.05, "greater", "less")
+reject_4.6.25 <- ifelse(p_4.6.25>0.05, "fail to", "")
+dont_4.6.25 <- ifelse(p_4.6.25>0.05, "do not", "")
+
+less_4.6.25c <- ifelse(p_4.6.25>0.01, "greater", "less")
+reject_4.6.25c <- ifelse(p_4.6.25>0.01, "fail to", "")
+
+@
+
+\eoce{ \qt{Waiting at an ER, Part III\label{er_wait_ht}} The hospital
+  administrator mentioned in Exercise~\ref{er_wait_intro} randomly
+  selected 64 patients and measured the time (in minutes) between when
+  they checked in to the ER and the time they were first seen by a
+  doctor. The average time is $\Sexpr{sm_4.6.13}$ minutes and the standard deviation
+  is $\Sexpr{ssd_4.6.25}$ minutes. She is getting grief from her supervisor on the basis
+  that the wait times in the ER has increased greatly from last year's
+  average of $\Sexpr{nh_4.6.25}$ minutes. However, she claims that the increase is
+  probably just due to chance.
+
+  \begin{parts}
+  \item Are conditions for inference met? Note any assumptions you must make to
+    proceed.
+  \item Using a significance level of $\alpha = 0.05$, is the change in wait times
+    statistically significant? Use a two-sided test since it seems the supervisor
+    had to inspect the data before she suggested an increase occurred.
+  \item Would the conclusion of the hypothesis test change if the significance
+    level was changed to $\alpha = 0.01$?
+  \end{parts}
+
 }{}
 
 
 
 % 26
 
-\eoce{\qt{Gifted children, Part II\label{gifted_children_ht}} Exercise~\ref{gifted_children_intro} describes a study on gifted
-children. In this study, along with variables on the children, the researchers
-also collected data on the mother's and father's IQ of the 36 randomly sampled
-gifted children. The histogram below shows the distribution of mother's IQ.
-Also provided are some sample statistics.
+<<ex4.6.26, echo=FALSE>>=
 
-
-\begin{minipage}[c]{0.6\textwidth}
-<<giftedChildrenMomIQHist, opts.label="plot">>=
-ggplot2::ggplot(data=openintro::gifted, ggplot2::aes(x=motheriq)) +
+plot_4.6.26 <- ggplot2::ggplot(data=df_4.6.24, ggplot2::aes(x=motheriq)) +
     ggplot2::geom_histogram(bins=10) +
-        ggplot2::labs(x="Mother's IQ")
+    ggplot2::labs(x="Mother's IQ")
+
+min_4.6.26 <- min(df_4.6.24$motheriq)
+mean_4.6.26 <- round(mean(df_4.6.24$motheriq), 2)
+sd_4.6.26 <- round(sd(df_4.6.24$motheriq), 2)
+max_4.6.26 <- max(df_4.6.24$motheriq)
+
+nh_4.6.26 <- round(runif(1, 98, 102))
+
+@
+
+\eoce{\ qt{Gifted children, Part II\label{gifted_children_ht}}
+  Exercise~\ref{gifted_children_intro} describes a study on gifted
+  children. In this study, along with variables on the children, the
+  researchers also collected data on the mother's and father's IQ of
+  the 36 randomly sampled gifted children. The histogram below shows
+  the distribution of mother's IQ.  Also provided are some sample
+  statistics.
+
+
+\begin{minipage}[c]{0.7\textwidth}
+<<plot_4_6_26, echo=FALSE, fig.width=4.5, fig.height=2>>=
+plot_4.6.26
 @
 \end{minipage}
-\begin{minipage}[c]{0.1\textwidth}
+\begin{minipage}[c]{0.2\textwidth}
 \begin{tabular}{l | r}
-n   & 36 \\
-Min & 101 \\
-Mean    & 118.2 \\
-SD  & 6.5 \\
-Max & 131
+  n   & $\Sexpr{n_4.6.24}$ \\
+  Min & $\Sexpr{min_4.6.26}$ \\
+  Mean & $\Sexpr{mean_4.6.26}$ \\
+  SD  & $\Sexpr{sd_4.6.26}$ \\
+  Max & $\Sexpr{max_4.6.26}$
 \end{tabular}
 \end{minipage}
 
-
 \begin{parts}
-\item Perform a hypothesis test to evaluate if these data provide convincing
-evidence that the average IQ of mothers of gifted children is different than the
-average IQ for the population at large, which is 100. Use a significance level
-of 0.10.
+\item Perform a hypothesis test to evaluate if these data provide
+  convincing evidence that the average IQ of mothers of gifted
+  children is different than the average IQ for the population at
+  large, which is $\Sexpr{nh_4.6.26}$. Use a significance level of
+  0.10.
 \item Calculate a 90\% confidence interval for the average IQ of mothers of
-gifted children.
+  gifted children.
 \item Do your results from the hypothesis test and the confidence interval
-agree? Explain.
+  agree? Explain.
 \end{parts}
+
 }{}
 
 % 27
 
-\eoce{\qt{Working backwards, one-sided\label{backwards_one_sided}} You are given the
-following hypotheses:
+<<ex4.6.27, echo=FALSE>>=
+
+nh_4.6.27 <- round(runif(1, 25, 35))
+ssd_4.6.27 <- round(runif(1, 8, 12))
+n_4.6.27 <- round(runif(1, 60, 80))
+p_4.6.27 <- sample(c(.001, .01, .05, .1, .2), 1)
+
+z_4.6.27 <- round(qnorm(1-p_4.6.27), 2)
+sm_4.6.27 <- round((ssd_4.6.27/sqrt(n_4.6.27))*z_4.6.27 + nh_4.6.27, 2)
+
+@
+
+\eoce{ \qt{Working backwards, one-sided\label{backwards_one_sided}}
+  You are given the following hypotheses:
+
 \begin{align*}
-H_0&: \mu = 30 \\
-H_A&: \mu > 30
+  H_0&: \mu = \Sexpr{nh_4.6.27} \\
+H_A&: \mu > \Sexpr{nh_4.6.27}
 \end{align*}
-We know that the sample standard deviation is 10 and the sample size is 70. For
-what sample mean would the p-value be equal to 0.05? Assume that all conditions
+
+We know that the sample standard deviation is $\Sexpr{ssd_4.6.27}$ and
+the sample size is $\Sexpr{n_4.6.27}$. For what sample mean would the
+p-value be equal to $\Sexpr{p_4.6.27}$? Assume that all conditions
 necessary for inference are satisfied.
+
 }{}
 
 % 28
+% TODO here
 
 \eoce{\qt{Working backwards, two-sided\label{backwards_two_sided}} You are given the
 following hypotheses:
