@@ -15,6 +15,8 @@ stdNormal <- function(border_decoration = FALSE) {
     p
 }
 
+
+## see 3.6.1 exercise
 shade_stdNormal <- function(expr1, expr2) {
     ## TODO put x-axis label at the numbers is expr1/2
 
@@ -37,6 +39,8 @@ shade_stdNormal <- function(expr1, expr2) {
     p
 }
 
+
+## see 3.6.3 solution
 annotate_stdNormal <- function(x, y) {
 
     if (length(x) != length(y)) {
@@ -63,6 +67,8 @@ annotate_stdNormal <- function(x, y) {
     grid::grid.draw(gt)
 }
 
+
+## see 3.6.4 exercise
 clock_time <- function(t) {
     ## change t seconds to clock time
 
@@ -76,6 +82,8 @@ clock_time <- function(t) {
     sprintf("%d:%d:%d", floor(hours), floor(minutes), ceiling(seconds))
 }
 
+
+## see 3.6.17 exercise
 hist_density <- function(x, xlab="") {
     df <- data.frame(x=x)
     s <- sd(x)
@@ -89,6 +97,7 @@ hist_density <- function(x, xlab="") {
             ggplot2::labs(x=xlab, y="")
 }
 
+## see 3.6.17 exercise
 quant_plot <- function(x, xlab="Theoretical Quantiles", ylab="Sample Quantiles") {
     df <- data.frame(x=x)
     xq <- quantile(x, c(0.25, 0.75))
@@ -100,6 +109,18 @@ quant_plot <- function(x, xlab="Theoretical Quantiles", ylab="Sample Quantiles")
             ggplot2::geom_abline(intercept=int, slope=slope) +
             ggplot2::labs(x=xlab, y=ylab)
 }
+
+
+## see 4.6.33 exercise
+resample <- function(n, x, R) {
+    nr <- length(x)
+    xbar <- vector("list", R)
+    for (i in seq_len(R)) {
+        xbar[[i]] <- mean(x[sample(nr, size=n, replace=TRUE)])
+    }
+    unlist(xbar)
+}
+
 
 
 

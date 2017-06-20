@@ -216,51 +216,65 @@ the standard error decreases, which will decrease the margin of error.}
 
 % 29
 
-\eocesol{(a)~$H_0$: Anti-depressants do not help symptoms of Fibromyalgia. $H_A$: Anti-
-depressants do treat symptoms of Fibromyalgia. Remark: Diana might also have
-taken special note if her symptoms got much worse, so a more scientific approach
-would have been to use a two-sided test. If you proposed a two-sided
-approach, your answers in~(b) and~(c) will be different.
-(b)~Concluding that anti-depressants work for the treatment of Fibromyalgia
-symptoms when they actually do not.
-(c)~Concluding that anti-depressants do not work for the treatment of
-Fibromyalgia symptoms when they actually do.}
+\eocesol{ (a)~$H_0$: Anti-depressants do not help symptoms of
+  Fibromyalgia. $H_A$: Anti- depressants do treat symptoms of
+  Fibromyalgia. Remark: Diana might also have taken special note if
+  her symptoms got much worse, so a more scientific approach would
+  have been to use a two-sided test. If you proposed a two-sided
+  approach, your answers in~(b) and~(c) will be different.
+  (b)~Concluding that anti-depressants work for the treatment of
+  Fibromyalgia symptoms when they actually do not.
+  (c)~Concluding that anti-depressants do not work for the treatment
+  of Fibromyalgia symptoms when they actually do.
+
+}
 
 % 31
 
-\eocesol{(a)~Scenario I is higher. Recall that a sample mean based on less data tends to
-be less accurate and have larger standard errors.
-(b)~Scenario I is higher. The higher the confidence level, the higher the
-corresponding margin of error.
-(c)~They are equal. The sample size does not affect the calculation of the p-
-value for a given Z-score.
-(d)~Scenario I is higher. If the null hypothesis is harder to reject
-(lower $\alpha$), then we are more likely to make a Type~2 Error when the
-alternative hypothesis is true.}
+\eocesol{ (a)~Scenario \Sexpr{a_4.6.31} is higher. Recall that a sample
+  mean based on less data tends to be less accurate and have larger
+  standard errors.
+  (b)~Scenario \Sexpr{b_4.6.31} is higher. The higher the confidence level, the higher the
+  corresponding margin of error.
+  (c)~They are equal. The sample size does not affect the calculation of the p-
+  value for a given Z-score.
+  (d)~Scenario \Sexpr{d_4.6.31} is higher. If the null hypothesis is
+  harder to reject (lower $\alpha$), then we are more likely to make a
+  Type~2 Error when the alternative hypothesis is true.
+
+}
 
 % 33
 
-\eocesol{(a)~The distribution is unimodal and strongly right skewed with a median between
-5 and 10 years old. Ages range from 0 to slightly over 50 years old, and the
-middle 50\% of the distribution is roughly between 5 and 15 years old. There are
-potential outliers on the higher end.
-(b)~When the sample size is small, the sampling distribution is right skewed,
-just like the population distribution. As the sample size increases, the
-sampling distribution gets more unimodal, symmetric, and approaches normality.
-The variability also decreases. This is consistent with the Central Limit
-Theorem.
-(c)~n = 5: $\mu_{\bar{x}} = 10.44, \quad \sigma_{\bar{x}} = 4.11$;
-n = 30: $\mu_{\bar{x}} = 10.44, \quad \sigma_{\bar{x}} = 1.68$;
-n = 100: $\mu_{\bar{x}} = 10.44, \quad \sigma_{\bar{x}} = 0.92$.
-The centers of the sampling distributions shown in part~(b) appear to be
-around 10. It is difficult to estimate the standard deviation for
-the sampling distribution when $n = 5$ from the histogram (since the
-distribution is somewhat skewed). If 1.68 is a plausible estimate for the
-standard deviation of the sampling distribution when $n = 30$, then using
-the 68-95-99.7\% Rule, we would expect the values to range roughly between
-$10.44 \pm 3* 1.68 = (5.4, 15.48)$, which seems to be the case. Similarly, when
-$n = 100$, we would expect the values to range roughly between
-$10.44 \pm 3* 0.92 = (7.68, 13.2)$, which also seems to be the case.}
+\eocesol{ (a)~The distribution is unimodal and strongly right skewed with a
+  median between 5 and 10 years old. Ages range from 0 to slightly
+  over 50 years old, and the middle 50\% of the distribution is
+  roughly between 5 and 15 years old. There are potential outliers on
+  the higher end.
+  (b)~When the sample size is small, the sampling distribution is
+  right skewed, just like the population distribution. As the sample
+  size increases, the sampling distribution gets more unimodal,
+  symmetric, and approaches normality.  The variability also
+  decreases. This is consistent with the Central Limit Theorem.
+  (c)~n = 5:
+  $\mu_{\bar{x}} = \Sexpr{pm_4.6.33}, \quad \sigma_{\bar{x}} =
+  \Sexpr{ssd_4.6.33[1]}$; n = 30:
+  $\mu_{\bar{x}} = \Sexpr{pm_4.6.33}, \quad \sigma_{\bar{x}} =
+  \Sexpr{ssd_4.6.33[2]}$; n = 100:
+  $\mu_{\bar{x}} = \Sexpr{pm_4.6.33}, \quad \sigma_{\bar{x}} =
+  \Sexpr{ssd_4.6.33[3]}$.  The centers of the sampling distributions
+  shown in part~(b) appear to be around 10. It is difficult to
+  estimate the standard deviation for the sampling distribution when
+  $n = 5$ from the histogram (since the distribution is somewhat
+  skewed). If 1.68 is a plausible estimate for the standard deviation
+  of the sampling distribution when $n = 30$, then using the
+  68-95-99.7\% Rule, we would expect the values to range roughly
+  between $10.44 \pm 3* 1.68 = (5.4, 15.48)$, which seems to be the
+  case. Similarly, when $n = 100$, we would expect the values to range
+  roughly between $10.44 \pm 3* 0.92 = (7.68, 13.2)$, which also seems
+  to be the case.
+
+}
 
 % 35
 
