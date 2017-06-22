@@ -111,7 +111,7 @@ quant_plot <- function(x, xlab="Theoretical Quantiles", ylab="Sample Quantiles")
 }
 
 
-## see 4.6.33 exercise
+## see 4.6.33, 4.6.37 exercise
 resample <- function(n, x, R) {
     nr <- length(x)
     xbar <- vector("list", R)

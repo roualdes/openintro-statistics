@@ -53,8 +53,8 @@
 % 3
 
 <<ex4.6.3, echo=FALSE>>=
-## TODO drop hard code sample size
-df_4.6.3 <- dplyr::sample_n(openintro::credits, 100, replace=TRUE)
+n_4.6.3 <- nrow(openintro::credits)
+df_4.6.3 <- dplyr::sample_n(openintro::credits, n_4.6.3, replace=TRUE)
 plot_4.6.3 <- ggplot2::ggplot(data=df_4.6.3, ggplot2::aes(x=credits)) +
     ggplot2::geom_histogram(bins=10) +
         ggplot2::labs(x="Number of credits")
@@ -63,10 +63,11 @@ min_4.6.3 <- min(df_4.6.3$credits)
 q1_4.6.3 <- round(quantile(df_4.6.3$credits, .25), 2)
 q2_4.6.3 <- round(quantile(df_4.6.3$credits, .5), 2)
 mean_4.6.3 <- round(mean(df_4.6.3$credits), 2)
+mean_4.6.3b <- round(mean(dplyr::sample_n(openintro::credits, n_4.6.3, replace=TRUE)$credits), 2)
 sd_4.6.3 <- round(sd(df_4.6.3$credits), 2)
 q3_4.6.3 <- round(quantile(df_4.6.3$credits, .75), 2)
 max_4.6.3 <- max(df_4.6.3)
-se_4.6.3 <- round(sd_4.6.3/sqrt(100), 2)
+se_4.6.3 <- round(sd_4.6.3/sqrt(n_4.6.3), 2)
 
 x_4.6.3a <- round(runif(1, 14, 16))
 x_4.6.3b <- round(runif(1, 18, 20))
@@ -79,7 +80,7 @@ not_4.6.3b <- ifelse(z_4.6.3b<=2, "not", "")
 \eoce{ \qt{College credits\label{college_credits}} A college counselor
   is interested in estimating how many credits a student typically
   enrolls in each semester. The counselor decides to randomly sample
-  100 students by using the registrar's database of students. The
+  $\Sexpr{n_4.6.3}$ students by using the registrar's database of students. The
   histogram below shows the distribution of the number of credits
   taken by these students. Sample statistics for this distribution are
   also provided.
@@ -115,8 +116,8 @@ plot_4.6.3
   college? What about $\Sexpr{x_4.6.3b}$ credits? Explain your
   reasoning. \textit{Hint:} Observations farther than two standard
   deviations from the mean are usually considered to be unusual.
-\item The college counselor takes another random sample of 100
-  students and this time finds a sample mean of 14.02 units. Should
+\item The college counselor takes another random sample of $\Sexpr{n_4.6.3}$
+  students and this time finds a sample mean of $\Sexpr{mean_4.6.3b}$ units. Should
   she be surprised that this sample statistic is slightly different
   than the one from the original sample?  Explain your reasoning.
 \item The sample means given above are point estimates for the mean number of
@@ -131,8 +132,8 @@ plot_4.6.3
 % 4
 
 <<ex4.6.4, echo=FALSE>>=
-## TODO drop hard code sample size
-df_4.6.4 <- dplyr::sample_n(openintro::bdims, 507, replace=TRUE)
+n_4.6.4 <- nrow(openintro::bdims)
+df_4.6.4 <- dplyr::sample_n(openintro::bdims, n_4.6.4, replace=TRUE)
 plot_4.6.4 <- ggplot2::ggplot(data=df_4.6.4, ggplot2::aes(x=hgt)) +
     ggplot2::geom_histogram(bins=10) +
     ggplot2::labs(x="Height (cm)")
@@ -153,7 +154,7 @@ x_4.6.4b <- round(runif(1, 50, 55))
 
 \eoce{ \qt{Heights of adults\label{adult_heights}} Researchers studying anthropometry collected body girth measurements
   and skeletal diameter measurements, as well as age, weight, height
-  and gender, for 507 physically active individuals. The histogram
+  and gender, for $\Sexpr{n_4.6.4}$ physically active individuals. The histogram
   below shows the sample distribution of heights in centimeters.
   \footfullcite{Heinz:2003}
 
@@ -381,24 +382,38 @@ x_4.6.10 <- (1 - se_4.6.8/100)*100
 
 
 % 11
-% TODO can I get my hands on these data? Randomize percent confidence
+
+<<ex4.6.11, echo=FALSE>>=
+
+# http://sda.berkeley.edu/sdaweb/analysis/?dataset=gss16
+gss_4.6.11 <- read.csv("../../data/gss2010.csv")
+df_4.6.11 <-  dplyr::filter(gss_4.6.11, !(HRSRELAX %in% c(-1, 99, 98)))
+n_4.6.11 <- nrow(df_4.6.11)
+df_4.6.11 <- dplyr::sample_n(df_4.6.11, n_4.6.11, replace=TRUE)
+
+ci_4.6.11 <- round(mean(df_4.6.11$HRSRELAX) + qt(c(0.025, 0.975), n_4.6.11-1)*(sd(df_4.6.11$HRSRELAX)/sqrt(n_4.6.11)), 2)
+
+@
 
 \eoce{ \qt{Relaxing after work\label{relax_after_work}} The 2010
   General Social Survey asked the question: ``After an average work
   day, about how many hours do you have to relax or pursue activities
-  that you enjoy?" to a random sample of 1,155
+  that you enjoy?" to a random sample of $\Sexpr{n_4.6.11}$
   Americans.\footfullcite{data:gss:2010} A 95\% confidence interval
   for the mean number of hours spent relaxing or pursuing activities
-  they enjoy was (1.38, 1.92).
+  they enjoy was $(\Sexpr{ci_4.6.11})$.
+
+  % techinically a bootstrapped sample from this database, to
+  % randomize the numbers
 
   \begin{parts}
   \item Interpret this interval in context of the data.
   \item Suppose another set of researchers reported a confidence interval with a
-    larger margin of error based on the same sample of 1,155 Americans. How does
+    larger margin of error based on the same sample of $\Sexpr{n_4.6.11}$ Americans. How does
     their confidence level compare to the confidence level of the interval stated
     above?
   \item Suppose next year a new survey asking the same question is conducted, and
-    this time the sample size is 2,500. Assuming that the population
+    this time the sample size is $2500$. Assuming that the population
     characteristics, with respect to how much time people spend relaxing after work,
     have not changed much within a year. How will the margin of error of the 95\%
     confidence interval constructed based on data from the new survey compare to the
@@ -408,14 +423,29 @@ x_4.6.10 <- (1 - se_4.6.8/100)*100
 }{}
 
 % 12
-% TODO can I get my hands on these data? Randomize percent confidence
+
+<<ex4.6.12, echo=FALSE>>=
+
+# http://sda.berkeley.edu/sdaweb/analysis/?dataset=gss16
+df_4.6.12 <-  dplyr::filter(gss_4.6.11, !(MNTLHLTH %in% c(-1, 99, 98)))
+n_4.6.12 <- nrow(df_4.6.12)
+df_4.6.12 <- dplyr::sample_n(df_4.6.12, n_4.6.12, replace=TRUE)
+
+ci_4.6.12 <- round(mean(df_4.6.12$MNTLHLTH) + qt(c(0.025, 0.975), n_4.6.12-1)*(sd(df_4.6.12$HRSRELAX)/sqrt(n_4.6.12)), 2)
+
+n_new_4.6.12 <- round(runif(1, 500, 2500))
+
+@
 
 \eoce{ \qt{Mental health\label{mental_health}} The 2010 General Social
   Survey asked the question: ``For how many days during the past 30
   days was your mental health, which includes stress, depression, and
-  problems with emotions, not good?" Based on responses from 1,151 US
-  residents, the survey reported a 95\% confidence interval of 3.40 to
-  4.24 days in 2010.
+  problems with emotions, not good?" Based on responses from $\Sexpr{n_4.6.12}$ US
+  residents, the survey reported a 95\% confidence interval of $\Sexpr{ci_4.6.12[1]}$ to
+  $\Sexpr{ci_4.6.12[2]}$ days in 2010.
+
+  % techinically a bootstrapped sample from this database, to
+  % randomize the numbers
 
   \begin{parts}
   \item Interpret this interval in context of the data.
@@ -423,9 +453,10 @@ x_4.6.10 <- (1 - se_4.6.8/100)*100
   \item Suppose the researchers think a 99\% confidence level would be more
     appropriate for this interval. Will this new interval be smaller or larger than
     the 95\% confidence interval?
-  \item If a new survey were to be done with 500 Americans, would the standard
-    error of the estimate be larger, smaller, or about the same. Assume the standard
-    deviation has remained constant since 2010.
+  \item If a new survey were to be done with $\Sexpr{n_new_4.6.12}$
+    Americans, would the standard error of the estimate be larger,
+    smaller, or about the same. Assume the standard deviation has
+    remained constant since 2010.
   \end{parts}
 
 }{}
@@ -1200,201 +1231,372 @@ plot_4.6.33b
 }{}
 
 % 35
-% TODO here
 
-\eoce{\qt{Housing prices\label{housing_prices}} A housing survey was conducted to
-determine the price of a typical home in Topanga, CA. The mean price of a house
-was roughly \$1.3 million with a standard deviation of \$300,000. There were no
-houses listed below \$600,000 but a few houses above \$3 million.
-\begin{parts}
-\item Is the distribution of housing prices in Topanga symmetric, right skewed,
-or left skewed? \textit{Hint:} Sketch the distribution.
-\item Would you expect most houses in Topanga to cost more or less than \$1.3
-million?
-\item Can we estimate the probability that a randomly chosen house in Topanga
-costs more than \$1.4 million using the normal distribution?
-\item What is the probability that the mean of 60 randomly chosen houses in
-Topanga is more than \$1.4 million?
-\item How would doubling the sample size affect the standard deviation of the
-mean?
-\end{parts}
+<<ex4.6.35, echo=FALSE>>=
+
+pm_4.6.35 <- round(runif(1, 1.2, 1.4), 2)
+psd_4.6.35 <- round(runif(1, 2, 3), 2)*1e5
+l_4.6.35 <- round(runif(1, 5, 7), 2)*1e5
+r_4.6.35 <- round(runif(1, 3, 3.5), 2)
+x_4.6.35 <- pm_4.6.35 + .1
+n_4.6.35 <- round(runif(1, 55, 65))
+z_4.6.35 <- round((x_4.6.35 - pm_4.6.35)/(psd_4.6.35/sqrt(n_4.6.35)), 2)
+p_4.6.35 <- round(1-pnorm(z_4.6.35), 4)
+
+@
+
+
+\eoce{ \qt{Housing prices\label{housing_prices}} A housing survey was
+  conducted to determine the price of a typical home in Topanga,
+  CA. The mean price of a house was roughly \$$\Sexpr{pm_4.6.35}$ million with a
+  standard deviation of \$$\Sexpr{psd_4.6.35}$. There were no houses listed below
+  \$$\Sexpr{l_4.6.35}$ but a few houses above \$$\Sexpr{r_4.6.35}$ million.
+
+  \begin{parts}
+  \item Is the distribution of housing prices in Topanga symmetric, right skewed,
+    or left skewed? \textit{Hint:} Sketch the distribution.
+  \item Would you expect most houses in Topanga to cost more or less
+    than \$$\Sexpr{pm_4.6.35}$ million?
+  \item Can we estimate the probability that a randomly chosen house in Topanga
+    costs more than \$$\Sexpr{x_4.6.35}$ million using the normal distribution?
+  \item What is the probability that the mean of $\Sexpr{n_4.6.35}$
+    randomly chosen houses in Topanga is more than
+    \$$\Sexpr{x_4.6.35}$ million?
+  \item How would doubling the sample size affect the standard deviation of the
+    mean?
+  \end{parts}
+
 }{}
 
 % 36
 
-\eoce{\qt{Stats final scores\label{stats_final_scores}} Each year about 1500 students
-take the introductory statistics course at a large university. This year scores
-on the final exam are distributed with a median of 74 points, a mean of 70
-points, and a standard deviation of 10 points. There are no students who scored
-above 100 (the maximum score attainable on the final) but a few students scored
-below 20 points.
-\begin{parts}
-\item Is the distribution of scores on this final exam symmetric, right skewed,
-or left skewed?
-\item Would you expect most students to have scored above or below 70 points?
-\item Can we calculate the probability that a randomly chosen student scored
-above 75 using the normal distribution?
-\item What is the probability that the average score for a random sample of 40
-students is above 75?
-\item How would cutting the sample size in half affect the standard deviation of
-the mean?
-\end{parts}
+<<ex4.6.36, echo=FALSE>>=
+
+pmd_4.6.36 <- round(runif(1, 72, 77))
+pm_4.6.36 <- pmd_4.6.36 - 4
+psd_4.6.36 <- round(runif(1, 8, 12))
+l_4.6.36 <- round(runif(1, 17, 22))
+x_4.6.36 <- pmd_4.6.36 + 1
+n_4.6.36 <- round(runif(1, 35, 45))
+
+@
+
+\eoce{ \qt{Stats final scores\label{stats_final_scores}} Each year
+  about 1500 students take the introductory statistics course at a
+  large university. This year scores on the final exam are distributed
+  with a median of $\Sexpr{pmd_4.6.36}$ points, a mean of
+  $\Sexpr{pm_4.6.36}$ points, and a standard deviation of
+  $\Sexpr{psd_4.6.36}$ points. There are no students who scored above
+  100 (the maximum score attainable on the final) but a few students
+  scored below $\Sexpr{l_4.6.36}$ points.
+
+  \begin{parts}
+  \item Is the distribution of scores on this final exam symmetric,
+    right skewed, or left skewed?
+  \item Would you expect most students to have scored above or below
+    $\Sexpr{pm_4.6.36}$ points?
+  \item Can we calculate the probability that a randomly chosen
+    student scored above $\Sexpr{x_4.6.36}$ using the normal
+    distribution?
+  \item What is the probability that the average score for a random
+    sample of $\Sexpr{n_4.6.36}$ students is above $\Sexpr{x_4.6.36}$?
+  \item How would cutting the sample size in half affect the standard
+    deviation of the mean?
+  \end{parts}
+
 }{}
 
 % 37
 
-\eoce{\qt{Identify distributions, Part I \label{identify_dist_symm_pop}}
+<<ex4.6.37, echo=FALSE>>=
 
-  Four plots are presented below. The plot at the top is a
-  distribution for a population.  The mean is 10 and the standard
-  deviation is 3.  Also shown below is a distribution of (1) a single
-  random sample of 100 values from this population, (2) a distribution
-  of 100 sample means from random samples with size 5, and (3) a
-  distribution of 100 sample means from random samples with size
-  25.  Determine which plot (A, B, or C) is which and explain your
-  reasoning.
+pm_4.6.37 <- round(runif(1, 7, 13))
+psd_4.6.37 <- round(runif(1, 1.5, 3.5), 1)
 
-<<identifyDistSymmPop, opts.label="plot">>=
-df <- data.frame(x=rnorm(1e6, 10, 3))
-ggplot2::ggplot(df, ggplot2::aes(x=x, y=..density..)) +
+df_4.6.37a <- data.frame(x=rnorm(1e5, pm_4.6.37, psd_4.6.37))
+
+plot_4.6.37a <- ggplot2::ggplot(df_4.6.37a, ggplot2::aes(x=x, y=..density..)) +
     ggplot2::labs(x="", y="") +
     ggplot2::geom_histogram(bins=60) +
-        ggplot2::annotate("text", x=17, y=0.100, label="Population") +
-        ggplot2::annotate("text", x=17, y=0.085, label="mu == 10", parse=TRUE) +
-        ggplot2::annotate("text", x=17, y=0.07, label="sigma == 3", parse=TRUE) +
-        ggplot2::theme(axis.text.y=ggplot2::element_blank(),
-                       axis.ticks.y=ggplot2::element_blank())
-@
+    ggplot2::annotate("text", x=pm_4.6.37+2.5*psd_4.6.37,
+                      y=0.125, label="Population") +
+    ggplot2::annotate("text", x=pm_4.6.37+2.5*psd_4.6.37,
+                      y=0.095, label=deparse(bquote(mu == .(pm_4.6.37))), parse=TRUE) +
+    ggplot2::annotate("text", x=pm_4.6.37+2.5*psd_4.6.37,
+                      y=0.075, label=deparse(bquote(sigma == .(psd_4.6.37))), parse=TRUE) +
+    ggplot2::theme(axis.text.y=ggplot2::element_blank(),
+                   axis.ticks.y=ggplot2::element_blank())
 
-<<identifyDistSymmSamp, opts.label="plot">>=
-sdf <- dplyr::sample_n(df, 100)
-df <- tidyr::gather(tibble::data_frame("Plot A"=resample(5, sdf[["x"]], 100),
-                         "Plot C"=resample(25, sdf[["x"]], 100),
-                         "Plot B"=sdf[["x"]]),
-                   ss, xbar)
-ggplot2::ggplot(data=df, ggplot2::aes(x=xbar)) +
-    ggplot2::labs(x="xbar") +           # TODO change to symbol xbar
+sdf_4.6.37 <- dplyr::sample_n(df_4.6.37a, 100)
+df_4.6.37b <- tidyr::gather(tibble::data_frame(
+                                "Plot A"=resample(5, sdf_4.6.37[["x"]], 100),
+                                "Plot C"=resample(25, sdf_4.6.37[["x"]], 100),
+                                "Plot B"=sdf_4.6.37[["x"]]),
+                    ss, xbar)
+
+plot_4.6.37b <- ggplot2::ggplot(data=df_4.6.37b, ggplot2::aes(x=xbar)) +
+    ggplot2::labs(x=expression(bar(x))) +
     ggplot2::geom_histogram(bins=7) +
-        ggplot2::facet_wrap(~factor(ss, levels=c("Plot A", "Plot B", "Plot C")), scales="free_x", nrow=1)
+    ggplot2::facet_wrap(~factor(ss, levels=c("Plot A", "Plot B", "Plot C")),
+                        scales="free_x", nrow=1)
 
 @
+
+\eoce{ \qt{Identify distributions, Part
+    I \label{identify_dist_symm_pop}} Four plots are presented
+  below. The plot at the top is a distribution for a population.  The
+  mean is $\Sexpr{pm_4.6.37}$ and the standard deviation is
+  $\Sexpr{psd_4.6.37}$.  Also shown below is a distribution of (1) a
+  single random sample of 100 values from this population, (2) a
+  distribution of 100 sample means from random samples with size 5,
+  and (3) a distribution of 100 sample means from random samples with
+  size 25.  Determine which plot (A, B, or C) is which and explain
+  your reasoning.
+
+<<plot_4_6_37a, fig.width=4.5, fig.height=2, fig.align="center", echo=FALSE>>=
+plot_4.6.37a
+@
+
+<<plot_4_6_37b, fig.width=4.5, fig.height=2, fig.align="center", echo=FALSE>>=
+plot_4.6.37b
+@
+
 }{}
 
 % 38
 
-\eoce{\qt{Identify distributions, Part II\label{identify_dist_ls_pop}}
-  Four plots are presented below. The plot at the top is a
-  distribution for a population. The mean is 60 and the standard
-  deviation is 18. Also shown below is a distribution of (1) a single
-  random sample of 500 values from this population, (2) a distribution
-  of 500 sample means from random samples of each size 18, and (3) a
-  distribution of 500 sample means from random samples of each size
-  81. Determine which plot (A, B, or C) is which and explain your
-  reasoning.
+<<ex4.6.38, echo=FALSE>>=
 
-<<identifyDistLsPop, opts.label="plot">>=
-df <- data.frame(x=rbeta(1e6, 3.5, 2)*94)
-## TODO remove y axis
-ggplot2::ggplot(df, ggplot2::aes(x=x, y=..density..)) +
+pm_4.6.38 <- round(runif(1, 1, 5), 1)
+df_4.6.38a <- data.frame(x=-1*rpois(1e5, pm_4.6.38))
+plot_4.6.38a <- ggplot2::ggplot(df_4.6.38a, ggplot2::aes(x=x, y=..density..)) +
     ggplot2::labs(x="", y="") +
-    ggplot2::geom_histogram(bins=60) +
-        ggplot2::annotate("text", x=10, y=0.015, label="Population") +
-        ggplot2::annotate("text", x=10, y=0.0125, label="mu == 60", parse=TRUE) +
-        ggplot2::annotate("text", x=10, y=0.01, label="sigma == 18", parse=TRUE)
+    ggplot2::geom_histogram(binwidth=1) +
+    ggplot2::annotate("text", x=-1*pm_4.6.38-3*sqrt(pm_4.6.38), y=0.15, label="Population") +
+    ggplot2::annotate("text", x=-1*pm_4.6.38-3*sqrt(pm_4.6.38), y=0.125, label=deparse(bquote(mu == .(-1*pm_4.6.38))), parse=TRUE) +
+    ggplot2::annotate("text", x=-1*pm_4.6.38-3*sqrt(pm_4.6.38), y=0.1, label=deparse(bquote(sigma == .(round(sqrt(pm_4.6.38), 1)))), parse=TRUE) +
+    ggplot2::theme(axis.text.y=ggplot2::element_blank(),
+                   axis.ticks.y=ggplot2::element_blank())
+
+df_4.6.38b <- tidyr::gather(
+                         tibble::data_frame(
+                                     "Plot A"=resample(18, df_4.6.38a[["x"]], 500),
+                                     "Plot C"=resample(81, df_4.6.38a[["x"]], 500),
+                                     "Plot B"=dplyr::sample_n(df_4.6.38a, 500, replace=TRUE)[["x"]]),
+                         ss, xbar)
+
+plot_4.6.38b <- ggplot2::ggplot(data=df_4.6.38b, ggplot2::aes(x=xbar)) +
+    ggplot2::labs(x=expression(bar(x))) +
+    ggplot2::geom_histogram(bins=11) +
+    ggplot2::facet_wrap(~factor(ss,
+                                levels=c("Plot A", "Plot B", "Plot C")),
+                        scales="free_x", nrow=1)
+
+
 @
 
-<<identifyDistLsSamp, opts.label="plot">>=
-## TODO drop hard code sample size
-sdf <- dplyr::sample_n(df, 500)
-df <- tidyr::gather(tibble::data_frame("Plot A"=resample(25, sdf[["x"]], 500),
-                         "Plot C"=resample(5, sdf[["x"]], 500),
-                         "Plot B"=sdf[["x"]]),
-                   ss, xbar)
-ggplot2::ggplot(data=df, ggplot2::aes(x=xbar)) +
-    ggplot2::labs(x="xbar") +           # TODO change to symbol xbar
-    ggplot2::geom_histogram(bins=10) +
-        ggplot2::facet_wrap(~factor(ss, levels=c("Plot A", "Plot B", "Plot C")), scales="free_x", nrow=1)
+\eoce{ \qt{Identify distributions, Part
+    II\label{identify_dist_ls_pop}} Four plots are presented
+  below. The plot at the top is a distribution for a population. The
+  mean is 60 and the standard deviation is 18. Also shown below is a
+  distribution of (1) a single random sample of 500 values from this
+  population, (2) a distribution of 500 sample means from random
+  samples of each size 18, and (3) a distribution of 500 sample means
+  from random samples of each size 81. Determine which plot (A, B, or
+  C) is which and explain your reasoning.
 
+<<plot_4_6_38a, echo=FALSE, fig.width=4.5, fig.height=2, fig.align="center">>=
+plot_4.6.38a
 @
+
+<<plot_4_6_38b, echo=FALSE, fig.width=4.5, fig.height=2, fig.align="center">>=
+plot_4.6.38b
+@
+
 }{}
 
 % 39
 
-\eoce{\qt{Weights of pennies\label{penny_weights}} The distribution of weights of
-United States pennies is approximately normal with a mean of 2.5 grams and a
-standard deviation of 0.03 grams.
-\begin{parts}
-\item What is the probability that a randomly chosen penny weighs less than 2.4
-grams?
-\item Describe the sampling distribution of the mean weight of 10 randomly
-chosen pennies.
-\item What is the probability that the mean weight of 10 pennies is less than
-2.4 grams?
-\item Sketch the two distributions (population and sampling) on the same scale.
-\item Could you estimate the probabilities from (a) and (c) if the weights of pennies had a skewed distribution?
-\end{parts}
+<<ex4.6.39, echo=FALSE>>=
+
+pm_4.6.39 <- round(runif(1, 1.5, 3.5), 1)
+psd_4.6.39 <- round(runif(1, 0.03, 0.08), 2)
+
+x_4.6.39 <- round(runif(1, 2, 3), 1)
+n_4.6.39 <- round(runif(1, 5, 15))
+
+z_4.6.39a <- round((x_4.6.39 - pm_4.6.39)/psd_4.6.39, 2)
+p_4.6.39a <- round(pnorm(z_4.6.39a), 4)
+pse_4.6.39 <- round(psd_4.6.39/sqrt(n_4.6.39), 2)
+z_4.6.39c <-  round((x_4.6.39 - pm_4.6.39)/pse_4.6.39, 2)
+p_4.6.39c <- round(pnorm(z_4.6.39c), 4)
+
+bounds_4.6.39 <- pm_4.6.39 + c(-3, 3)*psd_4.6.39
+x_seg_start_4.6.39 <- pm_4.6.39+0.75*psd_4.6.39
+x_seg_end_4.6.39 <- pm_4.6.39+1.25*psd_4.6.39
+x_text_start_4.6.39 <- pm_4.6.39+1.6*psd_4.6.39
+
+plot_4.6.39 <- ggplot2::ggplot(data.frame(x=bounds_4.6.39), ggplot2::aes(x)) +
+    ggplot2::stat_function(fun=dnorm, geom="line",
+                           args=list(mean=pm_4.6.39, sd=psd_4.6.39)) +
+    ggplot2::stat_function(fun=dnorm, geom="line", linetype="dashed",
+                           args=list(mean=pm_4.6.39, sd=psd_4.6.39/sqrt(n_4.6.39))) +
+    ggplot2::labs(x="", y="")
+## TODO text should scale better
+## +
+##     ggplot2::annotate("segment", x=x_seg_start_4.6.39, xend=x_seg_end_4.6.39,
+##                       y=22.5, yend=22.5) +
+##     ggplot2::annotate("segment", x=x_seg_start_4.6.39, xend=x_seg_end_4.6.39,
+##                       y=20, yend=20,
+##                       linetype="dashed") +
+##     ggplot2::annotate("text", x=x_text_start_4.6.39, y=22.5, label="Population") +
+##     ggplot2::annotate("text", x=x_text_start_4.6.39, y=20,
+##                       label=deparse(bquote(paste("Sampling (n=", .(n_4.6.39b), ")"))),
+##                       parse=TRUE)
+
+
+@
+
+\eoce{ \qt{Weights of pennies\label{penny_weights}} The distribution
+  of weights of United States pennies is approximately normal with a
+  mean of $\Sexpr{pm_4.6.39}$ grams and a standard deviation of $\Sexpr{psd_4.6.39}$ grams.
+
+  \begin{parts}
+  \item What is the probability that a randomly chosen penny weighs
+    less than $\Sexpr{x_4.6.39}$ grams?
+  \item Describe the sampling distribution of the mean weight of
+    $\Sexpr{n_4.6.39}$ randomly chosen pennies.
+  \item What is the probability that the mean weight of
+    $\Sexpr{n_4.6.39}$ pennies is less than $\Sexpr{x_4.6.39}$
+    grams?
+  \item Sketch the two distributions (population and sampling) on the
+    same scale.
+  \item Could you estimate the probabilities from (a) and (c) if the
+    weights of pennies had a skewed distribution?
+  \end{parts}
+
 }{}
 
 % 40
 
-\eoce{\qt{CFLBs\label{cflbs}} A manufacturer of compact fluorescent light bulbs advertises that the
-distribution of the lifespans of these light bulbs is nearly normal with a mean
-of 9,000 hours and a standard deviation of 1,000 hours.
-\begin{parts}
-\item What is the probability that a randomly chosen light bulb lasts more than
-10,500 hours?
-\item Describe the distribution of the mean lifespan of 15 light bulbs.
-\item What is the probability that the mean lifespan of 15 randomly chosen light
-bulbs is more than 10,500 hours?
-\item Sketch the two distributions (population and sampling) on the same scale.
-\item Could you estimate the probabilities from parts~(a) and~(c) if the
-lifespans of light bulbs had a skewed distribution?
-\end{parts}
+<<ex4.6.40, echo=FALSE>>=
+
+pm_4.6.40 <- round(runif(1, 8500, 9500))
+psd_4.6.40 <- round(runif(1, 950, 1250))
+
+x_4.6.40 <- round(runif(1, 10000, 11000))
+n_4.6.40 <- round(runif(1, 10, 20))
+
+
+@
+
+\eoce{ \qt{CFLBs\label{cflbs}} A manufacturer of compact fluorescent
+  light bulbs advertises that the distribution of the lifespans of
+  these light bulbs is nearly normal with a mean of $\Sexpr{pm_4.6.40}$ hours and a
+  standard deviation of $\Sexpr{psd_4.6.40}$ hours.
+
+  \begin{parts}
+  \item What is the probability that a randomly chosen light bulb lasts more than
+    $\Sexpr{x_4.6.40}$ hours?
+  \item Describe the distribution of the mean lifespan of $\Sexpr{n_4.6.40}$ light bulbs.
+  \item What is the probability that the mean lifespan of
+    $\Sexpr{n_4.6.40}$ randomly chosen light bulbs is more than
+    $\Sexpr{x_4.6.40}$ hours?
+  \item Sketch the two distributions (population and sampling) on the same scale.
+  \item Could you estimate the probabilities from parts~(a) and~(c) if the
+    lifespans of light bulbs had a skewed distribution?
+  \end{parts}
+
 }{}
 
 
 % 41
 
-\eoce{\qt{Songs on an iPod\label{songs_on_ipod}}
+<<ex4.6.41, echo=FALSE>>=
 
-  Suppose an iPod has 3,000 songs. The histogram below shows the
-  distribution of the lengths of these songs. We also know that, for
-  this iPod, the mean length is 3.45 minutes and the standard
-  deviation is 1.63 minutes.
+n_4.6.41 <- nrow(openintro::ipod)
+df_4.6.41 <- dplyr::sample_n(openintro::ipod, n_4.6.41, replace=TRUE)
 
-<<songsIpodHist, opts.label="plot">>=
-ggplot2::ggplot(openintro::ipod, ggplot2::aes(x=songLength)) +
+plot_4.6.41 <- ggplot2::ggplot(openintro::ipod, ggplot2::aes(x=songLength)) +
     ggplot2::geom_histogram(bins=10) +
-        ggplot2::labs(x="Length of song")
+    ggplot2::labs(x="Length of song")
+
+pm_4.6.41 <- round(mean(df_4.6.41$songLength), 2)
+psd_4.6.41 <- round(sd(df_4.6.41$songLength), 2)
+
+x_4.6.41 <- round(runif(1, 3, 8))
+n_4.6.41b <- round(runif(1, 10, 20))
+n_4.6.41c <- round(runif(1, 90, 110))
+
+x_4.6.41a <- sum(df_4.6.41$songLength > x_4.6.41)
+p_4.6.41a <- round(x_4.6.41a/n_4.6.41, 4)
+z_4.6.41b <- round((round(60/n_4.6.41b, 2) - pm_4.6.41)/(psd_4.6.41/sqrt(n_4.6.41b)), 2)
+p_4.6.41b <- round(1-pnorm(z_4.6.41b), 4)
+z_4.6.41c <- round((round(360/n_4.6.41c, 2) - pm_4.6.41)/(psd_4.6.41/sqrt(n_4.6.41b)), 2)
+p_4.6.41c <- round(1-pnorm(z_4.6.41c), 4)
+
+@
+
+\eoce{ \qt{Songs on an iPod\label{songs_on_ipod}} Suppose an iPod has
+  3,000 songs. The histogram below shows the distribution of the
+  lengths of these songs. We also know that, for this iPod, the mean
+  length is $\Sexpr{pm_4.6.41}$ minutes and the standard deviation is
+  $\Sexpr{psd_4.6.41}$ minutes.
+
+<<plot_4_6_41, echo=FALSE, fig.width=4.5, fig.height=2, fig.align="center">>=
+plot_4.6.41
 @
 
 \begin{parts}
-\item Calculate the probability that a randomly selected song lasts more than 5
-minutes.
-\item You are about to go for an hour run and you make a random playlist of 15 songs. What is the probability that your playlist lasts for the entire duration
-of your run? \textit{Hint:} If you want the playlist to last 60 minutes, what should be the minimum average length of a song?
-\item You are about to take a trip to visit your parents and the drive is 6 hours. You make a random playlist of 100 songs. What is the probability that your playlist lasts the entire drive?
+\item Calculate the probability that a randomly selected song lasts
+  more than $\Sexpr{x_4.6.41}$ minutes.
+\item You are about to go for an hour run and you make a random
+  playlist of $\Sexpr{n_4.6.41b}$ songs. What is the probability that
+  your playlist lasts for the entire duration of your run?
+  \textit{Hint:} If you want the playlist to last 60 minutes, what
+  should be the minimum average length of a song?
+\item You are about to take a trip to visit your parents and the drive
+  is 6 hours. You make a random playlist of $\Sexpr{n_4.6.41c}$
+  songs. What is the probability that your playlist lasts the entire
+  drive?
 \end{parts}
+
 }{}
 
 % 42
 
-\eoce{\qt{Spray paint\label{spray_paint}} Suppose the area that can be painted using a
-single can of spray paint is slightly variable and follows a nearly normal
-distribution with a mean of 25 square feet and a standard deviation of 3 square
-feet.
-\begin{parts}
-\item What is the probability that the area covered by a can of spray paint is
-more than 27 square feet?
-\item Suppose you want to spray paint an area of 540 square feet using 20 cans
-of spray paint. On average, how many square feet must each can be able to cover
-to spray paint all 540 square feet?
-\item What is the probability that you can cover a 540 square feet area using 20
-cans of spray paint?
-\item If the area covered by a can of spray paint had a slightly skewed
-distribution, could you still calculate the probabilities in parts~(a) and~(c)
-using the normal distribution?
-\end{parts}
+<<ex4.6.42, echo=FALSE>>=
+
+pm_4.6.42 <- round(runif(1, 20, 30), 1)
+psd_4.6.42 <- round(runif(1, 1.5, 4.5), 1)
+
+x_4.6.42a <- round(runif(1, 22, 32))
+x_4.6.42b <- round(runif(1, 525, 575))
+n_4.6.42b <- round(runif(1, 15, 25))
+
+@
+
+\eoce{ \qt{Spray paint\label{spray_paint}} Suppose the area that can
+  be painted using a single can of spray paint is slightly variable
+  and follows a nearly normal distribution with a mean of
+  $\Sexpr{pm_4.6.42}$ square feet and a standard deviation of
+  $\Sexpr{psd_4.6.42}$ square feet.
+
+  \begin{parts}
+  \item What is the probability that the area covered by a can of spray paint is
+    more than $\Sexpr{x_4.6.42a}$ square feet?
+  \item Suppose you want to spray paint an area of $\Sexpr{x_4.6.42b}$
+    square feet using $\Sexpr{n_4.6.42b}$ cans of spray paint. On
+    average, how many square feet must each can be able to cover to
+    spray paint all 540 square feet?
+  \item What is the probability that you can cover a
+    $\Sexpr{x_4.6.42b}$ square feet area using $\Sexpr{n_4.6.42b}$
+    cans of spray paint?
+  \item If the area covered by a can of spray paint had a slightly
+    skewed distribution, could you still calculate the probabilities
+    in parts~(a) and~(c) using the normal distribution?
+  \end{parts}
+
 }{}
 
 
@@ -1403,93 +1605,147 @@ using the normal distribution?
 \subsection{Inference for other estimators}
 
 % 43
+% TODO what to randomize?
+\eoce{ \qt{Spam mail counts\label{spam_mail_count}} The 2004 National
+  Technology Readiness Survey sponsored by the Smith School of
+  Business at the University of Maryland surveyed 418 randomly sampled
+  Americans, asking them how many spam emails they receive per
+  day. The survey was repeated on a new random sample of 499 Americans
+  in 2009.\footfullcite{webpage:spam}
 
-\eoce{\qt{Spam mail counts\label{spam_mail_count}} The 2004 National Technology
-Readiness Survey sponsored by the Smith School of Business at the University of
-Maryland surveyed 418 randomly sampled Americans, asking them how many spam
-emails they receive per day. The survey was repeated on a new random sample of
-499 Americans in 2009.\footfullcite{webpage:spam}
-\begin{parts}
-\item What are the hypotheses for evaluating if the average spam emails per day
-has changed from 2004 to 2009.
-\item In 2004 the mean was 18.5 spam emails per day, and in 2009 this value was
-14.9 emails per day. What is the point estimate for the difference between the
-two population means?
-\item A report on the survey states that the observed difference between the
-sample means is not statistically significant. Explain what this means in
-context of the hypothesis test and data.
-\item Would you expect a confidence interval for the difference between the two
-population means to contain 0? Explain your reasoning.
-\end{parts}
+  \begin{parts}
+  \item What are the hypotheses for evaluating if the average spam emails per day
+    has changed from 2004 to 2009.
+  \item In 2004 the mean was 18.5 spam emails per day, and in 2009 this value was
+    14.9 emails per day. What is the point estimate for the difference between the
+    two population means?
+  \item A report on the survey states that the observed difference between the
+    sample means is not statistically significant. Explain what this means in
+    context of the hypothesis test and data.
+  \item Would you expect a confidence interval for the difference between the two
+    population means to contain 0? Explain your reasoning.
+  \end{parts}
+
 }{}
-
-\textC{\pagebreak}
 
 % 44
 
-\eoce{\qt{Nearsighted\label{nearsighted}} It is believed that nearsightedness affects about 8\% of
-all children. In a random sample of 194 children, 21 are nearsighted.
-\begin{parts}
-\item Construct hypotheses appropriate for the following question: do these data
-provide evidence that the 8\% value is inaccurate?
-\item What proportion of children in this sample are nearsighted?
-\item Given that the standard error of the sample proportion is 0.0195 and the
-point estimate follows a nearly normal distribution, calculate the test
-statistic (the Z-statistic).
-\item What is the p-value for this hypothesis test?
-\item What is the conclusion of the hypothesis test?
-\end{parts}
+<<ex4.6.44, echo=FALSE>>=
+
+pp_4.6.44 <- round(runif(1, .05, .1))
+n_4.6.44 <- round(runif(1, 175, 225))
+pse_4.6.44 <- round(sqrt(pp_4.6.44*(1-pp_4.6.44)/n_4.6.44), 2)
+x_4.6.44 <- round(runif(1, 15, 25))
+
+@
+
+\eoce{ \qt{Nearsighted\label{nearsighted}} It is believed that
+  nearsightedness affects about $\Sexpr{pp_4.6.44*100}$\% of all
+  children. In a random sample of $\Sexpr{n_4.6.44}$ children,
+  $\Sexpr{x_4.6.44}$ are nearsighted.
+
+  \begin{parts}
+  \item Construct hypotheses appropriate for the following question:
+    do these data provide evidence that the $\Sexpr{pp_4.6.44*100}$\%
+    value is inaccurate?
+  \item What proportion of children in this sample are nearsighted?
+  \item Given that the standard error of the sample proportion is
+    $\Sexpr{pse_4.6.44}$ and the point estimate follows a nearly
+    normal distribution, calculate the test statistic (the
+    Z-statistic).
+  \item What is the p-value for this hypothesis test?
+  \item What is the conclusion of the hypothesis test?
+  \end{parts}
+
 }{}
 
 % 45
+% TODO what to randomize?
+\eoce{ \qt{Spam mail percentages\label{spam_mail_perc}} The National
+  Technology Readiness Survey sponsored by the Smith School of
+  Business at the University of Maryland surveyed 418 randomly sampled
+  Americans, asking them how often they delete spam emails. In 2004,
+  23\% of the respondents said they delete their spam mail once a
+  month or less, and in 2009 this value was 16\%.
 
-\eoce{\qt{Spam mail percentages\label{spam_mail_perc}} The National Technology Readiness Survey sponsored by
-the Smith School of Business at the University of Maryland surveyed 418 randomly
-sampled Americans, asking them how often they delete spam emails. In 2004, 23\%
-of the respondents said they delete their spam mail once a month or less, and in
-2009 this value was 16\%.
-\begin{parts}
-\item What are the hypotheses for evaluating if the proportion of those who
-delete their email once a month or less has changed from 2004 to 2009?
-\item What is the point estimate for the difference between the two population
-proportions?
-\item A report on the survey states that the observed decrease from 2004 to 2009
-is statistically significant. Explain what this means in context of the
-hypothesis test and the data.
-\item Would you expect a confidence interval for the difference between the two
-population proportions to contain 0? Explain your reasoning.
-\end{parts}
+  \begin{parts}
+  \item What are the hypotheses for evaluating if the proportion of those who
+    delete their email once a month or less has changed from 2004 to 2009?
+  \item What is the point estimate for the difference between the two population
+    proportions?
+  \item A report on the survey states that the observed decrease from 2004 to 2009
+    is statistically significant. Explain what this means in context of the
+    hypothesis test and the data.
+  \item Would you expect a confidence interval for the difference between the two
+    population proportions to contain 0? Explain your reasoning.
+  \end{parts}
+
 }{}
 
 % 46
 
-\eoce{\qt{Unemployment and relationship problems\label{unemployment_relationship}}
-A USA Today/Gallup poll conducted between 2010 and 2011 asked a group of
-unemployed and underemployed Americans if they have had major problems in their
-relationships with their spouse or another close family member as a result of
-not having a job (if unemployed) or not having a full-time job (if
-underemployed). 27\% of the 1,145 unemployed respondents and 25\% of the 675
-underemployed respondents said they had major problems in relationships as a
-result of their employment status.
-\begin{parts}
-\item What are the hypotheses for evaluating if the proportions of unemployed and underemployed people who had relationship problems were different?
-\item The p-value for this hypothesis test is approximately 0.35. Explain what this means in context of the hypothesis test and the data.
-\end{parts}
+<<ex4.6.46, echo=FALSE>>=
+
+n_unemp_4.6.46 <- round(runif(1, 1100, 1200))
+n_underemp_4.6.46 <- round(runif(1, 600, 700))
+pp_unemp_4.6.46 <- round(runif(1, .255, .3), 2)
+pp_underemp_4.6.46 <- round(runif(1, .2, .25), 2)
+se_4.6.46 <- sqrt(pp_unemp_4.6.46*(1-pp_unemp_4.6.46)/n_unemp_4.6.46 + pp_underemp_4.6.46*(1-pp_underemp_4.6.46)/n_underemp_4.6.46)
+z_4.6.46  <- (pp_underemp_4.6.46 - pp_unemp_4.6.46) / se_4.6.46
+p_4.6.46 <- round(2*(1-pnorm(abs(z_4.6.46))), 4)
+
+@
+
+\eoce{ \qt{Unemployment and relationship
+    problems\label{unemployment_relationship}} A USA Today/Gallup poll
+  conducted between 2010 and 2011 asked a group of unemployed and
+  underemployed Americans if they have had major problems in their
+  relationships with their spouse or another close family member as a
+  result of not having a job (if unemployed) or not having a full-time
+  job (if underemployed). $\Sexpr{pp_unemp_4.6.46*100}$\% of the
+  $\Sexpr{n_unemp_4.6.46}$ unemployed respondents and
+  $\Sexpr{pp_underemp_4.6.46*100}$\% of the
+  $\Sexpr{n_underemp_4.6.46}$ underemployed respondents said they had
+  major problems in relationships as a result of their employment
+  status.
+
+  \begin{parts}
+  \item What are the hypotheses for evaluating if the proportions of
+    unemployed and underemployed people who had relationship problems
+    were different?
+  \item The p-value for this hypothesis test is approximately
+    $\Sexpr{p_4.6.46}$. Explain what this means in context of the
+    hypothesis test and the data.
+  \end{parts}
+
 }{}
 
 % 47
 
-\eoce{\qt{Practical vs. statistical\label{prac_stat_sig}} Determine whether the
-following statement is true or false, and explain your reasoning: ``With large
-sample sizes, even small differences between the null value and the point
-estimate can be statistically significant."
+\eoce{ \qt{Practical vs. statistical\label{prac_stat_sig}} Determine
+  whether the following statement is true or false, and explain your
+  reasoning: ``With large sample sizes, even small differences between
+  the null value and the point estimate can be statistically
+  significant."
+
 }{}
 
 % 48
 
-\eoce{\qt{Same observation, different sample size\label{same_obs_diff_n}} Suppose you
-conduct a hypothesis test based on a sample where the sample size is $n = 50$,
-and arrive at a p-value of 0.08. You then refer back to your notes and discover
-that you made a careless mistake, the sample size should have been $n = 500$.
-Will your p-value increase, decrease, or stay the same? Explain.
+<<ex4.6.48, echo=FALSE>>=
+
+n_4.6.48a <- round(runif(1, 40, 60))
+p_4.6.48 <- round(runif(1, 0.02, 0.16), 2)
+n_4.6.48b <- round(runif(1, 30, 600))
+
+@
+
+\eoce{ \qt{Same observation, different sample
+    size\label{same_obs_diff_n}} Suppose you conduct a hypothesis test
+  based on a sample where the sample size is $n = \Sexpr{n_4.6.48a}$,
+  and arrive at a p-value of $\Sexpr{p_4.6.48}$. You then refer back
+  to your notes and discover that you made a careless mistake, the
+  sample size should have been $n = \Sexpr{n_4.6.48b}$.  Will your
+  p-value increase, decrease, or stay the same?  Explain.
+
 }{}

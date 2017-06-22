@@ -85,12 +85,16 @@
 
 % 11
 
-\eocesol{(a)~We are 95\% confident that Americans spend an average of 1.38 to 1.92 hours
-per day relaxing or pursuing activities they enjoy.
-(b)~Their confidence level must be higher as the width of the confidence
-interval increases as the confidence level increases.
-(c)~The new margin of error will be smaller since as the sample size increases
-the standard error decreases, which will decrease the margin of error.}
+\eocesol{ (a)~We are 95\% confident that Americans spend an average of
+  $\Sexpr{ci_4.6.11[1]}$ to $\Sexpr{ci_4.6.11[2]}$ hours per day
+  relaxing or pursuing activities they enjoy.
+  (b)~Their confidence level must be higher as the width of the
+  confidence interval increases as the confidence level increases.
+  (c)~The new margin of error will be smaller since as the sample size
+  increases the standard error decreases, which will decrease the
+  margin of error.
+
+}
 
 
 % 13
@@ -278,98 +282,117 @@ the standard error decreases, which will decrease the margin of error.}
 
 % 35
 
-\eocesol{(a)~Right skewed. There is a long tail on the higher end of the distribution but
-a much shorter tail on the lower end.
-(b)~Less than, as the median would be less than the mean in a right skewed
-distribution.
-(c)~We should not.
-(d)~Even though the population distribution is not normal, the conditions for
-inference are reasonably satisfied, with the possible exception of skew. If the
-skew isn't very strong (we should ask to see the data), then we can use the
-Central Limit Theorem to estimate this probability. For now, we'll assume the
-skew isn't very strong, though the description suggests it is at least moderate
-to strong. Use $N(1.3, SD_{\bar{x}} = 0.3/\sqrt{60})$: $Z=2.58$ $\to$ 0.0049.
-(e)~It would decrease it by a factor of $1/\sqrt{2}$.}
+\eocesol{ (a)~Right skewed. There is a long tail on the higher end of the
+  distribution but a much shorter tail on the lower end.
+  (b)~Less than, as the median would be less than the mean in a right skewed
+  distribution.
+  (c)~We should not.
+  (d)~Even though the population distribution is not normal, the
+  conditions for inference are reasonably satisfied, with the possible
+  exception of skew. If the skew isn't very strong (we should ask to
+  see the data), then we can use the Central Limit Theorem to estimate
+  this probability. For now, we'll assume the skew isn't very strong,
+  though the description suggests it is at least moderate to
+  strong. Use
+  $N(\Sexpr{pm_4.6.35}, SD_{\bar{x}} =
+  \Sexpr{psd_4.6.35/1e6}/\sqrt{n_4.6.35})$: $Z=\Sexpr{z_4.6.35} \to \Sexpr{p_4.6.35}$.
+  (e)~It would decrease it by a factor of $1/\sqrt{2}$.
+
+}
 
 % 37
 
-\eocesol{The centers are the same in each plot, and each data set is from a nearly normal
-distribution, though the histograms may not look very normal since each
-represents only 100 data points. The only way to tell which plot corresponds to
-which scenario is to examine the variability of each distribution. Plot B is the
-most variable, followed by Plot A, then Plot C. This means Plot B will
-correspond to the original data, Plot A to the sample means with size 5, and
-Plot C to the sample means with size 25.}
+\eocesol{ The centers are the same in each plot, and each data set is
+  from a nearly normal distribution, though the histograms may not
+  look very normal since each represents only 100 data points. The
+  only way to tell which plot corresponds to which scenario is to
+  examine the variability of each distribution. Plot B is the most
+  variable, followed by Plot A, then Plot C. This means Plot B will
+  correspond to the original data, Plot A to the sample means with
+  size 5, and Plot C to the sample means with size 25.
+
+}
 
 % 39
 
-\eocesol{(a)~$Z=-3.33$ $\to$ 0.0004.
-(b)~The population SD is known and the data are nearly normal, so the sample mean will be nearly normal with distribution $N(\mu, \sigma/\sqrt{n})$, i.e. $N(2.5, 0.0095)$.
-(c)~$Z=-10.54$ $\to$ $\approx0$.
-(d)~See below:
-<<penniesWeightSketch, opts.label="plot">>=
-
-## TODO add legend
-ggplot2::ggplot(data.frame(x=c(2.41, 2.59)), ggplot2::aes(x)) +
-        ggplot2::stat_function(fun=dnorm, geom="line", args=list(mean=2.5, sd=0.03)) +
-            ggplot2::stat_function(fun=dnorm, geom="line", args=list(mean=2.5, sd=0.03/sqrt(10)), linetype=2) +
-        ## ggplot2::annotate("text",  xmin=2.55, y=35, label="Population") +
-        ## ggplot2::annotate("text",  xmin=2.55, y=33, label="Sampling (n=10)")
-        ggplot2::labs(x="", y="") +
-        ggplot2::theme(axis.text.y=ggplot2::element_blank(),
-                       axis.ticks.y=ggplot2::element_blank())
+\eocesol{ (a)~$Z=\Sexpr{z_4.6.39a} \to \Sexpr{p_4.6.39a}$.
+  (b)~The population SD is known and the data are nearly normal, so the sample mean will be nearly normal with distribution $N(\mu, \sigma/\sqrt{n})$, i.e. $N(\Sexpr{pm_4.6.39}, \Sexpr{pse_4.6.39})$.
+  (c)~$Z=\Sexpr{z_4.6.39c} \to \approx \Sexpr{p_4.6.39c}$.
+  (d)~See below, where the population distribution is solid and the sampling distribution is dashed.
+<<ex4_6_39_plot, echo=FALSE, fig.width=3, fig.height=2, fig.align="center">>=
+plot_4.6.39
 @
+% \begin{center}
+% \includegraphics[width=0.48\textwidth]{chapters/inference_foundations/figures/eoce/penny_weights/penny_weights_sketch.pdf}
+% \end{center}
+(e)~We could not estimate (a) without a nearly normal population
+distribution. We also could not estimate (c) since the sample size is
+not sufficient to yield a nearly normal sampling distribution if the
+population distribution is not nearly normal.
 
-% TODO remove this plot, once the above is finished
-\begin{center}
-\includegraphics[width=0.48\textwidth]{chapters/inference_foundations/figures/eoce/penny_weights/penny_weights_sketch.pdf}
-\end{center}
-(e)~We could not estimate (a) without a nearly normal population distribution. We also could not estimate (c) since the sample size is not sufficient to yield a nearly normal sampling distribution if the population distribution is not nearly normal.}
+}
 
 % 41
 
-\eocesol{(a)~We cannot use the normal model for this calculation, but we can use the
-histogram. About 500 songs are shown to be longer than 5 minutes, so the
-probability is about $500/3000 = 0.167$.
-(b)~Two different answers are reasonable. $^{Option~1}$Since the population
-distribution is only slightly skewed to the right, even a small sample size will
-yield a nearly normal sampling distribution. We also know that the songs are
-sampled randomly and the sample size is less than 10\% of the population, so the
-length of one song in the sample is independent of another.  We are looking for
-the probability that the total length of 15 songs is more than 60 minutes, which
-means that the average song should last at least $60/15 = 4$ minutes. Using
-$SD_{\bar{x}}=1.63/\sqrt{15}$, $Z=1.31$ $\to$ 0.0951. $^{Option~2}$Since the
-population distribution is not normal, a small sample size may not be sufficient
-to yield a nearly normal sampling distribution. Therefore, we cannot estimate
-the probability using the tools we have learned so far.
-(c)~We can now be confident that the conditions are satisfied.
-$Z = 0.92$ $\to$ 0.1788.}
+\eocesol{ (a)~We cannot use the normal model for this calculation, but we can
+  use the histogram. About $\Sexpr{x_4.6.41a}$ songs are shown to be
+  longer than $\Sexpr{x_4.6.41}$ minutes, so the probability is about
+  $\Sexpr{x_4.6.41a}/\Sexpr{n_4.6.41} = \Sexpr{p_4.6.41a}$.
+  (b)~Two different answers are reasonable. $^{Option~1}$Since the
+  population distribution is only slightly skewed to the right, even a
+  small sample size will yield a nearly normal sampling
+  distribution. We also know that the songs are sampled randomly and
+  the sample size is less than 10\% of the population, so the length
+  of one song in the sample is independent of another.  We are looking
+  for the probability that the total length of 15 songs is more than
+  60 minutes, which means that the average song should last at least
+  $60/\Sexpr{n_4.6.41b} = \Sexpr{round(60/n_4.6.41b, 2)}$
+  minutes. Using
+  $SD_{\bar{x}}=\Sexpr{psd_4.6.41}/\sqrt{\Sexpr{n_4.6.41b}}$,
+  $Z=\Sexpr{z_4.6.41b} \to \Sexpr{p_4.6.41b}$. $^{Option~2}$Since the
+  population distribution is not normal, a small sample size may not
+  be sufficient to yield a nearly normal sampling
+  distribution. Therefore, we cannot estimate the probability using
+  the tools we have learned so far.
+  (c)~We can now be confident that the conditions are satisfied.
+  $Z = \Sexpr{z_4.6.41c} \to \Sexpr{p_4.6.41c}$.
+
+}
 
 % 43
 
-\eocesol{(a)~$H_0: \mu_{2009} = \mu_{2004}$. $H_A: \mu_{2009} \ne \mu_{2004}$.
-(b)~$\bar{x}_{2009} - \bar{x}_{2004} = -3.6$ spam emails per day.
-(c)~The null hypothesis was not rejected, and the data do not provide convincing
-evidence that the true average number of spam emails per day in years 2004 and
-2009 are different. The observed difference is about what we might expect from
-sampling variability alone.
-(d)~Yes, since the hypothesis of no difference was not rejected in part~(c).}
+\eocesol{ (a)~$H_0: \mu_{2009} = \mu_{2004}$. $H_A: \mu_{2009} \ne \mu_{2004}$.
+  (b)~$\bar{x}_{2009} - \bar{x}_{2004} = -3.6$ spam emails per day.
+  (c)~The null hypothesis was not rejected, and the data do not
+  provide convincing evidence that the true average number of spam
+  emails per day in years 2004 and 2009 are different. The observed
+  difference is about what we might expect from sampling variability
+  alone.
+  (d)~Yes, since the hypothesis of no difference was not rejected in
+  part~(c).
+
+}
 
 % 45
 
-\eocesol{(a)~$H_0: p_{2009} = p_{2004}$.  $H_A: p_{2009} \ne p_{2004}$.
-(b)~-7\%.
-(c)~The null hypothesis was rejected. The data provide strong evidence that the
-true proportion of those who once a month or less frequently delete their spam
-email was higher in 2004 than in 2009. The difference is so large that it cannot
-easily be explained as being due to chance.
-(d)~No, since the null difference, 0, was rejected in part (c).}
+\eocesol{ (a)~$H_0: p_{2009} = p_{2004}$.  $H_A: p_{2009} \ne p_{2004}$.
+  (b)~-7\%.
+  (c)~The null hypothesis was rejected. The data provide strong
+  evidence that the true proportion of those who once a month or less
+  frequently delete their spam email was higher in 2004 than in
+  2009. The difference is so large that it cannot easily be explained
+  as being due to chance.
+  (d)~No, since the null difference, 0, was rejected in part (c).
+
+}
 
 % 47
 
-\eocesol{True. If the sample size is large, then the standard error will be small,
+\eocesol {True. If the sample size is large, then the standard error will be small,
 meaning even relatively small differences between the null value and point
-estimate can be statistically significant.}
+estimate can be statistically significant.
+
+}
 
 
 \end{multicols}

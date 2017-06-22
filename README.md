@@ -33,12 +33,12 @@ $ make
 
 
 ## Roadmap
-   So far only the structure of this project is complete.  Here's a task list of completed chapters.
+   Only the structure of this project is complete.  Here's a task list of completed (triple checking wouldn't hurt) chapters.
 
    - [] Chapter 1
    - [] Chapter 2
-   - [] Chapter 3
-   - [] Chapter 4
+   - [x] Chapter 3
+   - [x] Chapter 4
    - [] Chapter 5
    - [] Chapter 6
    - [] Chapter 7
